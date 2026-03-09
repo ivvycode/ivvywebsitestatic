@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Top-level pages -->
+  <url><loc>/index.html</loc><priority>1.0</priority></url>
+  <url><loc>/about.html</loc><priority>0.8</priority></url>
+  <url><loc>/request-demo.html</loc><priority>0.9</priority></url>
+  <url><loc>/products.html</loc><priority>0.8</priority></url>
+  <url><loc>/software-for.html</loc><priority>0.8</priority></url>
+  <url><loc>/event-management.html</loc><priority>0.8</priority></url>
+  <url><loc>/event-ticketing.html</loc><priority>0.7</priority></url>
+  <url><loc>/ivvy-pay.html</loc><priority>0.7</priority></url>
+  <url><loc>/ivvyai.html</loc><priority>0.7</priority></url>
+  <url><loc>/integrations.html</loc><priority>0.8</priority></url>
+  <url><loc>/customers.html</loc><priority>0.8</priority></url>
+  <url><loc>/security.html</loc><priority>0.6</priority></url>
+  <url><loc>/faqs.html</loc><priority>0.6</priority></url>
+  <url><loc>/hotels.html</loc><priority>0.7</priority></url>
+  <url><loc>/hospitality.html</loc><priority>0.7</priority></url>
+  <url><loc>/function-centres.html</loc><priority>0.7</priority></url>
+  <url><loc>/stadiums.html</loc><priority>0.7</priority></url>
+  <url><loc>/universities.html</loc><priority>0.7</priority></url>
+  <url><loc>/government.html</loc><priority>0.7</priority></url>
+  <url><loc>/restaurants.html</loc><priority>0.7</priority></url>
+  <url><loc>/credit-terms.html</loc><priority>0.3</priority></url>
+  <url><loc>/events-terms.html</loc><priority>0.3</priority></url>
+  <url><loc>/marketplace-terms.html</loc><priority>0.3</priority></url>
+  <url><loc>/website-terms.html</loc><priority>0.3</priority></url>
+
+  <!-- Integration detail pages -->
+  <url><loc>/integrations/bepoz.html</loc><priority>0.5</priority></url>
+  <url><loc>/integrations/fourwindsinteractive.html</loc><priority>0.5</priority></url>
+  <url><loc>/integrations/googleanalytics.html</loc><priority>0.5</priority></url>
+  <url><loc>/integrations/googlecalendar.html</loc><priority>0.5</priority></url>
+  <url><loc>/integrations/googletagmanager.html</loc><priority>0.5</priority></url>
+  <url><loc>/integrations/handl.html</loc><priority>0.5</priority></url>
+  <url><loc>/integrations/infor.html</loc><priority>0.5</priority></url>
+  <url><loc>/integrations/janus.html</loc><priority>0.5</priority></url>
+  <url><loc>/integrations/mews.html</loc><priority>0.5</priority></url>
+  <url><loc>/integrations/myob.html</loc><priority>0.5</priority></url>
+  <url><loc>/integrations/netsuite-accounting.html</loc><priority>0.5</priority></url>
+  <url><loc>/integrations/opera-cloud.html</loc><priority>0.5</priority></url>
+  <url><loc>/integrations/opera.html</loc><priority>0.5</priority></url>
+  <url><loc>/integrations/outlook.html</loc><priority>0.5</priority></url>
+  <url><loc>/integrations/protel.html</loc><priority>0.5</priority></url>
+  <url><loc>/integrations/rms.html</loc><priority>0.5</priority></url>
+  <url><loc>/integrations/sabre.html</loc><priority>0.5</priority></url>
+  <url><loc>/integrations/sevenrooms.html</loc><priority>0.5</priority></url>
+  <url><loc>/integrations/smartspace.html</loc><priority>0.5</priority></url>
+  <url><loc>/integrations/sms.html</loc><priority>0.5</priority></url>
+  <url><loc>/integrations/stayntouch.html</loc><priority>0.5</priority></url>
+  <url><loc>/integrations/swiftpos.html</loc><priority>0.5</priority></url>
+  <url><loc>/integrations/venue-directory.html</loc><priority>0.5</priority></url>
+  <url><loc>/integrations/visualone.html</loc><priority>0.5</priority></url>
+  <url><loc>/integrations/xero.html</loc><priority>0.5</priority></url>
+
+  <!-- Customer story pages -->
+  <url><loc>/customers/avc.html</loc><priority>0.5</priority></url>
+  <url><loc>/customers/best-western-boulder-falls.html</loc><priority>0.5</priority></url>
+  <url><loc>/customers/central-hall.html</loc><priority>0.5</priority></url>
+  <url><loc>/customers/comwell-hotels.html</loc><priority>0.5</priority></url>
+  <url><loc>/customers/goodwood-estate.html</loc><priority>0.5</priority></url>
+  <url><loc>/customers/mantra-group.html</loc><priority>0.5</priority></url>
+  <url><loc>/customers/oakwood-premier-melbourne.html</loc><priority>0.5</priority></url>
+  <url><loc>/customers/qpm-hotels.html</loc><priority>0.5</priority></url>
+  <url><loc>/customers/queensland-department-of-education.html</loc><priority>0.5</priority></url>
+  <url><loc>/customers/red-rock-venues.html</loc><priority>0.5</priority></url>
+  <url><loc>/customers/southern-cross.html</loc><priority>0.5</priority></url>
+  <url><loc>/customers/strato-melbourne.html</loc><priority>0.5</priority></url>
+  <url><loc>/customers/tandem-hospitality-group.html</loc><priority>0.5</priority></url>
+  <url><loc>/customers/tfe.html</loc><priority>0.5</priority></url>
+  <url><loc>/customers/the-athenaeum.html</loc><priority>0.5</priority></url>
+  <url><loc>/customers/the-george-on-collins.html</loc><priority>0.5</priority></url>
+  <url><loc>/customers/tilley-wills.html</loc><priority>0.5</priority></url>
+  <url><loc>/customers/twickenham-stadium.html</loc><priority>0.5</priority></url>
+  <url><loc>/customers/victory-services-club.html</loc><priority>0.5</priority></url>
+</urlset>
