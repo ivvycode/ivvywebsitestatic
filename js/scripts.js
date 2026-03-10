@@ -1,343 +1,25 @@
 /* ==========================================================================
-   iVvy Complete Website - Static JavaScript
+   iVvy Static Site - Minimal JavaScript
+   No partial loading needed - header/footer are baked in at build time
    ========================================================================== */
 
-// ==========================================================================
-// Load Header and Footer Partials
-// Note: This requires the site to be served via HTTP (not file://)
-// For local development, use a local server like: npx serve static-site
-// ==========================================================================
-// Detect path prefix for subdirectory pages (e.g., integrations/, customers/)
-function getPathPrefix() {
-  var path = window.location.pathname;
-  // Count how many directory levels deep we are from root
-  // e.g., /integrations/xero.html → 1 level deep → prefix "../"
-  // e.g., /customers/tfe.html → 1 level deep → prefix "../"
-  // e.g., /index.html → 0 levels → prefix ""
-  var segments = path.replace(/^\//, '').split('/');
-  // segments for /integrations/xero.html → ["integrations", "xero.html"]
-  var depth = segments.length - 1; // subtract the filename
-  if (depth <= 0) return '';
-  var prefix = '';
-  for (var i = 0; i < depth; i++) prefix += '../';
-  return prefix;
-}
-
-// Rewrite internal links in injected HTML to use correct relative paths
-function rewritePartialLinks(html, prefix) {
-  if (!prefix) return html;
-  // Rewrite href="somepage.html" (not href="http", href="https", href="#", href="mailto:", href="/")
-  html = html.replace(/(href|src)="(?!https?:\/\/|mailto:|tel:|#|\/\/)([^"]+)"/g, function(match, attr, url) {
-    // Don't prefix if already has ../
-    if (url.startsWith('../') || url.startsWith('./')) return match;
-    return attr + '="' + prefix + url + '"';
-  });
-  return html;
-}
-
-function loadPartials() {
-  const headerPlaceholder = document.getElementById('header-placeholder');
-  const footerPlaceholder = document.getElementById('footer-placeholder');
-  
-  // If no placeholders, partials are already inline - just return resolved promise
-  if (!headerPlaceholder && !footerPlaceholder) {
-    return Promise.resolve();
-  }
-  
-  const prefix = getPathPrefix();
-  const promises = [];
-  
-  if (headerPlaceholder) {
-    promises.push(
-      fetch(prefix + 'partials/header.html')
-        .then(response => {
-          if (!response.ok) throw new Error('Failed to load header');
-          return response.text();
-        })
-        .then(html => {
-          headerPlaceholder.outerHTML = rewritePartialLinks(html, prefix);
-        })
-        .catch(err => {
-          console.error('Error loading header:', err);
-          headerPlaceholder.innerHTML = createFallbackHeader(prefix);
-        })
-    );
-  }
-  
-  if (footerPlaceholder) {
-    promises.push(
-      fetch(prefix + 'partials/footer.html')
-        .then(response => {
-          if (!response.ok) throw new Error('Failed to load footer');
-          return response.text();
-        })
-        .then(html => {
-          footerPlaceholder.outerHTML = rewritePartialLinks(html, prefix);
-        })
-        .catch(err => {
-          console.error('Error loading footer:', err);
-          footerPlaceholder.innerHTML = createFallbackFooter(prefix);
-        })
-    );
-  }
-  
-  return Promise.all(promises);
-}
-
-// Fallback header for when fetch fails (file:// protocol)
-function createFallbackHeader(prefix) {
-  prefix = prefix || '';
-  return `
-    <header class="header">
-      <div class="container">
-        <div class="header__inner">
-          <a href="${prefix}index.html" class="header__logo">
-            <img src="${prefix}images/ivvy-logo.svg" alt="iVvy" width="100" height="32">
-          </a>
-          <nav class="nav">
-            <div class="nav__item"><a href="${prefix}index.html" class="nav__link">Home</a></div>
-            <div class="nav__item"><a href="${prefix}event-management.html" class="nav__link">Products</a></div>
-            <div class="nav__item"><a href="${prefix}customers.html" class="nav__link">Customers</a></div>
-            <div class="nav__item"><a href="${prefix}about.html" class="nav__link">About</a></div>
-          </nav>
-          <div class="header__cta">
-            <div class="login-dropdown">
-              <button class="header__login login-dropdown__trigger">Login <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
-              <div class="login-dropdown__menu">
-                <div class="login-dropdown__menu-inner">
-                  <a href="https://www.ivvy.com.au/accounts/login" target="_blank" class="login-dropdown__item">Login (AU)</a>
-                  <a href="https://www.ivvy.co.uk/accounts/login" target="_blank" class="login-dropdown__item">Login (EU)</a>
-                  <a href="https://www.ivvy.com/accounts/login" target="_blank" class="login-dropdown__item">Login (US)</a>
-                </div>
-              </div>
-            </div>
-            <a href="${prefix}request-demo.html" class="btn btn--primary">Request Demo</a>
-          </div>
-        </div>
-      </div>
-    </header>
-  `;
-}
-
-// Fallback footer for when fetch fails
-function createFallbackFooter(prefix) {
-  prefix = prefix || '';
-  return `
-    <footer class="footer">
-      <div class="container">
-        <div class="footer__bottom">
-          <p class="footer__copyright">© 2026 iVvy. All rights reserved.</p>
-          <div class="footer__legal">
-            <a href="${prefix}pdfs/POL-IT-Privacy-2025-09-25.pdf" target="_blank" class="footer__legal-link">Privacy</a>
-            <a href="${prefix}credit-terms.html" class="footer__legal-link">Terms</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-  `;
-}
-
-// ==========================================================================
-// SEO: Inject JSON-LD, Twitter Cards, and Canonical Tags
-// ==========================================================================
-function injectSEOEnhancements() {
-  var head = document.head;
-  var title = document.title || 'iVvy';
-  var descMeta = document.querySelector('meta[name="description"]');
-  var description = descMeta ? descMeta.getAttribute('content') : '';
-  var url = window.location.href;
-  var origin = window.location.origin;
-
-  // JSON-LD Organization + WebSite schema (on every page)
-  var jsonLd = {
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'Organization',
-        '@id': origin + '/#organization',
-        'name': 'iVvy',
-        'url': origin,
-        'logo': origin + '/images/ivvy-logo.svg',
-        'sameAs': [
-          'https://www.linkedin.com/company/ivvy/',
-          'https://twitter.com/ivvy',
-          'https://www.facebook.com/ivvyevents/',
-          'https://www.youtube.com/@ivaborevents'
-        ]
-      },
-      {
-        '@type': 'WebSite',
-        '@id': origin + '/#website',
-        'name': 'iVvy',
-        'url': origin,
-        'publisher': { '@id': origin + '/#organization' }
-      },
-      {
-        '@type': 'WebPage',
-        'name': title,
-        'description': description,
-        'url': url,
-        'isPartOf': { '@id': origin + '/#website' }
-      }
-    ]
-  };
-
-  // Add BreadcrumbList for subpages
-  var path = window.location.pathname.replace(/^\//, '').replace(/\.html$/, '');
-  if (path && path !== 'index') {
-    var segments = path.split('/');
-    var breadcrumbs = [{ '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': origin + '/index.html' }];
-    if (segments.length === 2) {
-      // e.g., integrations/xero
-      var hubName = segments[0].charAt(0).toUpperCase() + segments[0].slice(1);
-      breadcrumbs.push({ '@type': 'ListItem', 'position': 2, 'name': hubName, 'item': origin + '/' + segments[0] + '.html' });
-      breadcrumbs.push({ '@type': 'ListItem', 'position': 3, 'name': title.split(' | ')[0] || title });
-    } else {
-      breadcrumbs.push({ '@type': 'ListItem', 'position': 2, 'name': title.split(' | ')[0] || title });
-    }
-    jsonLd['@graph'].push({
-      '@type': 'BreadcrumbList',
-      'itemListElement': breadcrumbs
-    });
-  }
-
-  var script = document.createElement('script');
-  script.type = 'application/ld+json';
-  script.textContent = JSON.stringify(jsonLd);
-  head.appendChild(script);
-
-  // Twitter Card meta tags (only if not already present)
-  if (!document.querySelector('meta[name="twitter:card"]')) {
-    var twitterTags = [
-      { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:site', content: '@ivvy' },
-      { name: 'twitter:title', content: title },
-      { name: 'twitter:description', content: description }
-    ];
-    twitterTags.forEach(function(tag) {
-      var meta = document.createElement('meta');
-      meta.setAttribute('name', tag.name);
-      meta.setAttribute('content', tag.content);
-      head.appendChild(meta);
-    });
-  }
-
-  // Canonical tag - ensure absolute URL using current origin
-  var existingCanonical = document.querySelector('link[rel="canonical"]');
-  if (existingCanonical) {
-    var href = existingCanonical.getAttribute('href');
-    if (href && !href.startsWith('http')) {
-      existingCanonical.href = origin + (href.startsWith('/') ? '' : '/') + href;
-    }
-  } else {
-    var canonical = document.createElement('link');
-    canonical.rel = 'canonical';
-    canonical.href = url.split('?')[0].split('#')[0];
-    head.appendChild(canonical);
-  }
-}
-
 document.addEventListener('DOMContentLoaded', function() {
-  
-  // Inject SEO enhancements immediately
-  injectSEOEnhancements();
-  
-  // Load partials first, then initialize other scripts
-  loadPartials().then(function() {
-    initMobileMenu();
-    initHeaderScrollEffect();
-  });
 
-
+  initMobileMenu();
+  initHeaderScrollEffect();
 
   // ==========================================================================
-  // Mobile Menu Toggle
-  // ==========================================================================
-  function initMobileMenu() {
-    const mobileToggle = document.querySelector('.mobile-toggle');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    const menuIcon = document.querySelector('.icon-menu');
-    const closeIcon = document.querySelector('.icon-close');
-    
-    if (mobileToggle && mobileMenu) {
-      mobileToggle.addEventListener('click', function() {
-        mobileMenu.classList.toggle('active');
-        if (menuIcon && closeIcon) {
-          menuIcon.style.display = mobileMenu.classList.contains('active') ? 'none' : 'block';
-          closeIcon.style.display = mobileMenu.classList.contains('active') ? 'block' : 'none';
-        }
-        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
-      });
-    }
-    
-    // Mobile submenu toggle
-    const mobileMenuItems = document.querySelectorAll('.mobile-menu__item');
-    mobileMenuItems.forEach(function(item) {
-      const link = item.querySelector('.mobile-menu__link');
-      if (link && item.querySelector('.mobile-menu__submenu')) {
-        link.addEventListener('click', function(e) {
-          e.preventDefault();
-          item.classList.toggle('active');
-        });
-      }
-    });
-    
-    // Login dropdown - mobile uses click toggle, desktop uses hover (handled via CSS)
-    document.querySelectorAll('.login-dropdown--mobile .login-dropdown__trigger').forEach(function(trigger) {
-      trigger.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        var dropdown = trigger.closest('.login-dropdown');
-        document.querySelectorAll('.login-dropdown.open').forEach(function(d) {
-          if (d !== dropdown) d.classList.remove('open');
-        });
-        dropdown.classList.toggle('open');
-      });
-    });
-    
-    // Close mobile login dropdown when clicking outside
-    document.addEventListener('click', function(e) {
-      if (!e.target.closest('.login-dropdown')) {
-        document.querySelectorAll('.login-dropdown.open').forEach(function(d) {
-          d.classList.remove('open');
-        });
-      }
-    });
-  }
-  
-  // ==========================================================================
-  // Header Scroll Effect
-  // ==========================================================================
-  function initHeaderScrollEffect() {
-    const header = document.querySelector('.header');
-    
-    if (header) {
-      window.addEventListener('scroll', function() {
-        const currentScroll = window.pageYOffset;
-        
-        if (currentScroll > 10) {
-          header.classList.add('header--scrolled');
-        } else {
-          header.classList.remove('header--scrolled');
-        }
-      }, { passive: true });
-    }
-  }
-  
-  // (Duplicate mobile menu code removed – handled by initMobileMenu above)
-  
-  // ==========================================================================
-  // Hero Rotating Words (above the fold – run immediately)
+  // Hero Rotating Words (homepage only)
   // ==========================================================================
   const rotatingWords = ['increase conversions', 'make decisions', 'get more done, faster'];
   let currentWordIndex = 0;
   const rotatingTextEl = document.querySelector('.hero__title-highlight');
-  
+
   if (rotatingTextEl) {
     setInterval(function() {
       rotatingTextEl.style.opacity = '0';
       rotatingTextEl.style.transform = 'translateY(10px)';
-      
+
       setTimeout(function() {
         currentWordIndex = (currentWordIndex + 1) % rotatingWords.length;
         rotatingTextEl.textContent = rotatingWords[currentWordIndex];
@@ -346,12 +28,12 @@ document.addEventListener('DOMContentLoaded', function() {
       }, 300);
     }, 3000);
   }
-  
+
   // ==========================================================================
-  // Parallax Effect for Hero (above the fold – run immediately)
+  // Parallax Effect for Hero
   // ==========================================================================
   const heroImage = document.querySelector('.hero__bg-image');
-  
+
   if (heroImage) {
     window.addEventListener('scroll', function() {
       const scrolled = window.pageYOffset;
@@ -360,25 +42,26 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // ==========================================================================
-  // Defer all non-critical JS to idle time
+  // Defer non-critical JS to idle time
   // ==========================================================================
   var deferInit = function() {
     // Animated Counter
     function animateCounter(element, target, duration) {
       let start = 0;
+      const suffix = element.dataset.suffix || '';
       const increment = target / (duration / 16);
       function updateCounter() {
         start += increment;
         if (start < target) {
-          element.textContent = Math.floor(start);
+          element.textContent = Math.floor(start) + suffix;
           requestAnimationFrame(updateCounter);
         } else {
-          element.textContent = target;
+          element.textContent = target + suffix;
         }
       }
       updateCounter();
     }
-    
+
     var counters = document.querySelectorAll('[data-counter]');
     if (counters.length > 0) {
       var counterObserver = new IntersectionObserver(function(entries) {
@@ -392,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }, { threshold: 0.5 });
       counters.forEach(function(counter) { counterObserver.observe(counter); });
     }
-    
+
     // Scroll Animations
     var animateOnScroll = document.querySelectorAll('.animate-on-scroll');
     if (animateOnScroll.length > 0) {
@@ -409,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
         scrollObserver.observe(el);
       });
     }
-    
+
     // Integration Category Filter
     var categoryBtns = document.querySelectorAll('.category-btn');
     var integrationCards = document.querySelectorAll('.integration-card');
@@ -425,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
       });
     }
-    
+
     // Smooth Scroll for Anchor Links
     document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
       anchor.addEventListener('click', function(e) {
@@ -434,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
-    
+
     // Form Validation
     document.querySelectorAll('form').forEach(function(form) {
       form.addEventListener('submit', function(e) {
@@ -451,24 +134,73 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!isValid) e.preventDefault();
       });
     });
-    
-    // Trust Logos - Pause on Hover
-    var trustLogosTrack = document.querySelector('.trust-logos__track');
-    if (trustLogosTrack) {
-      trustLogosTrack.addEventListener('mouseenter', function() { trustLogosTrack.style.animationPlayState = 'paused'; });
-      trustLogosTrack.addEventListener('mouseleave', function() { trustLogosTrack.style.animationPlayState = 'running'; });
+
+    // Trust Logos - ensure auto-scroll runs (with JS fallback if CSS animation is unavailable)
+    var trustLogoTracks = document.querySelectorAll('.trust-logos__track');
+    if (trustLogoTracks.length > 0) {
+      trustLogoTracks.forEach(function(track) {
+        track.style.willChange = 'transform';
+
+        var computed = window.getComputedStyle(track);
+        var hasCssAnimation = computed.animationName && computed.animationName !== 'none';
+
+        if (hasCssAnimation) {
+          track.style.animationPlayState = 'running';
+          track.addEventListener('mouseenter', function() { track.style.animationPlayState = 'paused'; });
+          track.addEventListener('mouseleave', function() { track.style.animationPlayState = 'running'; });
+          return;
+        }
+
+        var offset = 0;
+        var speed = 0.35;
+        var rafId = null;
+
+        function loop() {
+          var halfWidth = track.scrollWidth / 2;
+          if (halfWidth <= 0) {
+            rafId = requestAnimationFrame(loop);
+            return;
+          }
+
+          offset -= speed;
+          if (Math.abs(offset) >= halfWidth) offset = 0;
+          track.style.transform = 'translateX(' + offset + 'px)';
+          rafId = requestAnimationFrame(loop);
+        }
+
+        function pauseFallback() {
+          if (rafId) {
+            cancelAnimationFrame(rafId);
+            rafId = null;
+          }
+        }
+
+        function resumeFallback() {
+          if (!rafId) rafId = requestAnimationFrame(loop);
+        }
+
+        resumeFallback();
+        track.addEventListener('mouseenter', pauseFallback);
+        track.addEventListener('mouseleave', resumeFallback);
+      });
     }
-    
-    // Venue Card Slider Navigation
+
+    // Venue Card Slider Navigation - scroll one card at a time (matches React Embla carousel)
     var venueSlider = document.querySelector('.venue-types__slider');
     var prevBtn = document.querySelector('.venue-slider__prev');
     var nextBtn = document.querySelector('.venue-slider__next');
     if (venueSlider && prevBtn && nextBtn) {
-      var cardWidth = 374;
-      prevBtn.addEventListener('click', function() { venueSlider.scrollBy({ left: -cardWidth, behavior: 'smooth' }); });
-      nextBtn.addEventListener('click', function() { venueSlider.scrollBy({ left: cardWidth, behavior: 'smooth' }); });
+      function getCardScrollAmount() {
+        var firstCard = venueSlider.querySelector('.venue-card');
+        if (!firstCard) return 374;
+        var style = window.getComputedStyle(venueSlider);
+        var gap = parseInt(style.gap) || 24;
+        return firstCard.offsetWidth + gap;
+      }
+      prevBtn.addEventListener('click', function() { venueSlider.scrollBy({ left: -getCardScrollAmount(), behavior: 'smooth' }); });
+      nextBtn.addEventListener('click', function() { venueSlider.scrollBy({ left: getCardScrollAmount(), behavior: 'smooth' }); });
     }
-    
+
     // Testimonial Slider
     var testimonialSlides = document.querySelectorAll('.testimonial__slide');
     var testimonialDots = document.querySelectorAll('.testimonial__dot');
@@ -501,14 +233,37 @@ document.addEventListener('DOMContentLoaded', function() {
         showTestimonial((currentTestimonial + 1) % testimonialSlides.length);
       }, 6000);
     }
+
+    // Venue Page Testimonial Slider (hotels)
+    var vpSlides = document.querySelectorAll('.testimonial-slide');
+    var vpDots = document.querySelectorAll('.testimonial-slider__dot');
+    var vpPrev = document.getElementById('sliderPrev');
+    var vpNext = document.getElementById('sliderNext');
+    if (vpSlides.length > 1) {
+      var vpCurrent = 0;
+      var vpTimer;
+      function showVpSlide(idx) {
+        vpSlides.forEach(function(s) { s.classList.remove('testimonial-slide--active'); });
+        vpDots.forEach(function(d) { d.classList.remove('testimonial-slider__dot--active'); });
+        vpSlides[idx].classList.add('testimonial-slide--active');
+        if (vpDots[idx]) vpDots[idx].classList.add('testimonial-slider__dot--active');
+        vpCurrent = idx;
+        clearInterval(vpTimer);
+        vpTimer = setInterval(function() { showVpSlide((vpCurrent + 1) % vpSlides.length); }, 6000);
+      }
+      if (vpPrev) vpPrev.addEventListener('click', function() { showVpSlide((vpCurrent - 1 + vpSlides.length) % vpSlides.length); });
+      if (vpNext) vpNext.addEventListener('click', function() { showVpSlide((vpCurrent + 1) % vpSlides.length); });
+      vpDots.forEach(function(dot) { dot.addEventListener('click', function() { showVpSlide(parseInt(this.dataset.dot)); }); });
+      vpTimer = setInterval(function() { showVpSlide((vpCurrent + 1) % vpSlides.length); }, 6000);
+    }
   };
 
-  // Use requestIdleCallback to defer non-critical JS, falling back to setTimeout
   if ('requestIdleCallback' in window) {
     requestIdleCallback(deferInit);
   } else {
     setTimeout(deferInit, 200);
   }
+
   // Lite YouTube - click to load iframe
   document.querySelectorAll('.lite-youtube').forEach(function(el) {
     el.addEventListener('click', function() {
@@ -523,6 +278,76 @@ document.addEventListener('DOMContentLoaded', function() {
       el.appendChild(iframe);
     });
   });
-
-  console.log('iVvy Static Site Scripts Loaded');
 });
+
+// ==========================================================================
+// Mobile Menu Toggle
+// ==========================================================================
+function initMobileMenu() {
+  const mobileToggle = document.querySelector('.mobile-toggle');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const menuIcon = document.querySelector('.icon-menu');
+  const closeIcon = document.querySelector('.icon-close');
+
+  if (mobileToggle && mobileMenu) {
+    mobileToggle.addEventListener('click', function() {
+      mobileMenu.classList.toggle('active');
+      if (menuIcon && closeIcon) {
+        menuIcon.style.display = mobileMenu.classList.contains('active') ? 'none' : 'block';
+        closeIcon.style.display = mobileMenu.classList.contains('active') ? 'block' : 'none';
+      }
+      document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+    });
+  }
+
+  // Mobile submenu toggle
+  const mobileMenuItems = document.querySelectorAll('.mobile-menu__item');
+  mobileMenuItems.forEach(function(item) {
+    const link = item.querySelector('.mobile-menu__link');
+    if (link && item.querySelector('.mobile-menu__submenu')) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        item.classList.toggle('active');
+      });
+    }
+  });
+
+  // Login dropdown - mobile click toggle
+  document.querySelectorAll('.login-dropdown--mobile .login-dropdown__trigger').forEach(function(trigger) {
+    trigger.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var dropdown = trigger.closest('.login-dropdown');
+      document.querySelectorAll('.login-dropdown.open').forEach(function(d) {
+        if (d !== dropdown) d.classList.remove('open');
+      });
+      dropdown.classList.toggle('open');
+    });
+  });
+
+  // Close mobile login dropdown when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.login-dropdown')) {
+      document.querySelectorAll('.login-dropdown.open').forEach(function(d) {
+        d.classList.remove('open');
+      });
+    }
+  });
+}
+
+// ==========================================================================
+// Header Scroll Effect
+// ==========================================================================
+function initHeaderScrollEffect() {
+  const header = document.querySelector('.header');
+
+  if (header) {
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 10) {
+        header.classList.add('header--scrolled');
+      } else {
+        header.classList.remove('header--scrolled');
+      }
+    }, { passive: true });
+  }
+}
