@@ -5948,7 +5948,7 @@ ul, ol {
 
 /* ── Property Inclusions Table ── */
 .inclusions-table-wrap { max-width: 768px; margin: 0 auto; }
-.inclusions-table { border-radius: var(--radius-xl); overflow: hidden; border: 1px solid rgba(0,0,0,0.06); background: var(--ivvy-white); }
+.inclusions-table { border-radius: var(--radius-xl); overflow: hidden; border: none; background: var(--ivvy-white); box-shadow: var(--glass-shadow); }
 .inclusions-table__header { display: grid; grid-template-columns: 1fr 140px 140px; background: rgba(0,0,0,0.02); border-bottom: 1px solid rgba(0,0,0,0.06); }
 .inclusions-table__row { display: grid; grid-template-columns: 1fr 140px 140px; border-bottom: 1px solid rgba(0,0,0,0.04); }
 .inclusions-table__row:last-child { border-bottom: none; }
