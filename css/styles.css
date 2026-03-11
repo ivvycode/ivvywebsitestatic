@@ -2715,8 +2715,10 @@ ul, ol {
 }
 
 .integration-card__name {
-  font-size: 12px;
-  color: var(--ivvy-gray-500);
+  font-size: 14px;
+  font-weight: 700;
+  font-family: var(--font-feature);
+  color: var(--ivvy-dark-surface);
   text-align: center;
 }
 
