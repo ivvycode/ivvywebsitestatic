@@ -2708,7 +2708,7 @@ ul, ol {
 }
 
 .integration-card img {
-  margin-bottom: auto;
+  margin: auto 0;
 }
 
 .integration-card__logo {
