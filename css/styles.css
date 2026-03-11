@@ -786,7 +786,7 @@ ul, ol {
 
 @media (min-width: 1024px) {
   .hero__title {
-    font-size: 64px;
+    font-size: 60px;
   }
 }
 
@@ -865,7 +865,7 @@ ul, ol {
 
 @media (min-width: 1024px) {
   .page-hero__title {
-    font-size: 48px;
+    font-size: 60px;
   }
 }
 
@@ -3023,7 +3023,7 @@ ul, ol {
 
 @media (min-width: 1024px) {
   .ivvyai-hero__title {
-    font-size: 56px;
+    font-size: 60px;
   }
 }
 
@@ -4872,7 +4872,7 @@ ul, ol {
   margin-bottom: 16px;
 }
 @media (min-width: 1024px) {
-  .integ-hero__title { font-size: 48px; }
+  .integ-hero__title { font-size: 60px; }
 }
 
 .integ-hero__subtitle {
