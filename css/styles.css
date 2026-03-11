@@ -5944,7 +5944,7 @@ ul, ol {
 @media (min-width: 1024px) { .why-section__grid--3col { grid-template-columns: repeat(3, 1fr); } }
 .why-card { text-align: center; padding: 24px; border-radius: var(--radius-xl); border: none; background: var(--ivvy-white); box-shadow: var(--glass-shadow); transition: all 0.5s ease; }
 .why-card:hover { box-shadow: var(--shadow-xl); transform: translateY(-8px); }
-.why-card__stat { font-size: 30px; font-weight: 700; font-family: var(--font-feature); color: var(--ivvy-dark-surface); margin-bottom: 4px; }
+.why-card__stat { font-size: 24px; font-weight: 700; font-family: var(--font-feature); color: var(--ivvy-dark-surface); margin-bottom: 4px; }
 
 /* ── Property Inclusions Table ── */
 .inclusions-table-wrap { max-width: 768px; margin: 0 auto; }
@@ -5972,8 +5972,8 @@ ul, ol {
   background: rgba(46, 61, 41, 0.1);
   color: var(--ivvy-dark-surface, #2e3d29);
 }
-@media (min-width: 1024px) { .why-card__stat { font-size: 36px; } }
-.why-card__label { font-size: 14px; font-weight: 700; font-family: var(--font-feature); color: var(--ivvy-dark-surface); margin-bottom: 4px; }
+@media (min-width: 1024px) { .why-card__stat { font-size: 24px; } }
+.why-card__label { font-size: 24px; font-weight: 700; font-family: var(--font-feature); color: var(--ivvy-dark-surface); margin-bottom: 4px; }
 .why-card__desc { font-size: 12px; font-family: var(--font-body); color: var(--ivvy-gray-500); line-height: 1.5; }
 
 /* Legacy additional benefits (kept for compatibility) */
