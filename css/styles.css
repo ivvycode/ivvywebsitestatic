@@ -1005,6 +1005,21 @@ ul, ol {
   color: var(--ivvy-white);
 }
 
+.page-hero__title-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: rgba(153, 204, 82, 0.15);
+  color: var(--ivvy-primary);
+  margin-bottom: 16px;
+}
+
 .page-hero__title-highlight {
   color: var(--ivvy-primary);
 }
