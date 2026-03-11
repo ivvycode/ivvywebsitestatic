@@ -5953,6 +5953,16 @@ ul, ol {
   .inclusions-table__header,
   .inclusions-table__row { grid-template-columns: 1fr 160px 160px; }
 }
+.inclusions-table .tick-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(46, 61, 41, 0.1);
+  color: var(--ivvy-dark-surface, #2e3d29);
+}
 @media (min-width: 1024px) { .why-card__stat { font-size: 36px; } }
 .why-card__label { font-size: 14px; font-weight: 600; font-family: var(--font-body); color: var(--ivvy-dark-green); margin-bottom: 4px; }
 .why-card__desc { font-size: 12px; font-family: var(--font-body); color: var(--ivvy-gray-500); line-height: 1.5; }
