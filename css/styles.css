@@ -2212,7 +2212,7 @@ ul, ol {
 }
 
 .testimonial__quote .quote-mark {
-  color: var(--ivvy-primary);
+  color: var(--ivvy-dark-green);
   font-size: 36px;
   font-family: var(--font-heading);
   line-height: 1;
@@ -2236,7 +2236,7 @@ ul, ol {
 .testimonial__author {
   font-size: 18px;
   font-weight: 700;
-  color: var(--ivvy-primary);
+  color: var(--ivvy-gray-500);
 }
 
 .testimonial__author:empty {
@@ -4077,7 +4077,7 @@ ul, ol {
 }
 
 .testimonial-banner__quote .quote-mark {
-  color: var(--ivvy-primary);
+  color: var(--ivvy-dark-green);
   font-family: var(--font-heading);
   font-size: 36px;
   line-height: 1;
@@ -4086,7 +4086,7 @@ ul, ol {
 .testimonial-banner__author {
   font-size: 18px;
   font-weight: 600;
-  color: var(--ivvy-dark-green);
+  color: var(--ivvy-gray-500);
   margin-bottom: 4px;
 }
 
