@@ -8,13 +8,13 @@
 @font-face {
   font-family: 'Poppins';
   font-style: normal;
-  font-weight: 600 700;
+  font-weight: 600 800;
   font-display: swap;
   size-adjust: 105%;
   ascent-override: 95%;
   descent-override: 22%;
   line-gap-override: 0%;
-  src: local('Poppins SemiBold'), local('Poppins-SemiBold');
+  src: local('Poppins ExtraBold'), local('Poppins-ExtraBold');
 }
 @font-face {
   font-family: 'Nunito';
