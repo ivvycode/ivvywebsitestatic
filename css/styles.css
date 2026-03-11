@@ -866,7 +866,7 @@ ul, ol {
   border-radius: 9999px;
   background: var(--ivvy-gray-100);
   border: 1px solid var(--ivvy-gray-200);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   font-family: var(--font-body);
   text-transform: uppercase;
@@ -972,7 +972,7 @@ ul, ol {
   align-items: center;
   padding: 4px 12px;
   border-radius: 9999px;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
   font-family: var(--font-body);
   text-transform: uppercase;
@@ -1520,7 +1520,7 @@ ul, ol {
   align-items: center;
   padding: 4px 12px;
   border-radius: 9999px;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
   font-family: var(--font-body);
   text-transform: uppercase;
@@ -1724,7 +1724,7 @@ ul, ol {
   align-items: center;
   padding: 4px 12px;
   border-radius: 9999px;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
   font-family: var(--font-body);
   text-transform: uppercase;
@@ -1914,7 +1914,7 @@ ul, ol {
   align-items: center;
   padding: 4px 12px;
   border-radius: 9999px;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
   font-family: var(--font-body);
   text-transform: uppercase;
@@ -2103,7 +2103,7 @@ ul, ol {
   align-items: center;
   padding: 4px 12px;
   border-radius: 9999px;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -2897,7 +2897,7 @@ ul, ol {
   align-items: center;
   padding: 4px 12px;
   border-radius: 9999px;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
   font-family: var(--font-body);
   text-transform: uppercase;
@@ -2924,7 +2924,8 @@ ul, ol {
 .benefit__title span,
 .features-grid__title span,
 .ivvyai-section-title span,
-.intro__title span {
+.intro__title span,
+.venue-intro__heading span {
   background: linear-gradient(135deg, hsl(85 54% 56%), hsl(82 62% 44%));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -2934,7 +2935,8 @@ ul, ol {
 /* Dark background variant */
 .section--dark .section__title span,
 .section--dark h2 span,
-.cta-section h2 span {
+.cta-section h2 span,
+.cta .cta__title span {
   background: linear-gradient(135deg, hsl(85 54% 56%), hsl(85 54% 70%));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -3275,7 +3277,7 @@ ul, ol {
   align-items: center;
   padding: 4px 12px;
   border-radius: 9999px;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
   font-family: var(--font-body);
   text-transform: uppercase;
@@ -4070,6 +4072,7 @@ ul, ol {
    ========================================================================== */
 .testimonial-banner {
   padding: var(--section-padding);
+  padding-bottom: 80px;
   background: var(--ivvy-white);
 }
 
@@ -4556,7 +4559,7 @@ ul, ol {
   align-items: center;
   padding: 4px 12px;
   border-radius: 9999px;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
   font-family: var(--font-body);
   text-transform: uppercase;
