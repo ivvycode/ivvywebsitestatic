@@ -27,6 +27,17 @@
   line-gap-override: 0%;
   src: local('Nunito Regular'), local('Nunito-Regular');
 }
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 600 700;
+  font-display: swap;
+  size-adjust: 100%;
+  ascent-override: 100%;
+  descent-override: 25%;
+  line-gap-override: 0%;
+  src: local('Nunito Sans SemiBold'), local('NunitoSans-SemiBold');
+}
 
 /* ==========================================================================
    CSS Variables
@@ -50,6 +61,7 @@
   
   --font-heading: 'Poppins', sans-serif;
   --font-body: 'Nunito', sans-serif;
+  --font-feature: 'Nunito Sans', 'Nunito', sans-serif;
   
   --section-padding: 80px 0;
   --section-padding-lg: 80px 0;
@@ -1833,7 +1845,7 @@ ul, ol {
 .feature-card__title {
   font-size: 16px;
   font-weight: 700;
-  font-family: var(--font-body);
+  font-family: var(--font-feature);
   color: var(--ivvy-dark-green);
   margin-bottom: 8px;
 }
