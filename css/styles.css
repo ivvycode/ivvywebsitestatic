@@ -3939,7 +3939,7 @@ ul, ol {
 
 .section__title {
   font-size: 30px;
-  font-weight: 600;
+  font-weight: 800;
   color: var(--ivvy-dark-green);
   margin-bottom: 32px;
 }
@@ -4164,6 +4164,45 @@ ul, ol {
 
 .trust-logos__cta:hover {
   opacity: 0.8;
+}
+
+/* Noise texture + blur orbs (matches React Customers "All stories" section) */
+.features-grid--dark-extras::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+}
+
+.features-grid--dark-extras::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  right: 15%;
+  width: 400px;
+  height: 300px;
+  border-radius: 50%;
+  filter: blur(48px);
+  background: hsl(147, 45%, 40%, 0.08);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Second blur orb via box-shadow on the ::after pseudo */
+.features-grid--dark-extras .features-grid--dark-orb {
+  position: absolute;
+  bottom: 15%;
+  left: 10%;
+  width: 300px;
+  height: 250px;
+  border-radius: 50%;
+  filter: blur(48px);
+  background: hsl(85, 54%, 56%, 0.07);
+  pointer-events: none;
+  z-index: 1;
 }
 
 
