@@ -1008,7 +1008,7 @@ ul, ol {
 .page-hero__title-pill {
   display: inline-flex;
   align-items: center;
-  padding: 6px 16px;
+  padding: 4px 12px;
   border-radius: 9999px;
   font-size: 13px;
   font-weight: 600;
@@ -1017,7 +1017,7 @@ ul, ol {
   letter-spacing: 0.05em;
   background: rgba(153, 204, 82, 0.15);
   color: var(--ivvy-primary);
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .page-hero__title-highlight {
