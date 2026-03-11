@@ -971,7 +971,7 @@ ul, ol {
   font-size: 36px;
   color: var(--ivvy-white);
   margin-bottom: 16px;
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
 @media (min-width: 768px) {
