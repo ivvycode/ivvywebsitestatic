@@ -556,6 +556,20 @@ ul, ol {
   box-shadow: var(--shadow-xl);
 }
 
+/* CTA button (dark green gradient bg, mid-green text → mid-green bg on hover) */
+.btn--cta {
+  background: linear-gradient(to right, hsl(150, 55%, 8%), hsl(147, 45%, 16%), hsl(140, 35%, 22%));
+  color: var(--ivvy-primary) !important;
+  transition: all 0.3s ease;
+}
+
+.btn--cta:hover {
+  background: var(--ivvy-primary);
+  color: var(--ivvy-dark-green) !important;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl);
+}
+
 /* Hero button (mid-green bg, dark text → white bg on hover) - for dark sections */
 .btn--hero {
   background: var(--ivvy-primary);
@@ -794,6 +808,109 @@ ul, ol {
   color: var(--ivvy-primary);
   display: block;
   transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Mesh Hero (centered layout with collage image) */
+.hero-mesh {
+  position: relative;
+  overflow: hidden;
+  padding-top: 64px;
+}
+
+@media (min-width: 1024px) {
+  .hero-mesh {
+    padding-top: 96px;
+  }
+}
+
+.hero-mesh__bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 80%, hsla(85, 54%, 56%, 0.25) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 20%, hsla(45, 80%, 65%, 0.2) 0%, transparent 50%),
+    radial-gradient(ellipse 90% 70% at 50% 50%, hsla(82, 62%, 44%, 0.08) 0%, transparent 70%),
+    linear-gradient(160deg, hsl(60, 20%, 96%) 0%, hsl(80, 25%, 94%) 30%, hsl(45, 30%, 95%) 60%, hsl(60, 15%, 97%) 100%);
+}
+
+.hero-mesh__content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+.hero-mesh__pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  background: var(--ivvy-muted);
+  border: 1px solid var(--ivvy-border);
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #666;
+  margin-bottom: 24px;
+}
+
+.hero-mesh__title {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 768px) {
+  .hero-mesh__title {
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-mesh__title {
+    font-size: 60px;
+  }
+}
+
+.hero-mesh__title-dark {
+  color: var(--ivvy-dark-green);
+  display: block;
+}
+
+.hero-mesh__title-highlight {
+  background: linear-gradient(135deg, hsl(85, 54%, 56%), hsl(82, 62%, 44%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.hero-mesh__image-wrapper {
+  position: relative;
+  z-index: 10;
+  margin-top: 64px;
+  padding: 0 16px;
+}
+
+@media (min-width: 1024px) {
+  .hero-mesh__image-wrapper {
+    margin-top: 96px;
+    padding: 0 32px;
+  }
+}
+
+.hero-mesh__image {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.15));
 }
 
 /* Page Hero (for inner pages) */
@@ -4045,6 +4162,7 @@ ul, ol {
 .trust-logos__cta:hover {
   opacity: 0.8;
 }
+
 
 
 /* ==========================================================================

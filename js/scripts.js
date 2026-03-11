@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // ==========================================================================
   const rotatingWords = ['increase conversions', 'make decisions', 'get more done, faster'];
   let currentWordIndex = 0;
-  const rotatingTextEl = document.querySelector('.hero__title-highlight');
+  const rotatingTextEl = document.querySelector('.hero__title-highlight') || document.querySelector('.hero-mesh__title-highlight');
 
   if (rotatingTextEl) {
     setInterval(function() {
