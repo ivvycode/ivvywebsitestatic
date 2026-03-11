@@ -2197,23 +2197,23 @@ ul, ol {
 
 .testimonial__slides {
   position: relative;
-  min-height: 240px;
+  display: grid;
 }
 
 .testimonial__slide {
+  grid-area: 1 / 1;
   opacity: 0;
-  position: absolute;
-  inset: 0;
   transition: opacity 0.5s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  pointer-events: none;
 }
 
 .testimonial__slide--active {
   opacity: 1;
-  position: relative;
+  pointer-events: auto;
 }
 
 .testimonial__quote {
