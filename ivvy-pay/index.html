@@ -60,11 +60,11 @@ img{max-width:100%;height:auto;display:block}
 .header__left{display:flex;align-items:center}
 .header__logo img{height:32px;width:auto}
 .nav{display:none}@media(min-width:1024px){.nav{display:flex;align-items:center;gap:4px}}
-.nav__link{display:flex;align-items:center;gap:4px;height:40px;padding:8px 24px;font-size:14px;font-weight:600;color:#757575;border-radius:0;background:none;border:none}
+.nav__link{display:flex;align-items:center;gap:4px;height:40px;padding:8px 24px;font-size:14px;font-weight:600;color:#757575;border-radius:0;background:none;border:none;text-transform:none;letter-spacing:normal}
 .header__cta{display:none}@media(min-width:1024px){.header__cta{display:flex;align-items:center;gap:16px}}
 .mobile-toggle{display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:none;border:none;color:#103620}
 @media(min-width:1024px){.mobile-toggle{display:none}}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:8px 24px;font-family:'Nunito',sans-serif;font-size:14px;font-weight:700;border-radius:9999px;border:none;cursor:pointer;position:relative;overflow:hidden;isolation:isolate;text-transform:none;letter-spacing:normal}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:8px 24px;font-family:'Nunito',sans-serif;font-size:14px;font-weight:700;border-radius:9999px;border:none;cursor:pointer;position:relative;overflow:hidden;isolation:isolate;text-transform:uppercase;letter-spacing:0.05em}
 .btn--primary{background:#99CC52;color:#103620}
 .btn--nav-cta{background:#99CC52;color:#fff}
 .btn--lg{height:48px;padding:8px 32px;font-size:16px}
@@ -75,11 +75,11 @@ img{max-width:100%;height:auto;display:block}
 .hero__bg-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(255,255,255,0.8),rgba(255,255,255,0.5),transparent);z-index:1}
 .hero__bg-image{width:100%;height:120%;object-fit:cover}
 .hero__content{position:relative;z-index:2;max-width:600px}
-.hero__eyebrow{font-size:18px;color:#666666;margin-bottom:16px}
+.hero__eyebrow{font-size:18px;color:#666666;margin-bottom:32px}
 @media(min-width:768px){.hero__eyebrow{font-size:24px}}
 .hero__title{font-size:32px;color:#103620;margin-bottom:32px;line-height:1.3}
 @media(min-width:768px){.hero__title{font-size:40px}}
-@media(min-width:1024px){.hero__title{font-size:48px}}
+@media(min-width:1024px){.hero__title{font-size:64px}}
 .hero__title-highlight{color:#99CC52;display:block}
 .page-hero{position:relative;padding:80px 0 60px;overflow:hidden}
 .page-hero>.container{width:100%}
@@ -311,6 +311,7 @@ img{max-width:100%;height:auto;display:block}
   </div>
   <div class="container">
     <div class="page-hero__content">
+      <p class="page-hero__eyebrow">iVvy Pay</p>
       <h1 class="page-hero__title">Venue payment platform <span class="page-hero__title-highlight">powered by Worldpay</span></h1>
       <p class="page-hero__subtitle"><strong>Smarter payments for venues and event spaces.</strong></p>
       <p class="page-hero__note">*iVvy Pay is currently available to clients in Australia, New Zealand, and the USA</p>
@@ -323,7 +324,7 @@ img{max-width:100%;height:auto;display:block}
 <section class="intro section--grey">
   <div class="container">
     <div class="intro__inner">
-      <h2 class="intro__title">Automate payments, reduce admin, & get paid faster</h2>
+      <h2 class="intro__title">Automate payments, reduce admin, & <span>get paid faster</span></h2>
       <div class="intro__text">
         <p>iVvy Pay is your venue's all-in-one payment platform, designed to streamline event billing, improve cash flow, and deliver a frictionless online payment experience.</p>
       </div>
@@ -344,13 +345,13 @@ img{max-width:100%;height:auto;display:block}
     <div class="container">
       <div class="benefit__content">
         <p class="benefit__eyebrow">Smarter payments</p>
-        <h2 class="benefit__title">Why Choose iVvy Pay?</h2>
+        <h2 class="benefit__title">Why Choose <span>iVvy Pay?</span></h2>
         <div class="benefit__features">
-          <div class="benefit__feature"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Save on every transaction</strong> – Keep more revenue from each transaction with competitive payment processing rates.</span></div>
-          <div class="benefit__feature"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Get paid faster</strong> – Improve cash flow and avoid chasing payments with an embedded 'Pay Now' button on venue invoices.</span></div>
-          <div class="benefit__feature"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Offer flexible payment options</strong> – Make paying easy and familiar by accepting Visa, Mastercard, Amex, Google Pay*, and Apple Pay*.</span></div>
-          <div class="benefit__feature"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Minimise billing errors</strong> – Use automation for accurate event payment processing and reduced billing discrepancies.</span></div>
-          <div class="benefit__feature"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Free up your team's time</strong> – Combine iVvy Pay with iVvy's Billing Automation to auto-send invoices, track payments in real time, save up to 10 minutes per booking.</span></div>
+          <div class="benefit__feature"><span class="check-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Save on every transaction</strong> – Keep more revenue from each transaction with competitive payment processing rates.</span></div>
+          <div class="benefit__feature"><span class="check-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Get paid faster</strong> – Improve cash flow and avoid chasing payments with an embedded 'Pay Now' button on venue invoices.</span></div>
+          <div class="benefit__feature"><span class="check-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Offer flexible payment options</strong> – Make paying easy and familiar by accepting Visa, Mastercard, Amex, Google Pay*, and Apple Pay*.</span></div>
+          <div class="benefit__feature"><span class="check-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Minimise billing errors</strong> – Use automation for accurate event payment processing and reduced billing discrepancies.</span></div>
+          <div class="benefit__feature"><span class="check-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Free up your team's time</strong> – Combine iVvy Pay with iVvy's Billing Automation to auto-send invoices, track payments in real time, save up to 10 minutes per booking.</span></div>
         </div>
         <a href="/request-demo/" class="btn btn--primary btn--lg">Book a Call</a>
       </div>
@@ -364,12 +365,12 @@ img{max-width:100%;height:auto;display:block}
     <div class="container">
       <div class="benefit__content">
         <p class="benefit__eyebrow">Proven protection</p>
-        <h2 class="benefit__title">Trusted & secure</h2>
+        <h2 class="benefit__title">Trusted & <span>secure</span></h2>
         <p class="benefit__desc"><strong>iVvy Pay is powered by Worldpay, a trusted global payments facilitator.</strong></p>
         <div class="benefit__features">
-          <div class="benefit__feature"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Level 1 PCI-DSS compliant – the highest level of security certification</span></div>
-          <div class="benefit__feature"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Advanced fraud protection and data encryption</span></div>
-          <div class="benefit__feature"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Trusted by thousands of venues worldwide</span></div>
+          <div class="benefit__feature"><span class="check-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Level 1 PCI-DSS compliant – the highest level of security certification</span></div>
+          <div class="benefit__feature"><span class="check-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Advanced fraud protection and data encryption</span></div>
+          <div class="benefit__feature"><span class="check-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Trusted by thousands of venues worldwide</span></div>
         </div>
       </div>
       <div class="benefit__image-wrapper benefit__image-wrapper--logo">
@@ -382,12 +383,12 @@ img{max-width:100%;height:auto;display:block}
     <div class="container">
       <div class="benefit__content">
         <p class="benefit__eyebrow">Flexible fees</p>
-        <h2 class="benefit__title">Full control over fees</h2>
+        <h2 class="benefit__title">Full control <span>over fees</span></h2>
         <p class="benefit__desc">You decide how to manage transaction fees:</p>
         <div class="benefit__features">
-          <div class="benefit__feature"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Absorb them</span></div>
-          <div class="benefit__feature"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Pass them on to customers</span></div>
-          <div class="benefit__feature"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Split the cost</span></div>
+          <div class="benefit__feature"><span class="check-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Absorb them</span></div>
+          <div class="benefit__feature"><span class="check-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Pass them on to customers</span></div>
+          <div class="benefit__feature"><span class="check-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Split the cost</span></div>
         </div>
         <p class="benefit__desc"><strong>Whatever suits your venue best.</strong></p>
       </div>
@@ -416,7 +417,7 @@ img{max-width:100%;height:auto;display:block}
 
 <section class="section section--grey">
   <div class="container">
-    <h2 class="section__title section__title--center">Frequently asked questions</h2>
+    <h2 class="section__title section__title--center">Frequently asked <span>questions</span></h2>
     <div class="faqs">
       
       
@@ -451,7 +452,7 @@ img{max-width:100%;height:auto;display:block}
     <div class="cta__inner">
       <h2 class="cta__title">Smarter venue payments start <span>with iVvy Pay</span></h2>
       <p class="cta__subtitle">Connect with us to see how iVvy Pay can streamline your billing and help you get paid faster.</p>
-      <div class="hubspot-form-wrapper hubspot-form-wrapper--cta" style="max-width:560px;margin:24px auto 0;background:#fff;border-radius:12px;padding:24px 32px;position:relative;z-index:2;">
+      <div class="hubspot-form-wrapper hubspot-form-wrapper--cta" style="max-width:560px;margin:48px auto 0;background:#fff;border-radius:12px;padding:24px 32px;position:relative;z-index:2;">
         <div id="ivvypay-hs-form"></div>
         <script>
           (function() {

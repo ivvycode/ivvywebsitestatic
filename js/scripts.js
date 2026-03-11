@@ -49,14 +49,15 @@ document.addEventListener('DOMContentLoaded', function() {
     function animateCounter(element, target, duration) {
       let start = 0;
       const suffix = element.dataset.suffix || '';
+      const prefix = element.dataset.prefix || '';
       const increment = target / (duration / 16);
       function updateCounter() {
         start += increment;
         if (start < target) {
-          element.textContent = Math.floor(start) + suffix;
+          element.textContent = prefix + Math.floor(start) + suffix;
           requestAnimationFrame(updateCounter);
         } else {
-          element.textContent = target + suffix;
+          element.textContent = prefix + target + suffix;
         }
       }
       updateCounter();
@@ -203,31 +204,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Testimonial Slider
     var testimonialSlides = document.querySelectorAll('.testimonial__slide');
-    var testimonialDots = document.querySelectorAll('.testimonial__dot');
-    var testimonialPrev = document.querySelector('.testimonial__prev');
-    var testimonialNext = document.querySelector('.testimonial__next');
+    var testimonialNavItems = document.querySelectorAll('.testimonial__nav-item');
     if (testimonialSlides.length > 0) {
       var currentTestimonial = 0;
       var testimonialInterval;
       function showTestimonial(index) {
         testimonialSlides.forEach(function(s) { s.classList.remove('testimonial__slide--active'); });
-        testimonialDots.forEach(function(d) { d.classList.remove('testimonial__dot--active'); });
+        testimonialNavItems.forEach(function(d) { d.classList.remove('testimonial__nav-item--active'); });
         testimonialSlides[index].classList.add('testimonial__slide--active');
-        if (testimonialDots[index]) testimonialDots[index].classList.add('testimonial__dot--active');
+        if (testimonialNavItems[index]) testimonialNavItems[index].classList.add('testimonial__nav-item--active');
         currentTestimonial = index;
         clearInterval(testimonialInterval);
         testimonialInterval = setInterval(function() {
           showTestimonial((currentTestimonial + 1) % testimonialSlides.length);
         }, 6000);
       }
-      if (testimonialPrev) testimonialPrev.addEventListener('click', function() {
-        showTestimonial((currentTestimonial - 1 + testimonialSlides.length) % testimonialSlides.length);
-      });
-      if (testimonialNext) testimonialNext.addEventListener('click', function() {
-        showTestimonial((currentTestimonial + 1) % testimonialSlides.length);
-      });
-      testimonialDots.forEach(function(dot) {
-        dot.addEventListener('click', function() { showTestimonial(parseInt(this.dataset.index)); });
+      testimonialNavItems.forEach(function(item) {
+        item.addEventListener('click', function() { showTestimonial(parseInt(this.dataset.index)); });
       });
       testimonialInterval = setInterval(function() {
         showTestimonial((currentTestimonial + 1) % testimonialSlides.length);

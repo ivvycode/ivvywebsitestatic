@@ -58,11 +58,11 @@ img{max-width:100%;height:auto;display:block}
 .header__left{display:flex;align-items:center}
 .header__logo img{height:32px;width:auto}
 .nav{display:none}@media(min-width:1024px){.nav{display:flex;align-items:center;gap:4px}}
-.nav__link{display:flex;align-items:center;gap:4px;height:40px;padding:8px 24px;font-size:14px;font-weight:600;color:#757575;border-radius:0;background:none;border:none}
+.nav__link{display:flex;align-items:center;gap:4px;height:40px;padding:8px 24px;font-size:14px;font-weight:600;color:#757575;border-radius:0;background:none;border:none;text-transform:none;letter-spacing:normal}
 .header__cta{display:none}@media(min-width:1024px){.header__cta{display:flex;align-items:center;gap:16px}}
 .mobile-toggle{display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:none;border:none;color:#103620}
 @media(min-width:1024px){.mobile-toggle{display:none}}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:8px 24px;font-family:'Nunito',sans-serif;font-size:14px;font-weight:700;border-radius:9999px;border:none;cursor:pointer;position:relative;overflow:hidden;isolation:isolate;text-transform:none;letter-spacing:normal}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:8px 24px;font-family:'Nunito',sans-serif;font-size:14px;font-weight:700;border-radius:9999px;border:none;cursor:pointer;position:relative;overflow:hidden;isolation:isolate;text-transform:uppercase;letter-spacing:0.05em}
 .btn--primary{background:#99CC52;color:#103620}
 .btn--nav-cta{background:#99CC52;color:#fff}
 .btn--lg{height:48px;padding:8px 32px;font-size:16px}
@@ -73,11 +73,11 @@ img{max-width:100%;height:auto;display:block}
 .hero__bg-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(255,255,255,0.8),rgba(255,255,255,0.5),transparent);z-index:1}
 .hero__bg-image{width:100%;height:120%;object-fit:cover}
 .hero__content{position:relative;z-index:2;max-width:600px}
-.hero__eyebrow{font-size:18px;color:#666666;margin-bottom:16px}
+.hero__eyebrow{font-size:18px;color:#666666;margin-bottom:32px}
 @media(min-width:768px){.hero__eyebrow{font-size:24px}}
 .hero__title{font-size:32px;color:#103620;margin-bottom:32px;line-height:1.3}
 @media(min-width:768px){.hero__title{font-size:40px}}
-@media(min-width:1024px){.hero__title{font-size:48px}}
+@media(min-width:1024px){.hero__title{font-size:64px}}
 .hero__title-highlight{color:#99CC52;display:block}
 .page-hero{position:relative;padding:80px 0 60px;overflow:hidden}
 .page-hero>.container{width:100%}
@@ -307,12 +307,15 @@ img{max-width:100%;height:auto;display:block}
 
 
 
+
 <section class="page-hero page-hero--gradient page-hero--centered">
   <div class="container">
     <div class="page-hero__content">
       
+      <p class="page-hero__eyebrow">Customer Stories</p>
+      
       <h1 class="page-hero__title">
-        <span class="page-hero__title-base">Customer</span> <span class="page-hero__title-highlight">stories</span>
+        <span class="page-hero__title-base">Hear from our</span> <span class="page-hero__title-highlight">customers</span>
       </h1>
       
       <p class="page-hero__subtitle">Read real case studies and hear from satisfied customers who use iVvy to manage venue spaces and deliver exceptional events.</p>
@@ -331,7 +334,7 @@ img{max-width:100%;height:auto;display:block}
 
 <section class="section">
   <div class="container">
-    <h2 class="section__title section__title--center">Featured case studies</h2>
+    <h2 class="section__title section__title--center">Featured <span>stories</span></h2>
     <div class="case-study-grid case-study-grid--4col">
       
       
@@ -346,7 +349,7 @@ img{max-width:100%;height:auto;display:block}
           </div>
           
           <p class="case-study-card__headline--dark">Boosting Booking Conversions by 25% with iVvy</p>
-          <span class="case-study-card__link">View Case Study</span>
+          <span class="case-study-card__link">Read case study <span aria-hidden="true">→</span></span>
         </div>
       </a>
       
@@ -363,7 +366,7 @@ img{max-width:100%;height:auto;display:block}
           </div>
           
           <p class="case-study-card__headline--dark">Enhanced forecast accuracy for peak performance</p>
-          <span class="case-study-card__link">View Case Study</span>
+          <span class="case-study-card__link">Read case study <span aria-hidden="true">→</span></span>
         </div>
       </a>
       
@@ -380,7 +383,7 @@ img{max-width:100%;height:auto;display:block}
           </div>
           
           <p class="case-study-card__headline--dark">Streamlined Venue Management at Goodwood Estate</p>
-          <span class="case-study-card__link">View Case Study</span>
+          <span class="case-study-card__link">Read case study <span aria-hidden="true">→</span></span>
         </div>
       </a>
       
@@ -397,7 +400,7 @@ img{max-width:100%;height:auto;display:block}
           </div>
           
           <p class="case-study-card__headline--dark">Grows revenue by 43% with iVvy</p>
-          <span class="case-study-card__link">View Case Study</span>
+          <span class="case-study-card__link">Read case study <span aria-hidden="true">→</span></span>
         </div>
       </a>
       
@@ -436,10 +439,10 @@ img{max-width:100%;height:auto;display:block}
   </div>
 </section>
 
-<section class="section section--grey">
+<section class="section features-grid--dark">
   <div class="container">
     <div class="section__header section__header--center">
-      <h2>Case studies</h2>
+      <h2>All customer <span>stories</span></h2>
       <p>Don't just take our word for it, our clients are the proof of our success.</p>
     </div>
     <div class="case-study-grid case-study-grid--3col">
@@ -464,7 +467,7 @@ img{max-width:100%;height:auto;display:block}
           </div>
           
           <p class="case-study-card__headline--dark">Streamlined online booking for 180+ venue spaces</p>
-          <span class="case-study-card__link">View Case Study</span>
+          <span class="case-study-card__link">Read case study <span aria-hidden="true">→</span></span>
         </div>
       </a>
       
@@ -481,7 +484,7 @@ img{max-width:100%;height:auto;display:block}
           </div>
           
           <p class="case-study-card__headline--dark">Tripled response time, upping conversion potential</p>
-          <span class="case-study-card__link">View Case Study</span>
+          <span class="case-study-card__link">Read case study <span aria-hidden="true">→</span></span>
         </div>
       </a>
       
@@ -498,7 +501,7 @@ img{max-width:100%;height:auto;display:block}
           </div>
           
           <p class="case-study-card__headline--dark">Saves 10 mins per venue booking</p>
-          <span class="case-study-card__link">View Case Study</span>
+          <span class="case-study-card__link">Read case study <span aria-hidden="true">→</span></span>
         </div>
       </a>
       
@@ -515,7 +518,7 @@ img{max-width:100%;height:auto;display:block}
           </div>
           
           <p class="case-study-card__headline--dark">Has a 14% higher conversion rate on 124 properties</p>
-          <span class="case-study-card__link">View Case Study</span>
+          <span class="case-study-card__link">Read case study <span aria-hidden="true">→</span></span>
         </div>
       </a>
       
@@ -528,7 +531,7 @@ img{max-width:100%;height:auto;display:block}
         <div class="case-study-card__body">
           
           <p class="case-study-card__headline--dark">Now generates proposals in under 15 minutes</p>
-          <span class="case-study-card__link">View Case Study</span>
+          <span class="case-study-card__link">Read case study <span aria-hidden="true">→</span></span>
         </div>
       </a>
       
@@ -545,7 +548,7 @@ img{max-width:100%;height:auto;display:block}
           </div>
           
           <p class="case-study-card__headline--dark">Now enjoys an entirely unified sales process</p>
-          <span class="case-study-card__link">View Case Study</span>
+          <span class="case-study-card__link">Read case study <span aria-hidden="true">→</span></span>
         </div>
       </a>
       
@@ -558,7 +561,7 @@ img{max-width:100%;height:auto;display:block}
         <div class="case-study-card__body">
           
           <p class="case-study-card__headline--dark">Sets up school events in under 10 mins</p>
-          <span class="case-study-card__link">View Case Study</span>
+          <span class="case-study-card__link">Read case study <span aria-hidden="true">→</span></span>
         </div>
       </a>
       
@@ -575,7 +578,7 @@ img{max-width:100%;height:auto;display:block}
           </div>
           
           <p class="case-study-card__headline--dark">Now uses one platform for global venue insights</p>
-          <span class="case-study-card__link">View Case Study</span>
+          <span class="case-study-card__link">Read case study <span aria-hidden="true">→</span></span>
         </div>
       </a>
       
@@ -592,7 +595,7 @@ img{max-width:100%;height:auto;display:block}
           </div>
           
           <p class="case-study-card__headline--dark">Reduced quote to contract time</p>
-          <span class="case-study-card__link">View Case Study</span>
+          <span class="case-study-card__link">Read case study <span aria-hidden="true">→</span></span>
         </div>
       </a>
       
@@ -609,7 +612,7 @@ img{max-width:100%;height:auto;display:block}
           </div>
           
           <p class="case-study-card__headline--dark">Scalable software for continued venue growth</p>
-          <span class="case-study-card__link">View Case Study</span>
+          <span class="case-study-card__link">Read case study <span aria-hidden="true">→</span></span>
         </div>
       </a>
       
@@ -626,7 +629,7 @@ img{max-width:100%;height:auto;display:block}
           </div>
           
           <p class="case-study-card__headline--dark">Leadership reporting in minutes</p>
-          <span class="case-study-card__link">View Case Study</span>
+          <span class="case-study-card__link">Read case study <span aria-hidden="true">→</span></span>
         </div>
       </a>
       
@@ -639,7 +642,7 @@ img{max-width:100%;height:auto;display:block}
         <div class="case-study-card__body">
           
           <p class="case-study-card__headline--dark">Uses data to create more personalised experiences</p>
-          <span class="case-study-card__link">View Case Study</span>
+          <span class="case-study-card__link">Read case study <span aria-hidden="true">→</span></span>
         </div>
       </a>
       
@@ -656,7 +659,7 @@ img{max-width:100%;height:auto;display:block}
           </div>
           
           <p class="case-study-card__headline--dark">Now hosts 25% more events</p>
-          <span class="case-study-card__link">View Case Study</span>
+          <span class="case-study-card__link">Read case study <span aria-hidden="true">→</span></span>
         </div>
       </a>
       
@@ -673,7 +676,7 @@ img{max-width:100%;height:auto;display:block}
           </div>
           
           <p class="case-study-card__headline--dark">Now save 20+ hours a week on admin</p>
-          <span class="case-study-card__link">View Case Study</span>
+          <span class="case-study-card__link">Read case study <span aria-hidden="true">→</span></span>
         </div>
       </a>
       
@@ -690,7 +693,7 @@ img{max-width:100%;height:auto;display:block}
           </div>
           
           <p class="case-study-card__headline--dark">Now responds to enquiries within 24 hours</p>
-          <span class="case-study-card__link">View Case Study</span>
+          <span class="case-study-card__link">Read case study <span aria-hidden="true">→</span></span>
         </div>
       </a>
       
@@ -717,17 +720,17 @@ img{max-width:100%;height:auto;display:block}
       <div class="cta__stats cta__stats--3">
         
         <div class="cta__stat">
-          <div class="cta__stat-value" data-counter="25" data-suffix="%">0</div>
+          <div class="cta__stat-value" data-counter="25" data-suffix="%" data-prefix="">0</div>
           <div class="cta__stat-label">More conversions</div>
         </div>
         
         <div class="cta__stat">
-          <div class="cta__stat-value" data-counter="3" data-suffix="x">0</div>
+          <div class="cta__stat-value" data-counter="3" data-suffix="x" data-prefix="">0</div>
           <div class="cta__stat-label">Faster responses</div>
         </div>
         
         <div class="cta__stat">
-          <div class="cta__stat-value" data-counter="43" data-suffix="%">0</div>
+          <div class="cta__stat-value" data-counter="43" data-suffix="%" data-prefix="">0</div>
           <div class="cta__stat-label">Revenue increase</div>
         </div>
         

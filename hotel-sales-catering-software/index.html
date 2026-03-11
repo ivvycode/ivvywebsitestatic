@@ -60,11 +60,11 @@ img{max-width:100%;height:auto;display:block}
 .header__left{display:flex;align-items:center}
 .header__logo img{height:32px;width:auto}
 .nav{display:none}@media(min-width:1024px){.nav{display:flex;align-items:center;gap:4px}}
-.nav__link{display:flex;align-items:center;gap:4px;height:40px;padding:8px 24px;font-size:14px;font-weight:600;color:#757575;border-radius:0;background:none;border:none}
+.nav__link{display:flex;align-items:center;gap:4px;height:40px;padding:8px 24px;font-size:14px;font-weight:600;color:#757575;border-radius:0;background:none;border:none;text-transform:none;letter-spacing:normal}
 .header__cta{display:none}@media(min-width:1024px){.header__cta{display:flex;align-items:center;gap:16px}}
 .mobile-toggle{display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:none;border:none;color:#103620}
 @media(min-width:1024px){.mobile-toggle{display:none}}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:8px 24px;font-family:'Nunito',sans-serif;font-size:14px;font-weight:700;border-radius:9999px;border:none;cursor:pointer;position:relative;overflow:hidden;isolation:isolate;text-transform:none;letter-spacing:normal}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:8px 24px;font-family:'Nunito',sans-serif;font-size:14px;font-weight:700;border-radius:9999px;border:none;cursor:pointer;position:relative;overflow:hidden;isolation:isolate;text-transform:uppercase;letter-spacing:0.05em}
 .btn--primary{background:#99CC52;color:#103620}
 .btn--nav-cta{background:#99CC52;color:#fff}
 .btn--lg{height:48px;padding:8px 32px;font-size:16px}
@@ -75,11 +75,11 @@ img{max-width:100%;height:auto;display:block}
 .hero__bg-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(255,255,255,0.8),rgba(255,255,255,0.5),transparent);z-index:1}
 .hero__bg-image{width:100%;height:120%;object-fit:cover}
 .hero__content{position:relative;z-index:2;max-width:600px}
-.hero__eyebrow{font-size:18px;color:#666666;margin-bottom:16px}
+.hero__eyebrow{font-size:18px;color:#666666;margin-bottom:32px}
 @media(min-width:768px){.hero__eyebrow{font-size:24px}}
 .hero__title{font-size:32px;color:#103620;margin-bottom:32px;line-height:1.3}
 @media(min-width:768px){.hero__title{font-size:40px}}
-@media(min-width:1024px){.hero__title{font-size:48px}}
+@media(min-width:1024px){.hero__title{font-size:64px}}
 .hero__title-highlight{color:#99CC52;display:block}
 .page-hero{position:relative;padding:80px 0 60px;overflow:hidden}
 .page-hero>.container{width:100%}
@@ -346,7 +346,13 @@ img{max-width:100%;height:auto;display:block}
 
 <section class="trust-logos">
   <div class="container">
-    <p class="trust-logos__title">Trusted by thousands of venues</p>
+    <div style="text-align:center;margin-bottom:8px"><span class="section-pill">Trusted by thousands of venues</span></div>
+    <div style="text-align:center;margin-bottom:56px">
+      <a href="/customers/" class="trust-logos__cta">
+        Hear from our customers
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
   </div>
   <div class="trust-logos__wrapper">
     <div class="trust-logos__fade-left"></div>
@@ -484,22 +490,22 @@ img{max-width:100%;height:auto;display:block}
         <ul class="venue-intro__bullets">
           
           <li class="venue-intro__bullet">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span class="check-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
             <span>Respond to enquiries faster</span>
           </li>
           
           <li class="venue-intro__bullet">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span class="check-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
             <span>Standardise pricing and packages</span>
           </li>
           
           <li class="venue-intro__bullet">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span class="check-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
             <span>Keep bookings organised across multiple locations</span>
           </li>
           
           <li class="venue-intro__bullet">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span class="check-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
             <span>Access real-time data to make informed decisions</span>
           </li>
           
@@ -521,17 +527,24 @@ img{max-width:100%;height:auto;display:block}
 
 
 
-<section class="features-grid">
+<section class="features-grid features-grid--dark">
   <div class="container">
     <div class="features-grid__header">
-      <h2 class="features-grid__title">Sales & Catering software for busy hotel teams</h2>
+      <span class="features-grid__pill">Platform</span>
       
-      <p class="features-grid__subtitle">Get more eyes on your event spaces, and more bookings in your function diary.</p>
+      <h2 class="features-grid__title features-grid__title--light">Sales & Catering software for <span>busy hotel teams</span></h2>
+      
+      
+      <p class="features-grid__subtitle features-grid__subtitle--light">Get more eyes on your event spaces, and more bookings in your function diary.</p>
       
     </div>
     <div class="features-grid__grid">
       
-      <div class="feature-card">
+      
+      
+      
+      
+      <div class="feature-card feature-card--white">
         <div class="feature-card__icon-wrap">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="#CCE3A8" stroke="#0F331F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
         </div>
@@ -539,7 +552,14 @@ img{max-width:100%;height:auto;display:block}
         <p class="feature-card__desc">Respond to enquiries in minutes with instant quoting and live availability.</p>
       </div>
       
-      <div class="feature-card">
+      
+      
+      
+      
+        
+      
+      
+      <div class="feature-card feature-card--white feature-card--span-2">
         <div class="feature-card__icon-wrap">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="#CCE3A8" stroke="#0F331F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>
         </div>
@@ -547,7 +567,12 @@ img{max-width:100%;height:auto;display:block}
         <p class="feature-card__desc">Oversee bookings, inventory, and operations across all properties.</p>
       </div>
       
-      <div class="feature-card">
+      
+      
+      
+      
+      
+      <div class="feature-card feature-card--white">
         <div class="feature-card__icon-wrap">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="#CCE3A8" stroke="#0F331F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg>
         </div>
@@ -555,7 +580,12 @@ img{max-width:100%;height:auto;display:block}
         <p class="feature-card__desc">Track leads, automate follow-ups, and manage contracts with an inbuilt CRM.</p>
       </div>
       
-      <div class="feature-card">
+      
+      
+      
+      
+      
+      <div class="feature-card feature-card--white">
         <div class="feature-card__icon-wrap">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="#CCE3A8" stroke="#0F331F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         </div>
@@ -563,7 +593,12 @@ img{max-width:100%;height:auto;display:block}
         <p class="feature-card__desc">Auto-generate proposals, run sheets, and event documents.</p>
       </div>
       
-      <div class="feature-card">
+      
+      
+      
+      
+      
+      <div class="feature-card feature-card--white">
         <div class="feature-card__icon-wrap">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="#CCE3A8" stroke="#0F331F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg>
         </div>
@@ -571,7 +606,14 @@ img{max-width:100%;height:auto;display:block}
         <p class="feature-card__desc">Access real-time reporting and forecasting across your entire portfolio.</p>
       </div>
       
-      <div class="feature-card">
+      
+      
+      
+      
+        
+      
+      
+      <div class="feature-card feature-card--white feature-card--span-2">
         <div class="feature-card__icon-wrap">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="#CCE3A8" stroke="#0F331F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg>
         </div>
@@ -579,7 +621,12 @@ img{max-width:100%;height:auto;display:block}
         <p class="feature-card__desc">Customise menu packages, track catering orders, and keep teams aligned.</p>
       </div>
       
-      <div class="feature-card">
+      
+      
+      
+      
+      
+      <div class="feature-card feature-card--white">
         <div class="feature-card__icon-wrap">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="#CCE3A8" stroke="#0F331F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></svg>
         </div>
@@ -587,13 +634,19 @@ img{max-width:100%;height:auto;display:block}
         <p class="feature-card__desc">Integrate with existing systems to sync event bookings, rooms, and billing.</p>
       </div>
       
-      <div class="feature-card">
+      
+      
+      
+      
+      
+      <div class="feature-card feature-card--white">
         <div class="feature-card__icon-wrap">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="#CCE3A8" stroke="#0F331F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg>
         </div>
         <h3 class="feature-card__title">Manage group room blocks</h3>
         <p class="feature-card__desc">Automate rooming lists and group reservations with live availability.</p>
       </div>
+      
       
     </div>
   </div>
@@ -610,33 +663,33 @@ img{max-width:100%;height:auto;display:block}
         <div class="why-choose__items">
           
           <div class="why-choose__item">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span class="check-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
             <div>
-              <h3 class="why-choose__item-title">More time back</h3>
+              <h4 class="why-choose__item-title">More time back</h4>
               <p class="why-choose__item-desc">Automate processes from lead management to event communication. This means fewer errors &amp; repetitive tasks, and more time for creating memorable events.</p>
             </div>
           </div>
           
           <div class="why-choose__item">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span class="check-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
             <div>
-              <h3 class="why-choose__item-title">Increased visibility</h3>
+              <h4 class="why-choose__item-title">Increased visibility</h4>
               <p class="why-choose__item-desc">Publish live availability and accept bookings through your website, iVvy Marketplace, and our partners, all while maintaining control with the rules you set.</p>
             </div>
           </div>
           
           <div class="why-choose__item">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span class="check-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
             <div>
-              <h3 class="why-choose__item-title">Greater venue revenue</h3>
+              <h4 class="why-choose__item-title">Greater venue revenue</h4>
               <p class="why-choose__item-desc">With dynamic pricing and detailed data, you can adjust meeting &amp; event packages in real-time and get the best return from your venue spaces.</p>
             </div>
           </div>
           
           <div class="why-choose__item">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span class="check-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
             <div>
-              <h3 class="why-choose__item-title">Better team efficiency</h3>
+              <h4 class="why-choose__item-title">Better team efficiency</h4>
               <p class="why-choose__item-desc">Using task and team management tools, you can ensure every team member is equipped with the support and knowledge they need to succeed.</p>
             </div>
           </div>
@@ -723,11 +776,11 @@ img{max-width:100%;height:auto;display:block}
           <p class="testimonial-banner__author">Shahnaz Bakhshay</p>
           
           
-          <p class="testimonial-banner__company">Global Sales Officer, TFE Hotels</p>
+          <p class="testimonial-banner__title">Global Sales Officer</p>
           
           
           <div style="margin-top:1.5rem;">
-            <img src="/images/logos/tfe-hotels-logo.png" alt="Global Sales Officer, TFE Hotels" width="120" height="40" style="height:40px;margin:0 auto;" loading="lazy" decoding="async">
+            <img src="/images/logos/tfe-hotels-logo.png" alt="TFE Hotels" width="120" height="40" style="height:40px;margin:0 auto;" loading="lazy" decoding="async">
           </div>
           
         </div>
@@ -742,11 +795,11 @@ img{max-width:100%;height:auto;display:block}
           <p class="testimonial-banner__author">Ashley Thurman</p>
           
           
-          <p class="testimonial-banner__company">Regional Director of Sales, QPM Hotels</p>
+          <p class="testimonial-banner__title">Regional Director of Sales</p>
           
           
           <div style="margin-top:1.5rem;">
-            <img src="/images/logos/qpm-logo.png" alt="Regional Director of Sales, QPM Hotels" width="120" height="40" style="height:40px;margin:0 auto;" loading="lazy" decoding="async">
+            <img src="/images/logos/qpm-logo.png" alt="QPM Hotels" width="120" height="40" style="height:40px;margin:0 auto;" loading="lazy" decoding="async">
           </div>
           
         </div>
@@ -761,11 +814,11 @@ img{max-width:100%;height:auto;display:block}
           <p class="testimonial-banner__author">Mark Hodge</p>
           
           
-          <p class="testimonial-banner__company">Executive Director – Operations, Mantra Group</p>
+          <p class="testimonial-banner__title">Executive Director – Operations</p>
           
           
           <div style="margin-top:1.5rem;">
-            <img src="/images/logos/mantra-logo.png" alt="Executive Director – Operations, Mantra Group" width="120" height="40" style="height:40px;margin:0 auto;" loading="lazy" decoding="async">
+            <img src="/images/logos/mantra-logo.png" alt="Mantra Group" width="120" height="40" style="height:40px;margin:0 auto;" loading="lazy" decoding="async">
           </div>
           
         </div>
@@ -777,11 +830,11 @@ img{max-width:100%;height:auto;display:block}
         </button>
         <div class="testimonial-slider__dots" id="sliderDots">
           
-          <button class="testimonial-slider__dot testimonial-slider__dot--active" data-dot="0" aria-label="Go to testimonial 1"></button>
+          <button class="testimonial-slider__dot testimonial-slider__dot--active testimonial-slider__dot--pill" data-dot="0" data-company="TFE Hotels" aria-label="Go to testimonial 1">TFE Hotels</button>
           
-          <button class="testimonial-slider__dot" data-dot="1" aria-label="Go to testimonial 2"></button>
+          <button class="testimonial-slider__dot" data-dot="1" data-company="QPM Hotels" aria-label="Go to testimonial 2"></button>
           
-          <button class="testimonial-slider__dot" data-dot="2" aria-label="Go to testimonial 3"></button>
+          <button class="testimonial-slider__dot" data-dot="2" data-company="Mantra Group" aria-label="Go to testimonial 3"></button>
           
         </div>
         <button class="testimonial-slider__arrow" id="sliderNext" aria-label="Next testimonial">
@@ -795,26 +848,39 @@ img{max-width:100%;height:auto;display:block}
 
 
 
-<section class="section">
+<section class="section section--grey">
   <div class="container">
-    <h2 class="section__title section__title--center">Need more reasons to use iVvy?</h2>
-    <div class="additional-benefits">
-      
-      <div class="additional-benefit">
-        <h3 class="additional-benefit__title">55+ integrations</h3>
-        <p class="additional-benefit__desc">Share real-time data updates between iVvy and other tools, apps, and programs your hotel uses.</p>
+    <div class="why-section">
+      <div class="why-section__header">
+        <h2 class="section__title section__title--center">Need more reasons to <span>use iVvy?</span></h2>
       </div>
-      
-      <div class="additional-benefit">
-        <h3 class="additional-benefit__title">24/7 support</h3>
-        <p class="additional-benefit__desc">Our friendly support team is always here to help, boasting a customer satisfaction score of 6/7.</p>
+      <div class="why-section__grid why-section__grid--3col">
+        
+        <div class="why-card">
+          
+          <div class="why-card__stat">55+</div>
+          
+          <div class="why-card__label">Integrations</div>
+          <div class="why-card__desc">Share real-time data updates between iVvy and other tools, apps, and programs your hotel uses.</div>
+        </div>
+        
+        <div class="why-card">
+          
+          <div class="why-card__stat">24/7</div>
+          
+          <div class="why-card__label">Support</div>
+          <div class="why-card__desc">Our friendly support team is always here to help, boasting a customer satisfaction score of 6/7.</div>
+        </div>
+        
+        <div class="why-card">
+          
+          <div class="why-card__stat">Real-time</div>
+          
+          <div class="why-card__label">Updates</div>
+          <div class="why-card__desc">iVvy&#39;s cloud-based software means you receive updates instantly with no downtime.</div>
+        </div>
+        
       </div>
-      
-      <div class="additional-benefit">
-        <h3 class="additional-benefit__title">Real-time updates</h3>
-        <p class="additional-benefit__desc">iVvy&#39;s cloud-based software means you receive updates instantly with no downtime.</p>
-      </div>
-      
     </div>
   </div>
 </section>
@@ -840,17 +906,17 @@ img{max-width:100%;height:auto;display:block}
       <div class="cta__stats cta__stats--3">
         
         <div class="cta__stat">
-          <div class="cta__stat-value" data-counter="25" data-suffix="%">0</div>
+          <div class="cta__stat-value" data-counter="25" data-suffix="%" data-prefix="">0</div>
           <div class="cta__stat-label">More conversions</div>
         </div>
         
         <div class="cta__stat">
-          <div class="cta__stat-value" data-counter="3" data-suffix="x">0</div>
+          <div class="cta__stat-value" data-counter="3" data-suffix="x" data-prefix="">0</div>
           <div class="cta__stat-label">Faster responses</div>
         </div>
         
         <div class="cta__stat">
-          <div class="cta__stat-value" data-counter="43" data-suffix="%">0</div>
+          <div class="cta__stat-value" data-counter="43" data-suffix="%" data-prefix="">0</div>
           <div class="cta__stat-label">Revenue increase</div>
         </div>
         
