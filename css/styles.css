@@ -5974,7 +5974,7 @@ ul, ol {
 }
 @media (min-width: 1024px) { .why-card__stat { font-size: 24px; } }
 .why-card__label { font-size: 24px; font-weight: 700; font-family: var(--font-feature); color: var(--ivvy-dark-surface); margin-bottom: 4px; }
-.why-card__desc { font-size: 12px; font-family: var(--font-body); color: var(--ivvy-gray-500); line-height: 1.5; }
+.why-card__desc { font-size: 14px; font-family: var(--font-body); color: var(--ivvy-gray-500); line-height: 1.5; }
 
 /* Legacy additional benefits (kept for compatibility) */
 .additional-benefits { display: grid; grid-template-columns: 1fr; gap: 32px; text-align: center; }
