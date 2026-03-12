@@ -331,41 +331,48 @@ img{max-width:100%;height:auto;display:block}
   <div class="container">
 
     
-    
-    <div class="integration-filter integration-filter--type" id="softwareTypeFilter" style="margin-bottom:1rem;justify-content:center;display:flex;flex-wrap:wrap;gap:0.5rem;">
+    <div class="integration-filter-bar" style="background:rgba(0,0,0,0.03);border-radius:0.75rem;padding:1rem;max-width:56rem;margin:0 auto 3rem;display:flex;flex-direction:column;gap:0.75rem;">
       
-      <button class="integration-filter__btn integration-filter__btn--type integration-filter__btn--type-active" data-software-type="All" style="padding:0.625rem 1.25rem;border-radius:0.5rem;font-size:0.875rem;font-weight:600;border:1px solid var(--color-border);background:transparent;cursor:pointer;">All</button>
       
-      <button class="integration-filter__btn integration-filter__btn--type" data-software-type="Venue &amp; Event Management" style="padding:0.625rem 1.25rem;border-radius:0.5rem;font-size:0.875rem;font-weight:600;border:1px solid var(--color-border);background:transparent;cursor:pointer;">Venue &amp; Event Management</button>
-      
-      <button class="integration-filter__btn integration-filter__btn--type" data-software-type="Ticketed Events" style="padding:0.625rem 1.25rem;border-radius:0.5rem;font-size:0.875rem;font-weight:600;border:1px solid var(--color-border);background:transparent;cursor:pointer;">Ticketed Events</button>
-      
-    </div>
+      <div id="softwareTypeFilter" style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.5rem;align-items:center;">
+        <span style="font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--color-muted);margin-right:0.25rem;">Software:</span>
+        
+        <button class="integration-filter__btn integration-filter__btn--type integration-filter__btn--type-active" data-software-type="All">All</button>
+        
+        <button class="integration-filter__btn integration-filter__btn--type" data-software-type="Venue &amp; Event Management">Venue &amp; Event Management</button>
+        
+        <button class="integration-filter__btn integration-filter__btn--type" data-software-type="Ticketed Events">Ticketed Events</button>
+        
+      </div>
 
-    
-    
-    <div class="integration-filter" id="integrationFilter">
+      <div style="border-top:1px solid rgba(0,0,0,0.08);"></div>
+
       
-      <button class="integration-filter__btn integration-filter__btn--active" data-category="All">All</button>
       
-      <button class="integration-filter__btn" data-category="Essential Apps">Essential Apps</button>
-      
-      <button class="integration-filter__btn" data-category="Accounting &amp; ERP">Accounting &amp; ERP</button>
-      
-      <button class="integration-filter__btn" data-category="Signage">Signage</button>
-      
-      <button class="integration-filter__btn" data-category="Payment Gateway">Payment Gateway</button>
-      
-      <button class="integration-filter__btn" data-category="CRM">CRM</button>
-      
-      <button class="integration-filter__btn" data-category="PMS">PMS</button>
-      
-      <button class="integration-filter__btn" data-category="POS">POS</button>
-      
-      <button class="integration-filter__btn" data-category="Revenue Management">Revenue Management</button>
-      
-      <button class="integration-filter__btn" data-category="Restaurant Reservations">Restaurant Reservations</button>
-      
+      <div id="integrationFilter" style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.5rem;align-items:center;">
+        <span style="font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--color-muted);margin-right:0.25rem;">Category:</span>
+        
+        <button class="integration-filter__btn integration-filter__btn--active" data-category="All">All</button>
+        
+        <button class="integration-filter__btn" data-category="Essential Apps">Essential Apps</button>
+        
+        <button class="integration-filter__btn" data-category="Accounting &amp; ERP">Accounting &amp; ERP</button>
+        
+        <button class="integration-filter__btn" data-category="Signage">Signage</button>
+        
+        <button class="integration-filter__btn" data-category="Payment Gateway">Payment Gateway</button>
+        
+        <button class="integration-filter__btn" data-category="CRM">CRM</button>
+        
+        <button class="integration-filter__btn" data-category="PMS">PMS</button>
+        
+        <button class="integration-filter__btn" data-category="POS">POS</button>
+        
+        <button class="integration-filter__btn" data-category="Revenue Management">Revenue Management</button>
+        
+        <button class="integration-filter__btn" data-category="Restaurant Reservations">Restaurant Reservations</button>
+        
+      </div>
     </div>
 
     <div class="integration-grid" id="integrationGrid">
