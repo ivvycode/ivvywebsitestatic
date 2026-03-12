@@ -5942,6 +5942,9 @@ ul, ol {
 /* Case Study Cards Grid */
 .cs-cards-grid { display: grid; grid-template-columns: 1fr; gap: 32px; max-width: 1000px; margin: 0 auto; }
 @media (min-width: 768px) { .cs-cards-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 768px) { .cs-cards-grid--2col { grid-template-columns: repeat(2, 1fr); max-width: 768px; } }
+.cs-cards-grid--1col { max-width: 384px; }
+@media (min-width: 768px) { .cs-cards-grid--1col { grid-template-columns: 1fr; } }
 .cs-card-link { display: block; text-decoration: none; color: inherit; }
 .cs-card-link:hover .cs-card { transform: translateY(-8px) scale(1.02); box-shadow: var(--shadow-elevated); }
 .cs-card-link:hover .cs-card__image img { transform: scale(1.05); }
