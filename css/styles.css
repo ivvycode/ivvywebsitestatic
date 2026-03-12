@@ -134,8 +134,8 @@ h1 {
 }
 
 h4 {
-  font-family: var(--font-body);
-  font-weight: 700;
+  font-family: var(--font-feature);
+  font-weight: 700 !important;
   line-height: 1.2;
   letter-spacing: -0.02em;
 }
