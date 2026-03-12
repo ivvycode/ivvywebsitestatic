@@ -2709,6 +2709,11 @@ ul, ol {
 
 .integration-card img {
   margin: auto 0;
+  max-height: 120px;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 
 .integration-card__logo {
