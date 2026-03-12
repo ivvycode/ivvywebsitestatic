@@ -2449,9 +2449,82 @@ ul, ol {
   margin-bottom: 40px;
 }
 
+.cta__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.btn--outline-light {
+  background: rgba(255,255,255,0.1);
+  color: var(--ivvy-white);
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.btn--outline-light:hover {
+  background: rgba(255,255,255,0.2);
+}
+
 /* ==========================================================================
-   Footer - matches React Footer.tsx
+   Integration Related Cards
    ========================================================================== */
+.integration-related-card {
+  display: block;
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: var(--glass-shadow);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.integration-related-card:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-8px);
+}
+
+.integration-related-card__logo {
+  background: var(--ivvy-gray-50);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  margin-bottom: 16px;
+}
+
+.integration-related-card__logo img {
+  max-height: 48px;
+  object-fit: contain;
+}
+
+.integration-related-card__name {
+  font-family: var(--font-feature);
+  font-weight: 700;
+  color: var(--ivvy-dark-green);
+  margin-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+.integration-related-card:hover .integration-related-card__name {
+  color: var(--ivvy-primary);
+}
+
+.integration-related-card__subtitle {
+  font-size: 14px;
+  color: var(--ivvy-gray-500);
+  font-family: var(--font-body);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 .footer {
   background: var(--gradient-dark);
   color: var(--ivvy-white);
@@ -2626,7 +2699,7 @@ ul, ol {
 
 .integration-filter__btn {
   padding: 10px 20px;
-  border-radius: 8px;
+  border-radius: 9999px;
   font-size: 14px;
   font-family: var(--font-body);
   font-weight: 500;
@@ -2653,6 +2726,24 @@ ul, ol {
 .integration-filter__btn--active:hover {
   background: var(--ivvy-primary);
   color: #fff;
+}
+
+/* Software type filter - text-only active state */
+.integration-filter__btn--type {
+  border-radius: 8px;
+}
+
+.integration-filter__btn--type-active {
+  color: var(--ivvy-dark-green);
+  font-weight: 600;
+  background: transparent;
+  box-shadow: none;
+  transform: none;
+}
+
+.integration-filter__btn--type-active:hover {
+  background: transparent;
+  color: var(--ivvy-dark-green);
 }
 
 .integration-grid {
@@ -3834,21 +3925,27 @@ ul, ol {
 /* Video */
 .cs-video {
   aspect-ratio: 16/9;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   overflow: hidden;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--glass-shadow);
   margin-bottom: 40px;
-  transition: box-shadow 0.3s;
+  transition: all 0.5s ease;
 }
 
 .cs-video:hover {
   box-shadow: var(--shadow-xl);
+  transform: translateY(-8px) scale(1.02);
 }
 
 .cs-video iframe {
   width: 100%;
   height: 100%;
   border: none;
+}
+
+.cs-video .lite-youtube {
+  width: 100%;
+  height: 100%;
 }
 
 /* Lite YouTube for case studies - uses shared .lite-youtube styles */
@@ -4589,8 +4686,14 @@ ul, ol {
   aspect-ratio: 16 / 9;
   border-radius: var(--radius-xl);
   overflow: hidden;
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--glass-shadow);
   background: rgba(16, 54, 32, 0.1);
+  transition: all 0.5s ease;
+}
+
+.section__video:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-8px) scale(1.02);
 }
 
 .section__lead {
