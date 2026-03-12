@@ -1589,7 +1589,8 @@ ul, ol {
 }
 
 .benefit__title-gradient,
-.title-gradient {
+.title-gradient,
+.gradient-text {
   background: linear-gradient(135deg, #99CC52, hsl(82 62% 44%));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -4115,7 +4116,6 @@ ul, ol {
    ========================================================================== */
 .testimonial-banner {
   padding: var(--section-padding);
-  padding-bottom: 80px;
   background: var(--ivvy-white);
 }
 
@@ -4271,6 +4271,16 @@ ul, ol {
   background: hsl(85, 54%, 56%, 0.07);
   pointer-events: none;
   z-index: 1;
+}
+
+/* Tighter bottom padding for intro when followed by benefit sections */
+.intro--tight-bottom {
+  padding-bottom: 40px;
+}
+@media (min-width: 1024px) {
+  .intro--tight-bottom {
+    padding-bottom: 56px;
+  }
 }
 
 
@@ -4707,6 +4717,15 @@ ul, ol {
   border-radius: var(--radius-xl);
   padding: 32px;
   box-shadow: var(--shadow-lg);
+}
+
+/* Center-align the HubSpot form submit button */
+.hubspot-form-wrapper .hs-submit {
+  text-align: center;
+}
+
+.hubspot-form-wrapper--cta .hs-submit {
+  text-align: center;
 }
 
 .badges-row {
