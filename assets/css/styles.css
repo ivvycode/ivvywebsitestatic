@@ -3,41 +3,11 @@
    ========================================================================== */
 
 /* ==========================================================================
-   Font Metric Overrides – minimise CLS from web-font swap
+   Font Metric Overrides – removed conflicting local-only @font-face
+   declarations that prevented Google Fonts from loading in Chrome.
+   Google Fonts stylesheet handles all @font-face definitions with proper
+   url() sources. No local overrides needed.
    ========================================================================== */
-@font-face {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 600 800;
-  font-display: swap;
-  size-adjust: 105%;
-  ascent-override: 95%;
-  descent-override: 22%;
-  line-gap-override: 0%;
-  src: local('Poppins ExtraBold'), local('Poppins-ExtraBold');
-}
-@font-face {
-  font-family: 'Nunito';
-  font-style: normal;
-  font-weight: 400 700;
-  font-display: swap;
-  size-adjust: 98%;
-  ascent-override: 100%;
-  descent-override: 25%;
-  line-gap-override: 0%;
-  src: local('Nunito Regular'), local('Nunito-Regular');
-}
-@font-face {
-  font-family: 'Nunito Sans';
-  font-style: normal;
-  font-weight: 600 700;
-  font-display: swap;
-  size-adjust: 100%;
-  ascent-override: 100%;
-  descent-override: 25%;
-  line-gap-override: 0%;
-  src: local('Nunito Sans SemiBold'), local('NunitoSans-SemiBold');
-}
 
 /* ==========================================================================
    CSS Variables
@@ -864,14 +834,13 @@ ul, ol {
   align-items: center;
   padding: 6px 16px;
   border-radius: 9999px;
-  background: var(--ivvy-gray-100);
-  border: 1px solid var(--ivvy-gray-200);
+  background: rgba(153, 204, 82, 0.15);
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
   font-family: var(--font-body);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--ivvy-gray-500);
+  color: var(--ivvy-dark-green);
   margin-bottom: 24px;
 }
 
@@ -1168,10 +1137,16 @@ ul, ol {
    Trust Logos - matches React TrustLogos.tsx
    ========================================================================== */
 .trust-logos {
-  padding: 80px 0 120px;
+  padding: 48px 0 96px;
   background: var(--muted-30);
   overflow: hidden;
   position: relative;
+}
+
+@media (min-width: 1024px) {
+  .trust-logos {
+    padding: 56px 0 96px;
+  }
 }
 
 .trust-logos__title {
@@ -1221,7 +1196,8 @@ ul, ol {
   display: flex;
   width: max-content;
   will-change: transform;
-  animation: marquee-scroll 40s linear infinite;
+  gap: 48px;
+  animation: marquee-scroll 140s linear infinite;
 }
 
 .trust-logos__track:hover {
@@ -1239,7 +1215,6 @@ ul, ol {
   width: auto;
   object-fit: contain;
   max-width: 120px;
-  margin: 0 24px;
   filter: grayscale(100%);
   opacity: 0.6;
   transition: all 0.3s ease;
@@ -1251,9 +1226,11 @@ ul, ol {
 }
 
 @media (min-width: 768px) {
+  .trust-logos__track {
+    gap: 80px;
+  }
   .trust-logos__logo {
     height: 40px;
-    margin: 0 40px;
   }
 }
 

@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>iVvy Pay | Venue Payment Platform Powered by Worldpay</title>
   <meta name="description" content="Automate payments, reduce admin, and get paid faster with iVvy Pay. Venue payment platform with competitive rates, powered by Worldpay.">
@@ -44,8 +46,6 @@
 
   
   <style>
-@font-face{font-family:'Poppins';font-style:normal;font-weight:600 700;font-display:swap;size-adjust:105%;ascent-override:95%;descent-override:22%;line-gap-override:0%;src:local('Poppins SemiBold'),local('Poppins-SemiBold')}
-@font-face{font-family:'Nunito';font-style:normal;font-weight:400 700;font-display:swap;size-adjust:98%;ascent-override:100%;descent-override:25%;line-gap-override:0%;src:local('Nunito Regular'),local('Nunito-Regular')}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Nunito',sans-serif;color:#666666;background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased}
@@ -321,7 +321,7 @@ img{max-width:100%;height:auto;display:block}
 </section>
 
 
-<section class="intro section--grey">
+<section class="intro">
   <div class="container">
     <div class="intro__inner">
       <h2 class="intro__title">Automate payments, reduce admin, & <span class="gradient-text">get paid faster</span></h2>
@@ -345,15 +345,25 @@ img{max-width:100%;height:auto;display:block}
     <div class="container">
       <div class="benefit__content">
         <p class="benefit__eyebrow">Smarter payments</p>
-        <h2 class="benefit__title">Why choose <span>iVvy Pay?</span></h2>
+        <h3 class="benefit__title">Why choose <span>iVvy Pay?</span></h3>
         <div class="benefit__features">
           <div class="benefit__feature"><span class="check-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Save on every transaction</strong> – Keep more revenue from each transaction with competitive payment processing rates.</span></div>
           <div class="benefit__feature"><span class="check-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Get paid faster</strong> – Improve cash flow and avoid chasing payments with an embedded 'Pay Now' button on venue invoices.</span></div>
           <div class="benefit__feature"><span class="check-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Offer flexible payment options</strong> – Make paying easy and familiar by accepting Visa, Mastercard, Amex, Google Pay*, and Apple Pay*.</span></div>
           <div class="benefit__feature"><span class="check-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Minimise billing errors</strong> – Use automation for accurate event payment processing and reduced billing discrepancies.</span></div>
-          <div class="benefit__feature"><span class="check-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Free up your team's time</strong> – Combine iVvy Pay with iVvy's Billing Automation to auto-send invoices, track payments in real time, save up to 10 minutes per booking.</span></div>
+          <div class="benefit__feature"><span class="check-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <div>
+              <span><strong>Free up your team's time</strong> – Combine iVvy Pay with iVvy's Billing Automation to:</span>
+              <div class="benefit__sub-features" style="margin-top:12px;margin-left:24px;">
+                <div class="benefit__feature"><span class="check-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Auto-send invoices</span></div>
+                <div class="benefit__feature"><span class="check-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Track payments in real time</span></div>
+                <div class="benefit__feature"><span class="check-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Save up to 10 minutes per booking</span></div>
+                <div class="benefit__feature"><span class="check-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Encourage faster payments with embedded links</span></div>
+              </div>
+            </div>
+          </div>
         </div>
-        <a href="/request-demo/" class="btn btn--primary btn--lg">Book a Call</a>
+        <a href="/request-demo/" class="btn btn--cta btn--lg">Book a Call</a>
       </div>
       <div class="benefit__image-wrapper">
         <img src="/assets/images/badges/ivvy-pay-badge-5.png" alt="iVvy Pay" class="benefit__image" loading="lazy" width="600" height="500">
@@ -365,7 +375,7 @@ img{max-width:100%;height:auto;display:block}
     <div class="container">
       <div class="benefit__content">
         <p class="benefit__eyebrow">Proven protection</p>
-        <h2 class="benefit__title">Trusted & <span>secure</span></h2>
+        <h3 class="benefit__title">Trusted & <span>secure</span></h3>
         <p class="benefit__desc"><strong>iVvy Pay is powered by Worldpay, a trusted global payments facilitator.</strong></p>
         <div class="benefit__features">
           <div class="benefit__feature"><span class="check-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Level 1 PCI-DSS compliant – the highest level of security certification</span></div>
@@ -384,7 +394,7 @@ img{max-width:100%;height:auto;display:block}
     <div class="container">
       <div class="benefit__content">
         <p class="benefit__eyebrow">Flexible fees</p>
-        <h2 class="benefit__title">Full control <span>over fees</span></h2>
+        <h3 class="benefit__title">Full control <span>over fees</span></h3>
         <p class="benefit__desc">You decide how to manage transaction fees:</p>
         <div class="benefit__features">
           <div class="benefit__feature"><span class="check-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Absorb them</span></div>
@@ -468,7 +478,7 @@ img{max-width:100%;height:auto;display:block}
                   if (window.hbspt) {
                     window.hbspt.forms.create({
                       portalId: '5854099',
-                      formId: '9cf93369-0948-4f6d-9153-634cac4118f3',
+                      formId: '117e5a88-f3dc-42e1-896d-94f0bbc26b5c',
                       target: '#ivvypay-hs-form'
                     });
                   }
