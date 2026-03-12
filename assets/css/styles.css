@@ -39,10 +39,13 @@
   --container-max: 1400px;
   
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-soft: 0 4px 20px -4px rgba(0, 0, 0, 0.12);
+  --shadow-card: 0 8px 30px -4px rgba(0, 0, 0, 0.18);
   --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 20px -4px rgba(0, 0, 0, 0.12);
   --shadow-lg: 0 8px 30px -4px rgba(0, 0, 0, 0.18);
   --shadow-xl: 0 20px 50px -8px rgba(0, 0, 0, 0.25);
+  --shadow-elevated: 0 20px 50px -8px rgba(0, 0, 0, 0.25);
   
   --glass-bg: rgba(255, 255, 255, 0.6);
   --glass-border: rgba(255, 255, 255, 0.3);
@@ -2694,7 +2697,10 @@ ul, ol {
 }
 
 .integration-card img {
-  margin: auto 0;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   max-height: 120px;
   max-width: 100%;
   width: auto;
@@ -2862,10 +2868,10 @@ ul, ol {
 }
 
 .case-study-card__company {
-  font-family: var(--font-heading);
+  font-family: var(--font-feature);
   font-size: 14px;
   font-weight: 700;
-  color: var(--ivvy-dark-green);
+  color: var(--ivvy-dark-surface);
   margin-bottom: 8px;
 }
 
@@ -3896,34 +3902,46 @@ ul, ol {
 }
 
 .cs-quote__inner {
-  max-width: 800px;
+  max-width: 1152px;
   margin: 0 auto;
   text-align: center;
 }
 
 .cs-quote blockquote {
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-style: normal;
-  font-size: 24px;
+  font-weight: 700;
+  font-size: 20px;
   color: var(--ivvy-dark-green);
-  margin-bottom: 32px;
-  line-height: 1.5;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .cs-quote blockquote {
+    font-size: 24px;
+    line-height: 1.7;
+  }
 }
 
 @media (min-width: 1024px) {
   .cs-quote blockquote {
-    font-size: 30px;
+    font-size: 28px;
   }
-  .cs-quote blockquote .quote-mark {
-    font-size: 48px;
-  }
+}
+
+.cs-quote .quote-mark {
+  color: var(--ivvy-dark-green);
+  font-size: 36px;
+  font-family: var(--font-heading);
+  line-height: 0;
 }
 
 .cs-quote__author {
   font-family: var(--font-body);
   font-weight: 600;
   font-size: 18px;
-  color: var(--ivvy-primary);
+  color: var(--ivvy-gray-500);
 }
 
 .cs-quote__role {
@@ -4109,7 +4127,7 @@ ul, ol {
 }
 
 .testimonial-banner__inner {
-  max-width: 800px;
+  max-width: 1152px;
   margin: 0 auto;
   text-align: center;
 }
@@ -5505,8 +5523,14 @@ ul, ol {
   font-size: 16px;
   color: var(--ivvy-gray-500);
   line-height: 1.8;
-  max-width: 700px;
   margin: 0 auto;
+}
+
+/* iVvyAI suite intro h3 responsive */
+@media (min-width: 1024px) {
+  .ivvyai-suite-h3 {
+    font-size: 32px !important;
+  }
 }
 
 .section__header--center .section__subtitle {
@@ -5942,7 +5966,7 @@ ul, ol {
 .cs-card__body { padding: 20px; display: flex; flex-direction: column; flex: 1; }
 .cs-card__logo-wrap { height: 32px; margin-bottom: 8px; }
 .cs-card__logo-wrap img { height: 100%; width: auto; max-width: 120px; object-fit: contain; object-position: left; display: block; }
-.cs-card__name { font-family: var(--font-heading); font-weight: 700; font-size: 14px; color: var(--ivvy-dark-green); margin-bottom: 8px; }
+.cs-card__name { font-family: var(--font-feature); font-weight: 700; font-size: 14px; color: var(--ivvy-dark-surface); margin-bottom: 8px; }
 .cs-card__outcomes { font-family: var(--font-body); font-size: 14px; color: var(--ivvy-gray-500); margin-bottom: 16px; flex: 1; list-style: disc; list-style-position: inside; }
 .cs-card__outcomes li { margin-bottom: 4px; }
 .cs-card__text { font-family: var(--font-body); font-size: 14px; color: var(--ivvy-gray-500); margin-bottom: 16px; flex: 1; }
@@ -5950,6 +5974,7 @@ ul, ol {
 
 /* Testimonial Slider */
 .testimonial-slider { max-width: 1152px; margin: 0 auto; text-align: center; position: relative; min-height: 320px; }
+.testimonial-banner .testimonial-slider { min-height: auto; }
 .testimonial-slide { display: none; opacity: 0; transition: opacity 0.5s ease; }
 .testimonial-slide--active { display: block; opacity: 1; }
 .testimonial-slider__controls { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 16px; }
@@ -5969,8 +5994,8 @@ ul, ol {
 .why-section__grid--3col { grid-template-columns: 1fr; }
 @media (min-width: 640px) { .why-section__grid--3col { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1024px) { .why-section__grid--3col { grid-template-columns: repeat(3, 1fr); } }
-.why-card { text-align: center; padding: 24px; border-radius: var(--radius-xl); border: none; background: var(--ivvy-white); box-shadow: var(--glass-shadow); transition: all 0.5s ease; }
-.why-card:hover { box-shadow: var(--shadow-xl); transform: translateY(-8px); }
+.why-card { text-align: center; padding: 24px; border-radius: var(--radius-xl); border: none; background: var(--ivvy-white); box-shadow: var(--shadow-card); transition: all 0.5s ease; }
+.why-card:hover { box-shadow: var(--shadow-elevated); transform: translateY(-8px); }
 .why-card__stat { font-size: 24px; font-weight: 700; font-family: var(--font-feature); color: var(--ivvy-dark-surface); margin-bottom: 4px; }
 .why-card__heading { font-size: 24px; font-weight: 700; font-family: var(--font-feature); color: var(--ivvy-dark-surface); margin-bottom: 8px; }
 
