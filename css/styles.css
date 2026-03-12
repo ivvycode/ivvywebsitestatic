@@ -5932,7 +5932,7 @@ ul, ol {
 .why-choose__items { display: flex; flex-direction: column; gap: 24px; }
 .why-choose__item { display: flex; align-items: flex-start; gap: 12px; }
 .why-choose__item svg { flex-shrink: 0; margin-top: 4px; }
-.why-choose__item-title { font-family: var(--font-heading); font-weight: 700; font-size: 18px; color: var(--ivvy-dark-green); margin-bottom: 8px; }
+.why-choose__item-title { font-family: var(--font-feature); font-weight: 700; font-size: 18px; color: var(--ivvy-dark-green); margin-bottom: 8px; }
 .why-choose__item-desc { font-family: var(--font-body); color: var(--ivvy-gray-500); line-height: 1.6; }
 
 /* Case Study Cards Grid */
@@ -5949,8 +5949,10 @@ ul, ol {
 .cs-card__logo-wrap { height: 32px; margin-bottom: 8px; }
 .cs-card__logo-wrap img { height: 100%; width: auto; max-width: 120px; object-fit: contain; object-position: left; }
 .cs-card__name { font-family: var(--font-heading); font-weight: 700; font-size: 14px; color: var(--ivvy-dark-green); margin-bottom: 8px; }
+.cs-card__outcomes { font-family: var(--font-body); font-size: 14px; color: var(--ivvy-gray-500); margin-bottom: 16px; flex: 1; list-style: disc; list-style-position: inside; }
+.cs-card__outcomes li { margin-bottom: 4px; }
 .cs-card__text { font-family: var(--font-body); font-size: 14px; color: var(--ivvy-gray-500); margin-bottom: 16px; flex: 1; }
-.cs-card__cta { font-family: var(--font-heading); font-weight: 600; font-size: 14px; color: var(--ivvy-primary); }
+.cs-card__cta { font-family: var(--font-body); font-weight: 600; font-size: 14px; color: var(--ivvy-primary); }
 
 /* Testimonial Slider */
 .testimonial-slider { max-width: 800px; margin: 0 auto; text-align: center; position: relative; min-height: 320px; }

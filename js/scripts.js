@@ -230,22 +230,26 @@ document.addEventListener('DOMContentLoaded', function() {
     // Venue Page Testimonial Slider (hotels)
     var vpSlides = document.querySelectorAll('.testimonial-slide');
     var vpDots = document.querySelectorAll('.testimonial-slider__dot');
-    var vpPrev = document.getElementById('sliderPrev');
-    var vpNext = document.getElementById('sliderNext');
     if (vpSlides.length > 1) {
       var vpCurrent = 0;
       var vpTimer;
       function showVpSlide(idx) {
         vpSlides.forEach(function(s) { s.classList.remove('testimonial-slide--active'); });
-        vpDots.forEach(function(d) { d.classList.remove('testimonial-slider__dot--active'); });
+        vpDots.forEach(function(d) {
+          d.classList.remove('testimonial-slider__dot--active');
+          d.classList.remove('testimonial-slider__dot--pill');
+          d.textContent = '';
+        });
         vpSlides[idx].classList.add('testimonial-slide--active');
-        if (vpDots[idx]) vpDots[idx].classList.add('testimonial-slider__dot--active');
+        if (vpDots[idx]) {
+          vpDots[idx].classList.add('testimonial-slider__dot--active');
+          vpDots[idx].classList.add('testimonial-slider__dot--pill');
+          vpDots[idx].textContent = vpDots[idx].dataset.company || '';
+        }
         vpCurrent = idx;
         clearInterval(vpTimer);
         vpTimer = setInterval(function() { showVpSlide((vpCurrent + 1) % vpSlides.length); }, 6000);
       }
-      if (vpPrev) vpPrev.addEventListener('click', function() { showVpSlide((vpCurrent - 1 + vpSlides.length) % vpSlides.length); });
-      if (vpNext) vpNext.addEventListener('click', function() { showVpSlide((vpCurrent + 1) % vpSlides.length); });
       vpDots.forEach(function(dot) { dot.addEventListener('click', function() { showVpSlide(parseInt(this.dataset.dot)); }); });
       vpTimer = setInterval(function() { showVpSlide((vpCurrent + 1) % vpSlides.length); }, 6000);
     }
