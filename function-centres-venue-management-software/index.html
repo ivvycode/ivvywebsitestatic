@@ -2,13 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-TBQKMCP');</script>
-  <!-- End Google Tag Manager -->
+  <!-- GTM is loaded conditionally by cookie consent -->
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
   <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
@@ -22,6 +17,7 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
   
   
@@ -1094,14 +1090,73 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="footer__copyright">© 2026 iVvy. All rights reserved.</p>
       <div class="footer__legal">
         <a href="/pdfs/POL-IT-Privacy-2025-09-25.pdf" target="_blank" class="footer__legal-link">Privacy Policy</a>
+        <button class="footer__legal-link footer__cookie-btn" id="openCookieSettings">Manage Cookies</button>
       </div>
     </div>
   </div>
 </footer>
 
 
+<div id="cookieConsent" class="cookie-consent" style="display:none;">
+  <div class="cookie-consent__inner" id="cookieMain">
+    <h3 class="cookie-consent__title">We value your privacy</h3>
+    <p class="cookie-consent__text">
+      We use cookies to enhance your browsing experience, serve personalised content, and analyse our traffic. 
+      You can choose which cookies you allow.
+      <a href="/pdfs/POL-IT-Privacy-2025-09-25.pdf" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+    </p>
+    <div class="cookie-consent__actions">
+      <button class="cookie-consent__btn cookie-consent__btn--primary" id="cookieAcceptAll">Accept All</button>
+      <button class="cookie-consent__btn cookie-consent__btn--secondary" id="cookieDeclineAll">Decline All</button>
+      <button class="cookie-consent__btn cookie-consent__btn--outline" id="cookieManage">Manage Preferences</button>
+    </div>
+  </div>
+  <div class="cookie-consent__inner cookie-consent__prefs" id="cookiePrefs" style="display:none;">
+    <h3 class="cookie-consent__title">Cookie Preferences</h3>
+    <div class="cookie-consent__categories">
+      <div class="cookie-consent__cat">
+        <div>
+          <p class="cookie-consent__cat-label">Essential</p>
+          <p class="cookie-consent__cat-desc">Required for the website to function. Cannot be disabled.</p>
+        </div>
+        <label class="cookie-toggle">
+          <input type="checkbox" checked disabled>
+          <span class="cookie-toggle__slider cookie-toggle__slider--locked"></span>
+        </label>
+      </div>
+      <div class="cookie-consent__cat">
+        <div>
+          <p class="cookie-consent__cat-label">Analytics</p>
+          <p class="cookie-consent__cat-desc">Help us understand how visitors interact with our website via Google Analytics and Tag Manager.</p>
+        </div>
+        <label class="cookie-toggle">
+          <input type="checkbox" id="cookiePrefAnalytics">
+          <span class="cookie-toggle__slider"></span>
+        </label>
+      </div>
+      <div class="cookie-consent__cat">
+        <div>
+          <p class="cookie-consent__cat-label">Marketing</p>
+          <p class="cookie-consent__cat-desc">Used to deliver relevant advertisements and track campaign performance.</p>
+        </div>
+        <label class="cookie-toggle">
+          <input type="checkbox" id="cookiePrefMarketing">
+          <span class="cookie-toggle__slider"></span>
+        </label>
+      </div>
+    </div>
+    <div class="cookie-consent__actions">
+      <button class="cookie-consent__btn cookie-consent__btn--primary" id="cookieSavePrefs">Save Preferences</button>
+      <button class="cookie-consent__btn cookie-consent__btn--secondary" id="cookiePrefsAcceptAll">Accept All</button>
+      <button class="cookie-consent__btn cookie-consent__btn--outline" id="cookiePrefsCancel">Cancel</button>
+    </div>
+  </div>
+</div>
+
+
 
 <script src="/assets/js/scripts.js" defer></script>
+<script src="/assets/js/cookie-consent.js" defer></script>
 
 
 <script type="application/ld+json">
