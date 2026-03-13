@@ -3867,17 +3867,12 @@ ul, ol {
 }
 
 .cs-stat__value {
-  font-size: 36px;
+  font-size: 30px;
+  line-height: 1.25;
   font-weight: 700;
   color: var(--ivvy-primary);
   font-family: var(--font-heading);
   margin-bottom: 4px;
-}
-
-@media (min-width: 1024px) {
-  .cs-stat__value {
-    font-size: 48px;
-  }
 }
 
 .cs-stat__label {
@@ -6067,7 +6062,7 @@ ul, ol {
 .cs-card__image { aspect-ratio: 4/3; overflow: hidden; }
 .cs-card__image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
 .cs-card__body { padding: 20px; display: flex; flex-direction: column; flex: 1; }
-.cs-card__logo-wrap { height: 32px; margin-bottom: 8px; }
+.cs-card__logo-wrap { height: 40px; margin-bottom: 8px; }
 .cs-card__logo-wrap img { height: 100%; width: auto; max-width: 120px; object-fit: contain; object-position: left; display: block; }
 .cs-card__name { font-family: var(--font-feature); font-weight: 700; font-size: 14px; color: var(--ivvy-dark-surface); margin-bottom: 8px; }
 .cs-card__outcomes { font-family: var(--font-body); font-size: 14px; color: var(--ivvy-gray-500); margin-bottom: 16px; flex: 1; list-style: disc; list-style-position: inside; }
@@ -6084,7 +6079,7 @@ ul, ol {
 .testimonial-slider__arrow { background: none; border: none; color: var(--ivvy-primary); cursor: pointer; padding: 4px; transition: transform 0.2s ease; }
 .testimonial-slider__arrow:hover { transform: scale(1.1); color: rgba(153, 204, 82, 0.6); }
 .testimonial-slider__dots { display: flex; gap: 8px; }
-.testimonial-slider__dot { width: 44px; height: 44px; padding: 18px; border-radius: 50%; background: var(--ivvy-primary); border: none; cursor: pointer; opacity: 0.3; transition: opacity 0.3s ease; background-clip: content-box; }
+.testimonial-slider__dot { width: 44px; height: 44px; padding: 18px; border-radius: 50%; background: var(--ivvy-gray-500); border: none; cursor: pointer; opacity: 0.4; transition: opacity 0.3s ease; background-clip: content-box; }
 .testimonial-slider__dot--active { opacity: 1; }
 .testimonial-slider__dot--pill { width: auto; height: auto; padding: 8px 16px; border-radius: 9999px; background: var(--ivvy-primary); color: #fff; font-family: var(--font-heading); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 1; background-clip: border-box; }
 
