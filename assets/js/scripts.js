@@ -30,14 +30,20 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // ==========================================================================
-  // Parallax Effect for Hero
+  // Parallax Effect for Hero (throttled to reduce main-thread work)
   // ==========================================================================
   const heroImage = document.querySelector('.hero__bg-image');
 
   if (heroImage) {
+    var ticking = false;
     window.addEventListener('scroll', function() {
-      const scrolled = window.pageYOffset;
-      heroImage.style.transform = 'translateY(' + (scrolled * 0.3) + 'px)';
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(function() {
+          heroImage.style.transform = 'translateY(' + (window.pageYOffset * 0.3) + 'px)';
+          ticking = false;
+        });
+      }
     }, { passive: true });
   }
 
@@ -136,55 +142,12 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
 
-    // Trust Logos - ensure auto-scroll runs (with JS fallback if CSS animation is unavailable)
+    // Trust Logos - pause on hover (CSS animation handles scrolling)
     var trustLogoTracks = document.querySelectorAll('.trust-logos__track');
-    if (trustLogoTracks.length > 0) {
-      trustLogoTracks.forEach(function(track) {
-        track.style.willChange = 'transform';
-
-        var computed = window.getComputedStyle(track);
-        var hasCssAnimation = computed.animationName && computed.animationName !== 'none';
-
-        if (hasCssAnimation) {
-          track.style.animationPlayState = 'running';
-          track.addEventListener('mouseenter', function() { track.style.animationPlayState = 'paused'; });
-          track.addEventListener('mouseleave', function() { track.style.animationPlayState = 'running'; });
-          return;
-        }
-
-        var offset = 0;
-        var speed = 0.35;
-        var rafId = null;
-
-        function loop() {
-          var halfWidth = track.scrollWidth / 2;
-          if (halfWidth <= 0) {
-            rafId = requestAnimationFrame(loop);
-            return;
-          }
-
-          offset -= speed;
-          if (Math.abs(offset) >= halfWidth) offset = 0;
-          track.style.transform = 'translateX(' + offset + 'px)';
-          rafId = requestAnimationFrame(loop);
-        }
-
-        function pauseFallback() {
-          if (rafId) {
-            cancelAnimationFrame(rafId);
-            rafId = null;
-          }
-        }
-
-        function resumeFallback() {
-          if (!rafId) rafId = requestAnimationFrame(loop);
-        }
-
-        resumeFallback();
-        track.addEventListener('mouseenter', pauseFallback);
-        track.addEventListener('mouseleave', resumeFallback);
-      });
-    }
+    trustLogoTracks.forEach(function(track) {
+      track.addEventListener('mouseenter', function() { track.style.animationPlayState = 'paused'; });
+      track.addEventListener('mouseleave', function() { track.style.animationPlayState = 'running'; });
+    });
 
     // Venue Card Slider Navigation - scroll one card at a time (matches React Embla carousel)
     var venueSlider = document.querySelector('.venue-types__slider');
