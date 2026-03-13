@@ -2,8 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <!-- GTM is loaded conditionally by cookie consent -->
-  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
   <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
@@ -12,22 +10,22 @@
 
   
   <meta name="theme-color" content="#99CC52">
-  <meta name="apple-mobile-web-app-capable" content="yes">
 
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
   
   
   
-  
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;700&family=Poppins:wght@600;700;800&family=Nunito:wght@400;600;700&display=swap" as="style" crossorigin="anonymous">
 
   
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;700&family=Poppins:wght@600;700;800&family=Nunito:wght@400;600;700&display=swap" media="print" onload="this.media='all'" crossorigin="anonymous">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;700&family=Poppins:wght@600;700;800&family=Nunito:wght@400;600;700&display=swap" crossorigin="anonymous"></noscript>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" as="style" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" media="print" onload="this.media='all'" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;700&family=Poppins:wght@600;700&family=Nunito:wght@400;600;700&display=swap" media="print" onload="this.media='all'" crossorigin="anonymous">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;700&family=Poppins:wght@600;700;800&family=Nunito:wght@400;600;700&display=swap" crossorigin="anonymous">
+  </noscript>
 
   
   <meta property="og:title" content="The Athenaeum Case Study | iVvy">
@@ -128,7 +126,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="header__inner">
       <div class="header__left">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.png" alt="iVvy" width="120" height="32">
+          <img src="/assets/images/ivvy-logo-venues.png" alt="iVvy" width="120" height="32" fetchpriority="high">
         </a>
         <nav class="nav">
           
@@ -674,7 +672,6 @@ window.addEventListener('scroll', function() {
 
 
 <script src="/assets/js/scripts.js" defer></script>
-<script src="/assets/js/cookie-consent.js" defer></script>
 
 
 <script type="application/ld+json">
@@ -712,9 +709,6 @@ window.addEventListener('scroll', function() {
   ]
 }
 </script>
-
-
-
 
 
 
