@@ -14,6 +14,7 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://i.ytimg.com" crossorigin>
 
   
   
@@ -47,10 +48,13 @@
 
   
   <style>
+@font-face{font-family:'Poppins Fallback';src:local('Arial');size-adjust:60.85%;ascent-override:164.34%;descent-override:57.52%;line-gap-override:16.43%}
+@font-face{font-family:'Nunito Fallback';src:local('Arial');size-adjust:100.86%;ascent-override:99.49%;descent-override:34.82%;line-gap-override:0%}
+@font-face{font-family:'Nunito Sans Fallback';src:local('Arial');size-adjust:100.44%;ascent-override:100.07%;descent-override:34.53%;line-gap-override:0%}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'Nunito',sans-serif;color:#666666;background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased}
-h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif;font-weight:700;line-height:1.2;letter-spacing:-0.02em;color:#103620}
+html{}
+body{font-family:'Nunito','Nunito Fallback',sans-serif;color:#666666;background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,h5,h6{font-family:'Poppins','Poppins Fallback',sans-serif;font-weight:700;line-height:1.2;letter-spacing:-0.02em;color:#103620}
 h1,h2,h3{font-weight:800!important}
 h1{line-height:1.1!important}
 h2{font-weight:700}h3{font-weight:600}
@@ -67,14 +71,14 @@ ul,ol{list-style:none}
 .header__logo img{height:32px;width:auto}
 .nav{display:none}@media(min-width:1024px){.nav{display:flex;align-items:center;gap:0;margin-left:24px}}
 .nav__item{position:relative}
-.nav__link{display:flex;align-items:center;gap:4px;height:40px;padding:8px 24px;font-family:'Nunito Sans',sans-serif;font-size:14px;font-weight:500;color:#757575;border-radius:0;background:none;border:none;text-transform:none;letter-spacing:normal}
+.nav__link{display:flex;align-items:center;gap:4px;height:40px;padding:8px 24px;font-family:'Nunito Sans','Nunito Sans Fallback',sans-serif;font-size:14px;font-weight:500;color:#757575;border-radius:0;background:none;border:none;text-transform:none;letter-spacing:normal}
 .header__cta{display:none}@media(min-width:1024px){.header__cta{display:flex;align-items:center;gap:16px}}
-.header__login{font-family:'Nunito',sans-serif;font-size:14px;font-weight:600;color:#757575;background:none;border:none;display:flex;align-items:center;gap:4px}
+.header__login{font-family:'Nunito','Nunito Fallback',sans-serif;font-size:14px;font-weight:600;color:#757575;background:none;border:none;display:flex;align-items:center;gap:4px}
 .mobile-toggle{display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:none;border:none;color:#103620}
 @media(min-width:1024px){.mobile-toggle{display:none}}
 .mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:#fff;z-index:99;padding:24px 16px;overflow-y:auto}
 .mobile-menu.active{display:block}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:8px 24px;font-family:'Nunito',sans-serif;font-size:14px;font-weight:700;border-radius:9999px;border:none;cursor:pointer;position:relative;overflow:hidden;isolation:isolate;text-transform:uppercase;letter-spacing:0.05em}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:8px 24px;font-family:'Nunito','Nunito Fallback',sans-serif;font-size:14px;font-weight:700;border-radius:9999px;border:none;cursor:pointer;position:relative;overflow:hidden;isolation:isolate;text-transform:uppercase;letter-spacing:0.05em}
 .btn--primary{background:#99CC52;color:#103620}
 .btn--nav-cta{background:#99CC52;color:#fff}
 .btn--lg{height:48px;padding:8px 32px;font-size:16px}
@@ -95,7 +99,7 @@ ul,ol{list-style:none}
 .hero-mesh{position:relative;overflow:hidden;padding-top:64px}
 .hero-mesh__bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 20% 80%,hsla(85,54%,56%,0.25) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 80% 20%,hsla(45,80%,65%,0.2) 0%,transparent 50%),radial-gradient(ellipse 90% 70% at 50% 50%,hsla(82,62%,44%,0.08) 0%,transparent 70%),linear-gradient(160deg,hsl(60,20%,96%) 0%,hsl(80,25%,94%) 30%,hsl(45,30%,95%) 60%,hsl(60,15%,97%) 100%)}
 .hero-mesh__content{position:relative;z-index:10;text-align:center;display:flex;flex-direction:column;align-items:center;max-width:768px;margin:0 auto}
-.hero-mesh__pill{display:inline-flex;align-items:center;padding:6px 16px;border-radius:9999px;background:rgba(153,204,82,0.15);font-size:13px;font-weight:700;font-family:'Nunito',sans-serif;text-transform:uppercase;letter-spacing:0.05em;color:#103620;margin-bottom:24px}
+.hero-mesh__pill{display:inline-flex;align-items:center;padding:6px 16px;border-radius:9999px;background:rgba(153,204,82,0.15);font-size:13px;font-weight:700;font-family:'Nunito','Nunito Fallback',sans-serif;text-transform:uppercase;letter-spacing:0.05em;color:#103620;margin-bottom:24px}
 .hero-mesh__title{font-size:32px;font-weight:800;color:#103620;margin-bottom:24px;line-height:1.2}
 @media(min-width:768px){.hero-mesh__title{font-size:40px}}
 @media(min-width:1024px){.hero-mesh{padding-top:96px}.hero-mesh__title{font-size:60px}}
@@ -103,7 +107,7 @@ ul,ol{list-style:none}
 .hero-mesh__title-highlight{background:linear-gradient(135deg,hsl(85,54%,56%),hsl(82,62%,44%));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;line-height:1.3;padding-bottom:0.05em;transition:opacity 0.3s ease,transform 0.3s ease}
 .hero-mesh__image-wrapper{position:relative;z-index:10;margin-top:64px;padding:0 16px}
 @media(min-width:1024px){.hero-mesh__image-wrapper{margin-top:96px;padding:0 32px}}
-.hero-mesh__image{width:100%;height:auto;filter:drop-shadow(0 25px 25px rgba(0,0,0,0.15))}
+.hero-mesh__image{width:100%;height:auto;box-shadow:0 25px 50px -12px rgba(0,0,0,0.15)}
 .trust-logos{padding:48px 0 80px;background:hsla(0,0%,96%,0.3);overflow:hidden}
 @media(min-width:1024px){.trust-logos{padding:56px 0 96px}}
 .trust-logos__title{text-align:center;font-size:24px;font-weight:800;color:#103620;margin-bottom:8px}
@@ -141,11 +145,28 @@ ul,ol{list-style:none}
 .page-hero--split .page-hero__image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .section{padding:80px 0}
 @media(min-width:1024px){.section{padding:112px 0}}
+.section-pill{display:inline-flex;align-items:center;padding:4px 12px;border-radius:9999px;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;font-family:'Nunito','Nunito Fallback',sans-serif;background:rgba(153,204,82,0.10);color:#103620;margin-bottom:12px}
+.intro{padding:80px 0;background:#fff}
+@media(min-width:1024px){.intro{padding:112px 0}}
+.intro__inner{margin:0 auto;text-align:center}
+.intro__title{font-size:30px;font-weight:700;color:#103620;line-height:1.15;margin-bottom:32px}
+@media(min-width:1024px){.intro__title{font-size:44px}}
+.intro__title-gradient{background:linear-gradient(135deg,#99CC52,hsl(82 62% 44%));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.intro__text{font-size:16px;color:#666666;line-height:1.8;max-width:800px;margin:0 auto}
+@media(min-width:1024px){.intro__text{font-size:18px}}
+.intro__text p+p{margin-top:20px}
+.venue-card__image{width:100%;height:100%;object-fit:cover;aspect-ratio:5/4}
 </style>
 
   
   <link rel="stylesheet" href="/assets/css/styles.css" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="/assets/css/styles.css"></noscript>
+  
+  <link rel="stylesheet" href="/assets/css/styles-pages.css" media="print" onload="this.media='all'">
+  
+  <noscript>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/styles-pages.css">
+  </noscript>
 
   
   
@@ -161,7 +182,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="header__inner">
       <div class="header__left">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.png" alt="iVvy" width="120" height="32" fetchpriority="high">
+          <img src="/assets/images/ivvy-logo.svg" alt="iVvy" width="120" height="32" fetchpriority="high">
         </a>
         <nav class="nav">
           
@@ -567,7 +588,7 @@ window.addEventListener('scroll', function() {
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.png" alt="iVvy" class="footer__logo" width="120" height="40">
+        <img src="/assets/images/ivvy-logo.svg" alt="iVvy" class="footer__logo" width="120" height="40">
         <p class="footer__tagline">Event and venue management software that feels like an extra team member.</p>
         <div class="footer__social">
           <a href="https://www.linkedin.com/company/ivvy/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
@@ -766,7 +787,28 @@ window.addEventListener('scroll', function() {
       "name": "Tilley &amp;amp; Wills Case Study | iVvy",
       "description": "Now save 20+ hours a week on admin. Read how Tilley &amp;amp; Wills improved operations with iVvy venue management software.",
       "url": "https://www.ivvy.com/customers/tilley-wills/",
-      "isPartOf": { "@id": "https://www.ivvy.com/#website" }
+      "isPartOf": { "@id": "https://www.ivvy.com/#website" },
+      "breadcrumb": { "@id": "https://www.ivvy.com/customers/tilley-wills/#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.ivvy.com/customers/tilley-wills/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.ivvy.com/"
+        }
+        
+        ,{
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tilley &amp;amp; Wills Case Study | iVvy",
+          "item": "https://www.ivvy.com/customers/tilley-wills/"
+        }
+        
+      ]
     }
     
   ]
