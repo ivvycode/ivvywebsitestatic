@@ -1,6 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 35" fill="none">
-  <text x="0" y="28" font-family="Nunito, sans-serif" font-size="32" font-weight="700" fill="#77b72a">
-    <tspan>i</tspan>
-    <tspan font-weight="800">Vvy</tspan>
-  </text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" fill="none">
+  <!-- "i" with dot -->
+  <circle cx="8" cy="8" r="3.5" fill="#77b72a"/>
+  <rect x="4.5" y="14" width="7" height="20" rx="1" fill="#77b72a"/>
+  <!-- V -->
+  <path d="M20 14 L30 34 L40 14" stroke="#77b72a" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- v -->
+  <path d="M44 18 L52 34 L60 18" stroke="#77b72a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- y -->
+  <path d="M64 18 L72 34 L80 18" stroke="#77b72a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M72 34 L67 44" stroke="#77b72a" stroke-width="6" stroke-linecap="round" fill="none"/>
 </svg>
