@@ -273,8 +273,20 @@
         if (!card) return 374;
         return card.offsetWidth + (parseInt(getComputedStyle(slider).gap) || 24);
       }
-      prev.addEventListener('click', function() { slider.scrollBy({ left: -scrollAmt(), behavior: 'smooth' }); });
-      next.addEventListener('click', function() { slider.scrollBy({ left: scrollAmt(), behavior: 'smooth' }); });
+      prev.addEventListener('click', function() {
+        if (slider.scrollLeft <= 0) {
+          slider.scrollTo({ left: slider.scrollWidth - slider.clientWidth, behavior: 'smooth' });
+        } else {
+          slider.scrollBy({ left: -scrollAmt(), behavior: 'smooth' });
+        }
+      });
+      next.addEventListener('click', function() {
+        if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 2) {
+          slider.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          slider.scrollBy({ left: scrollAmt(), behavior: 'smooth' });
+        }
+      });
     }
 
     // Testimonial slider (homepage)
