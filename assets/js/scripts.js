@@ -11,26 +11,73 @@
   // ==========================================================================
   var STORAGE_KEY = 'ivvy_cookie_consent';
   var banner = document.getElementById('cookieConsent');
+  var trackingLoadScheduled = false;
+  var trackingLoaded = false;
+  var trackingDelayTimer = null;
 
   function getPrefs() {
     try { var s = localStorage.getItem(STORAGE_KEY); return s ? JSON.parse(s) : null; }
     catch(e) { return null; }
   }
 
-  function loadGTM() {
-    if (document.querySelector('script[src*="googletagmanager.com/gtm.js"]')) return;
+  function loadScriptOnce(src) {
+    if (document.querySelector('script[src="' + src + '"]')) return;
     var s = document.createElement('script');
     s.async = true;
-    s.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-TBQKMCP';
+    s.src = src;
     document.head.appendChild(s);
+  }
+
+  function hasTrackingConsent(prefs) {
+    return !!(prefs && (prefs.analytics || prefs.marketing));
+  }
+
+  function loadGTM() {
+    if (trackingLoaded) return;
+    trackingLoaded = true;
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+    loadScriptOnce('https://www.googletagmanager.com/gtm.js?id=GTM-TBQKMCP');
+  }
+
+  function scheduleTrackingLoad(prefs) {
+    if (!hasTrackingConsent(prefs) || trackingLoaded || trackingLoadScheduled) return;
+
+    trackingLoadScheduled = true;
+
+    var interactionEvents = ['pointerdown', 'keydown', 'touchstart'];
+
+    function clearTrackingListeners() {
+      interactionEvents.forEach(function(eventName) {
+        window.removeEventListener(eventName, onFirstInteraction, { passive: true });
+      });
+      if (trackingDelayTimer) {
+        clearTimeout(trackingDelayTimer);
+        trackingDelayTimer = null;
+      }
+    }
+
+    function onFirstInteraction() {
+      clearTrackingListeners();
+      trackingLoadScheduled = false;
+      loadGTM();
+    }
+
+    interactionEvents.forEach(function(eventName) {
+      window.addEventListener(eventName, onFirstInteraction, { once: true, passive: true });
+    });
+
+    trackingDelayTimer = setTimeout(function() {
+      clearTrackingListeners();
+      trackingLoadScheduled = false;
+      loadGTM();
+    }, 10000);
   }
 
   function savePrefs(prefs) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(prefs));
     if (banner) banner.style.display = 'none';
-    if (prefs.analytics || prefs.marketing) loadGTM();
+    scheduleTrackingLoad(prefs);
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({ event: 'cookie_consent_update', cookie_consent_analytics: prefs.analytics, cookie_consent_marketing: prefs.marketing });
   }
@@ -38,7 +85,7 @@
   // Check consent immediately (no DOMContentLoaded needed for localStorage)
   var stored = getPrefs();
   if (stored) {
-    if (stored.analytics || stored.marketing) loadGTM();
+    scheduleTrackingLoad(stored);
   } else if (banner) {
     banner.style.display = '';
   }
