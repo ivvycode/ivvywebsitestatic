@@ -191,25 +191,12 @@
   }
 
   // ==========================================================================
-  // Hero Rotating Words
+  // Hero Rotating Words (removed — headline is now static)
   // ==========================================================================
   function initRotatingWords() {
-    var words = ['increase conversions', 'make decisions', 'get more done, faster'];
-    var idx = 0;
-    var el = document.querySelector('.hero__title-highlight') || document.querySelector('.hero-mesh__title-highlight');
-    if (!el) return;
-
-    setInterval(function() {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(10px)';
-      setTimeout(function() {
-        idx = (idx + 1) % words.length;
-        el.textContent = words[idx];
-        el.style.opacity = '1';
-        el.style.transform = 'translateY(0)';
-      }, 300);
-    }, 3000);
+    // No-op: rotating text removed in favour of static headline
   }
+
 
   // ==========================================================================
   // Parallax (throttled)
