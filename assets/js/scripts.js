@@ -392,3 +392,15 @@
     }
   });
 })();
+
+// Agent tab switcher
+function switchAgentTab(id) {
+  document.querySelectorAll('.agent-tab').forEach(function(btn) {
+    btn.classList.toggle('agent-tab--active', btn.getAttribute('data-agent') === id);
+  });
+  document.querySelectorAll('.agent-panel').forEach(function(panel) {
+    var isActive = panel.id === 'agent-' + id;
+    panel.style.display = isActive ? '' : 'none';
+    panel.classList.toggle('agent-panel--active', isActive);
+  });
+}
