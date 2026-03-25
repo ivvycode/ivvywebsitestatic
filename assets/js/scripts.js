@@ -415,7 +415,7 @@ function switchAgentTab(id) {
     els.forEach(function(el) {
       var rect = el.getBoundingClientRect();
       var start = window.innerHeight - 150;
-      var end = window.innerHeight * 0.3;
+      var end = window.innerHeight * 0.66;
       var range = start - end;
       if (range <= 0) return;
       var p = Math.min(1, Math.max(0, (start - rect.top) / range));
