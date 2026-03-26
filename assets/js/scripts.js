@@ -291,6 +291,7 @@
       }
       window.addEventListener('scroll', updateScrollColors, { passive: true });
       updateScrollColors();
+    }
 
     // Integration filter
     var catBtns = document.querySelectorAll('.category-btn');
@@ -399,6 +400,7 @@
       if (prevArrow) prevArrow.addEventListener('click', function() { showImg((imgIdx - 1 + imgSlides.length) % imgSlides.length); });
       if (nextArrow) nextArrow.addEventListener('click', function() { showImg((imgIdx + 1) % imgSlides.length); });
       imgTimer = setInterval(function() { showImg((imgIdx + 1) % imgSlides.length); }, 6000);
+    }
 
     // Venue page testimonial slider
     var vpSlides = document.querySelectorAll('.testimonial-slide');
