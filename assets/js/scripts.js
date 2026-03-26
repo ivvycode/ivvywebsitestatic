@@ -273,7 +273,9 @@
           var r = Math.round(from[0] + (PRIMARY[0] - from[0]) * p);
           var g = Math.round(from[1] + (PRIMARY[1] - from[1]) * p);
           var b = Math.round(from[2] + (PRIMARY[2] - from[2]) * p);
-          el.style.color = 'rgb(' + r + ',' + g + ',' + b + ')';
+          var colorVal = 'rgb(' + r + ',' + g + ',' + b + ')';
+          el.style.setProperty('color', colorVal, 'important');
+          el.style.setProperty('-webkit-text-fill-color', colorVal, 'important');
           if (el.classList.contains('scroll-color-text--underline')) {
             var underlineEl = el.querySelector('.scroll-color-underline');
             if (!underlineEl) {
@@ -291,6 +293,23 @@
       }
       window.addEventListener('scroll', updateScrollColors, { passive: true });
       updateScrollColors();
+    }
+
+    // Product Suite card scroll-reveal animation
+    var productCards = document.querySelectorAll('.product-suite__card');
+    if (productCards.length) {
+      var pcObs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            var cards = entry.target.parentElement.querySelectorAll('.product-suite__card');
+            cards.forEach(function(card, i) {
+              setTimeout(function() { card.classList.add('animate-visible'); }, i * 60);
+            });
+            pcObs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08 });
+      if (productCards[0]) pcObs.observe(productCards[0]);
     }
 
     // Integration filter
@@ -409,9 +428,9 @@
       var vpIdx = 0, vpTimer;
       function showVp(i) {
         vpSlides.forEach(function(s) { s.classList.remove('testimonial-slide--active'); });
-        vpDots.forEach(function(d) { d.classList.remove('testimonial-slider__dot--active', 'testimonial-slider__dot--pill'); d.textContent = ''; });
+        vpDots.forEach(function(d) { d.classList.remove('testimonial-slider__dot--active'); });
         vpSlides[i].classList.add('testimonial-slide--active');
-        if (vpDots[i]) { vpDots[i].classList.add('testimonial-slider__dot--active', 'testimonial-slider__dot--pill'); vpDots[i].textContent = vpDots[i].dataset.company || ''; }
+        if (vpDots[i]) { vpDots[i].classList.add('testimonial-slider__dot--active'); }
         vpIdx = i;
         clearInterval(vpTimer);
         vpTimer = setInterval(function() { showVp((vpIdx + 1) % vpSlides.length); }, 6000);

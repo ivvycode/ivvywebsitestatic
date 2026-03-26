@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png?v=c13ee8d764">
-  <link rel="apple-touch-icon" href="/assets/images/favicon.png?v=c13ee8d764">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png?v=96b326898a">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png?v=96b326898a">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Request a Demo | Event Management Software | iVvy</title>
   <meta name="description" content="Book a free demo of iVvy event and venue management software. See how to boost bookings by 25%, cut admin time, and gain real-time business visibility.">
@@ -160,13 +160,13 @@ ul,ol{list-style:none}
 </style>
 
   
-  <link rel="stylesheet" href="/assets/css/styles.css?v=c13ee8d764" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/assets/css/styles.css?v=96b326898a" media="print" onload="this.media='all'">
   
-  <link rel="stylesheet" href="/assets/css/styles-pages.css?v=c13ee8d764" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/assets/css/styles-pages.css?v=96b326898a" media="print" onload="this.media='all'">
   
   <noscript>
-    <link rel="stylesheet" href="/assets/css/styles.css?v=c13ee8d764">
-    <link rel="stylesheet" href="/assets/css/styles-pages.css?v=c13ee8d764">
+    <link rel="stylesheet" href="/assets/css/styles.css?v=96b326898a">
+    <link rel="stylesheet" href="/assets/css/styles-pages.css?v=96b326898a">
   </noscript>
 
   
@@ -179,7 +179,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__left">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=c13ee8d764" alt="iVvy" width="120" height="32" fetchpriority="high">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=96b326898a" alt="iVvy" width="120" height="32" fetchpriority="high">
         </a>
         <nav class="nav">
           
@@ -279,9 +279,9 @@ ul,ol{list-style:none}
           <button class="header__login login-dropdown__trigger">Log in <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
           <div class="login-dropdown__menu">
             <div class="login-dropdown__menu-inner">
-              <a href="https://www.ivvy.com.au/accounts/login" target="_blank" class="login-dropdown__item" rel="noopener noreferrer">Log in (APAC)</a>
-              <a href="https://www.ivvy.co.uk/accounts/login" target="_blank" class="login-dropdown__item" rel="noopener noreferrer">Log in (UK & EU)</a>
-              <a href="https://www.ivvy.com/accounts/login" target="_blank" class="login-dropdown__item" rel="noopener noreferrer">Log in (US & NA)</a>
+              <a href="https://www.ivvy.com.au/accounts/login" target="_blank" class="login-dropdown__item" rel="noopener noreferrer">APAC</a>
+              <a href="https://www.ivvy.co.uk/accounts/login" target="_blank" class="login-dropdown__item" rel="noopener noreferrer">UK & EU</a>
+              <a href="https://www.ivvy.com/accounts/login" target="_blank" class="login-dropdown__item" rel="noopener noreferrer">US & NA</a>
             </div>
           </div>
         </div>
@@ -448,7 +448,7 @@ ul,ol{list-style:none}
           <p class="testimonial-banner__author">Shahnaz Bakhshay</p>
           
           
-          <p class="testimonial-banner__title">Global Sales Officer</p>
+          <p class="testimonial-banner__company">Global Sales Officer, TFE Hotels</p>
           
         </div>
       </div>
@@ -462,7 +462,7 @@ ul,ol{list-style:none}
           <p class="testimonial-banner__author">Rosie King</p>
           
           
-          <p class="testimonial-banner__title">IT Project Coordinator</p>
+          <p class="testimonial-banner__company">IT Project Coordinator, Goodwood Estate</p>
           
         </div>
       </div>
@@ -476,7 +476,7 @@ ul,ol{list-style:none}
           <p class="testimonial-banner__author">Andi Newcomer</p>
           
           
-          <p class="testimonial-banner__title">Event Centre Manager</p>
+          <p class="testimonial-banner__company">Event Centre Manager, Best Western Boulder Falls Inn</p>
           
         </div>
       </div>
@@ -484,11 +484,11 @@ ul,ol{list-style:none}
       <div class="testimonial-slider__controls">
         <div class="testimonial-slider__dots" id="demoSliderDots">
           
-          <button class="testimonial-slider__dot testimonial-slider__dot--active testimonial-slider__dot--pill" data-dot="0" data-company="TFE Hotels" aria-label="Go to testimonial 1">TFE Hotels</button>
+          <button class="testimonial-slider__dot testimonial-slider__dot--active" data-dot="0" aria-label="Go to testimonial 1"></button>
           
-          <button class="testimonial-slider__dot" data-dot="1" data-company="Goodwood Estate" aria-label="Go to testimonial 2"></button>
+          <button class="testimonial-slider__dot" data-dot="1" aria-label="Go to testimonial 2"></button>
           
-          <button class="testimonial-slider__dot" data-dot="2" data-company="Best Western Boulder Falls Inn" aria-label="Go to testimonial 3"></button>
+          <button class="testimonial-slider__dot" data-dot="2" aria-label="Go to testimonial 3"></button>
           
         </div>
       </div>
@@ -507,13 +507,7 @@ ul,ol{list-style:none}
       s.classList.toggle('testimonial-slide--active', i === idx);
     });
     dots.forEach(function(d, i) {
-      if (i === idx) {
-        d.classList.add('testimonial-slider__dot--active', 'testimonial-slider__dot--pill');
-        d.textContent = d.dataset.company;
-      } else {
-        d.classList.remove('testimonial-slider__dot--active', 'testimonial-slider__dot--pill');
-        d.textContent = '';
-      }
+      d.classList.toggle('testimonial-slider__dot--active', i === idx);
     });
     current = idx;
   }
@@ -528,11 +522,18 @@ ul,ol{list-style:none}
   <div style="position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 20% 80%,hsla(85,54%,56%,0.25) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 80% 20%,hsla(45,80%,65%,0.2) 0%,transparent 50%),radial-gradient(ellipse 90% 70% at 50% 50%,hsla(82,62%,44%,0.08) 0%,transparent 70%),linear-gradient(160deg,hsl(60,20%,96%) 0%,hsl(80,25%,94%) 30%,hsl(45,30%,95%) 60%,hsl(60,15%,97%) 100%);"></div>
   <div class="container" style="position:relative;z-index:10;">
     <div style="text-align:center;margin-bottom:32px;position:relative;z-index:10;"><span class="section-pill">Trusted by thousands of venues</span></div>
-    <div class="badges-row">
-      <img src="/assets/images/badges/g2-leader.png?v=c13ee8d764" alt="G2 Leader" width="80" height="100" loading="lazy">
-      <img src="/assets/images/badges/g2-support.png?v=c13ee8d764" alt="G2 Best Support" width="80" height="100" loading="lazy">
-      <img src="/assets/images/badges/g2-implementable.png?v=c13ee8d764" alt="G2 Most Implementable" width="80" height="100" loading="lazy">
-      <img src="/assets/images/badges/g2-easiest.png?v=c13ee8d764" alt="G2 Easiest to Use" width="80" height="100" loading="lazy">
+    <div class="g2-awards__badges">
+      <img src="/assets/images/badges/g2-spring-2026/g2-spring-2026-leader.png?v=96b326898a" alt="G2 Spring 2026 Leader" loading="lazy" width="120" height="140">
+      <img src="/assets/images/badges/g2-spring-2026/g2-spring-2026-momentum-leader.png?v=96b326898a" alt="G2 Spring 2026 Momentum Leader" loading="lazy" width="120" height="140">
+      <img src="/assets/images/badges/g2-spring-2026/g2-spring-2026-high-performer.png?v=96b326898a" alt="G2 Spring 2026 High Performer Mid-Market" loading="lazy" width="120" height="140">
+      <img src="/assets/images/badges/g2-spring-2026/g2-spring-2026-most-implementable.png?v=96b326898a" alt="G2 Spring 2026 Most Implementable Mid-Market" loading="lazy" width="120" height="140">
+      <img src="/assets/images/badges/g2-spring-2026/g2-spring-2026-easiest-to-use.png?v=96b326898a" alt="G2 Spring 2026 Easiest To Use Mid-Market" loading="lazy" width="120" height="140">
+      <img src="/assets/images/badges/g2-spring-2026/g2-spring-2026-easiest-business.png?v=96b326898a" alt="G2 Spring 2026 Easiest To Do Business With Mid-Market" loading="lazy" width="120" height="140">
+      <img src="/assets/images/badges/g2-spring-2026/g2-spring-2026-easiest-admin.png?v=96b326898a" alt="G2 Spring 2026 Easiest Admin Mid-Market" loading="lazy" width="120" height="140">
+      <img src="/assets/images/badges/g2-spring-2026/g2-spring-2026-best-usability.png?v=96b326898a" alt="G2 Spring 2026 Best Usability Mid-Market" loading="lazy" width="120" height="140">
+      <img src="/assets/images/badges/g2-spring-2026/g2-spring-2026-best-support.png?v=96b326898a" alt="G2 Spring 2026 Best Support Mid-Market" loading="lazy" width="120" height="140">
+      <img src="/assets/images/badges/g2-spring-2026/g2-spring-2026-best-results.png?v=96b326898a" alt="G2 Spring 2026 Best Results Mid-Market" loading="lazy" width="120" height="140">
+      <img src="/assets/images/badges/g2-spring-2026/g2-spring-2026-best-meets-requirements.png?v=96b326898a" alt="G2 Spring 2026 Best Meets Requirements Mid-Market" loading="lazy" width="120" height="140">
     </div>
   </div>
 </section>
@@ -543,7 +544,7 @@ ul,ol{list-style:none}
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=c13ee8d764" alt="iVvy" class="footer__logo" width="120" height="40">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=96b326898a" alt="iVvy" class="footer__logo" width="120" height="40">
         <p class="footer__tagline">Event and venue management software that feels like an extra team member.</p>
         <div class="footer__social">
           <a href="https://www.linkedin.com/company/ivvy/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
@@ -710,7 +711,7 @@ ul,ol{list-style:none}
 
 
 
-<script src="/assets/js/scripts.js?v=c13ee8d764" defer></script>
+<script src="/assets/js/scripts.js?v=96b326898a" defer></script>
 
 
 <script type="application/ld+json">
