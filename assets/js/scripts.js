@@ -239,7 +239,7 @@
             obs.unobserve(el);
           }
         });
-      }, { threshold: 0.5 });
+      }, { threshold: 0.15 });
       counters.forEach(function(c) { obs.observe(c); });
     }
 
