@@ -254,6 +254,44 @@
       animEls.forEach(function(el) { el.style.opacity = '0'; sObs.observe(el); });
     }
 
+    // Scroll-color-text: animate text color from dark-green (or white) to primary green on scroll
+    var scrollColorEls = document.querySelectorAll('.scroll-color-text');
+    if (scrollColorEls.length) {
+      var DARK_GREEN = [16, 54, 32];
+      var WHITE = [255, 255, 255];
+      var PRIMARY = [153, 204, 82];
+      var OFFSET = 150;
+      function updateScrollColors() {
+        scrollColorEls.forEach(function(el) {
+          var rect = el.getBoundingClientRect();
+          var start = window.innerHeight - OFFSET;
+          var end = window.innerHeight * 0.66;
+          var range = start - end;
+          if (range <= 0) return;
+          var p = Math.min(1, Math.max(0, (start - rect.top) / range));
+          var from = el.classList.contains('scroll-color-text--from-white') ? WHITE : DARK_GREEN;
+          var r = Math.round(from[0] + (PRIMARY[0] - from[0]) * p);
+          var g = Math.round(from[1] + (PRIMARY[1] - from[1]) * p);
+          var b = Math.round(from[2] + (PRIMARY[2] - from[2]) * p);
+          el.style.color = 'rgb(' + r + ',' + g + ',' + b + ')';
+          if (el.classList.contains('scroll-color-text--underline')) {
+            var underlineEl = el.querySelector('.scroll-color-underline');
+            if (!underlineEl) {
+              underlineEl = document.createElement('span');
+              underlineEl.className = 'scroll-color-underline';
+              underlineEl.style.cssText = 'position:absolute;left:0;bottom:0;height:5px;background:var(--ivvy-primary);border-radius:9999px;transform-origin:left;width:100%;';
+              el.style.position = 'relative';
+              el.style.display = 'inline';
+              el.style.paddingBottom = '8px';
+              el.appendChild(underlineEl);
+            }
+            underlineEl.style.transform = 'scaleX(' + p + ')';
+          }
+        });
+      }
+      window.addEventListener('scroll', updateScrollColors, { passive: true });
+      updateScrollColors();
+
     // Integration filter
     var catBtns = document.querySelectorAll('.category-btn');
     var intCards = document.querySelectorAll('.integration-card');
@@ -340,6 +378,27 @@
       tNav.forEach(function(item) { item.addEventListener('click', function() { showT(parseInt(this.dataset.index)); }); });
       tTimer = setInterval(function() { showT((tIdx + 1) % tSlides.length); }, 6000);
     }
+
+    // Image-layout testimonial slider (arrows + dots)
+    var imgSlides = document.querySelectorAll('.testimonial__slide--image');
+    var tDots = document.querySelectorAll('.testimonial__dot');
+    var prevArrow = document.querySelector('.testimonial__arrow--prev');
+    var nextArrow = document.querySelector('.testimonial__arrow--next');
+    if (imgSlides.length > 1) {
+      var imgIdx = 0, imgTimer;
+      function showImg(i) {
+        imgSlides.forEach(function(s) { s.classList.remove('testimonial__slide--active'); });
+        tDots.forEach(function(d) { d.classList.remove('testimonial__dot--active'); });
+        imgSlides[i].classList.add('testimonial__slide--active');
+        if (tDots[i]) tDots[i].classList.add('testimonial__dot--active');
+        imgIdx = i;
+        clearInterval(imgTimer);
+        imgTimer = setInterval(function() { showImg((imgIdx + 1) % imgSlides.length); }, 6000);
+      }
+      tDots.forEach(function(d) { d.addEventListener('click', function() { showImg(parseInt(this.dataset.index)); }); });
+      if (prevArrow) prevArrow.addEventListener('click', function() { showImg((imgIdx - 1 + imgSlides.length) % imgSlides.length); });
+      if (nextArrow) nextArrow.addEventListener('click', function() { showImg((imgIdx + 1) % imgSlides.length); });
+      imgTimer = setInterval(function() { showImg((imgIdx + 1) % imgSlides.length); }, 6000);
 
     // Venue page testimonial slider
     var vpSlides = document.querySelectorAll('.testimonial-slide');
