@@ -552,4 +552,100 @@ function switchAgentTab(id) {
       }
     });
   });
+
+  // ==========================================================================
+  // Articles Search & Filter (client-side)
+  // ==========================================================================
+  var articlesGrid = document.getElementById('articlesGrid');
+  if (articlesGrid) {
+    var searchInput = document.getElementById('articleSearch');
+    var categoryBtns = document.querySelectorAll('#categoryFilters .articles-filters__btn');
+    var tagChip = document.getElementById('tagChip');
+    var tagChipLabel = document.getElementById('tagChipLabel');
+    var tagChipClear = document.getElementById('tagChipClear');
+    var emptyState = document.getElementById('articlesEmpty');
+    var featuredHeroSection = document.querySelector('.featured-article-hero');
+    var cards = articlesGrid.querySelectorAll('.article-card');
+
+    var activeCategory = '';
+    var activeTag = '';
+    var searchTerm = '';
+
+    // Read ?tag= from URL
+    var urlParams = new URLSearchParams(window.location.search);
+    var tagParam = urlParams.get('tag');
+    if (tagParam) {
+      activeTag = tagParam.toLowerCase();
+      tagChipLabel.textContent = 'Tag: ' + tagParam;
+      tagChip.style.display = '';
+    }
+
+    // Hide the featured card from grid initially (no filters)
+    var featuredCard = articlesGrid.querySelector('[data-is-featured]');
+    if (featuredCard && !activeTag) {
+      featuredCard.style.display = 'none';
+    }
+
+    function filterArticles() {
+      var hasFilters = !!(searchTerm || activeCategory || activeTag);
+      var visible = 0;
+
+      // Show/hide featured hero based on filters
+      if (featuredHeroSection) {
+        featuredHeroSection.style.display = hasFilters ? 'none' : '';
+      }
+
+      cards.forEach(function(card) {
+        var title = card.getAttribute('data-title') || '';
+        var cat = card.getAttribute('data-category') || '';
+        var tags = card.getAttribute('data-tags') || '';
+        var isFeatured = card.hasAttribute('data-is-featured');
+
+        // Hide featured from grid when no filters active
+        if (isFeatured && !hasFilters) {
+          card.style.display = 'none';
+          return;
+        }
+
+        var matchSearch = !searchTerm || title.indexOf(searchTerm) !== -1 || tags.indexOf(searchTerm) !== -1;
+        var matchCat = !activeCategory || cat === activeCategory;
+        var matchTag = !activeTag || (',' + tags + ',').indexOf(',' + activeTag + ',') !== -1;
+
+        if (matchSearch && matchCat && matchTag) {
+          card.style.display = '';
+          visible++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      emptyState.style.display = visible === 0 ? '' : 'none';
+      articlesGrid.style.display = visible === 0 ? 'none' : '';
+    }
+
+    searchInput.addEventListener('input', function() {
+      searchTerm = this.value.toLowerCase().trim();
+      filterArticles();
+    });
+
+    categoryBtns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        categoryBtns.forEach(function(b) { b.classList.remove('is-active'); });
+        btn.classList.add('is-active');
+        activeCategory = btn.getAttribute('data-category') || '';
+        filterArticles();
+      });
+    });
+
+    tagChipClear.addEventListener('click', function() {
+      activeTag = '';
+      tagChip.style.display = 'none';
+      var u = new URL(window.location);
+      u.searchParams.delete('tag');
+      history.replaceState(null, '', u);
+      filterArticles();
+    });
+
+    // Initial filter (in case tag param is set)
+    if (activeTag) filterArticles();
+  }
 })();
