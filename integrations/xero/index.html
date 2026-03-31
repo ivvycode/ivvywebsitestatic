@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png?v=14a8919dfa">
-  <link rel="apple-touch-icon" href="/assets/images/favicon.png?v=14a8919dfa">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png?v=055d7678a4">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png?v=055d7678a4">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Xero Integration | iVvy</title>
   <meta name="description" content="The iVvy – Xero integration enhances your iVvy experience by pushing iVvy invoices into Xero in real time. Once configured, an &quot;iVvy Contacts&quot; group will automatically be created within Xero. Each contact that has been assigned an invoice in iVvy, will then be added to that group within Xero.">
@@ -54,11 +54,12 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{}
 body{font-family:'Nunito','Nunito Fallback',sans-serif;color:#666666;background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased}
-h1,h2,h3,h4,h5,h6{font-family:'Poppins','Poppins Fallback',sans-serif;font-weight:700;line-height:1.2;letter-spacing:-0.02em;color:#103620}
-h1,h2,h3{font-weight:800!important}
+h1,h2,h3,h4,h5,h6{color:#103620}
+h1,h2,h3,h5,h6{font-family:'Poppins','Poppins Fallback',sans-serif;line-height:1.2}
 h1{line-height:1.1!important}
-h2{font-weight:700}h3{font-weight:600}
-a{text-decoration:none;color:inherit}
+h4{font-family:'Nunito Sans','Nunito Sans Fallback','Nunito',sans-serif;font-weight:700!important;line-height:1.2;letter-spacing:-0.02em}
+h1,h2,h3{font-weight:800!important}
+a{text-decoration:none;color:inherit;transition:color 0.2s ease}
 img{max-width:100%;height:auto;display:block}
 button{font-family:inherit;cursor:pointer}
 ul,ol{list-style:none}
@@ -72,14 +73,14 @@ ul,ol{list-style:none}
 .header__logo img{height:32px;width:auto}
 .nav{display:none}@media(min-width:1024px){.nav{display:flex;align-items:center;gap:0;margin-left:24px}}
 .nav__item{position:relative}
-.nav__link{display:flex;align-items:center;gap:4px;height:40px;padding:8px 24px;font-family:'Nunito Sans','Nunito Sans Fallback',sans-serif;font-size:14px;font-weight:500;color:#757575;border-radius:0;background:none;border:none;text-transform:none;letter-spacing:normal}
+.nav__link{display:flex;align-items:center;gap:4px;height:40px;padding:8px 24px;font-family:'Nunito','Nunito Fallback',sans-serif;font-size:14px;font-weight:500;color:#666666;border-radius:0;transition:all 0.2s ease;background:none;border:none;text-transform:none;letter-spacing:normal}
 .header__cta{display:none}@media(min-width:1024px){.header__cta{display:flex;align-items:center;gap:16px}}
-.header__login{font-family:'Nunito','Nunito Fallback',sans-serif;font-size:14px;font-weight:600;color:#757575;background:none;border:none;display:flex;align-items:center;gap:4px}
+.header__login{font-family:'Nunito','Nunito Fallback',sans-serif;font-size:14px;font-weight:500;color:#666666;padding:8px 24px;background:none;border:none;cursor:pointer}
 .mobile-toggle{display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:none;border:none;color:#103620}
 @media(min-width:1024px){.mobile-toggle{display:none}}
 .mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:#fff;z-index:99;padding:24px 16px;overflow-y:auto}
 .mobile-menu.active{display:block}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:8px 24px;font-family:'Nunito','Nunito Fallback',sans-serif;font-size:14px;font-weight:700;border-radius:9999px;border:none;cursor:pointer;position:relative;overflow:hidden;isolation:isolate;text-transform:uppercase;letter-spacing:0.05em}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:8px 24px;font-family:'Nunito','Nunito Fallback',sans-serif;font-size:14px;font-weight:700;border-radius:9999px;border:none;cursor:pointer;transition:all 0.3s ease;position:relative;overflow:hidden;isolation:isolate;text-transform:uppercase;letter-spacing:0.05em}
 .btn--primary{background:#99CC52;color:#103620}
 .btn--nav-cta{background:#99CC52;color:#fff}
 .btn--lg{height:48px;padding:8px 32px;font-size:16px}
@@ -122,22 +123,23 @@ ul,ol{list-style:none}
 .trust-logos__logo{flex-shrink:0;height:32px;width:auto;filter:grayscale(1);opacity:0.6;transition:all 0.3s ease}
 @media(min-width:768px){.trust-logos__track{gap:80px}.trust-logos__logo{height:40px}}
 @keyframes scroll-logos{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.page-hero{position:relative;padding:80px 0 60px;overflow:hidden}
+.page-hero{position:relative;min-height:400px;display:flex;align-items:center;padding:48px 0;overflow:hidden}
 .page-hero>.container{width:100%}
+@media(min-width:1024px){.page-hero{min-height:520px}}
 .page-hero--gradient{background:radial-gradient(ellipse at 50% 50%,hsl(140,35%,22%) 0%,hsl(147,45%,16%) 40%,hsl(150,55%,8%) 100%)}
 .page-hero--centered{text-align:center}
 .page-hero__content{position:relative;z-index:2;max-width:800px}
 .page-hero--centered .page-hero__content{margin:0 auto;max-width:896px}
-.page-hero__eyebrow{font-size:18px;font-weight:400;color:#99CC52;margin-bottom:16px}
-.page-hero__title{font-size:32px;color:#fff;margin-bottom:16px}
+.page-hero__eyebrow{display:inline-flex;align-items:center;padding:4px 12px;border-radius:9999px;font-size:13px;font-weight:600;font-family:'Nunito','Nunito Fallback',sans-serif;text-transform:uppercase;letter-spacing:0.05em;background:rgba(153,204,82,0.15);color:#99CC52;margin-bottom:16px}
+.page-hero__title{font-size:36px;color:#fff;margin-bottom:16px;line-height:1.25}
 @media(min-width:768px){.page-hero__title{font-size:40px}}
-@media(min-width:1024px){.page-hero__title{font-size:60px}}
+@media(min-width:1024px){.page-hero__title{font-size:50px}}
 .page-hero__title-base{color:#fff}
 .page-hero__title-highlight{color:#99CC52}
 .page-hero__subtitle{font-size:18px;color:rgba(255,255,255,0.9);margin-bottom:32px;max-width:600px;line-height:1.6}
 .page-hero--centered .page-hero__subtitle{margin-left:auto;margin-right:auto;max-width:none}
 .page-hero__bg{position:absolute;inset:0;display:flex}
-.page-hero__bg-left{width:100%;background:linear-gradient(to right,hsl(150,55%,8%),hsl(147,45%,16%))}
+.page-hero__bg-left{width:100%;background:radial-gradient(ellipse at 50% 50%,hsl(140,35%,22%) 0%,hsl(147,45%,16%) 40%,hsl(150,55%,8%) 100%)}
 @media(min-width:1024px){.page-hero__bg-left{width:50%}}
 .page-hero__bg-right{display:none;position:relative;width:50%}
 @media(min-width:1024px){.page-hero__bg-right{display:block}}
@@ -151,23 +153,23 @@ ul,ol{list-style:none}
 .intro{padding:80px 0;background:#fff}
 @media(min-width:1024px){.intro{padding:112px 0}}
 .intro__inner{margin:0 auto;text-align:center}
-.intro__title{font-size:30px;font-weight:700;color:#103620;line-height:1.15;margin-bottom:32px}
+.intro__title{font-size:30px;font-weight:700;color:#103620;line-height:1.2;letter-spacing:-0.02em;margin-bottom:32px}
 @media(min-width:1024px){.intro__title{font-size:44px}}
 .intro__title-gradient{background:linear-gradient(135deg,#99CC52,hsl(82 62% 44%));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.intro__text{font-size:16px;color:#666666;line-height:1.8;max-width:800px;margin:0 auto}
+.intro__text{font-size:16px;color:#666666;line-height:1.625}
 @media(min-width:1024px){.intro__text{font-size:18px}}
 .intro__text p+p{margin-top:20px}
 .venue-card__image{width:100%;height:100%;object-fit:cover;aspect-ratio:5/4}
 </style>
 
   
-  <link rel="stylesheet" href="/assets/css/styles.css?v=14a8919dfa" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/assets/css/styles.css?v=055d7678a4" media="print" onload="this.media='all'">
   
-  <link rel="stylesheet" href="/assets/css/styles-pages.css?v=14a8919dfa" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/assets/css/styles-pages.css?v=055d7678a4" media="print" onload="this.media='all'">
   
   <noscript>
-    <link rel="stylesheet" href="/assets/css/styles.css?v=14a8919dfa">
-    <link rel="stylesheet" href="/assets/css/styles-pages.css?v=14a8919dfa">
+    <link rel="stylesheet" href="/assets/css/styles.css?v=055d7678a4">
+    <link rel="stylesheet" href="/assets/css/styles-pages.css?v=055d7678a4">
   </noscript>
 
   
@@ -180,7 +182,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__left">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=14a8919dfa" alt="iVvy" width="120" height="32" fetchpriority="high">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=055d7678a4" alt="iVvy" width="120" height="32" fetchpriority="high">
         </a>
         <nav class="nav">
           
@@ -447,7 +449,7 @@ ul,ol{list-style:none}
     <div class="page-hero__content">
       <div class="integration-hero-logos">
         <div class="integration-hero-logos__card">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=14a8919dfa" alt="iVvy" width="120" height="56" loading="eager">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=055d7678a4" alt="iVvy" width="120" height="56" loading="eager">
         </div>
         <div class="integration-hero-logos__connector">
           <span class="integration-hero-logos__line"></span>
@@ -455,7 +457,7 @@ ul,ol{list-style:none}
           <span class="integration-hero-logos__line"></span>
         </div>
         <div class="integration-hero-logos__card">
-          <img src="/assets/images/integrations/xero.webp?v=14a8919dfa" alt="Xero" width="120" height="56" loading="eager">
+          <img src="/assets/images/integrations/xero.webp?v=055d7678a4" alt="Xero" width="120" height="56" loading="eager">
         </div>
       </div>
       <h1 class="page-hero__title">
@@ -483,7 +485,7 @@ ul,ol{list-style:none}
       <div class="data-flow-card">
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/ivvy-logo-venues.webp?v=14a8919dfa" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/ivvy-logo-venues.webp?v=055d7678a4" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Invoice Contacts</span>
         </div>
@@ -499,7 +501,7 @@ ul,ol{list-style:none}
         </div>
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/integrations/xero.webp?v=14a8919dfa" alt="Xero" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/integrations/xero.webp?v=055d7678a4" alt="Xero" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Customers</span>
         </div>
@@ -508,7 +510,7 @@ ul,ol{list-style:none}
       <div class="data-flow-card">
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/ivvy-logo-venues.webp?v=14a8919dfa" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/ivvy-logo-venues.webp?v=055d7678a4" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Invoices</span>
         </div>
@@ -524,7 +526,7 @@ ul,ol{list-style:none}
         </div>
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/integrations/xero.webp?v=14a8919dfa" alt="Xero" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/integrations/xero.webp?v=055d7678a4" alt="Xero" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Sales Invoice</span>
         </div>
@@ -533,7 +535,7 @@ ul,ol{list-style:none}
       <div class="data-flow-card">
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/ivvy-logo-venues.webp?v=14a8919dfa" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/ivvy-logo-venues.webp?v=055d7678a4" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Payments</span>
         </div>
@@ -549,7 +551,7 @@ ul,ol{list-style:none}
         </div>
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/integrations/xero.webp?v=14a8919dfa" alt="Xero" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/integrations/xero.webp?v=055d7678a4" alt="Xero" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Payments</span>
         </div>
@@ -558,7 +560,7 @@ ul,ol{list-style:none}
       <div class="data-flow-card">
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/ivvy-logo-venues.webp?v=14a8919dfa" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/ivvy-logo-venues.webp?v=055d7678a4" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Cost Centers</span>
         </div>
@@ -574,7 +576,7 @@ ul,ol{list-style:none}
         </div>
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/integrations/xero.webp?v=14a8919dfa" alt="Xero" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/integrations/xero.webp?v=055d7678a4" alt="Xero" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Line Items</span>
         </div>
@@ -583,7 +585,7 @@ ul,ol{list-style:none}
       <div class="data-flow-card">
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/ivvy-logo-venues.webp?v=14a8919dfa" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/ivvy-logo-venues.webp?v=055d7678a4" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Refunds</span>
         </div>
@@ -599,7 +601,7 @@ ul,ol{list-style:none}
         </div>
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/integrations/xero.webp?v=14a8919dfa" alt="Xero" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/integrations/xero.webp?v=055d7678a4" alt="Xero" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Credit Notes</span>
         </div>
@@ -661,7 +663,7 @@ ul,ol{list-style:none}
 
 
 <section class="cta">
-  <img src="/assets/images/patterns/cta-pattern.webp?v=14a8919dfa" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600">
+  <img src="/assets/images/patterns/cta-pattern.webp?v=055d7678a4" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600">
   <div class="container">
     <div class="cta__inner">
       <h2 class="cta__title">Ready to integrate <span class="scroll-color-text scroll-color-text--from-white">Xero</span> with iVvy?</h2>
@@ -756,7 +758,7 @@ ul,ol{list-style:none}
       
       <a href="/integrations/myob/" class="integration-related-card">
         <div class="integration-related-card__logo">
-          <img src="/assets/images/integrations/myob.webp?v=14a8919dfa" alt="MYOB" width="96" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/integrations/myob.webp?v=055d7678a4" alt="MYOB" width="96" height="48" loading="lazy" decoding="async">
         </div>
         <h4 class="integration-related-card__name">MYOB</h4>
         <p class="integration-related-card__subtitle">Synchronise invoices, contacts, payments &amp; refunds</p>
@@ -764,7 +766,7 @@ ul,ol{list-style:none}
       
       <a href="/integrations/infor/" class="integration-related-card">
         <div class="integration-related-card__logo">
-          <img src="/assets/images/integrations/infor.webp?v=14a8919dfa" alt="Infor" width="96" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/integrations/infor.webp?v=055d7678a4" alt="Infor" width="96" height="48" loading="lazy" decoding="async">
         </div>
         <h4 class="integration-related-card__name">Infor</h4>
         <p class="integration-related-card__subtitle">Enterprise-grade ERP integration</p>
@@ -772,7 +774,7 @@ ul,ol{list-style:none}
       
       <a href="/integrations/netsuite-accounting/" class="integration-related-card">
         <div class="integration-related-card__logo">
-          <img src="/assets/images/integrations/netsuite.webp?v=14a8919dfa" alt="Oracle NetSuite" width="96" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/integrations/netsuite.webp?v=055d7678a4" alt="Oracle NetSuite" width="96" height="48" loading="lazy" decoding="async">
         </div>
         <h4 class="integration-related-card__name">Oracle NetSuite</h4>
         <p class="integration-related-card__subtitle">Enterprise accounting integration</p>
@@ -789,7 +791,7 @@ ul,ol{list-style:none}
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=14a8919dfa" alt="iVvy" class="footer__logo" width="120" height="40">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=055d7678a4" alt="iVvy" class="footer__logo" width="120" height="40">
         <p class="footer__tagline">Event and venue management software that feels like an extra team member.</p>
         <div class="footer__social">
           <a href="https://www.linkedin.com/company/ivvy/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
@@ -956,7 +958,7 @@ ul,ol{list-style:none}
 
 
 
-<script src="/assets/js/scripts.js?v=14a8919dfa" defer></script>
+<script src="/assets/js/scripts.js?v=055d7678a4" defer></script>
 
 
 <script type="application/ld+json">
