@@ -405,7 +405,7 @@
 
   
   <url>
-    <loc>https://www.ivvy.com/articles/</loc>
+    <loc>https://www.ivvy.com/blog/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -414,7 +414,7 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/articles/asd/</loc>
+    <loc>https://www.ivvy.com/blog/how-to-build-a-venue-sales-routine-with-ivvyai/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -422,7 +422,15 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/articles/the-revenue-impact-hiding-in-your-venues-enquiry-response-time/</loc>
+    <loc>https://www.ivvy.com/blog/the-revenue-impact-hiding-in-your-venues-enquiry-response-time/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.ivvy.com/blog/asd/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
