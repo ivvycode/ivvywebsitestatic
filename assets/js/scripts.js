@@ -508,4 +508,48 @@ function switchAgentTab(id) {
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
+
+  // ==========================================================================
+  // Reading Progress Bar (article detail pages)
+  // ==========================================================================
+  var progressBar = document.getElementById('progressBar');
+  if (progressBar) {
+    var articleEl = document.querySelector('.article-detail');
+    if (articleEl) {
+      var updateProgress = function() {
+        var rect = articleEl.getBoundingClientRect();
+        var articleTop = rect.top + window.scrollY;
+        var articleHeight = articleEl.offsetHeight;
+        var viewportHeight = window.innerHeight;
+        var scrolled = window.scrollY - articleTop;
+        var total = articleHeight - viewportHeight;
+        if (total <= 0) { progressBar.style.width = '100%'; return; }
+        var pct = Math.min(100, Math.max(0, (scrolled / total) * 100));
+        progressBar.style.width = pct + '%';
+      };
+      window.addEventListener('scroll', updateProgress, { passive: true });
+      updateProgress();
+    }
+  }
+  // ==========================================================================
+  // Article Share Buttons
+  // ==========================================================================
+  document.querySelectorAll('.article-share__btn[data-share]').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      var container = btn.closest('.article-share');
+      var shareTitle = encodeURIComponent(container.getAttribute('data-title') || '');
+      var shareUrl = encodeURIComponent(container.getAttribute('data-url') || window.location.href);
+      var type = btn.getAttribute('data-share');
+      if (type === 'linkedin') {
+        window.open('https://www.linkedin.com/shareArticle?mini=true&url=' + shareUrl + '&title=' + shareTitle, '_blank', 'noopener');
+      } else if (type === 'twitter') {
+        window.open('https://twitter.com/intent/tweet?text=' + shareTitle + '&url=' + shareUrl, '_blank', 'noopener');
+      } else if (type === 'facebook') {
+        window.open('https://www.facebook.com/sharer/sharer.php?u=' + shareUrl, '_blank', 'noopener');
+      } else if (type === 'copy') {
+        navigator.clipboard.writeText(decodeURIComponent(shareUrl));
+      }
+    });
+  });
 })();
