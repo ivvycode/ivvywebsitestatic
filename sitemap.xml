@@ -414,6 +414,14 @@
   
   
   <url>
+    <loc>https://www.ivvy.com/blog/7-mistakes-venues-make-that-slow-response-times/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://www.ivvy.com/blog/how-to-build-a-venue-sales-routine-with-ivvyai/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -423,14 +431,6 @@
   
   <url>
     <loc>https://www.ivvy.com/blog/the-revenue-impact-hiding-in-your-venues-enquiry-response-time/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://www.ivvy.com/blog/asd/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
