@@ -488,26 +488,27 @@ function switchAgentTab(id) {
 // Scroll-progress underline animation
 (function() {
   var els = document.querySelectorAll('.intro__underline-animate');
-  if (!els.length) return;
-  var dark = [16, 54, 32];
-  var pri = [153, 204, 82];
-  function onScroll() {
-    els.forEach(function(el) {
-      var rect = el.getBoundingClientRect();
-      var start = window.innerHeight - 150;
-      var end = window.innerHeight * 0.66;
-      var range = start - end;
-      if (range <= 0) return;
-      var p = Math.min(1, Math.max(0, (start - rect.top) / range));
-      el.style.setProperty('--underline-progress', p);
-      var r = Math.round(dark[0] + (pri[0] - dark[0]) * p);
-      var g = Math.round(dark[1] + (pri[1] - dark[1]) * p);
-      var b = Math.round(dark[2] + (pri[2] - dark[2]) * p);
-      el.style.color = 'rgb(' + r + ',' + g + ',' + b + ')';
-    });
+  if (els.length) {
+    var dark = [16, 54, 32];
+    var pri = [153, 204, 82];
+    function onScroll() {
+      els.forEach(function(el) {
+        var rect = el.getBoundingClientRect();
+        var start = window.innerHeight - 150;
+        var end = window.innerHeight * 0.66;
+        var range = start - end;
+        if (range <= 0) return;
+        var p = Math.min(1, Math.max(0, (start - rect.top) / range));
+        el.style.setProperty('--underline-progress', p);
+        var r = Math.round(dark[0] + (pri[0] - dark[0]) * p);
+        var g = Math.round(dark[1] + (pri[1] - dark[1]) * p);
+        var b = Math.round(dark[2] + (pri[2] - dark[2]) * p);
+        el.style.color = 'rgb(' + r + ',' + g + ',' + b + ')';
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
   }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
 
   // ==========================================================================
   // Reading Progress Bar (article detail pages)
