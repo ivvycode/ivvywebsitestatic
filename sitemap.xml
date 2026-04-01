@@ -414,6 +414,14 @@
   
   
   <url>
+    <loc>https://www.ivvy.com/blog/managing-event-speakers-you-need-this-free-checklist-mnf9u1sa/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://www.ivvy.com/blog/how-to-simplify-event-registration-and-boost-sign-ups-mnf9uxgp/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -431,14 +439,6 @@
   
   <url>
     <loc>https://www.ivvy.com/blog/free-venue-negotiation-guide-for-event-managers-mnf9xini/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://www.ivvy.com/blog/managing-event-speakers-you-need-this-free-checklist-mnf9u1sa/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -494,7 +494,7 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/blog/what-is-the-best-event-software-for-venues-mnf9kvip/</loc>
+    <loc>https://www.ivvy.com/blog/5-big-benefits-of-ivvyai-s-instant-proposal-for-venue-sales-teams-mnf9l8h8/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -502,7 +502,7 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/blog/how-ivvyai-automates-venue-enquiry-management-mnf9h1nz/</loc>
+    <loc>https://www.ivvy.com/blog/what-is-the-best-event-software-for-venues-mnf9kvip/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -542,7 +542,7 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/blog/5-big-benefits-of-ivvyai-s-instant-proposal-for-venue-sales-teams-mnf9l8h8/</loc>
+    <loc>https://www.ivvy.com/blog/how-ivvyai-automates-venue-enquiry-management-mnf9h1nz/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -646,7 +646,7 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/blog/free-venue-negotiation-guide-for-event-managers/</loc>
+    <loc>https://www.ivvy.com/blog/event-staffing-made-easy-your-free-staffing-schedule-mnf9zm37/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -654,7 +654,7 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/blog/boost-your-hotel-revenue-with-our-new-ebook/</loc>
+    <loc>https://www.ivvy.com/blog/free-event-sales-cheat-sheet-use-these-metrics-to-increase-revenue-mnfa1ll7/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -718,23 +718,31 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/blog/free-event-sales-cheat-sheet-use-these-metrics-to-increase-revenue-mnfa1ll7/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://www.ivvy.com/blog/ebook-how-to-increase-your-venue-sales/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  
-  
-  <url>
     <loc>https://www.ivvy.com/blog/7-mistakes-venues-make-that-slow-response-times/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.ivvy.com/blog/free-venue-negotiation-guide-for-event-managers/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.ivvy.com/blog/boost-your-hotel-revenue-with-our-new-ebook/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.ivvy.com/blog/adaptable-event-management-tips-to-master-event-chaos-mnf9yfeu/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -758,14 +766,6 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/blog/adaptable-event-management-tips-to-master-event-chaos-mnf9yfeu/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  
-  
-  <url>
     <loc>https://www.ivvy.com/blog/top-10-benefits-of-using-venue-management-software-for-your-business-mnfa2t2y/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -782,14 +782,6 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/blog/event-staffing-made-easy-your-free-staffing-schedule-mnf9zm37/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  
-  
-  <url>
     <loc>https://www.ivvy.com/blog/use-this-hotel-customer-journey-map-for-better-guest-experiences/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -798,7 +790,7 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/blog/ivvy-introduces-ivvyai-with-the-launch-of-its-first-solution-instant-proposal-mnf9m83c/</loc>
+    <loc>https://www.ivvy.com/blog/ebook-how-to-increase-your-venue-sales/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -807,6 +799,14 @@
   
   <url>
     <loc>https://www.ivvy.com/blog/use-this-hotel-customer-journey-map-for-better-guest-experiences-mnf9qbvx/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.ivvy.com/blog/ivvy-introduces-ivvyai-with-the-launch-of-its-first-solution-instant-proposal-mnf9m83c/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
