@@ -686,4 +686,42 @@ function switchAgentTab(id) {
     // Initial filter
     filterArticles();
   }
+
+  // ==========================================================================
+  // Special Section Carousels (dot navigation)
+  // ==========================================================================
+  document.querySelectorAll('[data-carousel-dots]').forEach(function(dotsContainer) {
+    var carouselName = dotsContainer.getAttribute('data-carousel-dots');
+    var grid = document.querySelector('[data-carousel="' + carouselName + '"]');
+    if (!grid) return;
+
+    var items = grid.querySelectorAll('[data-carousel-item]');
+    var perPage = 3;
+    var totalPages = Math.ceil(items.length / perPage);
+    if (totalPages < 1) return;
+
+    var currentPage = 0;
+
+    function renderDots() {
+      dotsContainer.innerHTML = '';
+      for (var i = 0; i < totalPages; i++) {
+        var dot = document.createElement('button');
+        dot.className = 'special-carousel__dot' + (i === currentPage ? ' special-carousel__dot--active' : '');
+        dot.setAttribute('aria-label', 'Go to page ' + (i + 1));
+        dot.addEventListener('click', (function(p) { return function() { goTo(p); }; })(i));
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function goTo(page) {
+      currentPage = page;
+      var start = page * perPage;
+      items.forEach(function(item, idx) {
+        item.style.display = (idx >= start && idx < start + perPage) ? '' : 'none';
+      });
+      renderDots();
+    }
+
+    goTo(0);
+  });
 })();
