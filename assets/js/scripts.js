@@ -715,11 +715,25 @@ function switchAgentTab(id) {
     }
 
     function goTo(page) {
-      currentPage = page;
       var start = page * perPage;
-      items.forEach(function(item, idx) {
-        item.style.display = (idx >= start && idx < start + perPage) ? '' : 'none';
-      });
+      // Fade-out
+      grid.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+      grid.style.opacity = '0';
+      grid.style.transform = 'translateX(-20px)';
+      setTimeout(function() {
+        items.forEach(function(item, idx) {
+          item.style.display = (idx >= start && idx < start + perPage) ? '' : 'none';
+        });
+        // Reset position off-screen right, then animate in
+        grid.style.transition = 'none';
+        grid.style.transform = 'translateX(20px)';
+        // Force reflow
+        void grid.offsetWidth;
+        grid.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        grid.style.opacity = '1';
+        grid.style.transform = 'translateX(0)';
+      }, 300);
+      currentPage = page;
       renderDots();
     }
 
