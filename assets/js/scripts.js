@@ -564,7 +564,7 @@ function switchAgentTab(id) {
     var tagChipLabel = document.getElementById('tagChipLabel');
     var tagChipClear = document.getElementById('tagChipClear');
     var emptyState = document.getElementById('articlesEmpty');
-    var featuredHeroSection = document.querySelector('.featured-article-hero');
+    var featuredHeroSection = document.querySelector('.featured-articles-section');
     var cards = Array.prototype.slice.call(articlesGrid.querySelectorAll('.article-card'));
     var paginationEl = document.getElementById('articlesPagination');
     var prevBtn = document.getElementById('paginationPrev');
@@ -587,9 +587,9 @@ function switchAgentTab(id) {
     }
 
     // Hide the featured card from grid initially (no filters)
-    var featuredCard = articlesGrid.querySelector('[data-is-featured]');
-    if (featuredCard && !activeTag) {
-      featuredCard.style.display = 'none';
+    var featuredCards = articlesGrid.querySelectorAll('[data-is-featured]');
+    if (featuredCards.length && !activeTag) {
+      featuredCards.forEach(function(fc) { fc.style.display = 'none'; });
     }
 
     function filterArticles() {
