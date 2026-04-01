@@ -565,8 +565,14 @@ function switchAgentTab(id) {
     var tagChipClear = document.getElementById('tagChipClear');
     var emptyState = document.getElementById('articlesEmpty');
     var featuredHeroSection = document.querySelector('.featured-article-hero');
-    var cards = articlesGrid.querySelectorAll('.article-card');
+    var cards = Array.prototype.slice.call(articlesGrid.querySelectorAll('.article-card'));
+    var paginationEl = document.getElementById('articlesPagination');
+    var prevBtn = document.getElementById('paginationPrev');
+    var nextBtn = document.getElementById('paginationNext');
+    var pageInfo = document.getElementById('paginationInfo');
 
+    var ARTICLES_PER_PAGE = 12;
+    var currentPage = 0;
     var activeCategory = '';
     var activeTag = '';
     var searchTerm = '';
@@ -588,13 +594,14 @@ function switchAgentTab(id) {
 
     function filterArticles() {
       var hasFilters = !!(searchTerm || activeCategory || activeTag);
-      var visible = 0;
 
       // Show/hide featured hero based on filters
       if (featuredHeroSection) {
         featuredHeroSection.style.display = hasFilters ? 'none' : '';
       }
 
+      // Collect visible cards
+      var visibleCards = [];
       cards.forEach(function(card) {
         var title = card.getAttribute('data-title') || '';
         var cat = card.getAttribute('data-category') || '';
@@ -612,18 +619,39 @@ function switchAgentTab(id) {
         var matchTag = !activeTag || (',' + tags + ',').indexOf(',' + activeTag + ',') !== -1;
 
         if (matchSearch && matchCat && matchTag) {
-          card.style.display = '';
-          visible++;
+          visibleCards.push(card);
         } else {
           card.style.display = 'none';
         }
       });
-      emptyState.style.display = visible === 0 ? '' : 'none';
-      articlesGrid.style.display = visible === 0 ? 'none' : '';
+
+      // Paginate visible cards
+      var totalPages = Math.ceil(visibleCards.length / ARTICLES_PER_PAGE);
+      if (currentPage >= totalPages) currentPage = Math.max(0, totalPages - 1);
+      var start = currentPage * ARTICLES_PER_PAGE;
+      var end = start + ARTICLES_PER_PAGE;
+
+      visibleCards.forEach(function(card, i) {
+        card.style.display = (i >= start && i < end) ? '' : 'none';
+      });
+
+      emptyState.style.display = visibleCards.length === 0 ? '' : 'none';
+      articlesGrid.style.display = visibleCards.length === 0 ? 'none' : '';
+
+      // Update pagination UI
+      if (totalPages > 1) {
+        paginationEl.style.display = '';
+        pageInfo.textContent = 'Page ' + (currentPage + 1) + ' of ' + totalPages;
+        prevBtn.disabled = currentPage === 0;
+        nextBtn.disabled = currentPage >= totalPages - 1;
+      } else {
+        paginationEl.style.display = 'none';
+      }
     }
 
     searchInput.addEventListener('input', function() {
       searchTerm = this.value.toLowerCase().trim();
+      currentPage = 0;
       filterArticles();
     });
 
@@ -632,6 +660,7 @@ function switchAgentTab(id) {
         categoryBtns.forEach(function(b) { b.classList.remove('is-active'); });
         btn.classList.add('is-active');
         activeCategory = btn.getAttribute('data-category') || '';
+        currentPage = 0;
         filterArticles();
       });
     });
@@ -642,10 +671,19 @@ function switchAgentTab(id) {
       var u = new URL(window.location);
       u.searchParams.delete('tag');
       history.replaceState(null, '', u);
+      currentPage = 0;
       filterArticles();
     });
 
-    // Initial filter (in case tag param is set)
-    if (activeTag) filterArticles();
+    prevBtn.addEventListener('click', function() {
+      if (currentPage > 0) { currentPage--; filterArticles(); window.scrollTo({ top: articlesGrid.offsetTop - 100, behavior: 'smooth' }); }
+    });
+
+    nextBtn.addEventListener('click', function() {
+      currentPage++; filterArticles(); window.scrollTo({ top: articlesGrid.offsetTop - 100, behavior: 'smooth' });
+    });
+
+    // Initial filter
+    filterArticles();
   }
 })();
