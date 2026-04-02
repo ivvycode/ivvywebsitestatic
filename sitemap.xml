@@ -414,6 +414,14 @@
   
   
   <url>
+    <loc>https://www.ivvy.com/blog/best-western-boulder-falls-inn-grows-revenue-by-43-with-ivvy/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://www.ivvy.com/blog/how-to-simplify-event-registration-and-boost-sign-ups-mnf9uxgp/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -446,6 +454,14 @@
   
   
   <url>
+    <loc>https://www.ivvy.com/blog/how-to-increase-venue-bookings-during-quieter-periods-mnf9wy0r/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://www.ivvy.com/blog/how-does-event-management-software-work-mnf9tftu/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -462,23 +478,7 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/blog/how-to-increase-venue-bookings-during-quieter-periods-mnf9wy0r/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://www.ivvy.com/blog/5-ways-slow-responses-hurt-your-venue-mnf9ii30/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://www.ivvy.com/blog/5-big-benefits-of-ivvyai-s-instant-proposal-for-venue-sales-teams-mnf9l8h8/</loc>
+    <loc>https://www.ivvy.com/blog/what-if-your-venue-inbox-managed-itself-with-ivvyai-it-can-mnf9iysm/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -502,7 +502,7 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/blog/what-if-your-venue-inbox-managed-itself-with-ivvyai-it-can-mnf9iysm/</loc>
+    <loc>https://www.ivvy.com/blog/the-revenue-impact-hiding-in-your-venue-s-enquiry-response-time-mnf9ghsj/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -526,7 +526,7 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/blog/the-revenue-impact-hiding-in-your-venue-s-enquiry-response-time-mnf9ghsj/</loc>
+    <loc>https://www.ivvy.com/blog/5-big-benefits-of-ivvyai-s-instant-proposal-for-venue-sales-teams-mnf9l8h8/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -551,6 +551,14 @@
   
   <url>
     <loc>https://www.ivvy.com/blog/why-speed-matters-the-psychology-behind-quick-responses-mnf9hhzj/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.ivvy.com/blog/5-ways-slow-responses-hurt-your-venue-mnf9ii30/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -630,14 +638,6 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/blog/event-staffing-made-easy-your-free-staffing-schedule-mnf9zm37/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  
-  
-  <url>
     <loc>https://www.ivvy.com/blog/free-event-sales-cheat-sheet-use-these-metrics-to-increase-revenue-mnfa1ll7/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -702,7 +702,7 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/blog/boost-your-hotel-revenue-with-our-new-ebook/</loc>
+    <loc>https://www.ivvy.com/blog/event-staffing-made-easy-your-free-staffing-schedule-mnf9zm37/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -727,14 +727,6 @@
   
   <url>
     <loc>https://www.ivvy.com/blog/how-australian-hotels-are-using-tech-to-elevate-service-standards-mnf9xx2u/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://www.ivvy.com/blog/best-western-boulder-falls-inn-grows-revenue-by-43-with-ivvy-mnfa3ew5/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -775,6 +767,14 @@
   
   <url>
     <loc>https://www.ivvy.com/blog/free-venue-negotiation-guide-for-event-managers/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.ivvy.com/blog/boost-your-hotel-revenue-with-our-new-ebook/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
