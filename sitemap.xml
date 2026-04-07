@@ -414,6 +414,14 @@
   
   
   <url>
+    <loc>https://www.ivvy.com/blog/event-sales-how-to-make-every-touchpoint-count/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://www.ivvy.com/blog/what-is-the-roi-of-event-management-software/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -446,7 +454,7 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/blog/how-ivvyai-automates-venue-enquiry-management/</loc>
+    <loc>https://www.ivvy.com/blog/6-ways-an-integrated-payment-platform-transforms-venue-management/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -558,7 +566,7 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/blog/6-ways-an-integrated-payment-platform-transforms-venue-management/</loc>
+    <loc>https://www.ivvy.com/blog/how-ivvyai-automates-venue-enquiry-management/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
