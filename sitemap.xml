@@ -414,6 +414,14 @@
   
   
   <url>
+    <loc>https://www.ivvy.com/blog/how-event-ticketing-software-can-reduce-no-shows/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://www.ivvy.com/blog/boost-your-hotel-revenue-with-our-new-ebook/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -430,7 +438,7 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/blog/what-is-the-roi-of-event-management-software/</loc>
+    <loc>https://www.ivvy.com/blog/5-event-reports-every-venue-manager-should-run-weekly/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -438,7 +446,7 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/blog/5-event-reports-every-venue-manager-should-run-weekly/</loc>
+    <loc>https://www.ivvy.com/blog/what-is-the-roi-of-event-management-software/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -519,14 +527,6 @@
   
   <url>
     <loc>https://www.ivvy.com/blog/how-to-build-a-venue-sales-routine-with-ivvyai/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://www.ivvy.com/blog/how-event-ticketing-software-can-reduce-no-shows/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
