@@ -414,7 +414,7 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/blog/how-event-ticketing-software-can-reduce-no-shows/</loc>
+    <loc>https://www.ivvy.com/blog/boost-your-hotel-revenue-with-our-new-ebook/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -422,7 +422,7 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/blog/boost-your-hotel-revenue-with-our-new-ebook/</loc>
+    <loc>https://www.ivvy.com/blog/how-event-ticketing-software-can-reduce-no-shows/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -478,15 +478,7 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/blog/the-revenue-impact-hiding-in-your-venues-enquiry-response-time/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://www.ivvy.com/blog/7-mistakes-venues-make-that-slow-response-times/</loc>
+    <loc>https://www.ivvy.com/blog/what-is-the-average-venue-response-time/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -495,6 +487,14 @@
   
   <url>
     <loc>https://www.ivvy.com/blog/5-big-benefits-of-ivvyais-instant-proposal-for-venue-sales-teams/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.ivvy.com/blog/5-ways-slow-responses-hurt-your-venue/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -534,22 +534,6 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/blog/5-ways-slow-responses-hurt-your-venue/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://www.ivvy.com/blog/what-is-the-average-venue-response-time/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  
-  
-  <url>
     <loc>https://www.ivvy.com/blog/6-ways-an-integrated-payment-platform-transforms-venue-management/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -575,6 +559,22 @@
   
   <url>
     <loc>https://www.ivvy.com/blog/how-to-prevent-double-bookings-in-your-venue/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.ivvy.com/blog/the-revenue-impact-hiding-in-your-venues-enquiry-response-time/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.ivvy.com/blog/7-mistakes-venues-make-that-slow-response-times/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
