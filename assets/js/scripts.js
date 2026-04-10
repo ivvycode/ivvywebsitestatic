@@ -515,22 +515,15 @@ function switchAgentTab(id) {
   // ==========================================================================
   var progressBar = document.getElementById('progressBar');
   if (progressBar) {
-    var articleEl = document.querySelector('.article-detail');
-    if (articleEl) {
-      var updateProgress = function() {
-        var rect = articleEl.getBoundingClientRect();
-        var articleTop = rect.top + window.scrollY;
-        var articleHeight = articleEl.offsetHeight;
-        var viewportHeight = window.innerHeight;
-        var scrolled = window.scrollY - articleTop;
-        var total = articleHeight - viewportHeight;
-        if (total <= 0) { progressBar.style.width = '100%'; return; }
-        var pct = Math.min(100, Math.max(0, (scrolled / total) * 100));
-        progressBar.style.width = pct + '%';
-      };
-      window.addEventListener('scroll', updateProgress, { passive: true });
-      updateProgress();
-    }
+    var updateProgress = function() {
+      var scrollTop = window.scrollY;
+      var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (docHeight <= 0) { progressBar.style.width = '0%'; return; }
+      var pct = Math.min(100, Math.max(0, (scrollTop / docHeight) * 100));
+      progressBar.style.width = pct + '%';
+    };
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
   }
   // ==========================================================================
   // Article Share Buttons
