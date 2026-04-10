@@ -331,7 +331,7 @@
       a.addEventListener('click', function(e) {
         e.preventDefault();
         var t = document.querySelector(this.getAttribute('href'));
-        if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (t) { var y = t.getBoundingClientRect().top + window.scrollY - 80; window.scrollTo({ top: y, behavior: 'smooth' }); }
       });
     });
 
