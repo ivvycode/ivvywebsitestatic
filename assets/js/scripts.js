@@ -732,4 +732,22 @@ function switchAgentTab(id) {
 
     goTo(0);
   });
+
+  // ==========================================================================
+  // Vimeo Facade – click-to-load
+  // ==========================================================================
+  document.querySelectorAll('.vimeo-facade').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var id = btn.getAttribute('data-vimeo-id');
+      var hash = btn.getAttribute('data-vimeo-hash');
+      var wrap = btn.parentElement;
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://player.vimeo.com/video/' + id + '?h=' + hash + '&badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1';
+      iframe.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share');
+      iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+      iframe.setAttribute('title', btn.getAttribute('aria-label').replace('Play ', ''));
+      iframe.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;border:0;';
+      wrap.replaceChild(iframe, btn);
+    });
+  });
 })();
