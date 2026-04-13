@@ -1,10 +1,10 @@
-<!-- build:24325982950-509 -->
+<!-- build:24326787273-510 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png?v=19f61dd84d">
-  <link rel="apple-touch-icon" href="/assets/images/favicon.png?v=19f61dd84d">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png?v=896b2f5c37">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png?v=896b2f5c37">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>How to build a venue sales routine with iVvyAI | iVvy Blog</title>
   <meta name="description" content="Venue sales move fast, and the process becomes easier when the day starts with clarity. When you can see which enquiries are ready, which need input and which tasks move revenue forward, your whole workflow feels more controlled.">
@@ -23,12 +23,7 @@
 
   
   <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLCz7Z1JlFd2JQEl8qw.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" as="style" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" media="print" onload="this.media='all'" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;700&family=Poppins:wght@600;700&family=Nunito:wght@400;600;700&display=swap" media="print" onload="this.media='all'" crossorigin="anonymous">
-  <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;700&family=Poppins:wght@600;700;800&family=Nunito:wght@400;600;700&display=swap" crossorigin="anonymous">
-  </noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Nunito+Sans:wght@600;700&family=Nunito:wght@400;600;700&display=swap" crossorigin="anonymous">
 
   
   <meta property="og:title" content="How to build a venue sales routine with iVvyAI | iVvy Blog">
@@ -71,11 +66,11 @@ ul,ol{list-style:none}
 .header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);transition:background 0.3s ease}
 .header--scrolled{background:rgba(255,255,255,0.95);backdrop-filter:blur(8px)}
 .header__inner{display:flex;align-items:center;justify-content:space-between;height:64px}
-.header__left{display:flex;align-items:center;min-width:0;flex-shrink:0}
+.header__left{display:flex;align-items:center;min-width:0;flex-shrink:0;min-height:64px}
 .header__logo img{height:32px;width:120px;object-fit:contain}
-.nav{display:none}@media(min-width:1024px){.nav{display:flex;align-items:center;gap:0;margin-left:24px}}
+.nav{display:none}@media(min-width:1024px){.nav{display:flex;align-items:center;gap:0;margin-left:24px;min-height:40px}}
 .nav__item{position:relative}
-.nav__link{display:flex;align-items:center;gap:4px;height:40px;padding:8px 24px;font-family:'Nunito','Nunito Fallback',sans-serif;font-size:14px;font-weight:500;color:#666666;border-radius:0;transition:color 0.2s ease;background:none;border:none;text-transform:none;letter-spacing:normal;white-space:nowrap}
+.nav__link{display:flex;align-items:center;gap:4px;height:40px;padding:8px 24px;font-family:'Nunito','Nunito Fallback',sans-serif;font-size:14px;font-weight:500;color:#666666;border-radius:0;transition:color 0.2s ease;background:none;border:none;text-transform:none;letter-spacing:normal;white-space:nowrap;min-width:max-content}
 .header__cta{display:none}@media(min-width:1024px){.header__cta{display:flex;align-items:center;gap:16px}}
 .header__login{font-family:'Nunito','Nunito Fallback',sans-serif;font-size:14px;font-weight:500;color:#666666;padding:8px 24px;background:none;border:none;cursor:pointer}
 .mobile-toggle{display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:none;border:none;color:#103620}
@@ -104,9 +99,9 @@ ul,ol{list-style:none}
 .hero-mesh__bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 20% 80%,hsla(85,54%,56%,0.25) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 80% 20%,hsla(45,80%,65%,0.2) 0%,transparent 50%),radial-gradient(ellipse 90% 70% at 50% 50%,hsla(82,62%,44%,0.08) 0%,transparent 70%),linear-gradient(160deg,hsl(60,20%,96%) 0%,hsl(80,25%,94%) 30%,hsl(45,30%,95%) 60%,hsl(60,15%,97%) 100%)}
 .hero-mesh__content{position:relative;z-index:10;text-align:center;display:flex;flex-direction:column;align-items:center;max-width:768px;margin:0 auto}
 .hero-mesh__pill{display:inline-flex;align-items:center;padding:6px 16px;border-radius:9999px;background:rgba(153,204,82,0.15);font-size:13px;font-weight:700;font-family:'Nunito','Nunito Fallback',sans-serif;text-transform:uppercase;letter-spacing:0.05em;color:#103620;margin-bottom:24px}
-.hero-mesh__title{font-size:32px;font-weight:800;color:#103620;margin-bottom:24px;line-height:1.4}
-@media(min-width:768px){.hero-mesh__title{font-size:40px}}
-@media(min-width:1024px){.hero-mesh{padding-top:96px}.hero-mesh__title{font-size:52px;line-height:1.45}}
+.hero-mesh__title{font-size:32px;font-weight:800;color:#103620;margin-bottom:24px;line-height:1.4;min-height:calc(2 * 32px * 1.4)}
+@media(min-width:768px){.hero-mesh__title{font-size:40px;min-height:calc(2 * 40px * 1.4)}}
+@media(min-width:1024px){.hero-mesh{padding-top:96px}.hero-mesh__title{font-size:52px;line-height:1.45;min-height:calc(2 * 52px * 1.45)}}
 .hero-mesh__title-dark{color:#103620;display:block}
 @media(min-width:1024px){.hero-mesh__title-dark{white-space:nowrap}}
 .hero-mesh__title-highlight{background:linear-gradient(135deg,hsl(85,54%,56%),hsl(82,62%,44%));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;line-height:1.3;padding-bottom:0.05em;transition:opacity 0.3s ease,transform 0.3s ease}
@@ -165,18 +160,18 @@ ul,ol{list-style:none}
 @media(min-width:1024px){.intro__text{font-size:18px}}
 .intro__text p+p{margin-top:20px}
 .venue-card__image{width:100%;height:100%;object-fit:cover;aspect-ratio:5/4}
-.benefit__image-wrapper{aspect-ratio:6/5;overflow:hidden}
-.benefit__image{width:100%;height:auto;object-fit:contain}
+.benefit__image-wrapper{aspect-ratio:6/5;overflow:hidden;contain:layout style}
+.benefit__image{width:100%;height:auto;object-fit:contain;aspect-ratio:6/5}
 </style>
 
   
-  <link rel="stylesheet" href="/assets/css/styles.css?v=19f61dd84d" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/assets/css/styles.css?v=896b2f5c37" media="print" onload="this.media='all'">
   
-  <link rel="stylesheet" href="/assets/css/styles-pages.css?v=19f61dd84d" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/assets/css/styles-pages.css?v=896b2f5c37" media="print" onload="this.media='all'">
   
   <noscript>
-    <link rel="stylesheet" href="/assets/css/styles.css?v=19f61dd84d">
-    <link rel="stylesheet" href="/assets/css/styles-pages.css?v=19f61dd84d">
+    <link rel="stylesheet" href="/assets/css/styles.css?v=896b2f5c37">
+    <link rel="stylesheet" href="/assets/css/styles-pages.css?v=896b2f5c37">
   </noscript>
 
   
@@ -189,7 +184,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__left">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=19f61dd84d" alt="iVvy" width="120" height="32" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=896b2f5c37" alt="iVvy" width="120" height="32" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;">
         </a>
         <nav class="nav">
           
@@ -457,7 +452,7 @@ ul,ol{list-style:none}
 
 <section class="article-hero">
   <div class="article-hero__image">
-    <img src="/assets/images/articles/4c8660d2ee453a10.webp?v=19f61dd84d" alt="How to build a venue sales routine with iVvyAI" width="1920" height="600" loading="eager" fetchpriority="high" decoding="async">
+    <img src="/assets/images/articles/4c8660d2ee453a10.webp?v=896b2f5c37" alt="How to build a venue sales routine with iVvyAI" width="1920" height="600" loading="eager" fetchpriority="high" decoding="async">
     <div class="article-hero__overlay"></div>
   </div>
 </section>
@@ -504,15 +499,15 @@ ul,ol{list-style:none}
       
       <div class="article-share article-share--dark" style="color: rgba(255,255,255,0.6);" data-title="How to build a venue sales routine with iVvyAI" data-url="https://www.ivvy.com/blog/how-to-build-a-venue-sales-routine-with-ivvyai/">
         <span class="article-share__label" style="color: rgba(255,255,255,0.6);">Send this article to someone who'd like it:</span>
-        <a class="article-share__btn" data-share="linkedin" aria-label="Share on LinkedIn">
+        <button class="article-share__btn" data-share="linkedin" aria-label="Share on LinkedIn">
           <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        </a>
-        <a class="article-share__btn" data-share="twitter" aria-label="Share on X">
+        </button>
+        <button class="article-share__btn" data-share="twitter" aria-label="Share on X">
           <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-        </a>
-        <a class="article-share__btn" data-share="facebook" aria-label="Share on Facebook">
+        </button>
+        <button class="article-share__btn" data-share="facebook" aria-label="Share on Facebook">
           <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-        </a>
+        </button>
         <button class="article-share__btn" data-share="copy" aria-label="Copy link">
           <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
         </button>
@@ -544,15 +539,15 @@ ul,ol{list-style:none}
           
           <div class="article-share article-share--bottom" data-title="How to build a venue sales routine with iVvyAI" data-url="https://www.ivvy.com/blog/how-to-build-a-venue-sales-routine-with-ivvyai/">
             <span class="article-share__label">Send this article to someone who'd like it:</span>
-            <a class="article-share__btn" data-share="linkedin" aria-label="Share on LinkedIn">
+            <button class="article-share__btn" data-share="linkedin" aria-label="Share on LinkedIn">
               <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            </a>
-            <a class="article-share__btn" data-share="twitter" aria-label="Share on X">
+            </button>
+            <button class="article-share__btn" data-share="twitter" aria-label="Share on X">
               <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            </a>
-            <a class="article-share__btn" data-share="facebook" aria-label="Share on Facebook">
+            </button>
+            <button class="article-share__btn" data-share="facebook" aria-label="Share on Facebook">
               <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-            </a>
+            </button>
             <button class="article-share__btn" data-share="copy" aria-label="Copy link">
               <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
             </button>
@@ -672,7 +667,7 @@ ul,ol{list-style:none}
         
         <div class="article-card__image-wrap">
           <div class="article-card__image">
-            <img src="/assets/images/articles/afbf061496692da7.webp?v=19f61dd84d" alt="Event Sales AI: 5 Benefits of iVvyAI’s Instant Proposal for Venues" width="600" height="338" loading="lazy" decoding="async">
+            <img src="/assets/images/articles/afbf061496692da7.webp?v=896b2f5c37" alt="Event Sales AI: 5 Benefits of iVvyAI’s Instant Proposal for Venues" width="600" height="338" loading="lazy" decoding="async">
           </div>
         </div>
         
@@ -702,7 +697,7 @@ ul,ol{list-style:none}
         
         <div class="article-card__image-wrap">
           <div class="article-card__image">
-            <img src="/assets/images/articles/dc4cd957991e2021.webp?v=19f61dd84d" alt="What is the ROI of event management software?" width="600" height="338" loading="lazy" decoding="async">
+            <img src="/assets/images/articles/dc4cd957991e2021.webp?v=896b2f5c37" alt="What is the ROI of event management software?" width="600" height="338" loading="lazy" decoding="async">
           </div>
         </div>
         
@@ -732,7 +727,7 @@ ul,ol{list-style:none}
         
         <div class="article-card__image-wrap">
           <div class="article-card__image">
-            <img src="/assets/images/articles/f8efd38b7b743a55.webp?v=19f61dd84d" alt="How to forecast venue revenue with greater accuracy" width="600" height="338" loading="lazy" decoding="async">
+            <img src="/assets/images/articles/f8efd38b7b743a55.webp?v=896b2f5c37" alt="How to forecast venue revenue with greater accuracy" width="600" height="338" loading="lazy" decoding="async">
           </div>
         </div>
         
@@ -766,7 +761,7 @@ ul,ol{list-style:none}
 
 
 <section class="cta">
-  <img src="/assets/images/patterns/cta-pattern.webp?v=19f61dd84d" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600">
+  <img src="/assets/images/patterns/cta-pattern.webp?v=896b2f5c37" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600">
   <div class="container">
     <div class="cta__inner">
       <h2 class="cta__title" style="background: linear-gradient(135deg, hsl(85, 54%, 56%), hsl(85, 54%, 75%)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Stay in the know</h2>
@@ -808,7 +803,7 @@ ul,ol{list-style:none}
   "@type": "Article",
   "headline": "How to build a venue sales routine with iVvyAI",
   "description": "Venue sales move fast, and the process becomes easier when the day starts with clarity. When you can see which enquiries are ready, which need input and which tasks move revenue forward, your whole workflow feels more controlled.",
-  "image": "/assets/images/articles/4c8660d2ee453a10.webp?v=19f61dd84d",
+  "image": "/assets/images/articles/4c8660d2ee453a10.webp?v=896b2f5c37",
   "datePublished": "2026-04-07T05:51:38.045+00:00",
   "dateModified": "2026-04-08T00:44:18.908401+00:00",
   "publisher": {
@@ -828,7 +823,7 @@ ul,ol{list-style:none}
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=19f61dd84d" alt="iVvy" class="footer__logo" width="120" height="40">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=896b2f5c37" alt="iVvy" class="footer__logo" width="120" height="40">
         <div class="footer__social">
           <a href="https://www.linkedin.com/company/ivvy/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -994,7 +989,7 @@ ul,ol{list-style:none}
 
 
 
-<script src="/assets/js/scripts.js?v=19f61dd84d" defer></script>
+<script src="/assets/js/scripts.js?v=896b2f5c37" defer></script>
 
 
 
