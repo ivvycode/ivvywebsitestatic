@@ -414,6 +414,30 @@
   
   
   <url>
+    <loc>https://www.ivvy.com/blog/guide-to-implementing-venue-management-software/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.ivvy.com/blog/how-to-build-a-venue-sales-routine-with-ivvyai/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.ivvy.com/blog/ivvy-introduces-ivvyai-with-the-launch-of-its-first-solution-instant-proposal/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://www.ivvy.com/blog/2026-event-trends-you-wont-want-to-miss/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -462,14 +486,6 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/blog/guide-to-implementing-venue-management-software/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  
-  
-  <url>
     <loc>https://www.ivvy.com/blog/tips-tricks-for-using-event-software-templates/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -511,14 +527,6 @@
   
   <url>
     <loc>https://www.ivvy.com/blog/5-event-reports-every-venue-manager-should-run-weekly/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://www.ivvy.com/blog/ivvy-introduces-ivvyai-with-the-launch-of-its-first-solution-instant-proposal/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -591,14 +599,6 @@
   
   <url>
     <loc>https://www.ivvy.com/blog/why-speed-matters-the-psychology-behind-quick-responses/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://www.ivvy.com/blog/how-to-build-a-venue-sales-routine-with-ivvyai/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
