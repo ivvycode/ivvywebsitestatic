@@ -414,6 +414,22 @@
   
   
   <url>
+    <loc>https://www.ivvy.com/blog/5-big-benefits-of-event-sales-ai-ivvyai-instant-proposal/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.ivvy.com/blog/what-is-the-difference-between-a-crm-and-venue-management-system/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://www.ivvy.com/blog/what-is-venue-management-learn-more/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -494,14 +510,6 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/blog/how-to-forecast-venue-revenue-with-greater-accuracy/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  
-  
-  <url>
     <loc>https://www.ivvy.com/blog/ivvy-introduces-ivvyai-with-the-launch-of-its-first-solution-instant-proposal/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -510,7 +518,15 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/blog/how-to-prevent-double-bookings-in-your-venue/</loc>
+    <loc>https://www.ivvy.com/blog/how-to-forecast-venue-revenue-with-greater-accuracy/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.ivvy.com/blog/6-ways-an-integrated-payment-platform-transforms-venue-management/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -526,7 +542,7 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/blog/6-ways-an-integrated-payment-platform-transforms-venue-management/</loc>
+    <loc>https://www.ivvy.com/blog/how-to-prevent-double-bookings-in-your-venue/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
