@@ -534,7 +534,7 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/blog/why-speed-matters-the-psychology-behind-quick-responses/</loc>
+    <loc>https://www.ivvy.com/blog/the-revenue-impact-hiding-in-your-venues-enquiry-response-time/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -542,7 +542,7 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/blog/the-revenue-impact-hiding-in-your-venues-enquiry-response-time/</loc>
+    <loc>https://www.ivvy.com/blog/why-speed-matters-the-psychology-behind-quick-responses/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -703,6 +703,14 @@
   
   <url>
     <loc>https://www.ivvy.com/blog/how-much-does-event-management-software-cost/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.ivvy.com/blog/how-to-increase-venue-bookings-during-quieter-periods/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
