@@ -534,6 +534,30 @@
   
   
   <url>
+    <loc>https://www.ivvy.com/blog/why-speed-matters-the-psychology-behind-quick-responses/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.ivvy.com/blog/the-revenue-impact-hiding-in-your-venues-enquiry-response-time/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.ivvy.com/blog/how-to-prevent-double-bookings-in-your-venue/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://www.ivvy.com/blog/6-ways-an-integrated-payment-platform-transforms-venue-management/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -567,30 +591,6 @@
   
   <url>
     <loc>https://www.ivvy.com/blog/what-if-your-venue-inbox-managed-itself-with-ivvyai-it-can/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://www.ivvy.com/blog/why-speed-matters-the-psychology-behind-quick-responses/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://www.ivvy.com/blog/the-revenue-impact-hiding-in-your-venues-enquiry-response-time/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://www.ivvy.com/blog/how-to-prevent-double-bookings-in-your-venue/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -671,6 +671,38 @@
   
   <url>
     <loc>https://www.ivvy.com/blog/what-features-should-i-look-for-in-event-management-software/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.ivvy.com/blog/how-does-event-management-software-work/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.ivvy.com/blog/how-to-simplify-event-registration-and-boost-sign-ups/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.ivvy.com/blog/multi-venue-event-management-5-smart-hacks-for-success/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.ivvy.com/blog/how-much-does-event-management-software-cost/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
