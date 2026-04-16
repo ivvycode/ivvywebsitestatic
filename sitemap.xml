@@ -414,6 +414,14 @@
   
   
   <url>
+    <loc>https://www.ivvy.com/blog/2026-event-trends-you-wont-want-to-miss/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://www.ivvy.com/blog/5-big-benefits-of-event-sales-ai-ivvyai-instant-proposal/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -526,7 +534,7 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/blog/6-ways-an-integrated-payment-platform-transforms-venue-management/</loc>
+    <loc>https://www.ivvy.com/blog/7-mistakes-venues-make-that-slow-response-times/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -550,7 +558,7 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/blog/7-mistakes-venues-make-that-slow-response-times/</loc>
+    <loc>https://www.ivvy.com/blog/6-ways-an-integrated-payment-platform-transforms-venue-management/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
