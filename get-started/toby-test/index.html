@@ -1,10 +1,10 @@
-<!-- build:24545334515-637 -->
+<!-- build:24545592820-638 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png?v=4073b11ccc">
-  <link rel="apple-touch-icon" href="/assets/images/favicon.png?v=4073b11ccc">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png?v=2088246e90">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png?v=2088246e90">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>iVvy</title>
   <meta name="description" content="">
@@ -167,43 +167,56 @@ ul,ol{list-style:none}
 </style>
 
   
-  <link rel="stylesheet" href="/assets/css/styles.css?v=4073b11ccc" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="/assets/css/styles-pages.css?v=4073b11ccc" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/assets/css/styles.css?v=2088246e90" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/assets/css/styles-pages.css?v=2088246e90" media="print" onload="this.media='all'">
   <noscript>
-    <link rel="stylesheet" href="/assets/css/styles.css?v=4073b11ccc">
-    <link rel="stylesheet" href="/assets/css/styles-pages.css?v=4073b11ccc">
+    <link rel="stylesheet" href="/assets/css/styles.css?v=2088246e90">
+    <link rel="stylesheet" href="/assets/css/styles-pages.css?v=2088246e90">
   </noscript>
 
   
   <style>
+    /* Brand tokens — must be defined globally so inline block styles using var(--font-heading) etc render correctly across all CMS-published landing pages */
+    :root {
+      --font-heading: 'Poppins', sans-serif;
+      --font-body: 'Nunito', sans-serif;
+      --color-primary: #99CC52;
+      --dark-green: #103620;
+      --foreground: #103620;
+      --text-muted: #666;
+      --muted-fg: #666;
+      --border: #e5e7eb;
+      --bg: #fff;
+    }
     *, *::before, *::after { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     img { max-width: 100%; height: auto; }
     iframe { max-width: 100%; }
-    body { font-family: var(--font-body, 'Nunito', sans-serif); color: #666; font-weight: 400; }
-    .lp-page, .lp-page p, .lp-page li, .lp-page span, .lp-page div { font-family: var(--font-body, 'Nunito', sans-serif); }
+    body { font-family: var(--font-body); color: #666; font-weight: 400; }
+    .lp-page, .lp-page p, .lp-page li, .lp-page span, .lp-page div { font-family: var(--font-body); }
     .lp-page p, .lp-page li { font-weight: 400; color: #666; }
+    .lp-page h1, .lp-page h2, .lp-page h3, .lp-page h4, .lp-page h5, .lp-page h6 { font-family: var(--font-heading); color: var(--dark-green); margin: 0; }
     .lp-hero { position: relative; }
-    .lp-hero h1 { font-family: var(--font-heading, 'Poppins', sans-serif); font-size: clamp(2rem, 5vw, 3.75rem); font-weight: 800; line-height: 1.1; margin: 0 0 16px; }
+    .lp-hero h1 { font-family: var(--font-heading); font-size: clamp(2rem, 5vw, 3.75rem); font-weight: 800; line-height: 1.1; margin: 0 0 16px; }
     .lp-hero p { font-size: 1.125rem; line-height: 1.6; margin: 0 0 24px; }
     .lp-richtext { max-width: 960px; margin: 0 auto; }
-    .lp-richtext h2 { font-family: var(--font-heading, 'Poppins', sans-serif); font-weight: 800; font-size: clamp(1.5rem, 3vw, 2.25rem); margin: 0 0 12px; }
-    .lp-richtext p { font-family: var(--font-body, 'Nunito', sans-serif); line-height: 1.7; margin: 0 0 16px; font-weight: 400; color: #666; }
+    .lp-richtext h2 { font-family: var(--font-heading); font-weight: 800; font-size: clamp(1.5rem, 3vw, 2.25rem); margin: 0 0 12px; }
+    .lp-richtext p { font-family: var(--font-body); line-height: 1.7; margin: 0 0 16px; font-weight: 400; color: #666; }
     .lp-richtext img, .lp-richtext iframe, .lp-richtext video { max-width: 100%; }
     .lp-two-col, .lp-three-col { max-width: 1200px; margin: 0 auto; }
     .lp-stat { display: flex; flex-direction: column; align-items: center; gap: 4px; }
-    .lp-stat__value { font-family: var(--font-heading, 'Poppins', sans-serif); font-size: 2rem; font-weight: 800; color: var(--color-primary, #99CC52); }
-    .lp-stat__label { font-family: var(--font-body, 'Nunito', sans-serif); font-size: 0.875rem; color: #666; }
-    .lp-testimonial blockquote { font-family: var(--font-heading, 'Poppins', sans-serif); font-style: normal; border: none; padding: 0; margin: 0; }
-    .lp-banner h2 { font-family: var(--font-heading, 'Poppins', sans-serif); font-weight: 800; font-size: clamp(1.5rem, 3vw, 2.25rem); margin: 0 0 12px; }
+    .lp-stat__value { font-family: var(--font-heading); font-size: 2rem; font-weight: 800; color: var(--color-primary); }
+    .lp-stat__label { font-family: var(--font-body); font-size: 0.875rem; color: #666; }
+    .lp-testimonial blockquote { font-family: var(--font-heading); font-style: normal; border: none; padding: 0; margin: 0; }
+    .lp-banner h2 { font-family: var(--font-heading); font-weight: 800; font-size: clamp(1.5rem, 3vw, 2.25rem); margin: 0 0 12px; }
     .lp-hubspot { max-width: 640px; margin: 0 auto; }
     .lp-spacer { pointer-events: none; }
     .lp-divider { display: block; }
-    .btn { display: inline-block; padding: 14px 32px; border-radius: 12px; font-family: var(--font-heading, 'Poppins', sans-serif); font-weight: 700; font-size: 1rem; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; }
+    .btn { display: inline-block; padding: 14px 32px; border-radius: 12px; font-family: var(--font-heading); font-weight: 700; font-size: 1rem; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; }
     .btn:hover { transform: translateY(-2px); }
-    .btn--primary { background: var(--color-primary, #99CC52); color: #fff; box-shadow: 0 4px 14px rgba(153,204,82,0.3); }
+    .btn--primary { background: var(--color-primary); color: #fff; box-shadow: 0 4px 14px rgba(153,204,82,0.3); }
     .btn--primary:hover { box-shadow: 0 6px 20px rgba(153,204,82,0.4); }
-    .btn--secondary { background: #fff; color: var(--dark-green, #103620); border: 2px solid var(--border, #e5e7eb); }
+    .btn--secondary { background: #fff; color: var(--dark-green); border: 2px solid var(--border); }
     .btn--outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.3); }
     .lp-page { overflow-x: clip; }
     .lp-embed-shell { position: relative; min-height: 200px; }
@@ -321,7 +334,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__left">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=4073b11ccc" alt="iVvy" width="120" height="32" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=2088246e90" alt="iVvy" width="120" height="32" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;">
         </a>
         <nav class="nav">
           
@@ -599,7 +612,7 @@ ul,ol{list-style:none}
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=4073b11ccc" alt="iVvy" class="footer__logo" width="120" height="40">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=2088246e90" alt="iVvy" class="footer__logo" width="120" height="40">
         <div class="footer__social">
           <a href="https://www.linkedin.com/company/ivvy/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -766,7 +779,7 @@ ul,ol{list-style:none}
 </div>
 
 
-<script src="/assets/js/scripts.js?v=4073b11ccc" defer></script>
+<script src="/assets/js/scripts.js?v=2088246e90" defer></script>
 
 
 
