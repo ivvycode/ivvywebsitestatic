@@ -502,14 +502,6 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/blog/boost-your-hotel-revenue-with-our-new-ebook/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  
-  
-  <url>
     <loc>https://www.ivvy.com/blog/how-event-ticketing-software-can-reduce-no-shows/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -534,7 +526,7 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/blog/what-is-the-average-venue-response-time/</loc>
+    <loc>https://www.ivvy.com/blog/5-ways-slow-responses-hurt-your-venue/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -543,14 +535,6 @@
   
   <url>
     <loc>https://www.ivvy.com/blog/the-revenue-impact-hiding-in-your-venues-enquiry-response-time/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://www.ivvy.com/blog/5-ways-slow-responses-hurt-your-venue/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -583,6 +567,14 @@
   
   <url>
     <loc>https://www.ivvy.com/blog/7-mistakes-venues-make-that-slow-response-times/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.ivvy.com/blog/what-is-the-average-venue-response-time/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -638,7 +630,7 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/blog/free-ebook-sustainable-practices-in-hotels-venues/</loc>
+    <loc>https://www.ivvy.com/blog/free-ebook-sustainable-hotel-practices-to-improve-venue-operations/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
