@@ -1,10 +1,10 @@
-<!-- build:24808082133-799 -->
+<!-- build:24810405074-800 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png?v=54ed83dc80">
-  <link rel="apple-touch-icon" href="/assets/images/favicon.png?v=54ed83dc80">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png?v=ca414a8859">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png?v=ca414a8859">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Sales &amp; Catering Software for Hotels | Event Sales | iVvy</title>
   <meta name="description" content="Sales and catering software for hotels. Streamline event sales, manage bookings, send instant quotes, and grow venue revenue with iVvy.">
@@ -16,10 +16,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  
 
   
   
-  <link rel="preload" href="/assets/images/heroes/hotels-hero.webp?v=54ed83dc80" as="image" fetchpriority="high">
+  <link rel="preload" href="/assets/images/heroes/hotels-hero.webp?v=ca414a8859" as="image" fetchpriority="high">
   
   
 
@@ -75,9 +77,9 @@ ul,ol{list-style:none}
 .header__inner{display:flex;align-items:center;justify-content:space-between;height:64px}
 .header__left{display:flex;align-items:center;min-width:0;flex-shrink:0;min-height:64px}
 .header__logo img{height:32px;width:120px;object-fit:contain}
-.nav{display:none}@media(min-width:1200px){.nav{display:flex;align-items:center;gap:0;margin-left:24px;min-height:40px}}
-.nav__item{position:relative}
-.nav__link{display:flex;align-items:center;gap:4px;height:40px;padding:8px 24px;font-family:'Nunito','Nunito Fallback',sans-serif;font-size:14px;font-weight:500;color:#666666;border-radius:0;transition:color 0.2s ease;background:none;border:none;text-transform:none;letter-spacing:normal;white-space:nowrap;min-width:max-content}
+.nav{display:none}@media(min-width:1200px){.nav{display:flex;align-items:center;gap:0;margin-left:24px;min-height:40px;width:560px;flex-shrink:0;contain:layout}}
+.nav__item{position:relative;flex:1;display:flex;justify-content:center}
+.nav__link{display:inline-flex;align-items:center;justify-content:center;gap:4px;height:40px;padding:8px 16px;font-family:'Nunito','Nunito Fallback',sans-serif;font-size:14px;font-weight:500;color:#666666;border-radius:0;transition:color 0.2s ease;background:none;border:none;text-transform:none;letter-spacing:normal;white-space:nowrap}
 .header__cta{display:none}@media(min-width:1200px){.header__cta{display:flex;align-items:center;gap:16px}}
 .header__login{font-family:'Nunito','Nunito Fallback',sans-serif;font-size:14px;font-weight:500;color:#666666;padding:8px 24px;background:none;border:none;cursor:pointer}
 .mobile-toggle{display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:none;border:none;color:#103620}
@@ -106,9 +108,10 @@ ul,ol{list-style:none}
 .hero-mesh__bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 20% 80%,hsla(85,54%,56%,0.25) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 80% 20%,hsla(45,80%,65%,0.2) 0%,transparent 50%),radial-gradient(ellipse 90% 70% at 50% 50%,hsla(82,62%,44%,0.08) 0%,transparent 70%),linear-gradient(160deg,hsl(60,20%,96%) 0%,hsl(80,25%,94%) 30%,hsl(45,30%,95%) 60%,hsl(60,15%,97%) 100%)}
 .hero-mesh__content{position:relative;z-index:10;text-align:center;display:flex;flex-direction:column;align-items:center;max-width:768px;margin:0 auto}
 .hero-mesh__pill{display:inline-flex;align-items:center;padding:6px 16px;border-radius:9999px;background:rgba(153,204,82,0.15);font-size:13px;font-weight:700;font-family:'Nunito','Nunito Fallback',sans-serif;text-transform:uppercase;letter-spacing:0.05em;color:#103620;margin-bottom:24px}
-.hero-mesh__title{font-size:32px;font-weight:800;color:#103620;margin-bottom:24px;line-height:1.4;min-height:calc(2 * 32px * 1.4)}
-@media(min-width:768px){.hero-mesh__title{font-size:40px;min-height:calc(2 * 40px * 1.4)}}
-@media(min-width:1024px){.hero-mesh{padding-top:96px}.hero-mesh__title{font-size:52px;line-height:1.45;min-height:calc(2 * 52px * 1.45)}}
+.hero-mesh__title{font-size:32px;font-weight:800;color:#103620;margin-bottom:24px;line-height:1.4;min-height:calc(2 * 32px * 1.4);text-wrap:balance;contain:layout}
+.hero-mesh__title-dark,.hero-mesh__title-highlight{min-height:calc(32px * 1.4)}
+@media(min-width:768px){.hero-mesh__title{font-size:40px;min-height:calc(2 * 40px * 1.4)}.hero-mesh__title-dark,.hero-mesh__title-highlight{min-height:calc(40px * 1.4)}}
+@media(min-width:1024px){.hero-mesh{padding-top:96px}.hero-mesh__title{font-size:52px;line-height:1.45;min-height:calc(2 * 52px * 1.45)}.hero-mesh__title-dark,.hero-mesh__title-highlight{min-height:calc(52px * 1.45)}}
 .hero-mesh__title-dark{color:#103620;display:block}
 @media(min-width:1024px){.hero-mesh__title-dark{white-space:nowrap}}
 .hero-mesh__title-highlight{background:linear-gradient(135deg,hsl(85,54%,56%),hsl(82,62%,44%));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;line-height:1.3;padding-bottom:0.05em;transition:opacity 0.3s ease,transform 0.3s ease}
@@ -173,11 +176,11 @@ ul,ol{list-style:none}
 </style>
 
   
-  <link rel="preload" href="/assets/css/styles.css?v=54ed83dc80" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/css/styles.css?v=54ed83dc80"></noscript>
+  <link rel="preload" href="/assets/css/styles.css?v=ca414a8859" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/styles.css?v=ca414a8859"></noscript>
   
-  <link rel="preload" href="/assets/css/styles-pages.css?v=54ed83dc80" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/css/styles-pages.css?v=54ed83dc80"></noscript>
+  <link rel="preload" href="/assets/css/styles-pages.css?v=ca414a8859" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/styles-pages.css?v=ca414a8859"></noscript>
   
 
   
@@ -215,11 +218,21 @@ ul,ol{list-style:none}
     }
   } catch(e) {}
 
-  // 3. Load GTM immediately. Container is detectable by Tag Assistant.
-  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
-  var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;
-  j.src='https://www.googletagmanager.com/gtm.js?id='+i;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-TBQKMCP');
+  // 3. Load GTM AFTER first paint to keep it off the LCP critical path.
+  //    Falls back to a 3s timer if 'load' never fires (e.g. tab in background).
+  function ivvyLoadGTM(){
+    if (window.__ivvyGtmLoaded) return; window.__ivvyGtmLoaded = true;
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+    var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;
+    j.src='https://www.googletagmanager.com/gtm.js?id='+i;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TBQKMCP');
+  }
+  if (document.readyState === 'complete') {
+    setTimeout(ivvyLoadGTM, 0);
+  } else {
+    window.addEventListener('load', function(){ setTimeout(ivvyLoadGTM, 0); }, { once: true });
+    setTimeout(ivvyLoadGTM, 3000);
+  }
 </script>
 
 
@@ -231,7 +244,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__left">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=54ed83dc80" alt="iVvy" width="120" height="32" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=ca414a8859" alt="iVvy" width="120" height="32" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;">
         </a>
         <nav class="nav">
           
@@ -510,7 +523,7 @@ ul,ol{list-style:none}
     <div class="page-hero__bg-left"></div>
     <div class="page-hero__bg-right">
       
-      <img src="/assets/images/heroes/hotels-hero.webp?v=54ed83dc80" alt="Hotel venue" width="960" height="520" loading="eager" fetchpriority="high">
+      <img src="/assets/images/heroes/hotels-hero.webp?v=ca414a8859" alt="Hotel venue" width="960" height="520" loading="eager" fetchpriority="high">
       
     </div>
   </div>
@@ -555,95 +568,95 @@ ul,ol{list-style:none}
     <div class="trust-logos__track">
       
       
-      <img src="/assets/images/logos/accor.png?v=54ed83dc80" alt="Accor Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/accor.png?v=ca414a8859" alt="Accor Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
-      <img src="/assets/images/logos/minor-hotels.webp?v=54ed83dc80" alt="Minor Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/minor-hotels.webp?v=ca414a8859" alt="Minor Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
-      <img src="/assets/images/logos/alh-group.webp?v=54ed83dc80" alt="ALH Group" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/alh-group.webp?v=ca414a8859" alt="ALH Group" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
-      <img src="/assets/images/logos/twickenham.webp?v=54ed83dc80" alt="Twickenham Stadium" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/twickenham.webp?v=ca414a8859" alt="Twickenham Stadium" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
-      <img src="/assets/images/logos/goodwood.webp?v=54ed83dc80" alt="Goodwood Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/goodwood.webp?v=ca414a8859" alt="Goodwood Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
-      <img src="/assets/images/logos/event.webp?v=54ed83dc80" alt="Event" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/event.webp?v=ca414a8859" alt="Event" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
-      <img src="/assets/images/logos/tfe-hotels.webp?v=54ed83dc80" alt="TFE Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/tfe-hotels.webp?v=ca414a8859" alt="TFE Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
-      <img src="/assets/images/logos/comwell.webp?v=54ed83dc80" alt="Comwell" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/comwell.webp?v=ca414a8859" alt="Comwell" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
-      <img src="/assets/images/logos/village.webp?v=54ed83dc80" alt="Village Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/village.webp?v=ca414a8859" alt="Village Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
-      <img src="/assets/images/logos/howard-smith.webp?v=54ed83dc80" alt="Howard Smith Wharves" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/howard-smith.webp?v=ca414a8859" alt="Howard Smith Wharves" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
-      <img src="/assets/images/logos/solotel.webp?v=54ed83dc80" alt="Solotel" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/solotel.webp?v=ca414a8859" alt="Solotel" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
-      <img src="/assets/images/logos/avc.webp?v=54ed83dc80" alt="AVC" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/avc.webp?v=ca414a8859" alt="AVC" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
-      <img src="/assets/images/logos/central-hall.webp?v=54ed83dc80" alt="Central Hall Westminster" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/central-hall.webp?v=ca414a8859" alt="Central Hall Westminster" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
-      <img src="/assets/images/logos/murrayfield.webp?v=54ed83dc80" alt="Murrayfield" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/murrayfield.webp?v=ca414a8859" alt="Murrayfield" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
-      <img src="/assets/images/logos/tottenham.webp?v=54ed83dc80" alt="Tottenham Hotspur" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/tottenham.webp?v=ca414a8859" alt="Tottenham Hotspur" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
-      <img src="/assets/images/logos/elior.webp?v=54ed83dc80" alt="Elior" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/elior.webp?v=ca414a8859" alt="Elior" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
-      <img src="/assets/images/logos/sheffield.webp?v=54ed83dc80" alt="Sheffield" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/sheffield.webp?v=ca414a8859" alt="Sheffield" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
-      <img src="/assets/images/logos/southern-cross.webp?v=54ed83dc80" alt="Southern Cross" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/southern-cross.webp?v=ca414a8859" alt="Southern Cross" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
-      <img src="/assets/images/logos/queensland-gov.webp?v=54ed83dc80" alt="University of Queensland" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/queensland-gov.webp?v=ca414a8859" alt="University of Queensland" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
-      <img src="/assets/images/logos/victoria.webp?v=54ed83dc80" alt="University of Victoria" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/victoria.webp?v=ca414a8859" alt="University of Victoria" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
-      <img src="/assets/images/logos/australian-government.webp?v=54ed83dc80" alt="Australian Government" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/australian-government.webp?v=ca414a8859" alt="Australian Government" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
-      <img src="/assets/images/logos/qld-education.webp?v=54ed83dc80" alt="Dept of Education" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/qld-education.webp?v=ca414a8859" alt="Dept of Education" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
       
       
-      <img src="/assets/images/logos/accor.png?v=54ed83dc80" alt="Accor Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/accor.png?v=ca414a8859" alt="Accor Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
-      <img src="/assets/images/logos/minor-hotels.webp?v=54ed83dc80" alt="Minor Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/minor-hotels.webp?v=ca414a8859" alt="Minor Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
-      <img src="/assets/images/logos/alh-group.webp?v=54ed83dc80" alt="ALH Group" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/alh-group.webp?v=ca414a8859" alt="ALH Group" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
-      <img src="/assets/images/logos/twickenham.webp?v=54ed83dc80" alt="Twickenham Stadium" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/twickenham.webp?v=ca414a8859" alt="Twickenham Stadium" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
-      <img src="/assets/images/logos/goodwood.webp?v=54ed83dc80" alt="Goodwood Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/goodwood.webp?v=ca414a8859" alt="Goodwood Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
-      <img src="/assets/images/logos/event.webp?v=54ed83dc80" alt="Event" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/event.webp?v=ca414a8859" alt="Event" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
-      <img src="/assets/images/logos/tfe-hotels.webp?v=54ed83dc80" alt="TFE Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/tfe-hotels.webp?v=ca414a8859" alt="TFE Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
-      <img src="/assets/images/logos/comwell.webp?v=54ed83dc80" alt="Comwell" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/comwell.webp?v=ca414a8859" alt="Comwell" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
-      <img src="/assets/images/logos/village.webp?v=54ed83dc80" alt="Village Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/village.webp?v=ca414a8859" alt="Village Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
-      <img src="/assets/images/logos/howard-smith.webp?v=54ed83dc80" alt="Howard Smith Wharves" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/howard-smith.webp?v=ca414a8859" alt="Howard Smith Wharves" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
-      <img src="/assets/images/logos/solotel.webp?v=54ed83dc80" alt="Solotel" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/solotel.webp?v=ca414a8859" alt="Solotel" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
-      <img src="/assets/images/logos/avc.webp?v=54ed83dc80" alt="AVC" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/avc.webp?v=ca414a8859" alt="AVC" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
-      <img src="/assets/images/logos/central-hall.webp?v=54ed83dc80" alt="Central Hall Westminster" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/central-hall.webp?v=ca414a8859" alt="Central Hall Westminster" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
-      <img src="/assets/images/logos/murrayfield.webp?v=54ed83dc80" alt="Murrayfield" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/murrayfield.webp?v=ca414a8859" alt="Murrayfield" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
-      <img src="/assets/images/logos/tottenham.webp?v=54ed83dc80" alt="Tottenham Hotspur" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/tottenham.webp?v=ca414a8859" alt="Tottenham Hotspur" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
-      <img src="/assets/images/logos/elior.webp?v=54ed83dc80" alt="Elior" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/elior.webp?v=ca414a8859" alt="Elior" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
-      <img src="/assets/images/logos/sheffield.webp?v=54ed83dc80" alt="Sheffield" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/sheffield.webp?v=ca414a8859" alt="Sheffield" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
-      <img src="/assets/images/logos/southern-cross.webp?v=54ed83dc80" alt="Southern Cross" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/southern-cross.webp?v=ca414a8859" alt="Southern Cross" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
-      <img src="/assets/images/logos/queensland-gov.webp?v=54ed83dc80" alt="University of Queensland" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/queensland-gov.webp?v=ca414a8859" alt="University of Queensland" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
-      <img src="/assets/images/logos/victoria.webp?v=54ed83dc80" alt="University of Victoria" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/victoria.webp?v=ca414a8859" alt="University of Victoria" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
-      <img src="/assets/images/logos/australian-government.webp?v=54ed83dc80" alt="Australian Government" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/australian-government.webp?v=ca414a8859" alt="Australian Government" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
-      <img src="/assets/images/logos/qld-education.webp?v=54ed83dc80" alt="Dept of Education" class="trust-logos__logo" loading="lazy" width="120" height="40">
+      <img src="/assets/images/logos/qld-education.webp?v=ca414a8859" alt="Dept of Education" class="trust-logos__logo" loading="lazy" width="120" height="40">
       
     </div>
   </div>
@@ -708,7 +721,7 @@ ul,ol{list-style:none}
         
       </div>
       <div class="venue-intro__image">
-        <img src="/assets/images/pages/hotels-1.webp?v=54ed83dc80" alt="Hotels Software Dashboard" width="600" height="400" loading="lazy" decoding="async">
+        <img src="/assets/images/pages/hotels-1.webp?v=ca414a8859" alt="Hotels Software Dashboard" width="600" height="400" loading="lazy" decoding="async">
       </div>
     </div>
   </div>
@@ -904,7 +917,7 @@ ul,ol{list-style:none}
         </div>
       </div>
       <div class="venue-intro__image">
-        <img src="/assets/images/benefits/speed.webp?v=54ed83dc80" alt="Why choose iVvy" width="600" height="400" loading="lazy" decoding="async">
+        <img src="/assets/images/benefits/speed.webp?v=ca414a8859" alt="Why choose iVvy" width="600" height="400" loading="lazy" decoding="async">
       </div>
     </div>
   </div>
@@ -923,11 +936,11 @@ ul,ol{list-style:none}
       <a href="/customers/mantra-group/" class="cs-card-link">
         <div class="cs-card">
           <div class="cs-card__image">
-            <img src="/assets/images/case-studies/mantra-hero.webp?v=54ed83dc80" alt="" width="400" height="300" loading="lazy" decoding="async">
+            <img src="/assets/images/case-studies/mantra-hero.webp?v=ca414a8859" alt="" width="400" height="300" loading="lazy" decoding="async">
           </div>
           <div class="cs-card__body">
             <div class="cs-card__logo-wrap">
-              <img src="/assets/images/logos/mantra-logo.webp?v=54ed83dc80" alt="" loading="lazy" decoding="async">
+              <img src="/assets/images/logos/mantra-logo.webp?v=ca414a8859" alt="" loading="lazy" decoding="async">
             </div>
             
             <h4 class="cs-card__name">Mantra Group</h4>
@@ -951,11 +964,11 @@ ul,ol{list-style:none}
       <a href="/customers/tfe/" class="cs-card-link">
         <div class="cs-card">
           <div class="cs-card__image">
-            <img src="/assets/images/case-studies/tfe-hero.webp?v=54ed83dc80" alt="" width="400" height="300" loading="lazy" decoding="async">
+            <img src="/assets/images/case-studies/tfe-hero.webp?v=ca414a8859" alt="" width="400" height="300" loading="lazy" decoding="async">
           </div>
           <div class="cs-card__body">
             <div class="cs-card__logo-wrap">
-              <img src="/assets/images/logos/tfe-logo.webp?v=54ed83dc80" alt="" loading="lazy" decoding="async">
+              <img src="/assets/images/logos/tfe-logo.webp?v=ca414a8859" alt="" loading="lazy" decoding="async">
             </div>
             
             <h4 class="cs-card__name">TFE Hotels</h4>
@@ -979,11 +992,11 @@ ul,ol{list-style:none}
       <a href="/customers/best-western-boulder-falls/" class="cs-card-link">
         <div class="cs-card">
           <div class="cs-card__image">
-            <img src="/assets/images/case-studies/best-western-hero.webp?v=54ed83dc80" alt="" width="400" height="300" loading="lazy" decoding="async">
+            <img src="/assets/images/case-studies/best-western-hero.webp?v=ca414a8859" alt="" width="400" height="300" loading="lazy" decoding="async">
           </div>
           <div class="cs-card__body">
             <div class="cs-card__logo-wrap">
-              <img src="/assets/images/logos/best-western-logo.webp?v=54ed83dc80" alt="" loading="lazy" decoding="async">
+              <img src="/assets/images/logos/best-western-logo.webp?v=ca414a8859" alt="" loading="lazy" decoding="async">
             </div>
             
             <h4 class="cs-card__name">Best Western Boulder Falls Inn</h4>
@@ -1438,7 +1451,7 @@ ul,ol{list-style:none}
 
 
 <section class="cta">
-  <img src="/assets/images/patterns/cta-pattern.webp?v=54ed83dc80" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600">
+  <img src="/assets/images/patterns/cta-pattern.webp?v=ca414a8859" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600">
   <div class="container">
     <div class="cta__inner">
       <h2 class="cta__title">Start seeing <span class="scroll-color-text scroll-color-text--from-white">your results</span></h2>
@@ -1491,7 +1504,7 @@ ul,ol{list-style:none}
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=54ed83dc80" alt="iVvy" class="footer__logo" width="120" height="40">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=ca414a8859" alt="iVvy" class="footer__logo" width="120" height="40">
         <div class="footer__social">
           <a href="https://www.linkedin.com/company/ivvy/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1657,7 +1670,7 @@ ul,ol{list-style:none}
 
 
 
-<script src="/assets/js/scripts.js?v=54ed83dc80" defer></script>
+<script src="/assets/js/scripts.js?v=ca414a8859" defer></script>
 
 
 

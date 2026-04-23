@@ -1,10 +1,10 @@
-<!-- build:24808082133-799 -->
+<!-- build:24810405074-800 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png?v=54ed83dc80">
-  <link rel="apple-touch-icon" href="/assets/images/favicon.png?v=54ed83dc80">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png?v=ca414a8859">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png?v=ca414a8859">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>eBook: hotel sales &amp; catering software and guest personalisation — a revenue growth guide | iVvy Blog</title>
   <meta name="description" content="Discover the strategies hotel sales managers are using to turn guest personalisation and hotel sales &amp; catering software into measurable revenue growth.">
@@ -15,6 +15,8 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
   
 
   
@@ -73,9 +75,9 @@ ul,ol{list-style:none}
 .header__inner{display:flex;align-items:center;justify-content:space-between;height:64px}
 .header__left{display:flex;align-items:center;min-width:0;flex-shrink:0;min-height:64px}
 .header__logo img{height:32px;width:120px;object-fit:contain}
-.nav{display:none}@media(min-width:1200px){.nav{display:flex;align-items:center;gap:0;margin-left:24px;min-height:40px}}
-.nav__item{position:relative}
-.nav__link{display:flex;align-items:center;gap:4px;height:40px;padding:8px 24px;font-family:'Nunito','Nunito Fallback',sans-serif;font-size:14px;font-weight:500;color:#666666;border-radius:0;transition:color 0.2s ease;background:none;border:none;text-transform:none;letter-spacing:normal;white-space:nowrap;min-width:max-content}
+.nav{display:none}@media(min-width:1200px){.nav{display:flex;align-items:center;gap:0;margin-left:24px;min-height:40px;width:560px;flex-shrink:0;contain:layout}}
+.nav__item{position:relative;flex:1;display:flex;justify-content:center}
+.nav__link{display:inline-flex;align-items:center;justify-content:center;gap:4px;height:40px;padding:8px 16px;font-family:'Nunito','Nunito Fallback',sans-serif;font-size:14px;font-weight:500;color:#666666;border-radius:0;transition:color 0.2s ease;background:none;border:none;text-transform:none;letter-spacing:normal;white-space:nowrap}
 .header__cta{display:none}@media(min-width:1200px){.header__cta{display:flex;align-items:center;gap:16px}}
 .header__login{font-family:'Nunito','Nunito Fallback',sans-serif;font-size:14px;font-weight:500;color:#666666;padding:8px 24px;background:none;border:none;cursor:pointer}
 .mobile-toggle{display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:none;border:none;color:#103620}
@@ -104,9 +106,10 @@ ul,ol{list-style:none}
 .hero-mesh__bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 20% 80%,hsla(85,54%,56%,0.25) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 80% 20%,hsla(45,80%,65%,0.2) 0%,transparent 50%),radial-gradient(ellipse 90% 70% at 50% 50%,hsla(82,62%,44%,0.08) 0%,transparent 70%),linear-gradient(160deg,hsl(60,20%,96%) 0%,hsl(80,25%,94%) 30%,hsl(45,30%,95%) 60%,hsl(60,15%,97%) 100%)}
 .hero-mesh__content{position:relative;z-index:10;text-align:center;display:flex;flex-direction:column;align-items:center;max-width:768px;margin:0 auto}
 .hero-mesh__pill{display:inline-flex;align-items:center;padding:6px 16px;border-radius:9999px;background:rgba(153,204,82,0.15);font-size:13px;font-weight:700;font-family:'Nunito','Nunito Fallback',sans-serif;text-transform:uppercase;letter-spacing:0.05em;color:#103620;margin-bottom:24px}
-.hero-mesh__title{font-size:32px;font-weight:800;color:#103620;margin-bottom:24px;line-height:1.4;min-height:calc(2 * 32px * 1.4)}
-@media(min-width:768px){.hero-mesh__title{font-size:40px;min-height:calc(2 * 40px * 1.4)}}
-@media(min-width:1024px){.hero-mesh{padding-top:96px}.hero-mesh__title{font-size:52px;line-height:1.45;min-height:calc(2 * 52px * 1.45)}}
+.hero-mesh__title{font-size:32px;font-weight:800;color:#103620;margin-bottom:24px;line-height:1.4;min-height:calc(2 * 32px * 1.4);text-wrap:balance;contain:layout}
+.hero-mesh__title-dark,.hero-mesh__title-highlight{min-height:calc(32px * 1.4)}
+@media(min-width:768px){.hero-mesh__title{font-size:40px;min-height:calc(2 * 40px * 1.4)}.hero-mesh__title-dark,.hero-mesh__title-highlight{min-height:calc(40px * 1.4)}}
+@media(min-width:1024px){.hero-mesh{padding-top:96px}.hero-mesh__title{font-size:52px;line-height:1.45;min-height:calc(2 * 52px * 1.45)}.hero-mesh__title-dark,.hero-mesh__title-highlight{min-height:calc(52px * 1.45)}}
 .hero-mesh__title-dark{color:#103620;display:block}
 @media(min-width:1024px){.hero-mesh__title-dark{white-space:nowrap}}
 .hero-mesh__title-highlight{background:linear-gradient(135deg,hsl(85,54%,56%),hsl(82,62%,44%));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;line-height:1.3;padding-bottom:0.05em;transition:opacity 0.3s ease,transform 0.3s ease}
@@ -171,11 +174,11 @@ ul,ol{list-style:none}
 </style>
 
   
-  <link rel="preload" href="/assets/css/styles.css?v=54ed83dc80" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/css/styles.css?v=54ed83dc80"></noscript>
+  <link rel="preload" href="/assets/css/styles.css?v=ca414a8859" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/styles.css?v=ca414a8859"></noscript>
   
-  <link rel="preload" href="/assets/css/styles-pages.css?v=54ed83dc80" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/css/styles-pages.css?v=54ed83dc80"></noscript>
+  <link rel="preload" href="/assets/css/styles-pages.css?v=ca414a8859" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/styles-pages.css?v=ca414a8859"></noscript>
   
 
   
@@ -213,11 +216,21 @@ ul,ol{list-style:none}
     }
   } catch(e) {}
 
-  // 3. Load GTM immediately. Container is detectable by Tag Assistant.
-  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
-  var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;
-  j.src='https://www.googletagmanager.com/gtm.js?id='+i;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-TBQKMCP');
+  // 3. Load GTM AFTER first paint to keep it off the LCP critical path.
+  //    Falls back to a 3s timer if 'load' never fires (e.g. tab in background).
+  function ivvyLoadGTM(){
+    if (window.__ivvyGtmLoaded) return; window.__ivvyGtmLoaded = true;
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+    var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;
+    j.src='https://www.googletagmanager.com/gtm.js?id='+i;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TBQKMCP');
+  }
+  if (document.readyState === 'complete') {
+    setTimeout(ivvyLoadGTM, 0);
+  } else {
+    window.addEventListener('load', function(){ setTimeout(ivvyLoadGTM, 0); }, { once: true });
+    setTimeout(ivvyLoadGTM, 3000);
+  }
 </script>
 
 
@@ -229,7 +242,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__left">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=54ed83dc80" alt="iVvy" width="120" height="32" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=ca414a8859" alt="iVvy" width="120" height="32" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;">
         </a>
         <nav class="nav">
           
@@ -497,7 +510,7 @@ ul,ol{list-style:none}
 
 <section class="article-hero">
   <div class="article-hero__image">
-    <img src="/assets/images/articles/97c68969f773edbc.webp?v=54ed83dc80" alt="eBook: hotel sales &amp; catering software and guest personalisation — a revenue growth guide" width="1920" height="600" loading="eager" fetchpriority="high" decoding="async">
+    <img src="/assets/images/articles/97c68969f773edbc.webp?v=ca414a8859" alt="eBook: hotel sales &amp; catering software and guest personalisation — a revenue growth guide" width="1920" height="600" loading="eager" fetchpriority="high" decoding="async">
     <div class="article-hero__overlay"></div>
   </div>
 </section>
@@ -577,7 +590,7 @@ ul,ol{list-style:none}
           
           
           <div class="article-detail__content article-rich-content">
-            <p>The hotels outperforming their competitors are delivering better experiences, and they're doing it deliberately.</p><p><strong><em>Personalising the Guest Experience: A Revenue-Boosting Guide for Hotels</em> </strong>gives hotel sales managers the strategic tools to turn guest personalisation into a measurable hotel revenue increase. Actionable insights you can put to work immediately with your hotel sales &amp; catering software.</p><div data-hubspot-cta="primary-green" data-embed-code="" style="margin: 1.5em 0px;"><a href="#" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: linear-gradient(135deg, rgb(153, 203, 82), rgb(140, 204, 51)); color: rgb(15, 51, 31); font-family: &quot;Nunito Sans&quot;, sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; font-size: 14px; padding: 14px 36px; border-radius: 9999px; text-decoration: none;">Download Now</a></div><h3><strong>Why guest personalisation is a hotel revenue strategy</strong></h3><p>78% of travellers actively prefer hotels that personalise their experience. Nearly half will share personal data to make it happen. That's a commercial opportunity most hotels are leaving on the table.</p><p>Done right, hotel guest personalisation drives 6–10% revenue growth, increases guest spend, reduces acquisition costs, and builds the kind of loyalty that makes your sales targets easier to hit year after year.</p><h3><strong>What does hotel guest personalisation involve?</strong></h3><p>Effective hotel personalisation goes beyond remembering a guest's name. It means using your hotel sales and catering software, CRM, and guest data strategically to tailor communications, room preferences, upsell offers, and on-property experiences in ways that drive repeat bookings and higher spend.</p><p><strong>What's inside the eBook</strong></p><ul><li><p><strong>Guest personalisation in practice:</strong> What hotel guest personalisation looks like at the operational level, and how to move the needle from adequate to exceptional</p></li><li><p><strong>Building a hotel personalisation strategy:</strong> A clear framework that aligns with your brand positioning and commercial objectives</p></li><li><p><strong>Turning guest data into revenue:</strong> How to ethically capture and activate guest data through your hotel sales and catering software to influence booking behaviour, upsells, and retention</p></li><li><p><strong>Solving the hard problems:</strong> Data privacy in hospitality, scaling personalisation without losing the human element, and getting buy-in across your property</p></li></ul><h3><strong>How are hotels using personalisation to increase revenue?</strong></h3><p>Best Western and Accor Group have built personalisation into their commercial strategy and the results show it. Increased loyalty, stronger app engagement, measurable satisfaction gains. The case studies inside show you exactly how they did it using hotel sales &amp; catering software.</p><h3><strong>Getting more from your hotel sales &amp; catering software</strong></h3><p>Buyer persona templates, guest data collection frameworks, and customer journey tools. Everything you need to move from reading about hotel personalisation to implementing it, and get more out of the hotel sales &amp; catering software your property already uses.</p><h3><strong>Download the free hotel personalisation eBook</strong></h3><p>Your competitors are already thinking about this. Download your free copy today and make sure your property is ahead of the curve.</p><div data-hubspot-cta="primary-green" data-embed-code="" style="margin: 1.5em 0px;"><a href="#" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: linear-gradient(135deg, rgb(153, 203, 82), rgb(140, 204, 51)); color: rgb(15, 51, 31); font-family: &quot;Nunito Sans&quot;, sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; font-size: 14px; padding: 14px 36px; border-radius: 9999px; text-decoration: none;">Download Now</a></div><p></p>
+            <p>The hotels outperforming their competitors are delivering better experiences, and they're doing it deliberately.</p><div data-edge-section="light-grey" style="background-color: rgb(245, 245, 245); padding: 2em 2.5em; border-radius: 12px; margin: 1.5em 0px;"><p><strong><em>Personalising the Guest Experience: A Revenue-Boosting Guide for Hotels</em> </strong>gives hotel sales managers the strategic tools to turn guest personalisation into a measurable hotel revenue increase. Actionable insights you can put to work immediately with your hotel sales &amp; catering software.</p><div data-hubspot-cta="primary-green" data-embed-code="" style="margin: 1.5em 0px;"><a href="#" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: linear-gradient(135deg, rgb(153, 203, 82), rgb(140, 204, 51)); color: rgb(15, 51, 31); font-family: &quot;Nunito Sans&quot;, sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; font-size: 14px; padding: 14px 36px; border-radius: 9999px; text-decoration: none;">Download Now</a></div></div><p><strong>Why guest personalisation is a hotel revenue strategy</strong></p><p>78% of travellers actively prefer hotels that personalise their experience. Nearly half will share personal data to make it happen. That's a commercial opportunity most hotels are leaving on the table.</p><p>Done right, hotel guest personalisation drives 6–10% revenue growth, increases guest spend, reduces acquisition costs, and builds the kind of loyalty that makes your sales targets easier to hit year after year.</p><h3><strong>What does hotel guest personalisation involve?</strong></h3><p>Effective hotel personalisation goes beyond remembering a guest's name. It means using your hotel sales and catering software, CRM, and guest data strategically to tailor communications, room preferences, upsell offers, and on-property experiences in ways that drive repeat bookings and higher spend.</p><p><strong>What's inside the eBook</strong></p><ul><li><p><strong>Guest personalisation in practice:</strong> What hotel guest personalisation looks like at the operational level, and how to move the needle from adequate to exceptional</p></li><li><p><strong>Building a hotel personalisation strategy:</strong> A clear framework that aligns with your brand positioning and commercial objectives</p></li><li><p><strong>Turning guest data into revenue:</strong> How to ethically capture and activate guest data through your hotel sales and catering software to influence booking behaviour, upsells, and retention</p></li><li><p><strong>Solving the hard problems:</strong> Data privacy in hospitality, scaling personalisation without losing the human element, and getting buy-in across your property</p></li></ul><h3><strong>How are hotels using personalisation to increase revenue?</strong></h3><p>Best Western and Accor Group have built personalisation into their commercial strategy and the results show it. Increased loyalty, stronger app engagement, measurable satisfaction gains. The case studies inside show you exactly how they did it using hotel sales &amp; catering software.</p><h3><strong>Getting more from your hotel sales &amp; catering software</strong></h3><p>Buyer persona templates, guest data collection frameworks, and customer journey tools. Everything you need to move from reading about hotel personalisation to implementing it, and get more out of the hotel sales &amp; catering software your property already uses.</p><div data-edge-section="dark-green" style="background: radial-gradient(at 30% 20%, rgb(36, 76, 50), rgb(22, 59, 39) 50%, rgb(9, 32, 20)); color: rgb(255, 255, 255); padding: 2em 2.5em; border-radius: 12px; margin: 1.5em 0px;"><h3><span style="color: rgb(153, 203, 82);"><strong>Download the free hotel personalisation eBook</strong></span></h3><p>Your competitors are already thinking about this. Download your free copy today and make sure your property is ahead of the curve.</p><div data-hubspot-cta="primary-green" data-embed-code="" style="margin: 1.5em 0px;"><a href="#" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: linear-gradient(135deg, rgb(153, 203, 82), rgb(140, 204, 51)); color: rgb(15, 51, 31); font-family: &quot;Nunito Sans&quot;, sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; font-size: 14px; padding: 14px 36px; border-radius: 9999px; text-decoration: none;">Download Now</a></div></div><p></p>
           </div>
           
 
@@ -774,7 +787,7 @@ ul,ol{list-style:none}
         
         <div class="article-card__image-wrap">
           <div class="article-card__image">
-            <img src="/assets/images/articles/2985d514f16e8796.webp?v=54ed83dc80" alt="eBook: how to increase your venue sales" width="600" height="338" loading="lazy" decoding="async">
+            <img src="/assets/images/articles/2985d514f16e8796.webp?v=ca414a8859" alt="eBook: how to increase your venue sales" width="600" height="338" loading="lazy" decoding="async">
           </div>
         </div>
         
@@ -804,7 +817,7 @@ ul,ol{list-style:none}
         
         <div class="article-card__image-wrap">
           <div class="article-card__image">
-            <img src="/assets/images/articles/66bddecfdddce0fb.webp?v=54ed83dc80" alt="eBook: how hotels can personalise the guest experience" width="600" height="338" loading="lazy" decoding="async">
+            <img src="/assets/images/articles/66bddecfdddce0fb.webp?v=ca414a8859" alt="eBook: how hotels can personalise the guest experience" width="600" height="338" loading="lazy" decoding="async">
           </div>
         </div>
         
@@ -834,7 +847,7 @@ ul,ol{list-style:none}
         
         <div class="article-card__image-wrap">
           <div class="article-card__image">
-            <img src="/assets/images/articles/c724946b5ef7adc1.webp?v=54ed83dc80" alt="eBook: sustainable hotel practices to improve venue operations" width="600" height="338" loading="lazy" decoding="async">
+            <img src="/assets/images/articles/c724946b5ef7adc1.webp?v=ca414a8859" alt="eBook: sustainable hotel practices to improve venue operations" width="600" height="338" loading="lazy" decoding="async">
           </div>
         </div>
         
@@ -868,7 +881,7 @@ ul,ol{list-style:none}
 
 
 <section class="cta">
-  <img src="/assets/images/patterns/cta-pattern.webp?v=54ed83dc80" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600">
+  <img src="/assets/images/patterns/cta-pattern.webp?v=ca414a8859" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600">
   <div class="container">
     <div class="cta__inner">
       <h2 class="cta__title" style="background: linear-gradient(135deg, hsl(85, 54%, 56%), hsl(85, 54%, 75%)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Stay in the know</h2>
@@ -917,7 +930,7 @@ ul,ol{list-style:none}
   "description": "Learn how hotel sales & catering software powers guest personalistion and boosts revenue. Get your free eBook to discover strategies for revenue growth.",
   "image": ["https://www.ivvy.com/assets/images/articles/97c68969f773edbc.webp"],
   "datePublished": "2025-04-30T23:00:00+00:00",
-  "dateModified": "2026-04-22T04:08:20.724285+00:00",
+  "dateModified": "2026-04-23T00:46:22.688797+00:00",
   "wordCount": 397,
   "inLanguage": "en",
   
@@ -936,7 +949,7 @@ ul,ol{list-style:none}
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=54ed83dc80" alt="iVvy" class="footer__logo" width="120" height="40">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=ca414a8859" alt="iVvy" class="footer__logo" width="120" height="40">
         <div class="footer__social">
           <a href="https://www.linkedin.com/company/ivvy/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1102,7 +1115,7 @@ ul,ol{list-style:none}
 
 
 
-<script src="/assets/js/scripts.js?v=54ed83dc80" defer></script>
+<script src="/assets/js/scripts.js?v=ca414a8859" defer></script>
 
 
 
