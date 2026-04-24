@@ -1,10 +1,10 @@
-<!-- build:24870821714-829 -->
+<!-- build:24871125430-830 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png?v=e437e75500">
-  <link rel="apple-touch-icon" href="/assets/images/favicon.png?v=e437e75500">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png?v=4f76334e02">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png?v=4f76334e02">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Tandem Hospitality Group Case Study | iVvy</title>
   <meta name="description" content="Leadership reporting in minutes. Read how Tandem Hospitality Group improved operations with iVvy venue management software.">
@@ -13,24 +13,16 @@
   <meta name="theme-color" content="#99CC52">
 
   
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-  
 
   
   
   
 
   
-  
-  
-  <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLDD4Z1xlFQ.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDLshdTQ3jw.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDFwmdTQ3jw.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Nunito+Sans:wght@600;700&family=Nunito:wght@400;600;700&display=swap" crossorigin="anonymous" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Nunito+Sans:wght@600;700&family=Nunito:wght@400;600;700&display=swap" crossorigin="anonymous"></noscript>
+  <link rel="preload" href="/fonts/poppins-800.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/nunito-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/nunito-700.woff2" as="font" type="font/woff2" crossorigin>
 
   
   <meta property="og:title" content="Tandem Hospitality Group Case Study | iVvy">
@@ -52,10 +44,20 @@
 
   
   <style>
+    @font-face{font-family:'Poppins';font-style:normal;font-weight:800;font-display:swap;src:url('/fonts/poppins-800.woff2') format('woff2')}
+    @font-face{font-family:'Nunito';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/nunito-400.woff2') format('woff2')}
+    @font-face{font-family:'Nunito';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/nunito-700.woff2') format('woff2')}
     @font-face{font-family:'Poppins Fallback';src:local('Arial');size-adjust:60.85%;ascent-override:164.34%;descent-override:57.52%;line-gap-override:16.43%}
     @font-face{font-family:'Nunito Fallback';src:local('Arial');size-adjust:100.86%;ascent-override:99.49%;descent-override:34.82%;line-gap-override:0%}
     @font-face{font-family:'Nunito Sans Fallback';src:local('Arial');size-adjust:100.44%;ascent-override:100.07%;descent-override:34.53%;line-gap-override:0%}
   </style>
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Nunito+Sans:wght@600;700&family=Nunito:wght@600&display=swap"
+        media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Nunito+Sans:wght@600;700&family=Nunito:wght@600&display=swap"></noscript>
 
   
   <style>
@@ -183,14 +185,17 @@ ul,ol{list-style:none}
 .venue-card__image{width:100%;height:100%;object-fit:cover;aspect-ratio:5/4}
 .benefit__image-wrapper{aspect-ratio:6/5;overflow:hidden;contain:layout style}
 .benefit__image{width:100%;height:auto;object-fit:contain;aspect-ratio:6/5}
+/* Pre-reserve underline space + inline display so JS-added underline span doesn't shift layout */
+.scroll-color-text--underline{position:relative;display:inline;padding-bottom:8px}
+.scroll-color-underline{position:absolute;left:0;bottom:0;height:5px;background:#99CC52;border-radius:9999px;transform-origin:left;width:100%;transform:scaleX(0)}
 </style>
 
   
-  <link rel="preload" href="/assets/css/styles.css?v=e437e75500" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/css/styles.css?v=e437e75500"></noscript>
+  <link rel="preload" href="/assets/css/styles.css?v=4f76334e02" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/styles.css?v=4f76334e02"></noscript>
   
-  <link rel="preload" href="/assets/css/styles-pages.css?v=e437e75500" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/css/styles-pages.css?v=e437e75500"></noscript>
+  <link rel="preload" href="/assets/css/styles-pages.css?v=4f76334e02" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/styles-pages.css?v=4f76334e02"></noscript>
   
 
   
@@ -249,12 +254,12 @@ ul,ol{list-style:none}
     ['scroll','keydown','mousemove','touchstart','click'].forEach(function(ev){
       window.addEventListener(ev, go, {passive:true, capture:true, once:true});
     });
-    setTimeout(go, 5000); // hard fallback: load after 5s of inactivity
+    setTimeout(go, 8000); // hard fallback: load after 8s of inactivity (was 5s — reduces mobile TBT)
   }
   if (document.readyState === 'complete') {
-    ivvyScheduleGTM();
+    setTimeout(ivvyScheduleGTM, 1500);
   } else {
-    window.addEventListener('load', ivvyScheduleGTM, { once: true });
+    window.addEventListener('load', function(){ setTimeout(ivvyScheduleGTM, 1500); }, { once: true });
   }
 </script>
 
@@ -267,7 +272,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__left">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=e437e75500" alt="iVvy" width="120" height="32" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=4f76334e02" alt="iVvy" width="120" height="32" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;">
         </a>
         <nav class="nav">
           
@@ -534,7 +539,7 @@ ul,ol{list-style:none}
 
 <section class="cs-hero">
   <div class="cs-hero__image">
-    <img src="/assets/images/case-studies/tandem-hero.webp?v=e437e75500" alt="Tandem Hospitality Group" width="1920" height="600" loading="eager" fetchpriority="high" decoding="async">
+    <img src="/assets/images/case-studies/tandem-hero.webp?v=4f76334e02" alt="Tandem Hospitality Group" width="1920" height="600" loading="eager" fetchpriority="high" decoding="async">
     <div class="cs-hero__overlay"></div>
   </div>
 </section>
@@ -544,7 +549,7 @@ ul,ol{list-style:none}
   <div class="cs-logo-card__inner">
     
     <div class="cs-logo-card__logo-wrap">
-      <img src="/assets/images/logos/tandem.webp?v=e437e75500" alt="Tandem Hospitality Group">
+      <img src="/assets/images/logos/tandem.webp?v=4f76334e02" alt="Tandem Hospitality Group">
     </div>
     
     <h1 class="cs-logo-card__name">Tandem Hospitality Group</h1>
@@ -619,17 +624,17 @@ ul,ol{list-style:none}
           <div class="cs-features cs-features--auto-rows">
             
             <div class="cs-feature">
-              <img src="/assets/images/icons/live-availability.png?v=e437e75500" alt="" width="32" height="32" loading="lazy" decoding="async">
+              <img src="/assets/images/icons/live-availability.png?v=4f76334e02" alt="" width="32" height="32" loading="lazy" decoding="async">
               <span>Faster conversions</span>
             </div>
             
             <div class="cs-feature">
-              <img src="/assets/images/icons/rules.png?v=e437e75500" alt="" width="32" height="32" loading="lazy" decoding="async">
+              <img src="/assets/images/icons/rules.png?v=4f76334e02" alt="" width="32" height="32" loading="lazy" decoding="async">
               <span>Quicker onboarding</span>
             </div>
             
             <div class="cs-feature">
-              <img src="/assets/images/icons/booking.png?v=e437e75500" alt="" width="32" height="32" loading="lazy" decoding="async">
+              <img src="/assets/images/icons/booking.png?v=4f76334e02" alt="" width="32" height="32" loading="lazy" decoding="async">
               <span>Easy multi-property management</span>
             </div>
             
@@ -698,7 +703,7 @@ ul,ol{list-style:none}
 
 
 <section class="cta">
-  <img src="/assets/images/patterns/cta-pattern.webp?v=e437e75500" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600">
+  <img src="/assets/images/patterns/cta-pattern.webp?v=4f76334e02" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600">
   <div class="container">
     <div class="cta__inner">
       <h2 class="cta__title">Start your success story <span class="scroll-color-text scroll-color-text--from-white">with iVvy</span></h2>
@@ -735,7 +740,7 @@ window.addEventListener('scroll', function() {
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=e437e75500" alt="iVvy" class="footer__logo" width="120" height="40">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=4f76334e02" alt="iVvy" class="footer__logo" width="120" height="40">
         <div class="footer__social">
           <a href="https://www.linkedin.com/company/ivvy/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -901,7 +906,7 @@ window.addEventListener('scroll', function() {
 
 
 
-<script src="/assets/js/scripts.js?v=e437e75500" defer></script>
+<script src="/assets/js/scripts.js?v=4f76334e02" defer></script>
 
 
 
