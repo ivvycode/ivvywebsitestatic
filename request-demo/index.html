@@ -1,10 +1,10 @@
-<!-- build:24870352760-828 -->
+<!-- build:24870821714-829 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png?v=e5ea3fdeec">
-  <link rel="apple-touch-icon" href="/assets/images/favicon.png?v=e5ea3fdeec">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png?v=e437e75500">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png?v=e437e75500">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Request a Demo | Event Management Software | iVvy</title>
   <meta name="description" content="Book a free demo of iVvy event and venue management software. See how to boost bookings by 25%, cut admin time, and gain real-time business visibility.">
@@ -49,6 +49,13 @@
 
   
   <link rel="canonical" href="https://www.ivvy.com/request-demo/">
+
+  
+  <style>
+    @font-face{font-family:'Poppins Fallback';src:local('Arial');size-adjust:60.85%;ascent-override:164.34%;descent-override:57.52%;line-gap-override:16.43%}
+    @font-face{font-family:'Nunito Fallback';src:local('Arial');size-adjust:100.86%;ascent-override:99.49%;descent-override:34.82%;line-gap-override:0%}
+    @font-face{font-family:'Nunito Sans Fallback';src:local('Arial');size-adjust:100.44%;ascent-override:100.07%;descent-override:34.53%;line-gap-override:0%}
+  </style>
 
   
   <style>
@@ -118,9 +125,9 @@ ul,ol{list-style:none}
 .hero-mesh__title-dark{color:#103620;display:block}
 @media(min-width:1024px){.hero-mesh__title-dark{white-space:nowrap}}
 .hero-mesh__title-highlight{background:linear-gradient(135deg,hsl(85,54%,56%),hsl(82,62%,44%));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;line-height:1.3;padding-bottom:0.05em;transition:opacity 0.3s ease,transform 0.3s ease}
-.hero-mesh__image-wrapper{position:relative;z-index:10;margin-top:64px;padding-left:16px;padding-right:16px;overflow:hidden;max-height:clamp(200px,25vw,400px)}
+.hero-mesh__image-wrapper{position:relative;z-index:10;margin-top:64px;padding-left:16px;padding-right:16px;overflow:hidden;max-height:clamp(200px,25vw,400px);aspect-ratio:1600/400;contain:layout}
 @media(min-width:1024px){.hero-mesh__image-wrapper{margin-top:96px;padding-left:32px;padding-right:32px}}
-.hero-mesh__image{width:100%;height:auto;display:block;background:none;box-shadow:none;border-radius:0}
+.hero-mesh__image{width:100%;height:100%;object-fit:cover;display:block;background:none;box-shadow:none;border-radius:0}
 .trust-logos{padding:48px 0 80px;background:hsla(0,0%,96%,0.3);overflow:hidden;min-height:200px;contain:layout style}
 @media(min-width:1024px){.trust-logos{padding:56px 0 96px;min-height:240px}}
 .section-pill{min-height:28px}
@@ -179,11 +186,11 @@ ul,ol{list-style:none}
 </style>
 
   
-  <link rel="preload" href="/assets/css/styles.css?v=e5ea3fdeec" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/css/styles.css?v=e5ea3fdeec"></noscript>
+  <link rel="preload" href="/assets/css/styles.css?v=e437e75500" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/styles.css?v=e437e75500"></noscript>
   
-  <link rel="preload" href="/assets/css/styles-pages.css?v=e5ea3fdeec" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/css/styles-pages.css?v=e5ea3fdeec"></noscript>
+  <link rel="preload" href="/assets/css/styles-pages.css?v=e437e75500" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/styles-pages.css?v=e437e75500"></noscript>
   
 
   
@@ -221,8 +228,9 @@ ul,ol{list-style:none}
     }
   } catch(e) {}
 
-  // 3. Load GTM AFTER first paint to keep it off the LCP critical path.
-  //    Falls back to a 3s timer if 'load' never fires (e.g. tab in background).
+  // 3. Load GTM AFTER first paint AND first user interaction (or 5s idle fallback)
+  //    to drastically reduce Total Blocking Time on mobile. GTM + downstream tags
+  //    typically cost 400-800ms of script eval, dominating TBT on slow devices.
   function ivvyLoadGTM(){
     if (window.__ivvyGtmLoaded) return; window.__ivvyGtmLoaded = true;
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
@@ -230,11 +238,23 @@ ul,ol{list-style:none}
     j.src='https://www.googletagmanager.com/gtm.js?id='+i;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-TBQKMCP');
   }
+  function ivvyScheduleGTM(){
+    var fired=false;
+    function go(){ if(fired) return; fired=true;
+      ['scroll','keydown','mousemove','touchstart','click'].forEach(function(ev){
+        window.removeEventListener(ev, go, {passive:true, capture:true});
+      });
+      (window.requestIdleCallback || function(cb){setTimeout(cb,1);})(ivvyLoadGTM, {timeout: 2000});
+    }
+    ['scroll','keydown','mousemove','touchstart','click'].forEach(function(ev){
+      window.addEventListener(ev, go, {passive:true, capture:true, once:true});
+    });
+    setTimeout(go, 5000); // hard fallback: load after 5s of inactivity
+  }
   if (document.readyState === 'complete') {
-    setTimeout(ivvyLoadGTM, 0);
+    ivvyScheduleGTM();
   } else {
-    window.addEventListener('load', function(){ setTimeout(ivvyLoadGTM, 0); }, { once: true });
-    setTimeout(ivvyLoadGTM, 3000);
+    window.addEventListener('load', ivvyScheduleGTM, { once: true });
   }
 </script>
 
@@ -247,7 +267,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__left">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=e5ea3fdeec" alt="iVvy" width="120" height="32" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=e437e75500" alt="iVvy" width="120" height="32" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;">
         </a>
         <nav class="nav">
           
@@ -646,15 +666,15 @@ ul,ol{list-style:none}
   <div class="container" style="position:relative;z-index:10;">
     <div style="text-align:center;margin-bottom:32px;position:relative;z-index:10;"><span class="section-pill">Trusted by thousands of venues</span></div>
     <div class="g2-awards__badges">
-      <img src="/assets/images/badges/g2-spring-2026/g2-spring-2026-leader.png?v=e5ea3fdeec" alt="G2 Spring 2026 Leader" loading="lazy" width="120" height="140">
-      <img src="/assets/images/badges/g2-spring-2026/g2-spring-2026-most-implementable.png?v=e5ea3fdeec" alt="G2 Spring 2026 Most Implementable Mid-Market" loading="lazy" width="120" height="140">
-      <img src="/assets/images/badges/g2-spring-2026/g2-spring-2026-easiest-to-use.png?v=e5ea3fdeec" alt="G2 Spring 2026 Easiest To Use Mid-Market" loading="lazy" width="120" height="140">
-      <img src="/assets/images/badges/g2-spring-2026/g2-spring-2026-easiest-business.png?v=e5ea3fdeec" alt="G2 Spring 2026 Easiest To Do Business With Mid-Market" loading="lazy" width="120" height="140">
-      <img src="/assets/images/badges/g2-spring-2026/g2-spring-2026-easiest-admin.png?v=e5ea3fdeec" alt="G2 Spring 2026 Easiest Admin Mid-Market" loading="lazy" width="120" height="140">
-      <img src="/assets/images/badges/g2-spring-2026/g2-spring-2026-best-usability.png?v=e5ea3fdeec" alt="G2 Spring 2026 Best Usability Mid-Market" loading="lazy" width="120" height="140">
-      <img src="/assets/images/badges/g2-spring-2026/g2-spring-2026-best-support.png?v=e5ea3fdeec" alt="G2 Spring 2026 Best Support Mid-Market" loading="lazy" width="120" height="140">
-      <img src="/assets/images/badges/g2-spring-2026/g2-spring-2026-best-results.png?v=e5ea3fdeec" alt="G2 Spring 2026 Best Results Mid-Market" loading="lazy" width="120" height="140">
-      <img src="/assets/images/badges/g2-spring-2026/g2-spring-2026-best-meets-requirements.png?v=e5ea3fdeec" alt="G2 Spring 2026 Best Meets Requirements Mid-Market" loading="lazy" width="120" height="140">
+      <img src="/assets/images/badges/g2-spring-2026/g2-spring-2026-leader.png?v=e437e75500" alt="G2 Spring 2026 Leader" loading="lazy" width="120" height="140">
+      <img src="/assets/images/badges/g2-spring-2026/g2-spring-2026-most-implementable.png?v=e437e75500" alt="G2 Spring 2026 Most Implementable Mid-Market" loading="lazy" width="120" height="140">
+      <img src="/assets/images/badges/g2-spring-2026/g2-spring-2026-easiest-to-use.png?v=e437e75500" alt="G2 Spring 2026 Easiest To Use Mid-Market" loading="lazy" width="120" height="140">
+      <img src="/assets/images/badges/g2-spring-2026/g2-spring-2026-easiest-business.png?v=e437e75500" alt="G2 Spring 2026 Easiest To Do Business With Mid-Market" loading="lazy" width="120" height="140">
+      <img src="/assets/images/badges/g2-spring-2026/g2-spring-2026-easiest-admin.png?v=e437e75500" alt="G2 Spring 2026 Easiest Admin Mid-Market" loading="lazy" width="120" height="140">
+      <img src="/assets/images/badges/g2-spring-2026/g2-spring-2026-best-usability.png?v=e437e75500" alt="G2 Spring 2026 Best Usability Mid-Market" loading="lazy" width="120" height="140">
+      <img src="/assets/images/badges/g2-spring-2026/g2-spring-2026-best-support.png?v=e437e75500" alt="G2 Spring 2026 Best Support Mid-Market" loading="lazy" width="120" height="140">
+      <img src="/assets/images/badges/g2-spring-2026/g2-spring-2026-best-results.png?v=e437e75500" alt="G2 Spring 2026 Best Results Mid-Market" loading="lazy" width="120" height="140">
+      <img src="/assets/images/badges/g2-spring-2026/g2-spring-2026-best-meets-requirements.png?v=e437e75500" alt="G2 Spring 2026 Best Meets Requirements Mid-Market" loading="lazy" width="120" height="140">
     </div>
   </div>
 </section>
@@ -665,7 +685,7 @@ ul,ol{list-style:none}
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=e5ea3fdeec" alt="iVvy" class="footer__logo" width="120" height="40">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=e437e75500" alt="iVvy" class="footer__logo" width="120" height="40">
         <div class="footer__social">
           <a href="https://www.linkedin.com/company/ivvy/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -831,7 +851,7 @@ ul,ol{list-style:none}
 
 
 
-<script src="/assets/js/scripts.js?v=e5ea3fdeec" defer></script>
+<script src="/assets/js/scripts.js?v=e437e75500" defer></script>
 
 
 
