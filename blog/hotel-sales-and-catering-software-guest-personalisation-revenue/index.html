@@ -1,10 +1,10 @@
-<!-- build:24863870370-824 -->
+<!-- build:24866692012-825 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png?v=eb6cd3cc7e">
-  <link rel="apple-touch-icon" href="/assets/images/favicon.png?v=eb6cd3cc7e">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png?v=efdb3109c0">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png?v=efdb3109c0">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>eBook: hotel sales &amp; catering software and guest personalisation — a revenue growth guide | iVvy Blog</title>
   <meta name="description" content="Discover the strategies hotel sales managers are using to turn guest personalisation and hotel sales &amp; catering software into measurable revenue growth.">
@@ -179,11 +179,11 @@ ul,ol{list-style:none}
 </style>
 
   
-  <link rel="preload" href="/assets/css/styles.css?v=eb6cd3cc7e" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/css/styles.css?v=eb6cd3cc7e"></noscript>
+  <link rel="preload" href="/assets/css/styles.css?v=efdb3109c0" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/styles.css?v=efdb3109c0"></noscript>
   
-  <link rel="preload" href="/assets/css/styles-pages.css?v=eb6cd3cc7e" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/css/styles-pages.css?v=eb6cd3cc7e"></noscript>
+  <link rel="preload" href="/assets/css/styles-pages.css?v=efdb3109c0" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/styles-pages.css?v=efdb3109c0"></noscript>
   
 
   
@@ -247,7 +247,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__left">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=eb6cd3cc7e" alt="iVvy" width="120" height="32" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=efdb3109c0" alt="iVvy" width="120" height="32" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;">
         </a>
         <nav class="nav">
           
@@ -515,7 +515,7 @@ ul,ol{list-style:none}
 
 <section class="article-hero">
   <div class="article-hero__image">
-    <img src="/assets/images/articles/97c68969f773edbc.webp?v=eb6cd3cc7e" alt="eBook: hotel sales &amp; catering software and guest personalisation — a revenue growth guide" width="1920" height="600" loading="eager" fetchpriority="high" decoding="async">
+    <img src="/assets/images/articles/97c68969f773edbc.webp?v=efdb3109c0" alt="eBook: hotel sales &amp; catering software and guest personalisation — a revenue growth guide" width="1920" height="600" loading="eager" fetchpriority="high" decoding="async">
     <div class="article-hero__overlay"></div>
   </div>
 </section>
@@ -631,12 +631,20 @@ ul,ol{list-style:none}
             root.querySelectorAll('[data-cta-button] a').forEach(function(a) {
               a.style.pointerEvents = 'auto';
             });
-            // Replace HubSpot CTA placeholders with their actual embed code.
+            // Activate HubSpot CTAs: keep editor-styled anchor, inject embed
+            // hidden alongside it, and route clicks through to the HubSpot
+            // anchor so analytics + navigation fire.
             root.querySelectorAll('[data-hubspot-cta]').forEach(function(wrapper) {
               var embed = wrapper.getAttribute('data-embed-code');
               if (!embed) return;
-              wrapper.innerHTML = embed;
-              wrapper.querySelectorAll('script').forEach(function(oldScript) {
+              if (!wrapper.style.position) wrapper.style.position = 'relative';
+              var styledAnchor = wrapper.querySelector(':scope > a');
+              var hsHost = document.createElement('span');
+              hsHost.setAttribute('data-hubspot-embed-host', '');
+              hsHost.style.cssText = 'position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);pointer-events:none;';
+              hsHost.innerHTML = embed;
+              wrapper.appendChild(hsHost);
+              hsHost.querySelectorAll('script').forEach(function(oldScript) {
                 var s = document.createElement('script');
                 Array.prototype.slice.call(oldScript.attributes).forEach(function(attr) {
                   s.setAttribute(attr.name, attr.value);
@@ -644,6 +652,16 @@ ul,ol{list-style:none}
                 s.textContent = oldScript.textContent;
                 oldScript.parentNode.replaceChild(s, oldScript);
               });
+              if (styledAnchor) {
+                styledAnchor.style.pointerEvents = 'auto';
+                styledAnchor.addEventListener('click', function(e) {
+                  var hsLink = hsHost.querySelector('a[href]');
+                  if (hsLink) {
+                    e.preventDefault();
+                    hsLink.click();
+                  }
+                });
+              }
             });
           })();
           </script>
@@ -745,8 +763,6 @@ ul,ol{list-style:none}
 
   
     
-      
-    
   
 
   
@@ -861,6 +877,10 @@ ul,ol{list-style:none}
     
   
 
+  
+    
+      
+    
   
 
   
@@ -903,41 +923,11 @@ ul,ol{list-style:none}
     <h2 class="related-articles__heading">Related articles</h2>
     <div class="related-articles__grid">
       
-      <a href="/blog/hotel-sales-catering-software-boost-your-hotel-revenue-with-our-new-ebook/" class="article-card">
-        
-        <div class="article-card__image-wrap">
-          <div class="article-card__image">
-            <img src="/assets/images/articles/92698e5f9bd1f4ba.webp?v=eb6cd3cc7e" alt="Hotel Sales &amp; Catering Software: Boost Your Hotel Revenue with Our New eBook" width="600" height="338" loading="lazy" decoding="async">
-          </div>
-        </div>
-        
-        <div class="article-card__body">
-          
-          <span class="article-card__category">eBooks</span>
-          
-          <h3 class="article-card__title">Hotel Sales &amp; Catering Software: Boost Your Hotel Revenue with Our New eBook</h3>
-          <div class="article-card__dateline">
-            
-            <time datetime="2026-04-23T02:59:00+00:00">April 23, 2026</time>
-            
-            <span class="article-card__readtime">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              3 min read
-            </span>
-            
-          </div>
-          
-          <p class="article-card__excerpt">Featured image alt text for &#39;Hotel Sales &amp; Catering Software: Boost Your Hotel Revenue with Our New eBook&#39;</p>
-          
-          <span class="article-card__link">Read article →</span>
-        </div>
-      </a>
-      
       <a href="/blog/ebook-how-to-increase-your-venue-sales/" class="article-card">
         
         <div class="article-card__image-wrap">
           <div class="article-card__image">
-            <img src="/assets/images/articles/2985d514f16e8796.webp?v=eb6cd3cc7e" alt="eBook: how to increase your venue sales" width="600" height="338" loading="lazy" decoding="async">
+            <img src="/assets/images/articles/2985d514f16e8796.webp?v=efdb3109c0" alt="eBook: how to increase your venue sales" width="600" height="338" loading="lazy" decoding="async">
           </div>
         </div>
         
@@ -967,7 +957,7 @@ ul,ol{list-style:none}
         
         <div class="article-card__image-wrap">
           <div class="article-card__image">
-            <img src="/assets/images/articles/66bddecfdddce0fb.webp?v=eb6cd3cc7e" alt="eBook: how hotels can personalise the guest experience" width="600" height="338" loading="lazy" decoding="async">
+            <img src="/assets/images/articles/66bddecfdddce0fb.webp?v=efdb3109c0" alt="eBook: how hotels can personalise the guest experience" width="600" height="338" loading="lazy" decoding="async">
           </div>
         </div>
         
@@ -993,6 +983,36 @@ ul,ol{list-style:none}
         </div>
       </a>
       
+      <a href="/blog/free-ebook-sustainable-hotel-practices-to-improve-venue-operations/" class="article-card">
+        
+        <div class="article-card__image-wrap">
+          <div class="article-card__image">
+            <img src="/assets/images/articles/c724946b5ef7adc1.webp?v=efdb3109c0" alt="eBook: sustainable hotel practices to improve venue operations" width="600" height="338" loading="lazy" decoding="async">
+          </div>
+        </div>
+        
+        <div class="article-card__body">
+          
+          <span class="article-card__category">eBooks</span>
+          
+          <h3 class="article-card__title">eBook: sustainable hotel practices to improve venue operations</h3>
+          <div class="article-card__dateline">
+            
+            <time datetime="2026-04-02T03:30:00+00:00">April 2, 2026</time>
+            
+            <span class="article-card__readtime">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              3 min read
+            </span>
+            
+          </div>
+          
+          <p class="article-card__excerpt">Find out what you can do in your hotel&#39;s venue or event space to increase sustainable hotel practices, improving your carbon footprint while lowering operating costs, paperwork, and manual admin.</p>
+          
+          <span class="article-card__link">Read article →</span>
+        </div>
+      </a>
+      
     </div>
   </div>
 </section>
@@ -1001,7 +1021,7 @@ ul,ol{list-style:none}
 
 
 <section class="cta">
-  <img src="/assets/images/patterns/cta-pattern.webp?v=eb6cd3cc7e" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600">
+  <img src="/assets/images/patterns/cta-pattern.webp?v=efdb3109c0" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600">
   <div class="container">
     <div class="cta__inner">
       <h2 class="cta__title" style="background: linear-gradient(135deg, hsl(85, 54%, 56%), hsl(85, 54%, 75%)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Stay in the know</h2>
@@ -1050,7 +1070,7 @@ ul,ol{list-style:none}
   "description": "Learn how hotel sales & catering software powers guest personalistion and boosts revenue. Get your free eBook to discover strategies for revenue growth.",
   "image": ["https://www.ivvy.com/assets/images/articles/97c68969f773edbc.webp"],
   "datePublished": "2025-04-30T23:00:00+00:00",
-  "dateModified": "2026-04-23T23:22:21.95265+00:00",
+  "dateModified": "2026-04-24T00:00:10.734028+00:00",
   "wordCount": 397,
   "inLanguage": "en",
   
@@ -1069,7 +1089,7 @@ ul,ol{list-style:none}
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=eb6cd3cc7e" alt="iVvy" class="footer__logo" width="120" height="40">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=efdb3109c0" alt="iVvy" class="footer__logo" width="120" height="40">
         <div class="footer__social">
           <a href="https://www.linkedin.com/company/ivvy/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1235,7 +1255,7 @@ ul,ol{list-style:none}
 
 
 
-<script src="/assets/js/scripts.js?v=eb6cd3cc7e" defer></script>
+<script src="/assets/js/scripts.js?v=efdb3109c0" defer></script>
 
 
 
