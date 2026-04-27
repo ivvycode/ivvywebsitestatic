@@ -84,7 +84,7 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/blog/what-is-the-roi-of-event-management-software/</loc>
+    <loc>https://www.ivvy.com/blog/how-long-does-it-take-to-implement-venue-software/</loc>
     <lastmod></lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -93,7 +93,7 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/blog/how-long-does-it-take-to-implement-venue-software/</loc>
+    <loc>https://www.ivvy.com/blog/what-is-the-roi-of-event-management-software/</loc>
     <lastmod></lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -174,7 +174,25 @@
   
   
   <url>
+    <loc>https://www.ivvy.com/blog/7-mistakes-venues-make-that-slow-response-times/</loc>
+    <lastmod></lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://www.ivvy.com/blog/venue-management-software-6-ways-an-integrated-payment-platform-transforms-your-business/</loc>
+    <lastmod></lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.ivvy.com/blog/what-if-your-venue-inbox-managed-itself-with-ivvyai-it-can/</loc>
     <lastmod></lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -193,24 +211,6 @@
   
   <url>
     <loc>https://www.ivvy.com/blog/event-venue-management-software-why-speed-matters/</loc>
-    <lastmod></lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://www.ivvy.com/blog/7-mistakes-venues-make-that-slow-response-times/</loc>
-    <lastmod></lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://www.ivvy.com/blog/what-if-your-venue-inbox-managed-itself-with-ivvyai-it-can/</loc>
     <lastmod></lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -381,7 +381,61 @@
   
   
   <url>
+    <loc>https://www.ivvy.com/blog/free-venue-booking-negotiation-guide-for-event-managers/</loc>
+    <lastmod></lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.ivvy.com/blog/tips-to-master-event-chaos-using-event-software/</loc>
+    <lastmod></lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.ivvy.com/blog/managing-your-venue-calendar-resources-with-venue-management-software/</loc>
+    <lastmod></lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.ivvy.com/blog/event-staffing-made-easy-your-free-staffing-schedule/</loc>
+    <lastmod></lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.ivvy.com/blog/the-untapped-potential-of-crm-data-in-your-venue-software/</loc>
+    <lastmod></lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://www.ivvy.com/blog/why-live-availability-in-your-venue-software-means-more-bookings/</loc>
+    <lastmod></lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.ivvy.com/blog/free-event-sales-cheat-sheet-use-these-event-software-metrics-to-increase-revenu/</loc>
     <lastmod></lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
