@@ -1,16 +1,16 @@
-<!-- build:25022774745-925 -->
+<!-- build:25024952356-926 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=9ccee3c3f2">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=9ccee3c3f2">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=9ccee3c3f2">
-  <link rel="alternate icon" href="/assets/images/favicon.ico?v=9ccee3c3f2">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=9ccee3c3f2">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=9ccee3c3f2">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=9ccee3c3f2">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=ddac94a971">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=ddac94a971">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=ddac94a971">
+  <link rel="alternate icon" href="/assets/images/favicon.ico?v=ddac94a971">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=ddac94a971">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=ddac94a971">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=ddac94a971">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Ticketed Events Terms | iVvy</title>
   <meta name="description" content="iVvy Software Agreement for Professional Conference Organisers. Online terms and conditions governing event software usage, licensing, payments, and support.">
@@ -37,6 +37,7 @@
   
   <link rel="preload" href="/fonts/poppins-800.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/nunito-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/nunito-600.woff2" as="font" type="font/woff2" crossorigin>
 
   
   <meta property="og:title" content="Ticketed Events Terms | iVvy">
@@ -61,8 +62,9 @@
     @font-face{font-family:'Poppins Fallback';src:local('Arial');size-adjust:60.85%;ascent-override:164.34%;descent-override:57.52%;line-gap-override:16.43%}
     @font-face{font-family:'Nunito Fallback';src:local('Arial');size-adjust:100.86%;ascent-override:99.49%;descent-override:34.82%;line-gap-override:0%}
     @font-face{font-family:'Nunito Sans Fallback';src:local('Arial');size-adjust:100.44%;ascent-override:100.07%;descent-override:34.53%;line-gap-override:0%}
-    @font-face{font-family:'Poppins';font-style:normal;font-weight:800;font-display:swap;src:url('/fonts/poppins-800.woff2') format('woff2')}
-    @font-face{font-family:'Nunito';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/nunito-400.woff2') format('woff2')}
+    @font-face{font-family:'Poppins';font-style:normal;font-weight:800;font-display:optional;src:url('/fonts/poppins-800.woff2') format('woff2')}
+    @font-face{font-family:'Nunito';font-style:normal;font-weight:400;font-display:optional;src:url('/fonts/nunito-400.woff2') format('woff2')}
+    @font-face{font-family:'Nunito';font-style:normal;font-weight:600;font-display:optional;src:url('/fonts/nunito-600.woff2') format('woff2')}
     
   </style>
 
@@ -123,17 +125,34 @@ ul,ol{list-style:none}
 .hero-mesh__image-wrapper{position:relative;z-index:10;margin-top:64px;padding-left:16px;padding-right:16px;overflow:hidden;max-height:clamp(200px,25vw,400px);aspect-ratio:1920/350;contain:layout}
 @media(min-width:1024px){.hero-mesh__image-wrapper{margin-top:96px;padding-left:32px;padding-right:32px}}
 .hero-mesh__image{width:100%;height:100%;object-fit:contain;object-position:center bottom;display:block;background:none;box-shadow:none;border-radius:0}
+/* Split page hero — reserve geometry above the fold so the lazy-loaded
+   image and the late-arriving async stylesheet cannot shift layout (CLS).
+   .page-hero--split locks the section height; .page-hero__bg is positioned
+   absolutely so the <img> inside .page-hero__bg-right cannot push the
+   surrounding content while it streams in. The dark green background-color
+   matches the hero's dominant tone, so the reserved space looks intentional
+   in the brief moment before the image paints. */
+.page-hero{position:relative;overflow:hidden}
+.page-hero--split{position:relative;min-height:400px;height:400px;display:flex;align-items:center;padding:0;background:#103620}
+@media(min-width:1024px){.page-hero--split{min-height:520px;height:520px}}
+.page-hero--split .page-hero__bg{position:absolute;inset:0;display:flex;z-index:0}
+.page-hero--split .page-hero__bg-left{width:100%;background:linear-gradient(to right,hsl(150,55%,8%),hsl(147,45%,16%),hsl(140,35%,22%))}
+@media(min-width:1024px){.page-hero--split .page-hero__bg-left{width:50%}}
+.page-hero--split .page-hero__bg-right{display:none;position:relative;width:50%;background:#103620;aspect-ratio:960/520}
+@media(min-width:1024px){.page-hero--split .page-hero__bg-right{display:block;aspect-ratio:auto}}
+.page-hero--split .page-hero__bg-right img{width:100%;height:100%;object-fit:cover;display:block}
+.page-hero--split .page-hero__content{position:relative;z-index:1}
 /* Pre-reserve underline space + inline display so JS-added underline span doesn't shift layout */
 .scroll-color-text--underline{position:relative;display:inline;padding-bottom:8px}
 .scroll-color-underline{position:absolute;left:0;bottom:0;height:5px;background:#99CC52;border-radius:9999px;transform-origin:left;width:100%;transform:scaleX(0)}
 </style>
 
   
-  <link rel="preload" href="/assets/css/styles.css?v=9ccee3c3f2" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/css/styles.css?v=9ccee3c3f2"></noscript>
+  <link rel="preload" href="/assets/css/page/p-2e9d54e579.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/page/p-2e9d54e579.css"></noscript>
   
-  <link rel="preload" href="/assets/css/styles-pages.css?v=9ccee3c3f2" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/css/styles-pages.css?v=9ccee3c3f2"></noscript>
+  
+  <noscript></noscript>
   
 
   
@@ -210,7 +229,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__left">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=9ccee3c3f2" alt="iVvy" width="120" height="32" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=ddac94a971" alt="iVvy" width="120" height="32" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
         </a>
         <nav class="nav">
           
@@ -224,7 +243,7 @@ ul,ol{list-style:none}
                   <a href="/venue-event-management-software/" class="nav__dropdown-item nav__dropdown-item--with-icon">
                     <span class="nav__dropdown-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0F331F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg></span>
                     <div>
-                      <h4>Event &amp; Venue Management Software</h4>
+                      <h3>Event &amp; Venue Management Software</h3>
                       <p>Respond first. Win more. Spend less time on admin.</p>
                     </div>
                   </a>
@@ -232,7 +251,7 @@ ul,ol{list-style:none}
                   <a href="/event-ticketing-software/" class="nav__dropdown-item nav__dropdown-item--with-icon">
                     <span class="nav__dropdown-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0F331F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2"/><path d="M13 17v2"/><path d="M13 11v2"/></svg></span>
                     <div>
-                      <h4>Event Ticketing Software</h4>
+                      <h3>Event Ticketing Software</h3>
                       <p>Sell more event tickets. Less admin. More events.</p>
                     </div>
                   </a>
@@ -240,7 +259,7 @@ ul,ol{list-style:none}
                   <a href="/event-sales-ai/" class="nav__dropdown-item nav__dropdown-item--with-icon">
                     <span class="nav__dropdown-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0F331F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
                     <div>
-                      <h4>iVvyAI</h4>
+                      <h3>iVvyAI</h3>
                       <p>AI agents for venue &amp; hotel sales teams</p>
                     </div>
                   </a>
@@ -248,7 +267,7 @@ ul,ol{list-style:none}
                   <a href="/ivvy-pay/" class="nav__dropdown-item nav__dropdown-item--with-icon">
                     <span class="nav__dropdown-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0F331F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg></span>
                     <div>
-                      <h4>iVvyPay</h4>
+                      <h3>iVvyPay</h3>
                       <p>Integrated payment processing</p>
                     </div>
                   </a>
@@ -256,7 +275,7 @@ ul,ol{list-style:none}
                   <a href="/integrations/" class="nav__dropdown-item nav__dropdown-item--with-icon">
                     <span class="nav__dropdown-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0F331F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg></span>
                     <div>
-                      <h4>Integrations</h4>
+                      <h3>Integrations</h3>
                       <p>Connect with your favorite tools</p>
                     </div>
                   </a>
@@ -264,7 +283,7 @@ ul,ol{list-style:none}
                   <a href="https://marketplace.ivvy.com/" class="nav__dropdown-item nav__dropdown-item--with-icon" target="_blank" rel="noopener noreferrer">
                     <span class="nav__dropdown-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0F331F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M22 7v3a2 2 0 0 1-2 2a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12a2 2 0 0 1-2-2V7"/></svg></span>
                     <div>
-                      <h4>Marketplace</h4>
+                      <h3>Marketplace</h3>
                       <p>Start getting more leads</p>
                     </div>
                   </a>
@@ -731,7 +750,7 @@ ul,ol{list-style:none}
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=9ccee3c3f2" alt="iVvy" class="footer__logo" width="120" height="40" decoding="async">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=ddac94a971" alt="iVvy" class="footer__logo" width="120" height="40" decoding="async">
         <div class="footer__social">
           <a href="https://www.linkedin.com/company/ivvy/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -897,7 +916,7 @@ ul,ol{list-style:none}
 
 
 
-<script src="/assets/js/scripts.js?v=9ccee3c3f2" defer></script>
+<script src="/assets/js/scripts.js?v=ddac94a971" defer></script>
 
 
 

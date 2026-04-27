@@ -1,16 +1,16 @@
-<!-- build:25022774745-925 -->
+<!-- build:25024952356-926 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=9ccee3c3f2">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=9ccee3c3f2">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=9ccee3c3f2">
-  <link rel="alternate icon" href="/assets/images/favicon.ico?v=9ccee3c3f2">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=9ccee3c3f2">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=9ccee3c3f2">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=9ccee3c3f2">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=ddac94a971">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=ddac94a971">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=ddac94a971">
+  <link rel="alternate icon" href="/assets/images/favicon.ico?v=ddac94a971">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=ddac94a971">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=ddac94a971">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=ddac94a971">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Event Ticketing Software | Event Management Software | iVvy</title>
   <meta name="description" content="Event ticketing software to sell tickets, manage registrations, and track attendance. Trusted by thousands of event planners for seamless event management.">
@@ -32,13 +32,14 @@
 
   
   
-  <link rel="preload" href="/assets/images/event-ticketing-hero.webp?v=9ccee3c3f2" as="image" fetchpriority="high">
+  <link rel="preload" href="/assets/images/event-ticketing-hero.webp?v=ddac94a971" as="image" fetchpriority="high">
   
   
 
   
   <link rel="preload" href="/fonts/poppins-800.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/nunito-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/nunito-600.woff2" as="font" type="font/woff2" crossorigin>
 
   
   <meta property="og:title" content="Event Ticketing Software | Event Management Software | iVvy">
@@ -63,8 +64,9 @@
     @font-face{font-family:'Poppins Fallback';src:local('Arial');size-adjust:60.85%;ascent-override:164.34%;descent-override:57.52%;line-gap-override:16.43%}
     @font-face{font-family:'Nunito Fallback';src:local('Arial');size-adjust:100.86%;ascent-override:99.49%;descent-override:34.82%;line-gap-override:0%}
     @font-face{font-family:'Nunito Sans Fallback';src:local('Arial');size-adjust:100.44%;ascent-override:100.07%;descent-override:34.53%;line-gap-override:0%}
-    @font-face{font-family:'Poppins';font-style:normal;font-weight:800;font-display:swap;src:url('/fonts/poppins-800.woff2') format('woff2')}
-    @font-face{font-family:'Nunito';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/nunito-400.woff2') format('woff2')}
+    @font-face{font-family:'Poppins';font-style:normal;font-weight:800;font-display:optional;src:url('/fonts/poppins-800.woff2') format('woff2')}
+    @font-face{font-family:'Nunito';font-style:normal;font-weight:400;font-display:optional;src:url('/fonts/nunito-400.woff2') format('woff2')}
+    @font-face{font-family:'Nunito';font-style:normal;font-weight:600;font-display:optional;src:url('/fonts/nunito-600.woff2') format('woff2')}
     
   </style>
 
@@ -125,14 +127,31 @@ ul,ol{list-style:none}
 .hero-mesh__image-wrapper{position:relative;z-index:10;margin-top:64px;padding-left:16px;padding-right:16px;overflow:hidden;max-height:clamp(200px,25vw,400px);aspect-ratio:1920/350;contain:layout}
 @media(min-width:1024px){.hero-mesh__image-wrapper{margin-top:96px;padding-left:32px;padding-right:32px}}
 .hero-mesh__image{width:100%;height:100%;object-fit:contain;object-position:center bottom;display:block;background:none;box-shadow:none;border-radius:0}
+/* Split page hero — reserve geometry above the fold so the lazy-loaded
+   image and the late-arriving async stylesheet cannot shift layout (CLS).
+   .page-hero--split locks the section height; .page-hero__bg is positioned
+   absolutely so the <img> inside .page-hero__bg-right cannot push the
+   surrounding content while it streams in. The dark green background-color
+   matches the hero's dominant tone, so the reserved space looks intentional
+   in the brief moment before the image paints. */
+.page-hero{position:relative;overflow:hidden}
+.page-hero--split{position:relative;min-height:400px;height:400px;display:flex;align-items:center;padding:0;background:#103620}
+@media(min-width:1024px){.page-hero--split{min-height:520px;height:520px}}
+.page-hero--split .page-hero__bg{position:absolute;inset:0;display:flex;z-index:0}
+.page-hero--split .page-hero__bg-left{width:100%;background:linear-gradient(to right,hsl(150,55%,8%),hsl(147,45%,16%),hsl(140,35%,22%))}
+@media(min-width:1024px){.page-hero--split .page-hero__bg-left{width:50%}}
+.page-hero--split .page-hero__bg-right{display:none;position:relative;width:50%;background:#103620;aspect-ratio:960/520}
+@media(min-width:1024px){.page-hero--split .page-hero__bg-right{display:block;aspect-ratio:auto}}
+.page-hero--split .page-hero__bg-right img{width:100%;height:100%;object-fit:cover;display:block}
+.page-hero--split .page-hero__content{position:relative;z-index:1}
 /* Pre-reserve underline space + inline display so JS-added underline span doesn't shift layout */
 .scroll-color-text--underline{position:relative;display:inline;padding-bottom:8px}
 .scroll-color-underline{position:absolute;left:0;bottom:0;height:5px;background:#99CC52;border-radius:9999px;transform-origin:left;width:100%;transform:scaleX(0)}
 </style>
 
   
-  <link rel="preload" href="/assets/css/styles.css?v=9ccee3c3f2" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/css/styles.css?v=9ccee3c3f2"></noscript>
+  <link rel="preload" href="/assets/css/page/p-622f141209.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/page/p-622f141209.css"></noscript>
   
 
   
@@ -209,7 +228,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__left">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=9ccee3c3f2" alt="iVvy" width="120" height="32" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=ddac94a971" alt="iVvy" width="120" height="32" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
         </a>
         <nav class="nav">
           
@@ -223,7 +242,7 @@ ul,ol{list-style:none}
                   <a href="/venue-event-management-software/" class="nav__dropdown-item nav__dropdown-item--with-icon">
                     <span class="nav__dropdown-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0F331F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg></span>
                     <div>
-                      <h4>Event &amp; Venue Management Software</h4>
+                      <h3>Event &amp; Venue Management Software</h3>
                       <p>Respond first. Win more. Spend less time on admin.</p>
                     </div>
                   </a>
@@ -231,7 +250,7 @@ ul,ol{list-style:none}
                   <a href="/event-ticketing-software/" class="nav__dropdown-item nav__dropdown-item--with-icon">
                     <span class="nav__dropdown-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0F331F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2"/><path d="M13 17v2"/><path d="M13 11v2"/></svg></span>
                     <div>
-                      <h4>Event Ticketing Software</h4>
+                      <h3>Event Ticketing Software</h3>
                       <p>Sell more event tickets. Less admin. More events.</p>
                     </div>
                   </a>
@@ -239,7 +258,7 @@ ul,ol{list-style:none}
                   <a href="/event-sales-ai/" class="nav__dropdown-item nav__dropdown-item--with-icon">
                     <span class="nav__dropdown-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0F331F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
                     <div>
-                      <h4>iVvyAI</h4>
+                      <h3>iVvyAI</h3>
                       <p>AI agents for venue &amp; hotel sales teams</p>
                     </div>
                   </a>
@@ -247,7 +266,7 @@ ul,ol{list-style:none}
                   <a href="/ivvy-pay/" class="nav__dropdown-item nav__dropdown-item--with-icon">
                     <span class="nav__dropdown-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0F331F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg></span>
                     <div>
-                      <h4>iVvyPay</h4>
+                      <h3>iVvyPay</h3>
                       <p>Integrated payment processing</p>
                     </div>
                   </a>
@@ -255,7 +274,7 @@ ul,ol{list-style:none}
                   <a href="/integrations/" class="nav__dropdown-item nav__dropdown-item--with-icon">
                     <span class="nav__dropdown-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0F331F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg></span>
                     <div>
-                      <h4>Integrations</h4>
+                      <h3>Integrations</h3>
                       <p>Connect with your favorite tools</p>
                     </div>
                   </a>
@@ -263,7 +282,7 @@ ul,ol{list-style:none}
                   <a href="https://marketplace.ivvy.com/" class="nav__dropdown-item nav__dropdown-item--with-icon" target="_blank" rel="noopener noreferrer">
                     <span class="nav__dropdown-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0F331F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M22 7v3a2 2 0 0 1-2 2a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12a2 2 0 0 1-2-2V7"/></svg></span>
                     <div>
-                      <h4>Marketplace</h4>
+                      <h3>Marketplace</h3>
                       <p>Start getting more leads</p>
                     </div>
                   </a>
@@ -475,7 +494,7 @@ ul,ol{list-style:none}
   <div class="page-hero__bg">
     <div class="page-hero__bg-left"></div>
     <div class="page-hero__bg-right">
-      <img src="/assets/images/event-ticketing-hero.webp?v=9ccee3c3f2" alt="Concert crowd with hands raised" width="960" height="520" loading="eager" fetchpriority="high" decoding="async">
+      <img src="/assets/images/event-ticketing-hero.webp?v=ddac94a971" alt="Concert crowd with hands raised" width="960" height="520" loading="eager" fetchpriority="high" decoding="async">
     </div>
   </div>
   <div class="container">
@@ -517,7 +536,7 @@ ul,ol{list-style:none}
         
       </div>
       <div class="benefit__image-wrapper">
-        <img src="/assets/images/badges/event-planning.webp?v=9ccee3c3f2" alt="Software Advice FrontRunners 2025 Badge" class="benefit__image" loading="lazy" width="600" height="500" decoding="async">
+        <img src="/assets/images/badges/event-planning.webp?v=ddac94a971" alt="Software Advice FrontRunners 2025 Badge" class="benefit__image" loading="lazy" width="600" height="500" decoding="async">
       </div>
     </div>
   </div>
@@ -537,7 +556,7 @@ ul,ol{list-style:none}
         
       </div>
       <div class="benefit__image-wrapper">
-        <img src="/assets/images/badges/event-sales.webp?v=9ccee3c3f2" alt="G2 Winter 2026 Easiest To Do Business With Badge" class="benefit__image" loading="lazy" width="600" height="500" decoding="async">
+        <img src="/assets/images/badges/event-sales.webp?v=ddac94a971" alt="G2 Winter 2026 Easiest To Do Business With Badge" class="benefit__image" loading="lazy" width="600" height="500" decoding="async">
       </div>
     </div>
   </div>
@@ -556,7 +575,7 @@ ul,ol{list-style:none}
         
       </div>
       <div class="benefit__image-wrapper">
-        <img src="/assets/images/badges/event-experiences.webp?v=9ccee3c3f2" alt="G2 Winter 2026 Easiest Admin Badge" class="benefit__image" loading="lazy" width="600" height="500" decoding="async">
+        <img src="/assets/images/badges/event-experiences.webp?v=ddac94a971" alt="G2 Winter 2026 Easiest Admin Badge" class="benefit__image" loading="lazy" width="600" height="500" decoding="async">
       </div>
     </div>
   </div>
@@ -591,7 +610,7 @@ ul,ol{list-style:none}
         <div class="feature-card__icon-wrap">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="#CCE3A8" stroke="#0F331F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M10 9.5 15 12l-5 2.5z"/><path d="M12 17v4"/><path d="M8 21h8"/></svg>
         </div>
-        <h4 class="feature-card__title">Website builder</h4>
+        <h3 class="feature-card__title">Website builder</h3>
         <p class="feature-card__desc">Build a branded event website in minutes. No developer needed — drag and drop your way to a live, mobile-responsive site that&#39;s optimised for search engines. Includes countdown clocks, event calendars, custom HTML, WordPress integration and URL masking.</p>
       </div>
       
@@ -603,7 +622,7 @@ ul,ol{list-style:none}
         <div class="feature-card__icon-wrap">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="#CCE3A8" stroke="#0F331F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
         </div>
-        <h4 class="feature-card__title">Venue &amp; supplier sourcing</h4>
+        <h3 class="feature-card__title">Venue &amp; supplier sourcing</h3>
         <p class="feature-card__desc">Search, compare and book from a live supplier database — hotels, restaurants, golf courses, boats and more. Group sleeping rooms, real-time availability and online payment, all in one place.</p>
       </div>
       
@@ -615,7 +634,7 @@ ul,ol{list-style:none}
         <div class="feature-card__icon-wrap">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="#CCE3A8" stroke="#0F331F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
         </div>
-        <h4 class="feature-card__title">Email marketing</h4>
+        <h3 class="feature-card__title">Email marketing</h3>
         <p class="feature-card__desc">Create personalised, branded campaigns with a drag-and-drop editor. Pre-built templates get you started fast. Track bounces, open rates and click-throughs in real time so you know what&#39;s working.</p>
       </div>
       
@@ -627,7 +646,7 @@ ul,ol{list-style:none}
         <div class="feature-card__icon-wrap">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="#CCE3A8" stroke="#0F331F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
         </div>
-        <h4 class="feature-card__title">Interactive sessions</h4>
+        <h3 class="feature-card__title">Interactive sessions</h3>
         <p class="feature-card__desc">Give attendees a live Q&amp;A, polling and discussion experience from their own device. Moderate submissions on the fly, display results on screen and capture rich demographic data from each session.</p>
       </div>
       
@@ -639,7 +658,7 @@ ul,ol{list-style:none}
         <div class="feature-card__icon-wrap">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="#CCE3A8" stroke="#0F331F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M22 7v3a2 2 0 0 1-2 2a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12a2 2 0 0 1-2-2V7"/></svg>
         </div>
-        <h4 class="feature-card__title">Exhibition &amp; sponsor management</h4>
+        <h3 class="feature-card__title">Exhibition &amp; sponsor management</h3>
         <p class="feature-card__desc">Register exhibitors, manage their portal, handle invoicing and promote sponsors directly on your event website.</p>
       </div>
       
@@ -654,7 +673,7 @@ ul,ol{list-style:none}
         <div class="feature-card__icon-wrap">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="#CCE3A8" stroke="#0F331F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" x2="19" y1="8" y2="14"/><line x1="22" x2="16" y1="11" y2="11"/></svg>
         </div>
-        <h4 class="feature-card__title">Invitation manager</h4>
+        <h3 class="feature-card__title">Invitation manager</h3>
         <p class="feature-card__desc">Stop managing guest lists in spreadsheets. Automate priority and B-list invitations, track RSVPs centrally and see a full history of every communication with every contact.</p>
       </div>
       
@@ -666,7 +685,7 @@ ul,ol{list-style:none}
         <div class="feature-card__icon-wrap">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="#CCE3A8" stroke="#0F331F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
         </div>
-        <h4 class="feature-card__title">Registration &amp; payments</h4>
+        <h3 class="feature-card__title">Registration &amp; payments</h3>
         <p class="feature-card__desc">Take registrations online with custom question flows, skip logic and multiple ticket types. Connect to 30+ payment gateways — including Stripe, PayPal, Afterpay and Worldpay — or use iVvy&#39;s own payment gateway with up to 50% of funds released before event day.</p>
       </div>
       
@@ -681,7 +700,7 @@ ul,ol{list-style:none}
         <div class="feature-card__icon-wrap">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="#CCE3A8" stroke="#0F331F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></svg>
         </div>
-        <h4 class="feature-card__title">Project management</h4>
+        <h3 class="feature-card__title">Project management</h3>
         <p class="feature-card__desc">Assign tasks, set deadlines and control access with role-based permissions. Real-time run sheets update automatically when your event changes, so the right people always know what&#39;s required.</p>
       </div>
       
@@ -693,7 +712,7 @@ ul,ol{list-style:none}
         <div class="feature-card__icon-wrap">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="#CCE3A8" stroke="#0F331F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
         </div>
-        <h4 class="feature-card__title">Attendee connect app</h4>
+        <h3 class="feature-card__title">Attendee connect app</h3>
         <p class="feature-card__desc">Keep attendees engaged before, during and after the event. Private messaging, profile lists, leaderboards, activity feeds and name badge scanning — all feeding real-time analytics so you can see engagement as it happens.</p>
       </div>
       
@@ -708,7 +727,7 @@ ul,ol{list-style:none}
         <div class="feature-card__icon-wrap">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="#CCE3A8" stroke="#0F331F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
         </div>
-        <h4 class="feature-card__title">Abstract &amp; speaker management</h4>
+        <h3 class="feature-card__title">Abstract &amp; speaker management</h3>
         <p class="feature-card__desc">Manage speaker programs, abstract submissions and the review process end to end. Assign reviewers by theme, session or presentation type. Allocate sessions with drag-and-drop scheduling. Manage AV requirements and speaker checklists without double handling. Generate speaker booklets automatically.</p>
       </div>
       
@@ -720,7 +739,7 @@ ul,ol{list-style:none}
         <div class="feature-card__icon-wrap">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="#CCE3A8" stroke="#0F331F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="10" height="14" x="3" y="8" rx="2"/><path d="M5 4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2h-8a2 2 0 0 1-2-2z"/><path d="M14 18h.01"/></svg>
         </div>
-        <h4 class="feature-card__title">Organiser event app</h4>
+        <h3 class="feature-card__title">Organiser event app</h3>
         <p class="feature-card__desc">Manage your event from your phone. View attendee, session, registration and payment data offline. Scan attendees as they arrive — no desk required.</p>
       </div>
       
@@ -732,7 +751,7 @@ ul,ol{list-style:none}
         <div class="feature-card__icon-wrap">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="#CCE3A8" stroke="#0F331F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg>
         </div>
-        <h4 class="feature-card__title">Spend management reporting</h4>
+        <h3 class="feature-card__title">Spend management reporting</h3>
         <p class="feature-card__desc">See budget versus actual in real time. Track spend by department and cost centre from a single expense management dashboard.</p>
       </div>
       
@@ -744,7 +763,7 @@ ul,ol{list-style:none}
         <div class="feature-card__icon-wrap">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="#CCE3A8" stroke="#0F331F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg>
         </div>
-        <h4 class="feature-card__title">Surveys</h4>
+        <h3 class="feature-card__title">Surveys</h3>
         <p class="feature-card__desc">Collect delegate feedback with a custom survey builder. Choose from short answer, multi-choice, drop-down and more. Skip logic ensures every respondent sees the right questions. Results are reported in a clean, user-friendly dashboard.</p>
       </div>
       
@@ -759,7 +778,7 @@ ul,ol{list-style:none}
         <div class="feature-card__icon-wrap">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="#CCE3A8" stroke="#0F331F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg>
         </div>
-        <h4 class="feature-card__title">Reporting &amp; analytics</h4>
+        <h3 class="feature-card__title">Reporting &amp; analytics</h3>
         <p class="feature-card__desc">Get the numbers you need without building reports manually. Choose from 20+ standard report templates, schedule automated delivery, or build custom reports from scratch. Financial reporting, report builder and one-click export included.</p>
       </div>
       
@@ -771,7 +790,7 @@ ul,ol{list-style:none}
         <div class="feature-card__icon-wrap">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="#CCE3A8" stroke="#0F331F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
         </div>
-        <h4 class="feature-card__title">Security &amp; compliance</h4>
+        <h3 class="feature-card__title">Security &amp; compliance</h3>
         <p class="feature-card__desc">PCI DSS compliant, ISO 27001 certified and 100% GDPR compliant. Data hosted across redundant data centres with daily offsite backups, two-factor authentication, role-based access controls, SAML V2 and LDAP support.</p>
       </div>
       
@@ -809,7 +828,7 @@ ul,ol{list-style:none}
 
 <section class="cta">
   
-  <img src="/assets/images/patterns/cta-pattern.webp?v=9ccee3c3f2" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35;mix-blend-mode:soft-light;pointer-events:none;">
+  <img src="/assets/images/patterns/cta-pattern.webp?v=ddac94a971" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35;mix-blend-mode:soft-light;pointer-events:none;">
   <div class="container">
     <div class="cta__inner">
       <h2 class="cta__title"><span class="scroll-color-text scroll-color-text--from-white">See iVvy Event Ticketing Software in action</span></h2>
@@ -836,7 +855,7 @@ ul,ol{list-style:none}
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=9ccee3c3f2" alt="iVvy" class="footer__logo" width="120" height="40" decoding="async">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=ddac94a971" alt="iVvy" class="footer__logo" width="120" height="40" decoding="async">
         <div class="footer__social">
           <a href="https://www.linkedin.com/company/ivvy/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1002,7 +1021,7 @@ ul,ol{list-style:none}
 
 
 
-<script src="/assets/js/scripts.js?v=9ccee3c3f2" defer></script>
+<script src="/assets/js/scripts.js?v=ddac94a971" defer></script>
 
 
 
