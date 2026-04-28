@@ -1,16 +1,16 @@
-<!-- build:25034780881-942 -->
+<!-- build:25034876671-943 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=e27ad94ccd">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=e27ad94ccd">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=e27ad94ccd">
-  <link rel="alternate icon" href="/assets/images/favicon.ico?v=e27ad94ccd">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=e27ad94ccd">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=e27ad94ccd">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=e27ad94ccd">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=c842bb7b0a">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=c842bb7b0a">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=c842bb7b0a">
+  <link rel="alternate icon" href="/assets/images/favicon.ico?v=c842bb7b0a">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=c842bb7b0a">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=c842bb7b0a">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=c842bb7b0a">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Customer Stories | Event Management Software Results | iVvy</title>
   <meta name="description" content="Real case studies from venues using iVvy event management software. See how hotels, stadiums, and function centres increased bookings and saved time.">
@@ -153,10 +153,20 @@ ul,ol{list-style:none}
    would arrive late and reflow the .container, which Lighthouse flagged as a 0.4 CLS. */
 .page-hero > .container{width:100%}
 .page-hero__content{position:relative;z-index:2;max-width:800px}
-.page-hero__title{font-size:36px;color:#fff;margin-bottom:16px;line-height:1.25;font-weight:800}
-@media(min-width:768px){.page-hero__title{font-size:40px}}
-@media(min-width:1024px){.page-hero__title{font-size:50px}}
-.benefit__eyebrow{display:inline-flex;align-items:center;padding:4px 12px;border-radius:9999px;font-size:13px;font-weight:600;font-family:'Nunito','Nunito Fallback',sans-serif;text-transform:uppercase;letter-spacing:0.05em;background:rgba(153,204,82,0.1);color:#103620;margin-bottom:20px}
+/* CLS guard: reserve 2 lines of h1 so font-swap from Poppins Fallback to Poppins 800 cannot change box height */
+.page-hero__title{font-size:36px;color:#fff;margin-bottom:16px;line-height:1.25;font-weight:800;min-height:calc(36px * 1.25 * 2);text-wrap:balance}
+.page-hero__title .gradient-text,.page-hero__title .gradient-text--dark{display:inline-block}
+@media(min-width:768px){.page-hero__title{font-size:40px;min-height:calc(40px * 1.25 * 2)}}
+@media(min-width:1024px){.page-hero__title{font-size:50px;min-height:calc(50px * 1.25 * 2)}}
+.benefit__eyebrow{display:inline-flex;align-items:center;padding:4px 12px;border-radius:9999px;font-size:13px;font-weight:600;font-family:'Nunito','Nunito Fallback',sans-serif;text-transform:uppercase;letter-spacing:0.05em;background:rgba(153,204,82,0.1);color:#103620;margin-bottom:20px;min-height:26px}
+/* Intro section — inlined so async styles.css arrival cannot reflow the heading on liteCSS pages.
+   Reserves 3 lines of h2 vertical space to absorb any font-metric variance between fallback and real Poppins 700. */
+.intro{padding:80px 0;background:#fff}
+@media(min-width:1024px){.intro{padding:112px 0}}
+.intro__inner{margin:0 auto;text-align:center}
+.intro__title{font-size:30px;font-weight:700;color:#103620;margin-bottom:32px;line-height:1.2;letter-spacing:-0.02em;min-height:calc(30px * 1.2 * 3);text-wrap:balance}
+@media(min-width:1024px){.intro__title{font-size:44px;min-height:calc(44px * 1.2 * 2)}}
+.intro__title span:not(.scroll-color-text){color:#99CC52}
 .gradient-text,.gradient-text--dark{background:linear-gradient(135deg,#99CC52,hsl(82 62% 44%));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .btn--hero{background:#99CC52;color:#103620}
 /* Pre-reserve underline space + inline display so JS-added underline span doesn't shift layout */
@@ -165,8 +175,8 @@ ul,ol{list-style:none}
 </style>
 
   
-  <link rel="preload" href="/assets/css/page/p-1e337b0f6c.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/css/page/p-1e337b0f6c.css"></noscript>
+  <link rel="preload" href="/assets/css/page/p-a84c00a46e.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/page/p-a84c00a46e.css"></noscript>
   
   
   <noscript></noscript>
@@ -246,7 +256,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__left">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=e27ad94ccd" alt="iVvy" width="120" height="32" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=c842bb7b0a" alt="iVvy" width="120" height="32" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
         </a>
         <nav class="nav">
           
@@ -550,12 +560,12 @@ ul,ol{list-style:none}
       
       <a href="/customers/tfe/" class="case-study-card case-study-card--white">
         <div class="case-study-card__image">
-          <img src="/assets/images/case-studies/tfe-hero.webp?v=e27ad94ccd" alt="TFE Hotels" width="400" height="300" loading="lazy" decoding="async">
+          <img src="/assets/images/case-studies/tfe-hero.webp?v=c842bb7b0a" alt="TFE Hotels" width="400" height="300" loading="lazy" decoding="async">
         </div>
         <div class="case-study-card__body">
           
           <div class="case-study-card__logo-wrap">
-            <img src="/assets/images/logos/tfe-hotels.webp?v=e27ad94ccd" alt="TFE Hotels" class="case-study-card__logo--color" width="120" height="40" loading="lazy" decoding="async">
+            <img src="/assets/images/logos/tfe-hotels.webp?v=c842bb7b0a" alt="TFE Hotels" class="case-study-card__logo--color" width="120" height="40" loading="lazy" decoding="async">
           </div>
           
           <h3 class="case-study-card__company">TFE Hotels</h3>
@@ -568,12 +578,12 @@ ul,ol{list-style:none}
       
       <a href="/customers/avc/" class="case-study-card case-study-card--white">
         <div class="case-study-card__image">
-          <img src="/assets/images/case-studies/avc-hero.webp?v=e27ad94ccd" alt="Australian Venue Co." width="400" height="300" loading="lazy" decoding="async">
+          <img src="/assets/images/case-studies/avc-hero.webp?v=c842bb7b0a" alt="Australian Venue Co." width="400" height="300" loading="lazy" decoding="async">
         </div>
         <div class="case-study-card__body">
           
           <div class="case-study-card__logo-wrap">
-            <img src="/assets/images/logos/avc.webp?v=e27ad94ccd" alt="Australian Venue Co." class="case-study-card__logo--color" width="120" height="40" loading="lazy" decoding="async">
+            <img src="/assets/images/logos/avc.webp?v=c842bb7b0a" alt="Australian Venue Co." class="case-study-card__logo--color" width="120" height="40" loading="lazy" decoding="async">
           </div>
           
           <h3 class="case-study-card__company">Australian Venue Co.</h3>
@@ -586,12 +596,12 @@ ul,ol{list-style:none}
       
       <a href="/customers/goodwood-estate/" class="case-study-card case-study-card--white">
         <div class="case-study-card__image">
-          <img src="/assets/images/case-studies/goodwood-hero.webp?v=e27ad94ccd" alt="Goodwood Estate" width="400" height="300" loading="lazy" decoding="async">
+          <img src="/assets/images/case-studies/goodwood-hero.webp?v=c842bb7b0a" alt="Goodwood Estate" width="400" height="300" loading="lazy" decoding="async">
         </div>
         <div class="case-study-card__body">
           
           <div class="case-study-card__logo-wrap">
-            <img src="/assets/images/logos/goodwood.webp?v=e27ad94ccd" alt="Goodwood Estate" class="case-study-card__logo--color" width="120" height="40" loading="lazy" decoding="async">
+            <img src="/assets/images/logos/goodwood.webp?v=c842bb7b0a" alt="Goodwood Estate" class="case-study-card__logo--color" width="120" height="40" loading="lazy" decoding="async">
           </div>
           
           <h3 class="case-study-card__company">Goodwood Estate</h3>
@@ -604,12 +614,12 @@ ul,ol{list-style:none}
       
       <a href="/customers/best-western-boulder-falls/" class="case-study-card case-study-card--white">
         <div class="case-study-card__image">
-          <img src="/assets/images/case-studies/best-western-hero.webp?v=e27ad94ccd" alt="Best Western Boulder Falls" width="400" height="300" loading="lazy" decoding="async">
+          <img src="/assets/images/case-studies/best-western-hero.webp?v=c842bb7b0a" alt="Best Western Boulder Falls" width="400" height="300" loading="lazy" decoding="async">
         </div>
         <div class="case-study-card__body">
           
           <div class="case-study-card__logo-wrap">
-            <img src="/assets/images/logos/best-western-logo.webp?v=e27ad94ccd" alt="Best Western Boulder Falls" class="case-study-card__logo--color" width="120" height="40" loading="lazy" decoding="async">
+            <img src="/assets/images/logos/best-western-logo.webp?v=c842bb7b0a" alt="Best Western Boulder Falls" class="case-study-card__logo--color" width="120" height="40" loading="lazy" decoding="async">
           </div>
           
           <h3 class="case-study-card__company">Best Western Boulder Falls</h3>
@@ -673,12 +683,12 @@ ul,ol{list-style:none}
       
       <a href="/customers/twickenham-stadium/" class="case-study-card case-study-card--white">
         <div class="case-study-card__image">
-          <img src="/assets/images/case-studies/twickenham-hero.webp?v=e27ad94ccd" alt="Allianz Stadium" width="400" height="300" loading="lazy" decoding="async">
+          <img src="/assets/images/case-studies/twickenham-hero.webp?v=c842bb7b0a" alt="Allianz Stadium" width="400" height="300" loading="lazy" decoding="async">
         </div>
         <div class="case-study-card__body">
           
           <div class="case-study-card__logo-wrap">
-            <img src="/assets/images/logos/twickenham.webp?v=e27ad94ccd" alt="Allianz Stadium" class="case-study-card__logo--color" width="120" height="40" loading="lazy" decoding="async">
+            <img src="/assets/images/logos/twickenham.webp?v=c842bb7b0a" alt="Allianz Stadium" class="case-study-card__logo--color" width="120" height="40" loading="lazy" decoding="async">
           </div>
           
           <h3 class="case-study-card__company">Allianz Stadium</h3>
@@ -691,12 +701,12 @@ ul,ol{list-style:none}
       
       <a href="/customers/central-hall/" class="case-study-card case-study-card--white">
         <div class="case-study-card__image">
-          <img src="/assets/images/case-studies/central-hall-hero.webp?v=e27ad94ccd" alt="Central Hall Westminster" width="400" height="300" loading="lazy" decoding="async">
+          <img src="/assets/images/case-studies/central-hall-hero.webp?v=c842bb7b0a" alt="Central Hall Westminster" width="400" height="300" loading="lazy" decoding="async">
         </div>
         <div class="case-study-card__body">
           
           <div class="case-study-card__logo-wrap">
-            <img src="/assets/images/logos/central-hall-logo.webp?v=e27ad94ccd" alt="Central Hall Westminster" class="case-study-card__logo--color" width="120" height="40" loading="lazy" decoding="async">
+            <img src="/assets/images/logos/central-hall-logo.webp?v=c842bb7b0a" alt="Central Hall Westminster" class="case-study-card__logo--color" width="120" height="40" loading="lazy" decoding="async">
           </div>
           
           <h3 class="case-study-card__company">Central Hall Westminster</h3>
@@ -709,12 +719,12 @@ ul,ol{list-style:none}
       
       <a href="/customers/comwell-hotels/" class="case-study-card case-study-card--white">
         <div class="case-study-card__image">
-          <img src="/assets/images/case-studies/comwell-hero.webp?v=e27ad94ccd" alt="Comwell Hotels" width="400" height="300" loading="lazy" decoding="async">
+          <img src="/assets/images/case-studies/comwell-hero.webp?v=c842bb7b0a" alt="Comwell Hotels" width="400" height="300" loading="lazy" decoding="async">
         </div>
         <div class="case-study-card__body">
           
           <div class="case-study-card__logo-wrap">
-            <img src="/assets/images/logos/comwell-logo.webp?v=e27ad94ccd" alt="Comwell Hotels" class="case-study-card__logo--color" width="120" height="40" loading="lazy" decoding="async">
+            <img src="/assets/images/logos/comwell-logo.webp?v=c842bb7b0a" alt="Comwell Hotels" class="case-study-card__logo--color" width="120" height="40" loading="lazy" decoding="async">
           </div>
           
           <h3 class="case-study-card__company">Comwell Hotels</h3>
@@ -727,12 +737,12 @@ ul,ol{list-style:none}
       
       <a href="/customers/mantra-group/" class="case-study-card case-study-card--white">
         <div class="case-study-card__image">
-          <img src="/assets/images/case-studies/mantra-hero.webp?v=e27ad94ccd" alt="Mantra Group" width="400" height="300" loading="lazy" decoding="async">
+          <img src="/assets/images/case-studies/mantra-hero.webp?v=c842bb7b0a" alt="Mantra Group" width="400" height="300" loading="lazy" decoding="async">
         </div>
         <div class="case-study-card__body">
           
           <div class="case-study-card__logo-wrap">
-            <img src="/assets/images/logos/mantra.webp?v=e27ad94ccd" alt="Mantra Group" class="case-study-card__logo--color" width="120" height="40" loading="lazy" decoding="async">
+            <img src="/assets/images/logos/mantra.webp?v=c842bb7b0a" alt="Mantra Group" class="case-study-card__logo--color" width="120" height="40" loading="lazy" decoding="async">
           </div>
           
           <h3 class="case-study-card__company">Mantra Group</h3>
@@ -745,12 +755,12 @@ ul,ol{list-style:none}
       
       <a href="/customers/oakwood-premier-melbourne/" class="case-study-card case-study-card--white">
         <div class="case-study-card__image">
-          <img src="/assets/images/case-studies/oakwood-hero.webp?v=e27ad94ccd" alt="Oakwood Premier Melbourne" width="400" height="300" loading="lazy" decoding="async">
+          <img src="/assets/images/case-studies/oakwood-hero.webp?v=c842bb7b0a" alt="Oakwood Premier Melbourne" width="400" height="300" loading="lazy" decoding="async">
         </div>
         <div class="case-study-card__body">
           
           <div class="case-study-card__logo-wrap">
-            <img src="/assets/images/logos/oakwood.webp?v=e27ad94ccd" alt="Oakwood Premier Melbourne" class="case-study-card__logo--color" width="120" height="40" loading="lazy" decoding="async">
+            <img src="/assets/images/logos/oakwood.webp?v=c842bb7b0a" alt="Oakwood Premier Melbourne" class="case-study-card__logo--color" width="120" height="40" loading="lazy" decoding="async">
           </div>
           
           <h3 class="case-study-card__company">Oakwood Premier Melbourne</h3>
@@ -763,12 +773,12 @@ ul,ol{list-style:none}
       
       <a href="/customers/qpm-hotels/" class="case-study-card case-study-card--white">
         <div class="case-study-card__image">
-          <img src="/assets/images/case-studies/qpm-hero.webp?v=e27ad94ccd" alt="QPM Hotels" width="400" height="300" loading="lazy" decoding="async">
+          <img src="/assets/images/case-studies/qpm-hero.webp?v=c842bb7b0a" alt="QPM Hotels" width="400" height="300" loading="lazy" decoding="async">
         </div>
         <div class="case-study-card__body">
           
           <div class="case-study-card__logo-wrap">
-            <img src="/assets/images/logos/qpm-logo.webp?v=e27ad94ccd" alt="QPM Hotels" class="case-study-card__logo--color" width="120" height="40" loading="lazy" decoding="async">
+            <img src="/assets/images/logos/qpm-logo.webp?v=c842bb7b0a" alt="QPM Hotels" class="case-study-card__logo--color" width="120" height="40" loading="lazy" decoding="async">
           </div>
           
           <h3 class="case-study-card__company">QPM Hotels</h3>
@@ -781,12 +791,12 @@ ul,ol{list-style:none}
       
       <a href="/customers/queensland-department-of-education/" class="case-study-card case-study-card--white">
         <div class="case-study-card__image">
-          <img src="/assets/images/case-studies/qld-education-hero.webp?v=e27ad94ccd" alt="Qld Dept of Education" width="400" height="300" loading="lazy" decoding="async">
+          <img src="/assets/images/case-studies/qld-education-hero.webp?v=c842bb7b0a" alt="Qld Dept of Education" width="400" height="300" loading="lazy" decoding="async">
         </div>
         <div class="case-study-card__body">
           
           <div class="case-study-card__logo-wrap">
-            <img src="/assets/images/logos/qld-education.webp?v=e27ad94ccd" alt="Qld Dept of Education" class="case-study-card__logo--color" width="120" height="40" loading="lazy" decoding="async">
+            <img src="/assets/images/logos/qld-education.webp?v=c842bb7b0a" alt="Qld Dept of Education" class="case-study-card__logo--color" width="120" height="40" loading="lazy" decoding="async">
           </div>
           
           <h3 class="case-study-card__company">Qld Dept of Education</h3>
@@ -799,12 +809,12 @@ ul,ol{list-style:none}
       
       <a href="/customers/red-rock-venues/" class="case-study-card case-study-card--white">
         <div class="case-study-card__image">
-          <img src="/assets/images/case-studies/red-rock-hero.webp?v=e27ad94ccd" alt="Red Rock Venues &amp; Events" width="400" height="300" loading="lazy" decoding="async">
+          <img src="/assets/images/case-studies/red-rock-hero.webp?v=c842bb7b0a" alt="Red Rock Venues &amp; Events" width="400" height="300" loading="lazy" decoding="async">
         </div>
         <div class="case-study-card__body">
           
           <div class="case-study-card__logo-wrap">
-            <img src="/assets/images/logos/red-rock.webp?v=e27ad94ccd" alt="Red Rock Venues &amp; Events" class="case-study-card__logo--color" width="120" height="40" loading="lazy" decoding="async">
+            <img src="/assets/images/logos/red-rock.webp?v=c842bb7b0a" alt="Red Rock Venues &amp; Events" class="case-study-card__logo--color" width="120" height="40" loading="lazy" decoding="async">
           </div>
           
           <h3 class="case-study-card__company">Red Rock Venues &amp; Events</h3>
@@ -817,12 +827,12 @@ ul,ol{list-style:none}
       
       <a href="/customers/southern-cross/" class="case-study-card case-study-card--white">
         <div class="case-study-card__image">
-          <img src="/assets/images/case-studies/southern-cross-hero.webp?v=e27ad94ccd" alt="Southern Cross University" width="400" height="300" loading="lazy" decoding="async">
+          <img src="/assets/images/case-studies/southern-cross-hero.webp?v=c842bb7b0a" alt="Southern Cross University" width="400" height="300" loading="lazy" decoding="async">
         </div>
         <div class="case-study-card__body">
           
           <div class="case-study-card__logo-wrap">
-            <img src="/assets/images/logos/southern-cross.webp?v=e27ad94ccd" alt="Southern Cross University" class="case-study-card__logo--color" width="120" height="40" loading="lazy" decoding="async">
+            <img src="/assets/images/logos/southern-cross.webp?v=c842bb7b0a" alt="Southern Cross University" class="case-study-card__logo--color" width="120" height="40" loading="lazy" decoding="async">
           </div>
           
           <h3 class="case-study-card__company">Southern Cross University</h3>
@@ -835,12 +845,12 @@ ul,ol{list-style:none}
       
       <a href="/customers/strato-melbourne/" class="case-study-card case-study-card--white">
         <div class="case-study-card__image">
-          <img src="/assets/images/case-studies/strato-hero.webp?v=e27ad94ccd" alt="Strato Melbourne" width="400" height="300" loading="lazy" decoding="async">
+          <img src="/assets/images/case-studies/strato-hero.webp?v=c842bb7b0a" alt="Strato Melbourne" width="400" height="300" loading="lazy" decoding="async">
         </div>
         <div class="case-study-card__body">
           
           <div class="case-study-card__logo-wrap">
-            <img src="/assets/images/logos/strato.webp?v=e27ad94ccd" alt="Strato Melbourne" class="case-study-card__logo--color" width="120" height="40" loading="lazy" decoding="async">
+            <img src="/assets/images/logos/strato.webp?v=c842bb7b0a" alt="Strato Melbourne" class="case-study-card__logo--color" width="120" height="40" loading="lazy" decoding="async">
           </div>
           
           <h3 class="case-study-card__company">Strato Melbourne</h3>
@@ -853,12 +863,12 @@ ul,ol{list-style:none}
       
       <a href="/customers/tandem-hospitality-group/" class="case-study-card case-study-card--white">
         <div class="case-study-card__image">
-          <img src="/assets/images/case-studies/tandem-hero.webp?v=e27ad94ccd" alt="Tandem Hospitality Group" width="400" height="300" loading="lazy" decoding="async">
+          <img src="/assets/images/case-studies/tandem-hero.webp?v=c842bb7b0a" alt="Tandem Hospitality Group" width="400" height="300" loading="lazy" decoding="async">
         </div>
         <div class="case-study-card__body">
           
           <div class="case-study-card__logo-wrap">
-            <img src="/assets/images/logos/tandem.webp?v=e27ad94ccd" alt="Tandem Hospitality Group" class="case-study-card__logo--color" width="120" height="40" loading="lazy" decoding="async">
+            <img src="/assets/images/logos/tandem.webp?v=c842bb7b0a" alt="Tandem Hospitality Group" class="case-study-card__logo--color" width="120" height="40" loading="lazy" decoding="async">
           </div>
           
           <h3 class="case-study-card__company">Tandem Hospitality Group</h3>
@@ -871,12 +881,12 @@ ul,ol{list-style:none}
       
       <a href="/customers/the-athenaeum/" class="case-study-card case-study-card--white">
         <div class="case-study-card__image">
-          <img src="/assets/images/case-studies/athenaeum-hero.webp?v=e27ad94ccd" alt="The Athenaeum" width="400" height="300" loading="lazy" decoding="async">
+          <img src="/assets/images/case-studies/athenaeum-hero.webp?v=c842bb7b0a" alt="The Athenaeum" width="400" height="300" loading="lazy" decoding="async">
         </div>
         <div class="case-study-card__body">
           
           <div class="case-study-card__logo-wrap">
-            <img src="/assets/images/logos/athenaeum-logo.webp?v=e27ad94ccd" alt="The Athenaeum" class="case-study-card__logo--color" width="120" height="40" loading="lazy" decoding="async">
+            <img src="/assets/images/logos/athenaeum-logo.webp?v=c842bb7b0a" alt="The Athenaeum" class="case-study-card__logo--color" width="120" height="40" loading="lazy" decoding="async">
           </div>
           
           <h3 class="case-study-card__company">The Athenaeum</h3>
@@ -889,12 +899,12 @@ ul,ol{list-style:none}
       
       <a href="/customers/the-george-on-collins/" class="case-study-card case-study-card--white">
         <div class="case-study-card__image">
-          <img src="/assets/images/case-studies/george-collins-hero.webp?v=e27ad94ccd" alt="The George on Collins" width="400" height="300" loading="lazy" decoding="async">
+          <img src="/assets/images/case-studies/george-collins-hero.webp?v=c842bb7b0a" alt="The George on Collins" width="400" height="300" loading="lazy" decoding="async">
         </div>
         <div class="case-study-card__body">
           
           <div class="case-study-card__logo-wrap">
-            <img src="/assets/images/logos/george-collins-logo.webp?v=e27ad94ccd" alt="The George on Collins" class="case-study-card__logo--color" width="120" height="40" loading="lazy" decoding="async">
+            <img src="/assets/images/logos/george-collins-logo.webp?v=c842bb7b0a" alt="The George on Collins" class="case-study-card__logo--color" width="120" height="40" loading="lazy" decoding="async">
           </div>
           
           <h3 class="case-study-card__company">The George on Collins</h3>
@@ -907,12 +917,12 @@ ul,ol{list-style:none}
       
       <a href="/customers/tilley-wills/" class="case-study-card case-study-card--white">
         <div class="case-study-card__image">
-          <img src="/assets/images/case-studies/tilley-wills-hero.webp?v=e27ad94ccd" alt="Tilley &amp; Wills" width="400" height="300" loading="lazy" decoding="async">
+          <img src="/assets/images/case-studies/tilley-wills-hero.webp?v=c842bb7b0a" alt="Tilley &amp; Wills" width="400" height="300" loading="lazy" decoding="async">
         </div>
         <div class="case-study-card__body">
           
           <div class="case-study-card__logo-wrap">
-            <img src="/assets/images/logos/tilley-wills.webp?v=e27ad94ccd" alt="Tilley &amp; Wills" class="case-study-card__logo--color" width="120" height="40" loading="lazy" decoding="async">
+            <img src="/assets/images/logos/tilley-wills.webp?v=c842bb7b0a" alt="Tilley &amp; Wills" class="case-study-card__logo--color" width="120" height="40" loading="lazy" decoding="async">
           </div>
           
           <h3 class="case-study-card__company">Tilley &amp; Wills</h3>
@@ -925,12 +935,12 @@ ul,ol{list-style:none}
       
       <a href="/customers/victory-services-club/" class="case-study-card case-study-card--white">
         <div class="case-study-card__image">
-          <img src="/assets/images/case-studies/vsc-hero.webp?v=e27ad94ccd" alt="Victory Services Club" width="400" height="300" loading="lazy" decoding="async">
+          <img src="/assets/images/case-studies/vsc-hero.webp?v=c842bb7b0a" alt="Victory Services Club" width="400" height="300" loading="lazy" decoding="async">
         </div>
         <div class="case-study-card__body">
           
           <div class="case-study-card__logo-wrap">
-            <img src="/assets/images/logos/vsc-logo.webp?v=e27ad94ccd" alt="Victory Services Club" class="case-study-card__logo--color" width="120" height="40" loading="lazy" decoding="async">
+            <img src="/assets/images/logos/vsc-logo.webp?v=c842bb7b0a" alt="Victory Services Club" class="case-study-card__logo--color" width="120" height="40" loading="lazy" decoding="async">
           </div>
           
           <h3 class="case-study-card__company">Victory Services Club</h3>
@@ -951,7 +961,7 @@ ul,ol{list-style:none}
 
 <section class="cta">
   
-  <img src="/assets/images/patterns/cta-pattern.webp?v=e27ad94ccd" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35;mix-blend-mode:soft-light;pointer-events:none;">
+  <img src="/assets/images/patterns/cta-pattern.webp?v=c842bb7b0a" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35;mix-blend-mode:soft-light;pointer-events:none;">
   <div class="container">
     <div class="cta__inner">
       <h2 class="cta__title">Start seeing <span class="scroll-color-text scroll-color-text--from-white">your results</span></h2>
@@ -1012,7 +1022,7 @@ ul,ol{list-style:none}
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=e27ad94ccd" alt="iVvy" class="footer__logo" width="120" height="40" decoding="async">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=c842bb7b0a" alt="iVvy" class="footer__logo" width="120" height="40" decoding="async">
         <div class="footer__social">
           <a href="https://www.linkedin.com/company/ivvy/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1178,7 +1188,7 @@ ul,ol{list-style:none}
 
 
 
-<script src="/assets/js/scripts.js?v=e27ad94ccd" defer></script>
+<script src="/assets/js/scripts.js?v=c842bb7b0a" defer></script>
 
 
 

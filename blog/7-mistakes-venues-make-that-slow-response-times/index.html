@@ -1,16 +1,16 @@
-<!-- build:25034780881-942 -->
+<!-- build:25034876671-943 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=e27ad94ccd">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=e27ad94ccd">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=e27ad94ccd">
-  <link rel="alternate icon" href="/assets/images/favicon.ico?v=e27ad94ccd">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=e27ad94ccd">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=e27ad94ccd">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=e27ad94ccd">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=c842bb7b0a">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=c842bb7b0a">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=c842bb7b0a">
+  <link rel="alternate icon" href="/assets/images/favicon.ico?v=c842bb7b0a">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=c842bb7b0a">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=c842bb7b0a">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=c842bb7b0a">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>7 mistakes venues make that slow response times | iVvy Blog</title>
   <meta name="description" content="Discover how slow enquiry response times can trigger a costly domino effect for event venues.
@@ -156,10 +156,20 @@ ul,ol{list-style:none}
    would arrive late and reflow the .container, which Lighthouse flagged as a 0.4 CLS. */
 .page-hero > .container{width:100%}
 .page-hero__content{position:relative;z-index:2;max-width:800px}
-.page-hero__title{font-size:36px;color:#fff;margin-bottom:16px;line-height:1.25;font-weight:800}
-@media(min-width:768px){.page-hero__title{font-size:40px}}
-@media(min-width:1024px){.page-hero__title{font-size:50px}}
-.benefit__eyebrow{display:inline-flex;align-items:center;padding:4px 12px;border-radius:9999px;font-size:13px;font-weight:600;font-family:'Nunito','Nunito Fallback',sans-serif;text-transform:uppercase;letter-spacing:0.05em;background:rgba(153,204,82,0.1);color:#103620;margin-bottom:20px}
+/* CLS guard: reserve 2 lines of h1 so font-swap from Poppins Fallback to Poppins 800 cannot change box height */
+.page-hero__title{font-size:36px;color:#fff;margin-bottom:16px;line-height:1.25;font-weight:800;min-height:calc(36px * 1.25 * 2);text-wrap:balance}
+.page-hero__title .gradient-text,.page-hero__title .gradient-text--dark{display:inline-block}
+@media(min-width:768px){.page-hero__title{font-size:40px;min-height:calc(40px * 1.25 * 2)}}
+@media(min-width:1024px){.page-hero__title{font-size:50px;min-height:calc(50px * 1.25 * 2)}}
+.benefit__eyebrow{display:inline-flex;align-items:center;padding:4px 12px;border-radius:9999px;font-size:13px;font-weight:600;font-family:'Nunito','Nunito Fallback',sans-serif;text-transform:uppercase;letter-spacing:0.05em;background:rgba(153,204,82,0.1);color:#103620;margin-bottom:20px;min-height:26px}
+/* Intro section — inlined so async styles.css arrival cannot reflow the heading on liteCSS pages.
+   Reserves 3 lines of h2 vertical space to absorb any font-metric variance between fallback and real Poppins 700. */
+.intro{padding:80px 0;background:#fff}
+@media(min-width:1024px){.intro{padding:112px 0}}
+.intro__inner{margin:0 auto;text-align:center}
+.intro__title{font-size:30px;font-weight:700;color:#103620;margin-bottom:32px;line-height:1.2;letter-spacing:-0.02em;min-height:calc(30px * 1.2 * 3);text-wrap:balance}
+@media(min-width:1024px){.intro__title{font-size:44px;min-height:calc(44px * 1.2 * 2)}}
+.intro__title span:not(.scroll-color-text){color:#99CC52}
 .gradient-text,.gradient-text--dark{background:linear-gradient(135deg,#99CC52,hsl(82 62% 44%));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .btn--hero{background:#99CC52;color:#103620}
 /* Pre-reserve underline space + inline display so JS-added underline span doesn't shift layout */
@@ -168,8 +178,8 @@ ul,ol{list-style:none}
 </style>
 
   
-  <link rel="preload" href="/assets/css/page/p-a60361de00.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/css/page/p-a60361de00.css"></noscript>
+  <link rel="preload" href="/assets/css/page/p-c207c1d2f1.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/page/p-c207c1d2f1.css"></noscript>
   
   
   <noscript></noscript>
@@ -249,7 +259,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__left">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=e27ad94ccd" alt="iVvy" width="120" height="32" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=c842bb7b0a" alt="iVvy" width="120" height="32" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
         </a>
         <nav class="nav">
           
@@ -519,7 +529,7 @@ ul,ol{list-style:none}
 
 <section class="article-hero">
   <div class="article-hero__image">
-    <img src="/assets/images/articles/41b3a7e83bfae587.webp?v=e27ad94ccd" alt="7 mistakes venues make that slow response times" width="1920" height="600" loading="eager" fetchpriority="high" decoding="async">
+    <img src="/assets/images/articles/41b3a7e83bfae587.webp?v=c842bb7b0a" alt="7 mistakes venues make that slow response times" width="1920" height="600" loading="eager" fetchpriority="high" decoding="async">
     <div class="article-hero__overlay"></div>
   </div>
 </section>
@@ -600,7 +610,7 @@ If responding to enquiries feels harder than it should, it probably is. Enquirie
           
           
           <div class="article-detail__content article-rich-content">
-            <p><strong>Discover how slow enquiry response times can trigger a costly domino effect for event venues.</strong></p><p>If responding to enquiries feels harder than it should, it probably is.&nbsp;Enquiries are coming in, but your current setup is slowing your team down and making it harder to respond quickly.</p><p>These common mistakes explain why venue enquiry replies drag out and what you can do to fix them.</p><h3>What slows down email response times for venues?</h3><h4>1. Playing inbox roulette</h4><p>One of the biggest factors behind slow responses? Leads sitting unnoticed in an inbox. Planners rarely distribute just one RFP, sending on average 10 or more at once, and the first venue to respond usually wins. If your team doesn’t have a system for monitoring enquiries, you’re already behind before you start.</p><p><strong>Why it matters:</strong> every hour a lead goes unanswered increases the chance they’ll book elsewhere. Replying within 5 minutes makes you 21 times more likely to qualify a lead than if you waited 30 minutes to respond.</p><p><strong>How to fix it:</strong> implement instant notifications through your CRM or <a target="_blank" rel="noopener noreferrer" class="text-primary underline" href="https://ivvy.com"><u>venue management software</u></a>. Real-time alerts ensure enquiries never go unnoticed, even when your team is away from their desks. Pair this with clear ownership rules. Every lead should have a name next to it within minutes of arrival.&nbsp;</p><h4>2. Treating every lead like a VIP</h4><p>It’s tempting to give every enquiry the royal treatment, but the reality is not all leads are created equal. Spending hours on low-value enquiries slows your team down and drains resources that could be spent on high-value opportunities.</p><p><strong>Why it matters:</strong> when you treat every lead equally, you risk missing out on more valuable events because your team is buried in admin for smaller ones (or leads less likely to convert).</p><p><strong>How to fix it:</strong> use lead scoring to prioritise enquiries based on event size, budget, and timeline. This approach ensures your team focuses on the opportunities most likely to convert. Venue management platforms like iVvy&nbsp;include lead scoring as a built-in feature, making prioritisation easy without adding extra manual steps.</p><h4>3. Building proposals from scratch</h4><p>If your team is still copying and pasting details into Word docs, you’re wasting hours. Manual workflows make it nearly impossible to keep up with planners’ expectations for speed.</p><p><strong>Why it matters:</strong> planners expect proposals in under 48 hours. If your process takes days, you’re out of the running before the conversation even starts.</p><p><strong>How to fix it:</strong> automate proposal creation with templates and venue management software. Using <a target="_blank" rel="noopener noreferrer nofollow" class="text-primary underline" href="https://www.ivvy.com/ivvyai/"><strong><u>iVvyAI’s Instant Proposal</u></strong></a> powered by hivr.ai can cut proposal turnaround from hours to seconds. Venue software features like real-time inventory, rate logic, and pre-built templates remove repetitive work so your team can respond quickly and accurately.</p><h4>4. No SLAs, no speed</h4><p>Without clear response time goals, speed becomes guesswork. If your team doesn’t know what “fast” means, they’ll default to what feels comfortable, which is rarely competitive.</p><p><strong>Why it matters:</strong> planners expect a first reply within 24–48 hours. Failing to meet that expectation directly impacts your chances of winning business.</p><p><strong>How to fix it:</strong> set service level agreements (SLAs) for response times, like replying to all enquiries within 24 hours and sending proposals within 48. Make these SLAs part of your team culture and track compliance regularly. When speed becomes a shared goal, it stops being optional.</p><h4>5. Chasing details instead of selling</h4><p>If your team spends more time hunting for availability and rates than talking to clients, that’s a problem. Disorganised&nbsp;data slows everything down and creates friction in the sales process.</p><p><strong>Why it matters:</strong> every delay cools the lead and increases the risk of losing the booking. Planners want accurate information fast, and if you can’t provide it, they’ll move on.</p><p><strong>How to fix it:</strong> centralise data with real-time inventory and rate visibility. Venue management software makes it easy to provide accurate details instantly, eliminating back-and-forth and keeping responses consistent.</p><h4>6. Ignoring metrics</h4><p>You can’t improve what you don’t measure. If you’re not tracking response times, you’re guessing at what’s slowing you down.</p><p><strong>Why it matters:</strong> metrics like time to first reply, proposal turnaround, and conversion rates by speed reveal where delays happen and which changes will make the biggest impact.</p><p><strong>How to fix it:</strong> start tracking your metrics and review them regularly. If enquiries are left unanswered for more than a day, tighten your SLA or automate initial responses.&nbsp;</p><h4>7. Unclear internal processes</h4><p>Software helps, but without training and process, it’s just another tool. Technology can’t fix unclear workflows or untrained staff.</p><p><strong>Why it matters:</strong> even the best tools fail if your team doesn’t know how to use them effectively. Slow responses often stem from process gaps, not just tech limitations.</p><p><strong>How to fix it:</strong> combine technology with standardised templates, clear workflows, and role-specific onboarding. Train your team to use tools confidently and create best practices for responding quickly and consistently.</p><h3>&nbsp;Turn fast responses into your venue advantage</h3><p>At the end of the day, planners want clarity and speed. When your team can deliver both, you stand out immediately. Fixing the slow spots in your process helps you meet those expectations and sets your venue up to win more of the enquiries already coming your way.</p><img src="/assets/images/articles/2bb031da65315eb3.webp?v=e27ad94ccd" alt="venue inbox blog footer" width="1975" height="500" containerstyle="width: 1975px; height: auto; cursor: pointer; " wrapperstyle="display: flex"><p><strong>&nbsp;</strong></p>
+            <p><strong>Discover how slow enquiry response times can trigger a costly domino effect for event venues.</strong></p><p>If responding to enquiries feels harder than it should, it probably is.&nbsp;Enquiries are coming in, but your current setup is slowing your team down and making it harder to respond quickly.</p><p>These common mistakes explain why venue enquiry replies drag out and what you can do to fix them.</p><h3>What slows down email response times for venues?</h3><h4>1. Playing inbox roulette</h4><p>One of the biggest factors behind slow responses? Leads sitting unnoticed in an inbox. Planners rarely distribute just one RFP, sending on average 10 or more at once, and the first venue to respond usually wins. If your team doesn’t have a system for monitoring enquiries, you’re already behind before you start.</p><p><strong>Why it matters:</strong> every hour a lead goes unanswered increases the chance they’ll book elsewhere. Replying within 5 minutes makes you 21 times more likely to qualify a lead than if you waited 30 minutes to respond.</p><p><strong>How to fix it:</strong> implement instant notifications through your CRM or <a target="_blank" rel="noopener noreferrer" class="text-primary underline" href="https://ivvy.com"><u>venue management software</u></a>. Real-time alerts ensure enquiries never go unnoticed, even when your team is away from their desks. Pair this with clear ownership rules. Every lead should have a name next to it within minutes of arrival.&nbsp;</p><h4>2. Treating every lead like a VIP</h4><p>It’s tempting to give every enquiry the royal treatment, but the reality is not all leads are created equal. Spending hours on low-value enquiries slows your team down and drains resources that could be spent on high-value opportunities.</p><p><strong>Why it matters:</strong> when you treat every lead equally, you risk missing out on more valuable events because your team is buried in admin for smaller ones (or leads less likely to convert).</p><p><strong>How to fix it:</strong> use lead scoring to prioritise enquiries based on event size, budget, and timeline. This approach ensures your team focuses on the opportunities most likely to convert. Venue management platforms like iVvy&nbsp;include lead scoring as a built-in feature, making prioritisation easy without adding extra manual steps.</p><h4>3. Building proposals from scratch</h4><p>If your team is still copying and pasting details into Word docs, you’re wasting hours. Manual workflows make it nearly impossible to keep up with planners’ expectations for speed.</p><p><strong>Why it matters:</strong> planners expect proposals in under 48 hours. If your process takes days, you’re out of the running before the conversation even starts.</p><p><strong>How to fix it:</strong> automate proposal creation with templates and venue management software. Using <a target="_blank" rel="noopener noreferrer nofollow" class="text-primary underline" href="https://www.ivvy.com/ivvyai/"><strong><u>iVvyAI’s Instant Proposal</u></strong></a> powered by hivr.ai can cut proposal turnaround from hours to seconds. Venue software features like real-time inventory, rate logic, and pre-built templates remove repetitive work so your team can respond quickly and accurately.</p><h4>4. No SLAs, no speed</h4><p>Without clear response time goals, speed becomes guesswork. If your team doesn’t know what “fast” means, they’ll default to what feels comfortable, which is rarely competitive.</p><p><strong>Why it matters:</strong> planners expect a first reply within 24–48 hours. Failing to meet that expectation directly impacts your chances of winning business.</p><p><strong>How to fix it:</strong> set service level agreements (SLAs) for response times, like replying to all enquiries within 24 hours and sending proposals within 48. Make these SLAs part of your team culture and track compliance regularly. When speed becomes a shared goal, it stops being optional.</p><h4>5. Chasing details instead of selling</h4><p>If your team spends more time hunting for availability and rates than talking to clients, that’s a problem. Disorganised&nbsp;data slows everything down and creates friction in the sales process.</p><p><strong>Why it matters:</strong> every delay cools the lead and increases the risk of losing the booking. Planners want accurate information fast, and if you can’t provide it, they’ll move on.</p><p><strong>How to fix it:</strong> centralise data with real-time inventory and rate visibility. Venue management software makes it easy to provide accurate details instantly, eliminating back-and-forth and keeping responses consistent.</p><h4>6. Ignoring metrics</h4><p>You can’t improve what you don’t measure. If you’re not tracking response times, you’re guessing at what’s slowing you down.</p><p><strong>Why it matters:</strong> metrics like time to first reply, proposal turnaround, and conversion rates by speed reveal where delays happen and which changes will make the biggest impact.</p><p><strong>How to fix it:</strong> start tracking your metrics and review them regularly. If enquiries are left unanswered for more than a day, tighten your SLA or automate initial responses.&nbsp;</p><h4>7. Unclear internal processes</h4><p>Software helps, but without training and process, it’s just another tool. Technology can’t fix unclear workflows or untrained staff.</p><p><strong>Why it matters:</strong> even the best tools fail if your team doesn’t know how to use them effectively. Slow responses often stem from process gaps, not just tech limitations.</p><p><strong>How to fix it:</strong> combine technology with standardised templates, clear workflows, and role-specific onboarding. Train your team to use tools confidently and create best practices for responding quickly and consistently.</p><h3>&nbsp;Turn fast responses into your venue advantage</h3><p>At the end of the day, planners want clarity and speed. When your team can deliver both, you stand out immediately. Fixing the slow spots in your process helps you meet those expectations and sets your venue up to win more of the enquiries already coming your way.</p><img src="/assets/images/articles/2bb031da65315eb3.webp?v=c842bb7b0a" alt="venue inbox blog footer" width="1975" height="500" containerstyle="width: 1975px; height: auto; cursor: pointer; " wrapperstyle="display: flex"><p><strong>&nbsp;</strong></p>
           </div>
           
 
@@ -875,7 +885,7 @@ If responding to enquiries feels harder than it should, it probably is. Enquirie
         
         <div class="article-card__image-wrap">
           <div class="article-card__image">
-            <img src="/assets/images/articles/0d3100ac53d989ec.webp?v=e27ad94ccd" alt="How to use AI to automate venue inbox management" width="600" height="338" loading="lazy" decoding="async">
+            <img src="/assets/images/articles/0d3100ac53d989ec.webp?v=c842bb7b0a" alt="How to use AI to automate venue inbox management" width="600" height="338" loading="lazy" decoding="async">
           </div>
         </div>
         
@@ -907,7 +917,7 @@ If responding to enquiries feels harder than it should, it probably is. Enquirie
         
         <div class="article-card__image-wrap">
           <div class="article-card__image">
-            <img src="/assets/images/articles/e209689d4f89fc72.webp?v=e27ad94ccd" alt="A step-by-step guide to implementing venue management software" width="600" height="338" loading="lazy" decoding="async">
+            <img src="/assets/images/articles/e209689d4f89fc72.webp?v=c842bb7b0a" alt="A step-by-step guide to implementing venue management software" width="600" height="338" loading="lazy" decoding="async">
           </div>
         </div>
         
@@ -939,7 +949,7 @@ If responding to enquiries feels harder than it should, it probably is. Enquirie
         
         <div class="article-card__image-wrap">
           <div class="article-card__image">
-            <img src="/assets/images/articles/f8370d77d831fe37.webp?v=e27ad94ccd" alt="How to build a venue sales routine with iVvyAI" width="600" height="338" loading="lazy" decoding="async">
+            <img src="/assets/images/articles/f8370d77d831fe37.webp?v=c842bb7b0a" alt="How to build a venue sales routine with iVvyAI" width="600" height="338" loading="lazy" decoding="async">
           </div>
         </div>
         
@@ -973,7 +983,7 @@ If responding to enquiries feels harder than it should, it probably is. Enquirie
 
 
 <section class="cta">
-  <img src="/assets/images/patterns/cta-pattern.webp?v=e27ad94ccd" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600">
+  <img src="/assets/images/patterns/cta-pattern.webp?v=c842bb7b0a" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600">
   <div class="container">
     <div class="cta__inner">
       <h2 class="cta__title" style="background: linear-gradient(135deg, hsl(85, 54%, 56%), hsl(85, 54%, 75%)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Stay in the know</h2>
@@ -1053,7 +1063,7 @@ If responding to enquiries feels harder than it should, it probably is. Enquirie
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=e27ad94ccd" alt="iVvy" class="footer__logo" width="120" height="40" decoding="async">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=c842bb7b0a" alt="iVvy" class="footer__logo" width="120" height="40" decoding="async">
         <div class="footer__social">
           <a href="https://www.linkedin.com/company/ivvy/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1219,7 +1229,7 @@ If responding to enquiries feels harder than it should, it probably is. Enquirie
 
 
 
-<script src="/assets/js/scripts.js?v=e27ad94ccd" defer></script>
+<script src="/assets/js/scripts.js?v=c842bb7b0a" defer></script>
 
 
 

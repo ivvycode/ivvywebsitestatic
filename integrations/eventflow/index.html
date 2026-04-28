@@ -1,16 +1,16 @@
-<!-- build:25034780881-942 -->
+<!-- build:25034876671-943 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=e27ad94ccd">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=e27ad94ccd">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=e27ad94ccd">
-  <link rel="alternate icon" href="/assets/images/favicon.ico?v=e27ad94ccd">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=e27ad94ccd">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=e27ad94ccd">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=e27ad94ccd">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=c842bb7b0a">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=c842bb7b0a">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=c842bb7b0a">
+  <link rel="alternate icon" href="/assets/images/favicon.ico?v=c842bb7b0a">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=c842bb7b0a">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=c842bb7b0a">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=c842bb7b0a">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>EventFlow Integration | iVvy</title>
   <meta name="description" content="Combine iVvy venue management system and EventFlow event collaboration platform to cut down on back-and-forth communication, streamline manual admin and work collaboratively with clients through an interactive customer portal.">
@@ -153,10 +153,20 @@ ul,ol{list-style:none}
    would arrive late and reflow the .container, which Lighthouse flagged as a 0.4 CLS. */
 .page-hero > .container{width:100%}
 .page-hero__content{position:relative;z-index:2;max-width:800px}
-.page-hero__title{font-size:36px;color:#fff;margin-bottom:16px;line-height:1.25;font-weight:800}
-@media(min-width:768px){.page-hero__title{font-size:40px}}
-@media(min-width:1024px){.page-hero__title{font-size:50px}}
-.benefit__eyebrow{display:inline-flex;align-items:center;padding:4px 12px;border-radius:9999px;font-size:13px;font-weight:600;font-family:'Nunito','Nunito Fallback',sans-serif;text-transform:uppercase;letter-spacing:0.05em;background:rgba(153,204,82,0.1);color:#103620;margin-bottom:20px}
+/* CLS guard: reserve 2 lines of h1 so font-swap from Poppins Fallback to Poppins 800 cannot change box height */
+.page-hero__title{font-size:36px;color:#fff;margin-bottom:16px;line-height:1.25;font-weight:800;min-height:calc(36px * 1.25 * 2);text-wrap:balance}
+.page-hero__title .gradient-text,.page-hero__title .gradient-text--dark{display:inline-block}
+@media(min-width:768px){.page-hero__title{font-size:40px;min-height:calc(40px * 1.25 * 2)}}
+@media(min-width:1024px){.page-hero__title{font-size:50px;min-height:calc(50px * 1.25 * 2)}}
+.benefit__eyebrow{display:inline-flex;align-items:center;padding:4px 12px;border-radius:9999px;font-size:13px;font-weight:600;font-family:'Nunito','Nunito Fallback',sans-serif;text-transform:uppercase;letter-spacing:0.05em;background:rgba(153,204,82,0.1);color:#103620;margin-bottom:20px;min-height:26px}
+/* Intro section — inlined so async styles.css arrival cannot reflow the heading on liteCSS pages.
+   Reserves 3 lines of h2 vertical space to absorb any font-metric variance between fallback and real Poppins 700. */
+.intro{padding:80px 0;background:#fff}
+@media(min-width:1024px){.intro{padding:112px 0}}
+.intro__inner{margin:0 auto;text-align:center}
+.intro__title{font-size:30px;font-weight:700;color:#103620;margin-bottom:32px;line-height:1.2;letter-spacing:-0.02em;min-height:calc(30px * 1.2 * 3);text-wrap:balance}
+@media(min-width:1024px){.intro__title{font-size:44px;min-height:calc(44px * 1.2 * 2)}}
+.intro__title span:not(.scroll-color-text){color:#99CC52}
 .gradient-text,.gradient-text--dark{background:linear-gradient(135deg,#99CC52,hsl(82 62% 44%));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .btn--hero{background:#99CC52;color:#103620}
 /* Pre-reserve underline space + inline display so JS-added underline span doesn't shift layout */
@@ -165,8 +175,8 @@ ul,ol{list-style:none}
 </style>
 
   
-  <link rel="preload" href="/assets/css/page/p-16da74f0b7.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/css/page/p-16da74f0b7.css"></noscript>
+  <link rel="preload" href="/assets/css/page/p-8779ff1888.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/page/p-8779ff1888.css"></noscript>
   
   
   <noscript></noscript>
@@ -246,7 +256,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__left">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=e27ad94ccd" alt="iVvy" width="120" height="32" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=c842bb7b0a" alt="iVvy" width="120" height="32" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
         </a>
         <nav class="nav">
           
@@ -513,7 +523,7 @@ ul,ol{list-style:none}
     <div class="page-hero__content">
       <div class="integration-hero-logos">
         <div class="integration-hero-logos__card">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=e27ad94ccd" alt="iVvy" width="120" height="56" loading="eager" decoding="async">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=c842bb7b0a" alt="iVvy" width="120" height="56" loading="eager" decoding="async">
         </div>
         <div class="integration-hero-logos__connector">
           <span class="integration-hero-logos__line"></span>
@@ -521,7 +531,7 @@ ul,ol{list-style:none}
           <span class="integration-hero-logos__line"></span>
         </div>
         <div class="integration-hero-logos__card">
-          <img src="/assets/images/integrations/eventflow.webp?v=e27ad94ccd" alt="EventFlow" width="120" height="56" loading="eager" decoding="async">
+          <img src="/assets/images/integrations/eventflow.webp?v=c842bb7b0a" alt="EventFlow" width="120" height="56" loading="eager" decoding="async">
         </div>
       </div>
       <h1 class="page-hero__title">
@@ -577,7 +587,7 @@ ul,ol{list-style:none}
       <div class="data-flow-card">
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/ivvy-logo-venues.webp?v=e27ad94ccd" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/ivvy-logo-venues.webp?v=c842bb7b0a" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Booking details</span>
         </div>
@@ -593,7 +603,7 @@ ul,ol{list-style:none}
         </div>
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/integrations/eventflow.webp?v=e27ad94ccd" alt="EventFlow" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/integrations/eventflow.webp?v=c842bb7b0a" alt="EventFlow" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Booking details</span>
         </div>
@@ -602,7 +612,7 @@ ul,ol{list-style:none}
       <div class="data-flow-card">
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/ivvy-logo-venues.webp?v=e27ad94ccd" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/ivvy-logo-venues.webp?v=c842bb7b0a" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Documents</span>
         </div>
@@ -618,7 +628,7 @@ ul,ol{list-style:none}
         </div>
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/integrations/eventflow.webp?v=e27ad94ccd" alt="EventFlow" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/integrations/eventflow.webp?v=c842bb7b0a" alt="EventFlow" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Documents</span>
         </div>
@@ -627,7 +637,7 @@ ul,ol{list-style:none}
       <div class="data-flow-card">
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/ivvy-logo-venues.webp?v=e27ad94ccd" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/ivvy-logo-venues.webp?v=c842bb7b0a" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Invoices</span>
         </div>
@@ -643,7 +653,7 @@ ul,ol{list-style:none}
         </div>
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/integrations/eventflow.webp?v=e27ad94ccd" alt="EventFlow" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/integrations/eventflow.webp?v=c842bb7b0a" alt="EventFlow" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Payments</span>
         </div>
@@ -652,7 +662,7 @@ ul,ol{list-style:none}
       <div class="data-flow-card">
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/ivvy-logo-venues.webp?v=e27ad94ccd" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/ivvy-logo-venues.webp?v=c842bb7b0a" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Guest counts*</span>
         </div>
@@ -668,7 +678,7 @@ ul,ol{list-style:none}
         </div>
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/integrations/eventflow.webp?v=e27ad94ccd" alt="EventFlow" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/integrations/eventflow.webp?v=c842bb7b0a" alt="EventFlow" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Guest counts</span>
         </div>
@@ -677,7 +687,7 @@ ul,ol{list-style:none}
       <div class="data-flow-card">
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/ivvy-logo-venues.webp?v=e27ad94ccd" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/ivvy-logo-venues.webp?v=c842bb7b0a" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Event details*</span>
         </div>
@@ -693,7 +703,7 @@ ul,ol{list-style:none}
         </div>
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/integrations/eventflow.webp?v=e27ad94ccd" alt="EventFlow" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/integrations/eventflow.webp?v=c842bb7b0a" alt="EventFlow" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Event details</span>
         </div>
@@ -702,7 +712,7 @@ ul,ol{list-style:none}
       <div class="data-flow-card">
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/ivvy-logo-venues.webp?v=e27ad94ccd" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/ivvy-logo-venues.webp?v=c842bb7b0a" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Runsheet*</span>
         </div>
@@ -718,7 +728,7 @@ ul,ol{list-style:none}
         </div>
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/integrations/eventflow.webp?v=e27ad94ccd" alt="EventFlow" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/integrations/eventflow.webp?v=c842bb7b0a" alt="EventFlow" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Runsheet</span>
         </div>
@@ -775,7 +785,7 @@ ul,ol{list-style:none}
 
 <section class="cta">
   
-  <img src="/assets/images/patterns/cta-pattern.webp?v=e27ad94ccd" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35;mix-blend-mode:soft-light;pointer-events:none;">
+  <img src="/assets/images/patterns/cta-pattern.webp?v=c842bb7b0a" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35;mix-blend-mode:soft-light;pointer-events:none;">
   <div class="container">
     <div class="cta__inner">
       <h2 class="cta__title">Ready to integrate <span class="scroll-color-text scroll-color-text--from-white">EventFlow</span> with iVvy?</h2>
@@ -937,7 +947,7 @@ ul,ol{list-style:none}
       
       <a href="/integrations/xero/" class="integration-related-card">
         <div class="integration-related-card__logo">
-          <img src="/assets/images/integrations/xero.webp?v=e27ad94ccd" alt="Xero" width="96" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/integrations/xero.webp?v=c842bb7b0a" alt="Xero" width="96" height="48" loading="lazy" decoding="async">
         </div>
         <h3 class="integration-related-card__name">Xero</h3>
         <p class="integration-related-card__subtitle">Get realtime Invoices and Payments directly into your Xero Account.</p>
@@ -945,7 +955,7 @@ ul,ol{list-style:none}
       
       <a href="/integrations/myob/" class="integration-related-card">
         <div class="integration-related-card__logo">
-          <img src="/assets/images/integrations/myob.webp?v=e27ad94ccd" alt="MYOB" width="96" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/integrations/myob.webp?v=c842bb7b0a" alt="MYOB" width="96" height="48" loading="lazy" decoding="async">
         </div>
         <h3 class="integration-related-card__name">MYOB</h3>
         <p class="integration-related-card__subtitle">Synchronise invoices, contacts, payments &amp; refunds</p>
@@ -953,7 +963,7 @@ ul,ol{list-style:none}
       
       <a href="/integrations/opera-cloud/" class="integration-related-card">
         <div class="integration-related-card__logo">
-          <img src="/assets/images/integrations/opera-cloud.webp?v=e27ad94ccd" alt="Oracle Opera Cloud" width="96" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/integrations/opera-cloud.webp?v=c842bb7b0a" alt="Oracle Opera Cloud" width="96" height="48" loading="lazy" decoding="async">
         </div>
         <h3 class="integration-related-card__name">Oracle Opera Cloud</h3>
         <p class="integration-related-card__subtitle">Full visibility of available accommodation</p>
@@ -961,7 +971,7 @@ ul,ol{list-style:none}
       
       <a href="/integrations/mews/" class="integration-related-card">
         <div class="integration-related-card__logo">
-          <img src="/assets/images/integrations/mews.webp?v=e27ad94ccd" alt="Mews" width="96" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/integrations/mews.webp?v=c842bb7b0a" alt="Mews" width="96" height="48" loading="lazy" decoding="async">
         </div>
         <h3 class="integration-related-card__name">Mews</h3>
         <p class="integration-related-card__subtitle">Full visibility of available accommodation</p>
@@ -969,7 +979,7 @@ ul,ol{list-style:none}
       
       <a href="/integrations/googleanalytics/" class="integration-related-card">
         <div class="integration-related-card__logo">
-          <img src="/assets/images/integrations/google-analytics.webp?v=e27ad94ccd" alt="Google Analytics" width="96" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/integrations/google-analytics.webp?v=c842bb7b0a" alt="Google Analytics" width="96" height="48" loading="lazy" decoding="async">
         </div>
         <h3 class="integration-related-card__name">Google Analytics</h3>
         <p class="integration-related-card__subtitle">Maximise efficiencies with iVvy and Google</p>
@@ -977,7 +987,7 @@ ul,ol{list-style:none}
       
       <a href="/integrations/googlecalendar/" class="integration-related-card">
         <div class="integration-related-card__logo">
-          <img src="/assets/images/integrations/google-calendar.webp?v=e27ad94ccd" alt="Google Calendar" width="96" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/integrations/google-calendar.webp?v=c842bb7b0a" alt="Google Calendar" width="96" height="48" loading="lazy" decoding="async">
         </div>
         <h3 class="integration-related-card__name">Google Calendar</h3>
         <p class="integration-related-card__subtitle">Sync your iVvy events with Google Calendar</p>
@@ -994,7 +1004,7 @@ ul,ol{list-style:none}
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=e27ad94ccd" alt="iVvy" class="footer__logo" width="120" height="40" decoding="async">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=c842bb7b0a" alt="iVvy" class="footer__logo" width="120" height="40" decoding="async">
         <div class="footer__social">
           <a href="https://www.linkedin.com/company/ivvy/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1160,7 +1170,7 @@ ul,ol{list-style:none}
 
 
 
-<script src="/assets/js/scripts.js?v=e27ad94ccd" defer></script>
+<script src="/assets/js/scripts.js?v=c842bb7b0a" defer></script>
 
 
 
