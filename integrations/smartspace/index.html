@@ -1,16 +1,16 @@
-<!-- build:25034225537-940 -->
+<!-- build:25034550783-941 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=bb6848dba4">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=bb6848dba4">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=bb6848dba4">
-  <link rel="alternate icon" href="/assets/images/favicon.ico?v=bb6848dba4">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=bb6848dba4">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=bb6848dba4">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=bb6848dba4">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=a5f03690ab">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=a5f03690ab">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=a5f03690ab">
+  <link rel="alternate icon" href="/assets/images/favicon.ico?v=a5f03690ab">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=a5f03690ab">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=a5f03690ab">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=a5f03690ab">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>SmartSpace Integration | iVvy</title>
   <meta name="description" content="Connect iVvy with SmartSpace for optimised space utilisation and booking management.">
@@ -65,10 +65,10 @@
     @font-face{font-family:'Nunito Fallback';src:local('Arial');size-adjust:100.86%;ascent-override:99.49%;descent-override:34.82%;line-gap-override:0%}
     @font-face{font-family:'Nunito Sans Fallback';src:local('Arial');size-adjust:100.44%;ascent-override:100.07%;descent-override:34.53%;line-gap-override:0%}
     @font-face{font-family:'Poppins';font-style:normal;font-weight:800;font-display:optional;src:url('/fonts/poppins-800.woff2') format('woff2')}
-    @font-face{font-family:'Nunito';font-style:normal;font-weight:400;font-display:optional;src:url('/fonts/nunito-400.woff2') format('woff2')}
+    @font-face{font-family:'Nunito';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/nunito-400.woff2') format('woff2')}
     @font-face{font-family:'Poppins';font-style:normal;font-weight:700;font-display:optional;src:url('/fonts/poppins-700.woff2') format('woff2')}
-    @font-face{font-family:'Nunito';font-style:normal;font-weight:600;font-display:optional;src:url('/fonts/nunito-600.woff2') format('woff2')}
-    @font-face{font-family:'Nunito Sans';font-style:normal;font-weight:600;font-display:optional;src:url('/fonts/nunito-sans-600.woff2') format('woff2')}
+    @font-face{font-family:'Nunito';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/nunito-600.woff2') format('woff2')}
+    @font-face{font-family:'Nunito Sans';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/nunito-sans-600.woff2') format('woff2')}
     
   </style>
 
@@ -84,6 +84,8 @@ h1,h2,h3,h5,h6{font-family:'Poppins','Poppins Fallback',sans-serif;line-height:1
 h1{line-height:1.1!important}
 h4{font-family:'Nunito Sans','Nunito Sans Fallback','Nunito',sans-serif;font-weight:700!important;line-height:1.2;letter-spacing:-0.02em}
 h1,h2,h3{font-weight:800!important}
+.nav__dropdown-item h3,.nav__dropdown-item h4{font-family:'Nunito','Nunito Fallback',sans-serif!important;font-weight:600!important;font-size:14px;line-height:1.3;color:#103620}
+.nav__dropdown-item p{font-size:12px;color:#666;font-weight:400}
 a{text-decoration:none;color:inherit}
 img{max-width:100%;height:auto;display:block}
 button{font-family:inherit;cursor:pointer}
@@ -146,14 +148,25 @@ ul,ol{list-style:none}
 @media(min-width:1024px){.page-hero--split .page-hero__bg-right{display:block;aspect-ratio:auto}}
 .page-hero--split .page-hero__bg-right img{width:100%;height:100%;object-fit:cover;display:block}
 .page-hero--split .page-hero__content{position:relative;z-index:1}
+/* Hero content typography & button — inlined so eyebrow pill, h1 sizing and the CTA
+   render at their final dimensions on first paint. Without these the async stylesheet
+   would arrive late and reflow the .container, which Lighthouse flagged as a 0.4 CLS. */
+.page-hero > .container{width:100%}
+.page-hero__content{position:relative;z-index:2;max-width:800px}
+.page-hero__title{font-size:36px;color:#fff;margin-bottom:16px;line-height:1.25;font-weight:800}
+@media(min-width:768px){.page-hero__title{font-size:40px}}
+@media(min-width:1024px){.page-hero__title{font-size:50px}}
+.benefit__eyebrow{display:inline-flex;align-items:center;padding:4px 12px;border-radius:9999px;font-size:13px;font-weight:600;font-family:'Nunito','Nunito Fallback',sans-serif;text-transform:uppercase;letter-spacing:0.05em;background:rgba(153,204,82,0.1);color:#103620;margin-bottom:20px}
+.gradient-text,.gradient-text--dark{background:linear-gradient(135deg,#99CC52,hsl(82 62% 44%));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.btn--hero{background:#99CC52;color:#103620}
 /* Pre-reserve underline space + inline display so JS-added underline span doesn't shift layout */
 .scroll-color-text--underline{position:relative;display:inline;padding-bottom:8px}
 .scroll-color-underline{position:absolute;left:0;bottom:0;height:5px;background:#99CC52;border-radius:9999px;transform-origin:left;width:100%;transform:scaleX(0)}
 </style>
 
   
-  <link rel="preload" href="/assets/css/page/p-91ccdca58b.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/css/page/p-91ccdca58b.css"></noscript>
+  <link rel="preload" href="/assets/css/page/p-16da74f0b7.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/page/p-16da74f0b7.css"></noscript>
   
   
   <noscript></noscript>
@@ -233,7 +246,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__left">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=bb6848dba4" alt="iVvy" width="120" height="32" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=a5f03690ab" alt="iVvy" width="120" height="32" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
         </a>
         <nav class="nav">
           
@@ -500,7 +513,7 @@ ul,ol{list-style:none}
     <div class="page-hero__content">
       <div class="integration-hero-logos">
         <div class="integration-hero-logos__card">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=bb6848dba4" alt="iVvy" width="120" height="56" loading="eager" decoding="async">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=a5f03690ab" alt="iVvy" width="120" height="56" loading="eager" decoding="async">
         </div>
         <div class="integration-hero-logos__connector">
           <span class="integration-hero-logos__line"></span>
@@ -508,7 +521,7 @@ ul,ol{list-style:none}
           <span class="integration-hero-logos__line"></span>
         </div>
         <div class="integration-hero-logos__card">
-          <img src="/assets/images/integrations/smartspace.webp?v=bb6848dba4" alt="SmartSpace" width="120" height="56" loading="eager" decoding="async">
+          <img src="/assets/images/integrations/smartspace.webp?v=a5f03690ab" alt="SmartSpace" width="120" height="56" loading="eager" decoding="async">
         </div>
       </div>
       <h1 class="page-hero__title">
@@ -556,7 +569,7 @@ ul,ol{list-style:none}
       <div class="data-flow-card">
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/ivvy-logo-venues.webp?v=bb6848dba4" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/ivvy-logo-venues.webp?v=a5f03690ab" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Space Bookings</span>
         </div>
@@ -572,7 +585,7 @@ ul,ol{list-style:none}
         </div>
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/integrations/smartspace.webp?v=bb6848dba4" alt="SmartSpace" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/integrations/smartspace.webp?v=a5f03690ab" alt="SmartSpace" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Room Reservations</span>
         </div>
@@ -619,7 +632,7 @@ ul,ol{list-style:none}
 
 <section class="cta">
   
-  <img src="/assets/images/patterns/cta-pattern.webp?v=bb6848dba4" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35;mix-blend-mode:soft-light;pointer-events:none;">
+  <img src="/assets/images/patterns/cta-pattern.webp?v=a5f03690ab" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35;mix-blend-mode:soft-light;pointer-events:none;">
   <div class="container">
     <div class="cta__inner">
       <h2 class="cta__title">Ready to integrate <span class="scroll-color-text scroll-color-text--from-white">SmartSpace</span> with iVvy?</h2>
@@ -724,7 +737,7 @@ ul,ol{list-style:none}
       
       <a href="/integrations/googlecalendar/" class="integration-related-card">
         <div class="integration-related-card__logo">
-          <img src="/assets/images/integrations/google-calendar.webp?v=bb6848dba4" alt="Google Calendar" width="96" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/integrations/google-calendar.webp?v=a5f03690ab" alt="Google Calendar" width="96" height="48" loading="lazy" decoding="async">
         </div>
         <h3 class="integration-related-card__name">Google Calendar</h3>
         <p class="integration-related-card__subtitle">Sync your iVvy events with Google Calendar</p>
@@ -732,7 +745,7 @@ ul,ol{list-style:none}
       
       <a href="/integrations/outlook/" class="integration-related-card">
         <div class="integration-related-card__logo">
-          <img src="/assets/images/integrations/outlook.webp?v=bb6848dba4" alt="Outlook - Tasks &amp; Activities" width="96" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/integrations/outlook.webp?v=a5f03690ab" alt="Outlook - Tasks &amp; Activities" width="96" height="48" loading="lazy" decoding="async">
         </div>
         <h3 class="integration-related-card__name">Outlook - Tasks &amp; Activities</h3>
         <p class="integration-related-card__subtitle">Sync tasks and activities</p>
@@ -740,7 +753,7 @@ ul,ol{list-style:none}
       
       <a href="/integrations/outlook-calendar/" class="integration-related-card">
         <div class="integration-related-card__logo">
-          <img src="/assets/images/integrations/outlook.webp?v=bb6848dba4" alt="Outlook Calendar" width="96" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/integrations/outlook.webp?v=a5f03690ab" alt="Outlook Calendar" width="96" height="48" loading="lazy" decoding="async">
         </div>
         <h3 class="integration-related-card__name">Outlook Calendar</h3>
         <p class="integration-related-card__subtitle">Bring your venue diary into Outlook Calendar</p>
@@ -748,7 +761,7 @@ ul,ol{list-style:none}
       
       <a href="/integrations/sabre/" class="integration-related-card">
         <div class="integration-related-card__logo">
-          <img src="/assets/images/integrations/sabre.webp?v=bb6848dba4" alt="Sabre" width="96" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/integrations/sabre.webp?v=a5f03690ab" alt="Sabre" width="96" height="48" loading="lazy" decoding="async">
         </div>
         <h3 class="integration-related-card__name">Sabre</h3>
         <p class="integration-related-card__subtitle">Global distribution system integration</p>
@@ -756,7 +769,7 @@ ul,ol{list-style:none}
       
       <a href="/integrations/venue-directory/" class="integration-related-card">
         <div class="integration-related-card__logo">
-          <img src="/assets/images/integrations/venue-directory.webp?v=bb6848dba4" alt="Venue Directory" width="96" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/integrations/venue-directory.webp?v=a5f03690ab" alt="Venue Directory" width="96" height="48" loading="lazy" decoding="async">
         </div>
         <h3 class="integration-related-card__name">Venue Directory</h3>
         <p class="integration-related-card__subtitle">Expand your venue&#39;s visibility</p>
@@ -773,7 +786,7 @@ ul,ol{list-style:none}
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=bb6848dba4" alt="iVvy" class="footer__logo" width="120" height="40" decoding="async">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=a5f03690ab" alt="iVvy" class="footer__logo" width="120" height="40" decoding="async">
         <div class="footer__social">
           <a href="https://www.linkedin.com/company/ivvy/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -939,7 +952,7 @@ ul,ol{list-style:none}
 
 
 
-<script src="/assets/js/scripts.js?v=bb6848dba4" defer></script>
+<script src="/assets/js/scripts.js?v=a5f03690ab" defer></script>
 
 
 
