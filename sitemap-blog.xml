@@ -165,24 +165,6 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/blog/5-ways-slow-responses-hurt-your-venue/</loc>
-    <lastmod></lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://www.ivvy.com/blog/7-mistakes-venues-make-that-slow-response-times/</loc>
-    <lastmod></lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  
-  
-  <url>
     <loc>https://www.ivvy.com/blog/venue-management-software-6-ways-an-integrated-payment-platform-transforms-your-business/</loc>
     <lastmod></lastmod>
     <changefreq>monthly</changefreq>
@@ -210,7 +192,25 @@
   
   
   <url>
+    <loc>https://www.ivvy.com/blog/5-ways-slow-responses-hurt-your-venue/</loc>
+    <lastmod></lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
     <loc>https://www.ivvy.com/blog/event-venue-management-software-why-speed-matters/</loc>
+    <lastmod></lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.ivvy.com/blog/7-mistakes-venues-make-that-slow-response-times/</loc>
     <lastmod></lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
