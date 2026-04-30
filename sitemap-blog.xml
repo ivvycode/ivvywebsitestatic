@@ -165,7 +165,7 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/blog/what-if-your-venue-inbox-managed-itself-with-ivvyai-it-can/</loc>
+    <loc>https://www.ivvy.com/blog/5-ways-slow-responses-hurt-your-venue/</loc>
     <lastmod></lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -192,15 +192,6 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/blog/event-venue-management-software-why-speed-matters/</loc>
-    <lastmod></lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  
-  
-  <url>
     <loc>https://www.ivvy.com/blog/how-to-prevent-double-bookings-in-your-venue/</loc>
     <lastmod></lastmod>
     <changefreq>monthly</changefreq>
@@ -210,7 +201,16 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/blog/5-ways-slow-responses-hurt-your-venue/</loc>
+    <loc>https://www.ivvy.com/blog/what-if-your-venue-inbox-managed-itself-with-ivvyai-it-can/</loc>
+    <lastmod></lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.ivvy.com/blog/event-venue-management-software-why-speed-matters/</loc>
     <lastmod></lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -561,7 +561,7 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/blog/ivvy-selected-sales-catering-software-vendor-accor/</loc>
+    <loc>https://www.ivvy.com/blog/simplify-event-planning-free-event-contract-template/</loc>
     <lastmod></lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -570,7 +570,7 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/blog/simplify-event-planning-free-event-contract-template/</loc>
+    <loc>https://www.ivvy.com/blog/ivvy-selected-sales-catering-software-vendor-accor/</loc>
     <lastmod></lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -661,6 +661,42 @@
   
   <url>
     <loc>https://www.ivvy.com/blog/power-words-for-your-venue-sales-pitch-pdf/</loc>
+    <lastmod></lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.ivvy.com/blog/venue-sales-software-integrations-to-boost-bookings/</loc>
+    <lastmod></lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.ivvy.com/blog/how-event-ticketing-software-makes-exhibitor-management-easier/</loc>
+    <lastmod></lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.ivvy.com/blog/event-budgeting-spreadsheet-keep-event-costs-on-track/</loc>
+    <lastmod></lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.ivvy.com/blog/9-integrations-your-venue-management-software-needs-to-have/</loc>
     <lastmod></lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
