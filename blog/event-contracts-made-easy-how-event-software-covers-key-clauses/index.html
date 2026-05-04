@@ -1,16 +1,16 @@
-<!-- build:25348153278-1084 -->
+<!-- build:25348965585-1085 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=66f7f2eef0">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=66f7f2eef0">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=66f7f2eef0">
-  <link rel="alternate icon" href="/assets/images/favicon.ico?v=66f7f2eef0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=66f7f2eef0">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=66f7f2eef0">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=66f7f2eef0">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=da1c7f070c">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=da1c7f070c">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=da1c7f070c">
+  <link rel="alternate icon" href="/assets/images/favicon.ico?v=da1c7f070c">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=da1c7f070c">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=da1c7f070c">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=da1c7f070c">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Event contracts made easy: how event software covers key clauses | iVvy Blog</title>
   <meta name="description" content="A solid event contract is your best tool for protecting your interests and ensuring everyone involved in an event is on the same page. But what should contracts include to safeguard your event success?">
@@ -139,8 +139,8 @@ ul,ol{list-style:none}
    matches the hero's dominant tone, so the reserved space looks intentional
    in the brief moment before the image paints. */
 .page-hero{position:relative;overflow:hidden}
-.page-hero--split{position:relative;min-height:400px;height:400px;display:flex;align-items:center;padding:0;background:#103620}
-@media(min-width:1024px){.page-hero--split{min-height:520px;height:520px}}
+.page-hero--split{position:relative;min-height:420px;height:auto;display:flex;align-items:center;padding:48px 0;background:#103620}
+@media(min-width:1024px){.page-hero--split{min-height:520px;height:520px;padding:0}}
 .page-hero--split .page-hero__bg{position:absolute;inset:0;display:flex;z-index:0}
 .page-hero--split .page-hero__bg-left{width:100%;background:linear-gradient(to right,hsl(150,55%,8%),hsl(147,45%,16%),hsl(140,35%,22%))}
 @media(min-width:1024px){.page-hero--split .page-hero__bg-left{width:50%}}
@@ -153,12 +153,15 @@ ul,ol{list-style:none}
    would arrive late and reflow the .container, which Lighthouse flagged as a 0.4 CLS. */
 .page-hero > .container{width:100%}
 .page-hero__content{position:relative;z-index:2;max-width:800px}
-/* CLS guard: reserve 2 lines of h1 so font-swap from Poppins Fallback to Poppins 800 cannot change box height */
-.page-hero__title{font-size:36px;color:#fff;margin-bottom:16px;line-height:1.25;font-weight:800;min-height:calc(36px * 1.25 * 2);text-wrap:balance}
+/* CLS guard: reserve lines of h1 so font-swap from Poppins Fallback to Poppins 800 cannot change box height.
+   h1 line-height is overridden to 1.1 via !important — use that value in all min-height calcs.
+   Mobile titles wrap to 3+ lines; tablet/desktop fit in 2. */
+.page-hero__title{font-size:36px;color:#fff;margin-bottom:16px;line-height:1.1;font-weight:800;min-height:calc(36px * 1.1 * 3);text-wrap:balance}
 .page-hero__title .gradient-text,.page-hero__title .gradient-text--dark{display:inline-block}
-@media(min-width:768px){.page-hero__title{font-size:40px;min-height:calc(40px * 1.25 * 2)}}
-@media(min-width:1024px){.page-hero__title{font-size:50px;min-height:calc(50px * 1.25 * 2)}}
+@media(min-width:768px){.page-hero__title{font-size:40px;min-height:calc(40px * 1.1 * 2)}}
+@media(min-width:1024px){.page-hero__title{font-size:50px;min-height:calc(50px * 1.1 * 2)}}
 .benefit__eyebrow{display:inline-flex;align-items:center;padding:4px 12px;border-radius:9999px;font-size:13px;font-weight:600;font-family:'Nunito','Nunito Fallback',sans-serif;text-transform:uppercase;letter-spacing:0.05em;background:rgba(153,204,82,0.1);color:#103620;margin-bottom:20px;min-height:26px}
+.section-pill{display:inline-flex;align-items:center;padding:4px 12px;border-radius:9999px;font-size:13px;font-weight:600;font-family:'Nunito','Nunito Fallback',sans-serif;text-transform:uppercase;letter-spacing:0.05em;background:rgba(153,204,82,0.1);color:#103620;margin-bottom:12px;min-height:26px}
 /* Industry / iVvyPay hero eyebrow + title parts + subtitle + note — inlined so the
    async stylesheet arrival cannot reflow the hero on hotel/restaurant/stadium/
    government/university/hospitality/function-centres/ivvy-pay pages. Each rule
@@ -190,8 +193,8 @@ ul,ol{list-style:none}
 </style>
 
   
-  <link rel="preload" href="/assets/css/page/p-bb7bce24fd.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/css/page/p-bb7bce24fd.css"></noscript>
+  <link rel="preload" href="/assets/css/page/p-0775488584.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/page/p-0775488584.css"></noscript>
   
   
   <noscript></noscript>
@@ -271,7 +274,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__left">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=66f7f2eef0" alt="iVvy" width="120" height="32" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=da1c7f070c" alt="iVvy" width="120" height="32" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
         </a>
         <nav class="nav">
           
@@ -541,7 +544,7 @@ ul,ol{list-style:none}
 
 <section class="article-hero">
   <div class="article-hero__image">
-    <img src="/assets/images/articles/65a112fe0b25300e.webp?v=66f7f2eef0" alt="Event contracts made easy: how event software covers key clauses" width="1920" height="600" loading="eager" fetchpriority="high" decoding="async">
+    <img src="/assets/images/articles/65a112fe0b25300e.webp?v=da1c7f070c" alt="Event contracts made easy: how event software covers key clauses" width="1920" height="600" loading="eager" fetchpriority="high" decoding="async">
     <div class="article-hero__overlay"></div>
   </div>
 </section>
@@ -1080,7 +1083,7 @@ ul,ol{list-style:none}
         
         <div class="article-card__image-wrap">
           <div class="article-card__image">
-            <img src="/assets/images/articles/b2e66a0938434ce7.webp?v=66f7f2eef0" alt="5 event reports every venue manager should run weekly" width="600" height="338" loading="lazy" decoding="async">
+            <img src="/assets/images/articles/b2e66a0938434ce7.webp?v=da1c7f070c" alt="5 event reports every venue manager should run weekly" width="600" height="338" loading="lazy" decoding="async">
           </div>
         </div>
         
@@ -1112,7 +1115,7 @@ ul,ol{list-style:none}
         
         <div class="article-card__image-wrap">
           <div class="article-card__image">
-            <img src="/assets/images/articles/14609616bdfbeaf2.webp?v=66f7f2eef0" alt="How to simplify event registration and boost sign-ups" width="600" height="338" loading="lazy" decoding="async">
+            <img src="/assets/images/articles/14609616bdfbeaf2.webp?v=da1c7f070c" alt="How to simplify event registration and boost sign-ups" width="600" height="338" loading="lazy" decoding="async">
           </div>
         </div>
         
@@ -1144,7 +1147,7 @@ ul,ol{list-style:none}
         
         <div class="article-card__image-wrap">
           <div class="article-card__image">
-            <img src="/assets/images/articles/0ee83aefdbea127e.webp?v=66f7f2eef0" alt="Tips to master event chaos using event software" width="600" height="338" loading="lazy" decoding="async">
+            <img src="/assets/images/articles/0ee83aefdbea127e.webp?v=da1c7f070c" alt="Tips to master event chaos using event software" width="600" height="338" loading="lazy" decoding="async">
           </div>
         </div>
         
@@ -1178,7 +1181,7 @@ ul,ol{list-style:none}
 
 
 <section class="cta">
-  <img src="/assets/images/patterns/cta-pattern.webp?v=66f7f2eef0" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600">
+  <img src="/assets/images/patterns/cta-pattern.webp?v=da1c7f070c" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600">
   <div class="container">
     <div class="cta__inner">
       <h2 class="cta__title" style="background: linear-gradient(135deg, hsl(85, 54%, 56%), hsl(85, 54%, 75%)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Stay in the know</h2>
@@ -1258,7 +1261,7 @@ ul,ol{list-style:none}
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=66f7f2eef0" alt="iVvy" class="footer__logo" width="120" height="40" decoding="async">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=da1c7f070c" alt="iVvy" class="footer__logo" width="120" height="40" decoding="async">
         <div class="footer__social">
           <a href="https://www.linkedin.com/company/ivvy/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1424,7 +1427,7 @@ ul,ol{list-style:none}
 
 
 
-<script src="/assets/js/scripts.js?v=66f7f2eef0" defer></script>
+<script src="/assets/js/scripts.js?v=da1c7f070c" defer></script>
 
 
 
