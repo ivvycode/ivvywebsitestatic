@@ -1,16 +1,16 @@
-<!-- build:25413335068-1114 -->
+<!-- build:25414579168-1115 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=f60fa937f2">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=f60fa937f2">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=f60fa937f2">
-  <link rel="alternate icon" href="/assets/images/favicon.ico?v=f60fa937f2">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=f60fa937f2">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=f60fa937f2">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=f60fa937f2">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=8af6972eb4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=8af6972eb4">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=8af6972eb4">
+  <link rel="alternate icon" href="/assets/images/favicon.ico?v=8af6972eb4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=8af6972eb4">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=8af6972eb4">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=8af6972eb4">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>iVvyAI | AI-Powered Venue & Event Automation</title>
   <meta name="description" content="iVvyAI handles the admin, speeds up your sales process, and helps your team focus on closing the deals that matter.">
@@ -151,13 +151,16 @@ ul,ol{list-style:none}
 /* Hero content typography & button — inlined so eyebrow pill, h1 sizing and the CTA
    render at their final dimensions on first paint. Without these the async stylesheet
    would arrive late and reflow the .container, which Lighthouse flagged as a 0.4 CLS. */
-.page-hero > .container{width:100%}
+/* contain: layout style on the hero container prevents internal font-swap reflow from
+   propagating to the page-level layout — the .container box stays at its committed size
+   even if inline-block gradient spans change width during Poppins swap. */
+.page-hero > .container{width:100%;contain:layout style}
 .page-hero__content{position:relative;z-index:2;max-width:800px}
 /* CLS guard: reserve lines of h1 so font-swap from Poppins Fallback to Poppins 800 cannot change box height.
    h1 line-height is overridden to 1.1 via !important — use that value in all min-height calcs.
    Mobile titles wrap to 3+ lines; tablet/desktop fit in 2. */
 .page-hero__title{font-size:36px;color:#fff;margin-bottom:16px;line-height:1.1;font-weight:800;min-height:calc(36px * 1.1 * 3);text-wrap:balance}
-.page-hero__title .gradient-text,.page-hero__title .gradient-text--dark{display:inline-block}
+.page-hero__title .gradient-text,.page-hero__title .gradient-text--dark{display:inline}
 @media(min-width:768px){.page-hero__title{font-size:40px;min-height:calc(40px * 1.1 * 2)}}
 @media(min-width:1024px){.page-hero__title{font-size:50px;min-height:calc(50px * 1.1 * 2)}}
 /* iVvyAI hero title is longer — reserve 5 lines on mobile, 3 on tablet, 3 on desktop */
@@ -279,7 +282,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__left">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=f60fa937f2" alt="iVvy" width="120" height="32" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=8af6972eb4" alt="iVvy" width="120" height="32" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
         </a>
         <nav class="nav">
           
@@ -541,11 +544,25 @@ ul,ol{list-style:none}
 <main>
   
 
+
+<style>
+  .ivvyai-hero__title { font-size: 36px !important; }
+  @media (min-width: 1024px) { .ivvyai-hero__title { font-size: 50px !important; } }
+  .ivvyai-h2-sized { font-size: 30px; }
+  @media (min-width: 1024px) { .ivvyai-h2-sized { font-size: 44px; } }
+  .ivvyai-h2-agent { font-size: 30px; }
+  @media (min-width: 1024px) { .ivvyai-h2-agent { font-size: 40px; } }
+  .in-control-title { font-size: 24px !important; line-height: 1.25; margin-bottom: 24px; }
+  @media (min-width: 1024px) { .in-control-title { font-size: 44px !important; margin-bottom: 48px; } }
+</style>
+
+
+
 <section class="page-hero page-hero--split">
   <div class="page-hero__bg">
     <div class="page-hero__bg-left"></div>
     <div class="page-hero__bg-right" style="background:linear-gradient(to right, hsl(150,55%,8%), hsl(147,45%,16%), hsl(140,35%,22%));">
-      <img src="/assets/images/patterns/cta-pattern.webp?v=f60fa937f2" alt="" aria-hidden="true" width="1200" height="400" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.2;pointer-events:none;" loading="eager" decoding="async">
+      <img src="/assets/images/patterns/cta-pattern.webp?v=8af6972eb4" alt="" aria-hidden="true" width="1200" height="400" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.2;pointer-events:none;" loading="lazy" decoding="async">
     </div>
   </div>
   <div class="container">
@@ -557,18 +574,6 @@ ul,ol{list-style:none}
     </div>
   </div>
 </section>
-
-<style>
-  .ivvyai-hero__title { font-size: 36px !important; }
-  @media (min-width: 1024px) { .ivvyai-hero__title { font-size: 50px !important; } }
-  .ivvyai-h2-sized { font-size: 30px; }
-  @media (min-width: 1024px) { .ivvyai-h2-sized { font-size: 44px; } }
-  .ivvyai-h2-agent { font-size: 30px; }
-  @media (min-width: 1024px) { .ivvyai-h2-agent { font-size: 40px; } }
-  /* Mobile: smaller heading + tighter spacing so a slider tile is visible above the fold */
-  .in-control-title { font-size: 24px !important; line-height: 1.25; margin-bottom: 24px; }
-  @media (min-width: 1024px) { .in-control-title { font-size: 44px !important; margin-bottom: 48px; } }
-</style>
 
 
 <section class="section">
@@ -635,7 +640,7 @@ ul,ol{list-style:none}
           </div>
         </div>
         <div>
-          <img src="/assets/images/ivvyai/ivvy-email-ingestion.gif?v=f60fa937f2" alt="iVvy AI email ingestion reading inbox" class="content-section__image" loading="lazy" width="600" height="400" style="box-shadow:0 8px 30px rgba(0,0,0,0.12);border-radius:12px;" decoding="async">
+          <img src="/assets/images/ivvyai/ivvy-email-ingestion.gif?v=8af6972eb4" alt="iVvy AI email ingestion reading inbox" class="content-section__image" loading="lazy" width="600" height="400" style="box-shadow:0 8px 30px rgba(0,0,0,0.12);border-radius:12px;" decoding="async">
         </div>
       </div>
     </div>
@@ -654,7 +659,7 @@ ul,ol{list-style:none}
           </div>
         </div>
         <div>
-          <img src="/assets/images/ivvyai/ivvy-lead-qualification.gif?v=f60fa937f2" alt="iVvy lead qualification pipeline view" class="content-section__image" loading="lazy" width="600" height="400" style="box-shadow:0 8px 30px rgba(0,0,0,0.12);border-radius:12px;" decoding="async">
+          <img src="/assets/images/ivvyai/ivvy-lead-qualification.gif?v=8af6972eb4" alt="iVvy lead qualification pipeline view" class="content-section__image" loading="lazy" width="600" height="400" style="box-shadow:0 8px 30px rgba(0,0,0,0.12);border-radius:12px;" decoding="async">
         </div>
       </div>
     </div>
@@ -672,7 +677,7 @@ ul,ol{list-style:none}
           </div>
         </div>
         <div>
-          <img src="/assets/images/ivvyai-proposal.gif?v=f60fa937f2" alt="iVvy AI proposal generation" width="600" height="400" loading="lazy" decoding="async" class="content-section__image" style="border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.12);">
+          <img src="/assets/images/ivvyai-proposal.gif?v=8af6972eb4" alt="iVvy AI proposal generation" width="600" height="400" loading="lazy" decoding="async" class="content-section__image" style="border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.12);">
         </div>
       </div>
     </div>
@@ -924,7 +929,7 @@ ul,ol{list-style:none}
 
 
 <section id="ivvyai-demo-form" class="cta" style="padding-bottom:80px;">
-  <img src="/assets/images/patterns/cta-pattern.webp?v=f60fa937f2" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600">
+  <img src="/assets/images/patterns/cta-pattern.webp?v=8af6972eb4" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600">
   <div class="container">
     <div class="cta__inner">
       <h2 class="cta__title" style="max-width:896px;margin-left:auto;margin-right:auto;"><span class="scroll-color-text scroll-color-text--from-white">What could a 50% increase in conversions</span> do for your business?</h2>
@@ -965,7 +970,7 @@ ul,ol{list-style:none}
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=f60fa937f2" alt="iVvy" class="footer__logo" width="120" height="40" decoding="async">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=8af6972eb4" alt="iVvy" class="footer__logo" width="120" height="40" decoding="async">
         <div class="footer__social">
           <a href="https://www.linkedin.com/company/ivvy/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1131,7 +1136,7 @@ ul,ol{list-style:none}
 
 
 
-<script src="/assets/js/scripts.js?v=f60fa937f2" defer></script>
+<script src="/assets/js/scripts.js?v=8af6972eb4" defer></script>
 
 
 
