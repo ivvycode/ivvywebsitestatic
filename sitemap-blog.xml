@@ -246,15 +246,6 @@
   
   
   <url>
-    <loc>https://www.ivvy.com/blog/how-to-prevent-double-bookings-in-your-venue/</loc>
-    <lastmod></lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  
-  
-  <url>
     <loc>https://www.ivvy.com/blog/5-ways-slow-responses-hurt-your-venue/</loc>
     <lastmod></lastmod>
     <changefreq>monthly</changefreq>
@@ -274,6 +265,15 @@
   
   <url>
     <loc>https://www.ivvy.com/blog/event-venue-management-software-why-speed-matters/</loc>
+    <lastmod></lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.ivvy.com/blog/how-to-prevent-double-bookings-in-your-venue/</loc>
     <lastmod></lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
