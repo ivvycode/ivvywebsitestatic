@@ -1,16 +1,16 @@
-<!-- build:26153403617-1407 -->
+<!-- build:26156577068-1408 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=1ef0092e82">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=1ef0092e82">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=1ef0092e82">
-  <link rel="alternate icon" href="/assets/images/favicon.ico?v=1ef0092e82">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=1ef0092e82">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=1ef0092e82">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=1ef0092e82">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=6a338170fb">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=6a338170fb">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=6a338170fb">
+  <link rel="alternate icon" href="/assets/images/favicon.ico?v=6a338170fb">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=6a338170fb">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=6a338170fb">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=6a338170fb">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>How venue management software can help forecast revenue more accurately | iVvy Blog</title>
   <meta name="description" content="For most venues, forecasting feels like guesswork. It doesn&#39;t have to. Here&#39;s how to turn scattered data into confident, data-driven revenue planning using venue management software.">
@@ -257,11 +257,39 @@ ul,ol{list-style:none}
 .checklist__item{display:flex;align-items:flex-start;gap:12px;font-size:16px;color:#103620;line-height:1.6;min-height:26px}
 /* Article container — reserves blog post layout so async CSS cannot shift /blog/<slug>/ above the fold. */
 .article-detail__wrapper,.article-detail__container,.article-body{max-width:760px;margin:0 auto}
+/* Blog article hero + detail header — reserve every box that was previously sized by the async stylesheet
+   so /blog/<slug>/ paints at final geometry and Lighthouse stops seeing 0.2+ CLS above the fold. */
+.article-hero__image{width:100%;max-height:540px;aspect-ratio:16/5;overflow:hidden;position:relative}
+.article-hero__image img{width:100%;height:100%;object-fit:cover;display:block}
+.article-hero__overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(16,54,32,0.4),transparent)}
+.article-detail{padding:48px 0 64px}
+@media(min-width:1024px){.article-detail{padding:64px 0 80px}}
+.article-detail__inner{max-width:896px;margin:0 auto}
+.article-detail__back{display:flex;align-items:center;gap:4px;font-size:14px;font-weight:700;font-family:'Nunito','Nunito Fallback',sans-serif;color:rgba(255,255,255,0.8);text-decoration:none;margin-bottom:2.5rem;width:fit-content;min-height:22px}
+.article-detail__title{font-size:30px;font-weight:700;font-family:'Poppins','Poppins Fallback',sans-serif;line-height:1.2;margin-bottom:24px;min-height:calc(30px * 1.2 * 3);background:linear-gradient(135deg,hsl(85,54%,56%),hsl(85,54%,75%));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+@media(min-width:1024px){.article-detail__title{font-size:48px;min-height:calc(48px * 1.2 * 2)}}
+.article-detail__excerpt{font-size:18px;font-family:'Nunito','Nunito Fallback',sans-serif;line-height:1.6;border-left:4px solid #99CC52;padding-left:16px;margin-top:2.5em;margin-bottom:32px;color:rgba(255,255,255,0.7);min-height:calc(18px * 1.6 * 2)}
+.article-detail__meta{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:16px;min-height:20px}
+.article-share{display:flex;align-items:center;gap:12px;margin-bottom:24px;min-height:32px;flex-wrap:wrap}
+.article-hero-cta{margin-bottom:24px;min-height:48px}
+.article-hero-cta a{display:inline-block;padding:14px 36px;border-radius:9999px;background:linear-gradient(135deg,hsl(85,54%,56%),hsl(85,60%,50%));color:hsl(147,55%,13%);font-family:'Nunito Sans','Nunito Sans Fallback',sans-serif;font-size:14px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none}
+.reading-progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:9999;background:transparent;pointer-events:none}
+.reading-progress__bar{height:100%;width:0;background:#99CC52;transform-origin:left}
+/* iVvyAI / Event-Sales-AI section primitives — reserve grid + typography boxes so the async stylesheet
+   activating `.content-section__grid` (block→2col), `.section__subtitle`, `.section__title--light`, and
+   the `.agent-tab` pill row cannot shift the page below the hero on /event-sales-ai/. */
+.content-section__grid{display:grid;grid-template-columns:1fr;gap:48px;align-items:center}
+@media(min-width:1024px){.content-section__grid{grid-template-columns:1fr 1fr;gap:64px}}
+.section__subtitle{font-size:16px;color:#666;line-height:1.8;margin:0 auto}
+.section__header--center .section__subtitle{text-align:center}
+.section__title--light{color:#fff}
+.agent-tab{padding:12px 24px;border-radius:9999px;font-size:14px;font-weight:700;font-family:'Nunito','Nunito Fallback',sans-serif;border:none;background:transparent;color:#666;cursor:pointer;min-height:42px}
+.agent-tab--active{background:#99CC52;color:#fff;box-shadow:0 4px 12px rgba(153,204,82,0.3)}
 </style>
 
   
-  <link rel="preload" href="/assets/css/page/p-1a75d05faf.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/css/page/p-1a75d05faf.css"></noscript>
+  <link rel="preload" href="/assets/css/page/p-fc54e4dbff.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/page/p-fc54e4dbff.css"></noscript>
   
   
   <noscript></noscript>
@@ -341,7 +369,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__left">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=1ef0092e82" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=6a338170fb" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
         </a>
         <nav class="nav">
           
@@ -627,7 +655,7 @@ ul,ol{list-style:none}
 
 <section class="article-hero">
   <div class="article-hero__image">
-    <img src="/assets/images/articles/f8efd38b7b743a55.webp?v=1ef0092e82" srcset="/assets/images/articles/f8efd38b7b743a55.webp?v=1ef0092e82 480w, /assets/images/articles/f8efd38b7b743a55.webp 1920w" sizes="100vw" alt="How venue management software can help forecast revenue more accurately" width="1920" height="600" loading="eager" fetchpriority="high" decoding="async">
+    <img src="/assets/images/articles/f8efd38b7b743a55.webp?v=6a338170fb" srcset="/assets/images/articles/f8efd38b7b743a55.webp?v=6a338170fb 480w, /assets/images/articles/f8efd38b7b743a55.webp 1920w" sizes="100vw" alt="How venue management software can help forecast revenue more accurately" width="1920" height="600" loading="eager" fetchpriority="high" decoding="async">
     <div class="article-hero__overlay"></div>
   </div>
 </section>
@@ -1099,7 +1127,7 @@ ul,ol{list-style:none}
         
         <div class="article-card__image-wrap">
           <div class="article-card__image">
-            <img src="/assets/images/articles/a09559ad6cd2d527.webp?v=1ef0092e82" srcset="/assets/images/articles/a09559ad6cd2d527.webp?v=1ef0092e82 480w, /assets/images/articles/a09559ad6cd2d527.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="The cost of a manual venue proposal process" width="600" height="338" loading="lazy" decoding="async">
+            <img src="/assets/images/articles/a09559ad6cd2d527.webp?v=6a338170fb" srcset="/assets/images/articles/a09559ad6cd2d527.webp?v=6a338170fb 480w, /assets/images/articles/a09559ad6cd2d527.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="The cost of a manual venue proposal process" width="600" height="338" loading="lazy" decoding="async">
           </div>
         </div>
         
@@ -1130,7 +1158,7 @@ ul,ol{list-style:none}
         
         <div class="article-card__image-wrap">
           <div class="article-card__image">
-            <img src="/assets/images/articles/e3888d454160f2ca.webp?v=1ef0092e82" srcset="/assets/images/articles/e3888d454160f2ca.webp?v=1ef0092e82 480w, /assets/images/articles/e3888d454160f2ca.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="What happens when you use Excel as your venue CRM" width="600" height="338" loading="lazy" decoding="async">
+            <img src="/assets/images/articles/e3888d454160f2ca.webp?v=6a338170fb" srcset="/assets/images/articles/e3888d454160f2ca.webp?v=6a338170fb 480w, /assets/images/articles/e3888d454160f2ca.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="What happens when you use Excel as your venue CRM" width="600" height="338" loading="lazy" decoding="async">
           </div>
         </div>
         
@@ -1161,7 +1189,7 @@ ul,ol{list-style:none}
         
         <div class="article-card__image-wrap">
           <div class="article-card__image">
-            <img src="/assets/images/articles/e7f870aa6db1fe9d.webp?v=1ef0092e82" srcset="/assets/images/articles/e7f870aa6db1fe9d.webp?v=1ef0092e82 480w, /assets/images/articles/e7f870aa6db1fe9d.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="AI for venue sales: what it does (and doesn&#39;t)" width="600" height="338" loading="lazy" decoding="async">
+            <img src="/assets/images/articles/e7f870aa6db1fe9d.webp?v=6a338170fb" srcset="/assets/images/articles/e7f870aa6db1fe9d.webp?v=6a338170fb 480w, /assets/images/articles/e7f870aa6db1fe9d.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="AI for venue sales: what it does (and doesn&#39;t)" width="600" height="338" loading="lazy" decoding="async">
           </div>
         </div>
         
@@ -1195,7 +1223,7 @@ ul,ol{list-style:none}
 
 
 <section class="cta">
-  <img src="/assets/images/patterns/cta-pattern.webp?v=1ef0092e82" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600">
+  <img src="/assets/images/patterns/cta-pattern.webp?v=6a338170fb" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600">
   <div class="container">
     <div class="cta__inner">
       <h2 class="cta__title title-gradient-light">Stay in the know</h2>
@@ -1275,7 +1303,7 @@ ul,ol{list-style:none}
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=1ef0092e82" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=6a338170fb" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
         <div class="footer__social">
           <a href="https://www.linkedin.com/company/ivvy/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1441,7 +1469,7 @@ ul,ol{list-style:none}
 
 
 
-<script src="/assets/js/scripts.js?v=1ef0092e82" defer></script>
+<script src="/assets/js/scripts.js?v=6a338170fb" defer></script>
 
 
 
