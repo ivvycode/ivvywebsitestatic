@@ -1,16 +1,16 @@
-<!-- build:26140719157-1398 -->
+<!-- build:26141241984-1399 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=e42148fb50">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=e42148fb50">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=e42148fb50">
-  <link rel="alternate icon" href="/assets/images/favicon.ico?v=e42148fb50">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=e42148fb50">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=e42148fb50">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=e42148fb50">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=28a8f46184">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=28a8f46184">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=28a8f46184">
+  <link rel="alternate icon" href="/assets/images/favicon.ico?v=28a8f46184">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=28a8f46184">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=28a8f46184">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=28a8f46184">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>iVvyAI | AI-Powered Venue & Event Automation</title>
   <meta name="description" content="iVvyAI handles the admin, speeds up your sales process, and helps your team focus on closing the deals that matter.">
@@ -215,11 +215,21 @@ ul,ol{list-style:none}
 /* Pre-reserve underline space + inline display so JS-added underline span doesn't shift layout */
 .scroll-color-text--underline{position:relative;display:inline;padding-bottom:8px}
 .scroll-color-underline{position:absolute;left:0;bottom:0;height:5px;background:#99CC52;border-radius:9999px;transform-origin:left;width:100%;transform:scaleX(0)}
+/* Integration detail hero connected logos — inlined so async styles-pages.css arrival
+   cannot reflow the hero. Reserves the exact card geometry (160x80 / 180x88) plus
+   connector dimensions to eliminate CLS on /integrations/<slug>/ pages. */
+.integration-hero-logos{display:flex;align-items:center;justify-content:center;gap:1.5rem;margin-bottom:2.5rem}
+.integration-hero-logos__card{background:#fff;border-radius:1rem;padding:1.25rem 1.5rem;box-shadow:0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -4px rgba(0,0,0,0.1);display:flex;align-items:center;justify-content:center;width:160px;height:80px}
+.integration-hero-logos__card img{height:2.5rem;width:auto;object-fit:contain}
+.integration-hero-logos__connector{display:flex;align-items:center;gap:0.75rem}
+.integration-hero-logos__line{display:block;width:2rem;height:2px;background:linear-gradient(90deg,rgba(153,204,82,0.2),#99CC52)}
+.integration-hero-logos__icon{display:flex;align-items:center;justify-content:center;width:2.25rem;height:2.25rem;border-radius:50%;border:1px solid rgba(153,204,82,0.3);background:rgba(255,255,255,0.1);color:#99CC52;font-size:1rem;font-weight:700}
+@media(min-width:1024px){.integration-hero-logos{gap:2.5rem}.integration-hero-logos__card{width:180px;height:88px}.integration-hero-logos__card img{height:3.5rem}.integration-hero-logos__line{width:3rem}}
 </style>
 
   
-  <link rel="preload" href="/assets/css/page/p-2f7038b698.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/css/page/p-2f7038b698.css"></noscript>
+  <link rel="preload" href="/assets/css/page/p-2243386c76.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/page/p-2243386c76.css"></noscript>
   
   
   <noscript></noscript>
@@ -299,7 +309,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__left">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=e42148fb50" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=28a8f46184" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
         </a>
         <nav class="nav">
           
@@ -579,7 +589,7 @@ ul,ol{list-style:none}
   <div class="page-hero__bg">
     <div class="page-hero__bg-left"></div>
     <div class="page-hero__bg-right" style="background:linear-gradient(to right, hsl(150,55%,8%), hsl(147,45%,16%), hsl(140,35%,22%));">
-      <img src="/assets/images/patterns/cta-pattern.webp?v=e42148fb50" alt="" aria-hidden="true" width="1200" height="400" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.2;pointer-events:none;" loading="lazy" decoding="async">
+      <img src="/assets/images/patterns/cta-pattern.webp?v=28a8f46184" alt="" aria-hidden="true" width="1200" height="400" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.2;pointer-events:none;" loading="lazy" decoding="async">
     </div>
   </div>
   <div class="container">
@@ -626,7 +636,7 @@ ul,ol{list-style:none}
   <div class="container">
     <div class="section__header section__header--center">
       <span class="section-pill" style="color:#fff;background:rgba(255,255,255,0.15);margin-bottom:24px;">The first product in the iVvyAI suite</span>
-      <h2 class="section__title--light"><span class="scroll-color-text scroll-color-text--from-white">Instant Proposal – Email</span> powered by hivr.ai</h2>
+      <h2 class="section__title--light" style="color:#fff;"><span class="scroll-color-text scroll-color-text--from-white">Instant Proposal – Email</span> <span style="color:#fff;">powered by hivr.ai</span></h2>
       <p class="section__subtitle" style="margin-top:32px;max-width:700px;margin-left:auto;margin-right:auto;color:rgba(255,255,255,0.8);">Automate from the moment an enquiry arrives to the moment a proposal is ready to generate in iVvy. Three AI agents working together in one workflow to ensure you and your team wake up to qualified leads and proposals ready to be generated.</p>
     </div>
   </div>
@@ -657,7 +667,7 @@ ul,ol{list-style:none}
           </div>
         </div>
         <div>
-          <img src="/assets/images/ivvyai/ivvy-email-ingestion.gif?v=e42148fb50" alt="iVvy AI email ingestion reading inbox" class="content-section__image" loading="lazy" width="600" height="400" style="box-shadow:0 8px 30px rgba(0,0,0,0.12);border-radius:12px;" decoding="async">
+          <img src="/assets/images/ivvyai/ivvy-email-ingestion.gif?v=28a8f46184" alt="iVvy AI email ingestion reading inbox" class="content-section__image" loading="lazy" width="600" height="400" style="box-shadow:0 8px 30px rgba(0,0,0,0.12);border-radius:12px;" decoding="async">
         </div>
       </div>
     </div>
@@ -676,7 +686,7 @@ ul,ol{list-style:none}
           </div>
         </div>
         <div>
-          <img src="/assets/images/ivvyai/ivvy-lead-qualification.gif?v=e42148fb50" alt="iVvy lead qualification pipeline view" class="content-section__image" loading="lazy" width="600" height="400" style="box-shadow:0 8px 30px rgba(0,0,0,0.12);border-radius:12px;" decoding="async">
+          <img src="/assets/images/ivvyai/ivvy-lead-qualification.gif?v=28a8f46184" alt="iVvy lead qualification pipeline view" class="content-section__image" loading="lazy" width="600" height="400" style="box-shadow:0 8px 30px rgba(0,0,0,0.12);border-radius:12px;" decoding="async">
         </div>
       </div>
     </div>
@@ -694,7 +704,7 @@ ul,ol{list-style:none}
           </div>
         </div>
         <div>
-          <img src="/assets/images/ivvyai-proposal.gif?v=e42148fb50" alt="iVvy AI proposal generation" width="600" height="400" loading="lazy" decoding="async" class="content-section__image" style="border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.12);">
+          <img src="/assets/images/ivvyai-proposal.gif?v=28a8f46184" alt="iVvy AI proposal generation" width="600" height="400" loading="lazy" decoding="async" class="content-section__image" style="border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.12);">
         </div>
       </div>
     </div>
@@ -946,7 +956,7 @@ ul,ol{list-style:none}
 
 
 <section id="ivvyai-demo-form" class="cta" style="padding-bottom:80px;">
-  <img src="/assets/images/patterns/cta-pattern.webp?v=e42148fb50" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600">
+  <img src="/assets/images/patterns/cta-pattern.webp?v=28a8f46184" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600">
   <div class="container">
     <div class="cta__inner">
       <h2 class="cta__title" style="max-width:896px;margin-left:auto;margin-right:auto;"><span class="scroll-color-text scroll-color-text--from-white">What could a 50% increase in conversions</span> do for your business?</h2>
@@ -981,13 +991,64 @@ ul,ol{list-style:none}
   </div>
 </section>
 
+
+
+
+,{
+  "@type": "SoftwareApplication",
+  "name": "iVvyAI",
+  "description": "AI agents that read enquiry emails, qualify leads and prepare proposals automatically for hotels, function centres and hospitality venues.",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock" }
+},
+{
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is iVvyAI like ChatGPT?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. ChatGPT is a general-purpose language model. iVvyAI is a suite of purpose-built AI agents designed specifically for event sales workflows — reading enquiry emails, qualifying leads, entering data into iVvy, and preparing proposals. It doesn't chat. It works." }
+    },{
+      "@type": "Question",
+      "name": "What's the difference between an AI assistant and an AI agent?",
+      "acceptedAnswer": { "@type": "Answer", "text": "An AI assistant waits for instructions and responds when prompted. An AI agent acts autonomously — it monitors your inbox, processes enquiries, scores leads, and prepares proposals without being asked. iVvyAI agents work in the background so your team can focus on selling." }
+    },{
+      "@type": "Question",
+      "name": "Is Instant Proposal – powered by hivr.ai going to replace my sales team?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Instant Proposal is designed to support your team, not replace them. It handles the repetitive admin — reading emails, extracting details, entering data, and building draft proposals — so your sales team can spend their time on what they do best: building relationships and closing deals." }
+    },{
+      "@type": "Question",
+      "name": "Will it send proposals on my team's behalf?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Your team always has the final say. Instant Proposal prepares everything and generates a tailored proposal in iVvy, ready for your team to review, adjust if needed, and send. The human is always in the loop." }
+    },{
+      "@type": "Question",
+      "name": "How much control do I have over the AI?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Full control. You define the scoring criteria, qualification rules, and automation settings. The AI works to your rules, consistently and at scale. You can adjust your criteria anytime as your strategy evolves." }
+    },{
+      "@type": "Question",
+      "name": "Does it support different languages?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Instant Proposal can read and process enquiry emails in multiple languages, extract the key details, and prepare proposals in your preferred language inside iVvy." }
+    },{
+      "@type": "Question",
+      "name": "Does it matter what email solution I use?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Instant Proposal works with any email provider — Gmail, Outlook, Exchange, or any other solution your venue uses. It reads inbound enquiries regardless of your email platform." }
+    },{
+      "@type": "Question",
+      "name": "Can I only have one agent?",
+      "acceptedAnswer": { "@type": "Answer", "text": "All three agents work together to deliver the best outcomes as one workflow. We recommend you use all three to get the best results. Although with that in mind, you can opt out of the lead qualification agent." }
+    }
+  ]
+}
+
+
 </main>
 
 <footer class="footer">
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=e42148fb50" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=28a8f46184" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
         <div class="footer__social">
           <a href="https://www.linkedin.com/company/ivvy/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1153,7 +1214,7 @@ ul,ol{list-style:none}
 
 
 
-<script src="/assets/js/scripts.js?v=e42148fb50" defer></script>
+<script src="/assets/js/scripts.js?v=28a8f46184" defer></script>
 
 
 

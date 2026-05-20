@@ -1,16 +1,16 @@
-<!-- build:26140719157-1398 -->
+<!-- build:26141241984-1399 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=e42148fb50">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=e42148fb50">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=e42148fb50">
-  <link rel="alternate icon" href="/assets/images/favicon.ico?v=e42148fb50">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=e42148fb50">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=e42148fb50">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=e42148fb50">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=28a8f46184">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=28a8f46184">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=28a8f46184">
+  <link rel="alternate icon" href="/assets/images/favicon.ico?v=28a8f46184">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=28a8f46184">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=28a8f46184">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=28a8f46184">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Australian Venue Co. Case Study | iVvy</title>
   <meta name="description" content="Enhanced forecast accuracy for peak performance. Read how Australian Venue Co. improved operations with iVvy venue management software.">
@@ -215,11 +215,21 @@ ul,ol{list-style:none}
 /* Pre-reserve underline space + inline display so JS-added underline span doesn't shift layout */
 .scroll-color-text--underline{position:relative;display:inline;padding-bottom:8px}
 .scroll-color-underline{position:absolute;left:0;bottom:0;height:5px;background:#99CC52;border-radius:9999px;transform-origin:left;width:100%;transform:scaleX(0)}
+/* Integration detail hero connected logos — inlined so async styles-pages.css arrival
+   cannot reflow the hero. Reserves the exact card geometry (160x80 / 180x88) plus
+   connector dimensions to eliminate CLS on /integrations/<slug>/ pages. */
+.integration-hero-logos{display:flex;align-items:center;justify-content:center;gap:1.5rem;margin-bottom:2.5rem}
+.integration-hero-logos__card{background:#fff;border-radius:1rem;padding:1.25rem 1.5rem;box-shadow:0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -4px rgba(0,0,0,0.1);display:flex;align-items:center;justify-content:center;width:160px;height:80px}
+.integration-hero-logos__card img{height:2.5rem;width:auto;object-fit:contain}
+.integration-hero-logos__connector{display:flex;align-items:center;gap:0.75rem}
+.integration-hero-logos__line{display:block;width:2rem;height:2px;background:linear-gradient(90deg,rgba(153,204,82,0.2),#99CC52)}
+.integration-hero-logos__icon{display:flex;align-items:center;justify-content:center;width:2.25rem;height:2.25rem;border-radius:50%;border:1px solid rgba(153,204,82,0.3);background:rgba(255,255,255,0.1);color:#99CC52;font-size:1rem;font-weight:700}
+@media(min-width:1024px){.integration-hero-logos{gap:2.5rem}.integration-hero-logos__card{width:180px;height:88px}.integration-hero-logos__card img{height:3.5rem}.integration-hero-logos__line{width:3rem}}
 </style>
 
   
-  <link rel="preload" href="/assets/css/page/p-f23c2c33d5.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/css/page/p-f23c2c33d5.css"></noscript>
+  <link rel="preload" href="/assets/css/page/p-ff4bb12d46.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/page/p-ff4bb12d46.css"></noscript>
   
   
   <noscript></noscript>
@@ -299,7 +309,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__left">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=e42148fb50" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=28a8f46184" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
         </a>
         <nav class="nav">
           
@@ -586,8 +596,8 @@ ul,ol{list-style:none}
     
     
     <img
-      src="/assets/images/case-studies/avc-hero.webp?v=e42148fb50"
-      srcset="/assets/images/case-studies/avc-hero-768w.webp?v=e42148fb50 768w, /assets/images/case-studies/avc-hero-960w.webp 960w, /assets/images/case-studies/avc-hero-1280w.webp 1280w, /assets/images/case-studies/avc-hero.webp 1920w"
+      src="/assets/images/case-studies/avc-hero.webp?v=28a8f46184"
+      srcset="/assets/images/case-studies/avc-hero-768w.webp?v=28a8f46184 768w, /assets/images/case-studies/avc-hero-960w.webp 960w, /assets/images/case-studies/avc-hero-1280w.webp 1280w, /assets/images/case-studies/avc-hero.webp 1920w"
       sizes="100vw"
       alt="Australian Venue Co." width="1920" height="600"
       loading="eager" fetchpriority="high" decoding="async">
@@ -600,7 +610,7 @@ ul,ol{list-style:none}
   <div class="cs-logo-card__inner">
     
     <div class="cs-logo-card__logo-wrap">
-      <img src="/assets/images/logos/avc.webp?v=e42148fb50" alt="Australian Venue Co." width="160" height="64" loading="eager" fetchpriority="high" decoding="async">
+      <img src="/assets/images/logos/avc.webp?v=28a8f46184" alt="Australian Venue Co." width="160" height="64" loading="eager" fetchpriority="high" decoding="async">
     </div>
     
     <h1 class="cs-logo-card__name">Australian Venue Co.</h1>
@@ -674,17 +684,17 @@ ul,ol{list-style:none}
           <div class="cs-features cs-features--auto-rows">
             
             <div class="cs-feature">
-              <img src="/assets/images/icons/fee.png?v=e42148fb50" alt="" width="32" height="32" loading="lazy" decoding="async">
+              <img src="/assets/images/icons/fee.png?v=28a8f46184" alt="" width="32" height="32" loading="lazy" decoding="async">
               <span>Tech fee without commissions</span>
             </div>
             
             <div class="cs-feature">
-              <img src="/assets/images/icons/rules.png?v=e42148fb50" alt="" width="32" height="32" loading="lazy" decoding="async">
+              <img src="/assets/images/icons/rules.png?v=28a8f46184" alt="" width="32" height="32" loading="lazy" decoding="async">
               <span>Rules Engine for live bookings</span>
             </div>
             
             <div class="cs-feature">
-              <img src="/assets/images/icons/booking.png?v=e42148fb50" alt="" width="32" height="32" loading="lazy" decoding="async">
+              <img src="/assets/images/icons/booking.png?v=28a8f46184" alt="" width="32" height="32" loading="lazy" decoding="async">
               <span>Direct booking engine and distribution controls</span>
             </div>
             
@@ -754,7 +764,7 @@ ul,ol{list-style:none}
 
 <section class="cta">
   
-  <img src="/assets/images/patterns/cta-pattern.webp?v=e42148fb50" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35;mix-blend-mode:soft-light;pointer-events:none;">
+  <img src="/assets/images/patterns/cta-pattern.webp?v=28a8f46184" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35;mix-blend-mode:soft-light;pointer-events:none;">
   <div class="container">
     <div class="cta__inner">
       <h2 class="cta__title">Start your success story <span class="scroll-color-text scroll-color-text--from-white">with iVvy</span></h2>
@@ -783,7 +793,7 @@ ul,ol{list-style:none}
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=e42148fb50" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=28a8f46184" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
         <div class="footer__social">
           <a href="https://www.linkedin.com/company/ivvy/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -949,7 +959,7 @@ ul,ol{list-style:none}
 
 
 
-<script src="/assets/js/scripts.js?v=e42148fb50" defer></script>
+<script src="/assets/js/scripts.js?v=28a8f46184" defer></script>
 
 
 

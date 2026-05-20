@@ -1,0 +1,40 @@
+# iVvy
+
+> iVvy is event and venue management software for hotels, function centres, restaurants, stadiums, universities and government venues. The platform covers enquiry capture, proposals, bookings, payments and reporting, with an AI suite (iVvyAI) and integrated payments (iVvyPay).
+
+## Products
+
+- [iVvyAI — Instant Proposal](/event-sales-ai/): AI agents that read enquiry emails, extract details and draft proposals automatically.
+- [iVvyPay](/ivvy-pay/): Integrated payments for deposits, balances and on-the-day charges.
+- [Event Ticketing](/event-ticketing-software/): Sell, scan and manage tickets for paid and free events.
+- [Venue Management Software](/venue-event-management-software/): End-to-end venue sales, catering and event operations.
+
+## Venue types
+
+- [Hotels](/hotel-sales-catering-software/): Sales and catering software for hotel groups.
+- [Hospitality groups](/hospitality-groups-venue-management-software/): Multi-venue management for hospitality brands.
+- [Function centres](/function-centres-venue-management-software/): Bookings, BEOs and floorplans for function centres.
+- [Stadiums & sport clubs](/stadium-and-sport-clubs-venue-management-software/): Match-day and corporate event management.
+- [Restaurants](/restaurant-event-management-software/): Private dining and group bookings.
+- [Universities](/university-venue-management-software/): Internal and external space bookings for tertiary venues.
+- [Government & public venues](/government-and-public-venue-management-software/): Compliant booking and reporting for public venues.
+
+## Company
+
+- [About iVvy](/about/): Our mission, leadership team and history.
+- [Customers](/customers/): Case studies from venues using iVvy.
+- [Integrations](/integrations/): Connected POS, PMS, accounting and marketing tools.
+- [Blog](/blog/): Industry insights, product news and best practice guides.
+- [FAQs](/faqs/): Common questions about the platform.
+- [Security](/security/): How we protect customer and guest data.
+
+## Get in touch
+
+- [Request a demo](/request-demo/): Book a personalised walkthrough with our team.
+
+## Legal
+
+- [Website terms](/website-terms/)
+- [Credit terms](/credit-terms/)
+- [Marketplace terms](/marketplace-terms/)
+- [Events terms](/events-terms/)
