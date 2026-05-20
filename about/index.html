@@ -1,16 +1,16 @@
-<!-- build:26131673630-1391 -->
+<!-- build:26134984304-1392 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=3cb12392fe">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=3cb12392fe">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=3cb12392fe">
-  <link rel="alternate icon" href="/assets/images/favicon.ico?v=3cb12392fe">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=3cb12392fe">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=3cb12392fe">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=3cb12392fe">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=f9f8f0abcd">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=f9f8f0abcd">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=f9f8f0abcd">
+  <link rel="alternate icon" href="/assets/images/favicon.ico?v=f9f8f0abcd">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=f9f8f0abcd">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=f9f8f0abcd">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=f9f8f0abcd">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>About iVvy | Event & Venue Management Software Company</title>
   <meta name="description" content="Learn about iVvy's journey from a 2009 startup to a global event management software platform. 10,000+ users in 13 countries trust iVvy to manage events.">
@@ -138,7 +138,16 @@ ul,ol{list-style:none}
    surrounding content while it streams in. The dark green background-color
    matches the hero's dominant tone, so the reserved space looks intentional
    in the brief moment before the image paints. */
-.page-hero{position:relative;overflow:hidden}
+/* Base .page-hero geometry must be reserved in the critical CSS — otherwise the async styles.css
+   arrival adds padding/flex/background on EVERY hero variant and pushes the section below the hero
+   down by 90-100px, causing a 0.4+ CLS hit on centered-hero pages (integrations, blog, customers,
+   faqs, request-demo, ivvy-pay, event-sales-ai, about, all legal pages). */
+.page-hero{position:relative;overflow:hidden;display:flex;align-items:center;padding:48px 0;background-color:#103620}
+@media(min-width:1024px){.page-hero{padding:64px 0}}
+.page-hero--gradient{background:linear-gradient(to right,hsl(150,55%,8%),hsl(147,45%,16%),hsl(140,35%,22%))}
+.page-hero--centered{text-align:center;min-height:360px}
+@media(min-width:1024px){.page-hero--centered{min-height:440px}}
+.page-hero--centered .page-hero__content{margin:0 auto;max-width:896px}
 .page-hero--split{position:relative;min-height:420px;height:auto;display:flex;align-items:center;padding:48px 0;background:#103620}
 @media(min-width:1024px){.page-hero--split{min-height:520px;padding:64px 0}}
 .page-hero--split .page-hero__bg{position:absolute;inset:0;display:flex;z-index:0}
@@ -282,7 +291,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__left">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=3cb12392fe" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=f9f8f0abcd" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
         </a>
         <nav class="nav">
           
@@ -605,7 +614,7 @@ ul,ol{list-style:none}
     data-vimeo-hash="04e7aec1c5"
     aria-label="Play iVvy Explainer"
     style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;background:#103620;cursor:pointer;display:flex;align-items:center;justify-content:center;">
-    <img src="/assets/images/video-posters/explainer.webp?v=3cb12392fe" alt="iVvy Explainer" width="640" height="360" loading="lazy" decoding="async" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
+    <img src="/assets/images/video-posters/explainer.webp?v=f9f8f0abcd" alt="iVvy Explainer" width="640" height="360" loading="lazy" decoding="async" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
     <svg width="68" height="48" viewBox="0 0 68 48" aria-hidden="true" style="position:relative;z-index:1;opacity:0.85;">
       <path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55C3.97 2.33 2.27 4.81 1.48 7.74.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#99CC52"/>
       <path d="M45 24 27 14v20" fill="#fff"/>
@@ -665,7 +674,7 @@ ul,ol{list-style:none}
       
       <div class="exec-card">
         <div class="exec-card__photo">
-          <img src="/assets/images/team/lauren-hall.webp?v=3cb12392fe" alt="Lauren Hall" width="400" height="400" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;" />
+          <img src="/assets/images/team/lauren-hall.webp?v=f9f8f0abcd" alt="Lauren Hall" width="400" height="400" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;" />
         </div>
         <div class="exec-card__banner">
           <span class="exec-card__banner-name">Lauren Hall</span>
@@ -687,7 +696,7 @@ ul,ol{list-style:none}
       
       <div class="exec-card">
         <div class="exec-card__photo">
-          <img src="/assets/images/team/david-rose.webp?v=3cb12392fe" alt="David Rose" width="400" height="400" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center center;" />
+          <img src="/assets/images/team/david-rose.webp?v=f9f8f0abcd" alt="David Rose" width="400" height="400" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center center;" />
         </div>
         <div class="exec-card__banner">
           <span class="exec-card__banner-name">David Rose</span>
@@ -709,7 +718,7 @@ ul,ol{list-style:none}
       
       <div class="exec-card">
         <div class="exec-card__photo">
-          <img src="/assets/images/team/david-tannock.webp?v=3cb12392fe" alt="David Tannock" width="400" height="400" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;" />
+          <img src="/assets/images/team/david-tannock.webp?v=f9f8f0abcd" alt="David Tannock" width="400" height="400" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;" />
         </div>
         <div class="exec-card__banner">
           <span class="exec-card__banner-name">David Tannock</span>
@@ -731,7 +740,7 @@ ul,ol{list-style:none}
       
       <div class="exec-card">
         <div class="exec-card__photo">
-          <img src="/assets/images/team/dion-soich.webp?v=3cb12392fe" alt="Dion Soich" width="400" height="400" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;" />
+          <img src="/assets/images/team/dion-soich.webp?v=f9f8f0abcd" alt="Dion Soich" width="400" height="400" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;" />
         </div>
         <div class="exec-card__banner">
           <span class="exec-card__banner-name">Dion Soich</span>
@@ -753,7 +762,7 @@ ul,ol{list-style:none}
       
       <div class="exec-card">
         <div class="exec-card__photo">
-          <img src="/assets/images/team/toby-marosszeky.webp?v=3cb12392fe" alt="Toby Marosszeky" width="400" height="400" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:contain;object-position:center 20%;" />
+          <img src="/assets/images/team/toby-marosszeky.webp?v=f9f8f0abcd" alt="Toby Marosszeky" width="400" height="400" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:contain;object-position:center 20%;" />
         </div>
         <div class="exec-card__banner">
           <span class="exec-card__banner-name">Toby Marosszeky</span>
@@ -824,7 +833,7 @@ ul,ol{list-style:none}
 
 <section class="cta">
   
-  <img src="/assets/images/patterns/cta-pattern.webp?v=3cb12392fe" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35;mix-blend-mode:soft-light;pointer-events:none;">
+  <img src="/assets/images/patterns/cta-pattern.webp?v=f9f8f0abcd" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35;mix-blend-mode:soft-light;pointer-events:none;">
   <div class="container">
     <div class="cta__inner">
       <h2 class="cta__title"><span class="scroll-color-text scroll-color-text--from-white">Want to join us?</span></h2>
@@ -851,7 +860,7 @@ ul,ol{list-style:none}
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=3cb12392fe" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=f9f8f0abcd" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
         <div class="footer__social">
           <a href="https://www.linkedin.com/company/ivvy/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1017,7 +1026,7 @@ ul,ol{list-style:none}
 
 
 
-<script src="/assets/js/scripts.js?v=3cb12392fe" defer></script>
+<script src="/assets/js/scripts.js?v=f9f8f0abcd" defer></script>
 
 
 

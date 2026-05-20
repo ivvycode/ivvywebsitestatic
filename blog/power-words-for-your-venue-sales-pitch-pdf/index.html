@@ -1,16 +1,16 @@
-<!-- build:26131673630-1391 -->
+<!-- build:26134984304-1392 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=3cb12392fe">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=3cb12392fe">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=3cb12392fe">
-  <link rel="alternate icon" href="/assets/images/favicon.ico?v=3cb12392fe">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=3cb12392fe">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=3cb12392fe">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=3cb12392fe">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=f9f8f0abcd">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=f9f8f0abcd">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=f9f8f0abcd">
+  <link rel="alternate icon" href="/assets/images/favicon.ico?v=f9f8f0abcd">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=f9f8f0abcd">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=f9f8f0abcd">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=f9f8f0abcd">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Power words for your venue sales pitch (PDF) | iVvy Blog</title>
   <meta name="description" content="The words you use during a venue sales call can determine whether a lead converts or walks. Download our free PDF for power words to use to boost conversion potential and land more venue sales.">
@@ -138,7 +138,16 @@ ul,ol{list-style:none}
    surrounding content while it streams in. The dark green background-color
    matches the hero's dominant tone, so the reserved space looks intentional
    in the brief moment before the image paints. */
-.page-hero{position:relative;overflow:hidden}
+/* Base .page-hero geometry must be reserved in the critical CSS — otherwise the async styles.css
+   arrival adds padding/flex/background on EVERY hero variant and pushes the section below the hero
+   down by 90-100px, causing a 0.4+ CLS hit on centered-hero pages (integrations, blog, customers,
+   faqs, request-demo, ivvy-pay, event-sales-ai, about, all legal pages). */
+.page-hero{position:relative;overflow:hidden;display:flex;align-items:center;padding:48px 0;background-color:#103620}
+@media(min-width:1024px){.page-hero{padding:64px 0}}
+.page-hero--gradient{background:linear-gradient(to right,hsl(150,55%,8%),hsl(147,45%,16%),hsl(140,35%,22%))}
+.page-hero--centered{text-align:center;min-height:360px}
+@media(min-width:1024px){.page-hero--centered{min-height:440px}}
+.page-hero--centered .page-hero__content{margin:0 auto;max-width:896px}
 .page-hero--split{position:relative;min-height:420px;height:auto;display:flex;align-items:center;padding:48px 0;background:#103620}
 @media(min-width:1024px){.page-hero--split{min-height:520px;padding:64px 0}}
 .page-hero--split .page-hero__bg{position:absolute;inset:0;display:flex;z-index:0}
@@ -201,8 +210,8 @@ ul,ol{list-style:none}
 </style>
 
   
-  <link rel="preload" href="/assets/css/page/p-5a642e41f4.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/css/page/p-5a642e41f4.css"></noscript>
+  <link rel="preload" href="/assets/css/page/p-94258ebad3.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/page/p-94258ebad3.css"></noscript>
   
   
   <noscript></noscript>
@@ -282,7 +291,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__left">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=3cb12392fe" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=f9f8f0abcd" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
         </a>
         <nav class="nav">
           
@@ -568,7 +577,7 @@ ul,ol{list-style:none}
 
 <section class="article-hero">
   <div class="article-hero__image">
-    <img src="/assets/images/articles/efe7199e3533c564.webp?v=3cb12392fe" srcset="/assets/images/articles/efe7199e3533c564.webp?v=3cb12392fe 480w, /assets/images/articles/efe7199e3533c564.webp 1920w" sizes="100vw" alt="Power words for your venue sales pitch (PDF)" width="1920" height="600" loading="eager" fetchpriority="high" decoding="async">
+    <img src="/assets/images/articles/efe7199e3533c564.webp?v=f9f8f0abcd" srcset="/assets/images/articles/efe7199e3533c564.webp?v=f9f8f0abcd 480w, /assets/images/articles/efe7199e3533c564.webp 1920w" sizes="100vw" alt="Power words for your venue sales pitch (PDF)" width="1920" height="600" loading="eager" fetchpriority="high" decoding="async">
     <div class="article-hero__overlay"></div>
   </div>
 </section>
@@ -1112,7 +1121,7 @@ ul,ol{list-style:none}
         
         <div class="article-card__image-wrap">
           <div class="article-card__image">
-            <img src="/assets/images/articles/76b9cf8f157c4f03.webp?v=3cb12392fe" srcset="/assets/images/articles/76b9cf8f157c4f03.webp?v=3cb12392fe 480w, /assets/images/articles/76b9cf8f157c4f03.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="Do&#39;s &amp; don&#39;ts of BEOs (+ free BEO template for event planners)" width="600" height="338" loading="lazy" decoding="async">
+            <img src="/assets/images/articles/76b9cf8f157c4f03.webp?v=f9f8f0abcd" srcset="/assets/images/articles/76b9cf8f157c4f03.webp?v=f9f8f0abcd 480w, /assets/images/articles/76b9cf8f157c4f03.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="Do&#39;s &amp; don&#39;ts of BEOs (+ free BEO template for event planners)" width="600" height="338" loading="lazy" decoding="async">
           </div>
         </div>
         
@@ -1143,7 +1152,7 @@ ul,ol{list-style:none}
         
         <div class="article-card__image-wrap">
           <div class="article-card__image">
-            <img src="/assets/images/articles/acc72d4ee52b9c3d.webp?v=3cb12392fe" srcset="/assets/images/articles/acc72d4ee52b9c3d.webp?v=3cb12392fe 480w, /assets/images/articles/acc72d4ee52b9c3d.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="Venue booking negotiation guide for event managers" width="600" height="338" loading="lazy" decoding="async">
+            <img src="/assets/images/articles/acc72d4ee52b9c3d.webp?v=f9f8f0abcd" srcset="/assets/images/articles/acc72d4ee52b9c3d.webp?v=f9f8f0abcd 480w, /assets/images/articles/acc72d4ee52b9c3d.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="Venue booking negotiation guide for event managers" width="600" height="338" loading="lazy" decoding="async">
           </div>
         </div>
         
@@ -1174,7 +1183,7 @@ ul,ol{list-style:none}
         
         <div class="article-card__image-wrap">
           <div class="article-card__image">
-            <img src="/assets/images/articles/33a0c1fb73a515c4.webp?v=3cb12392fe" srcset="/assets/images/articles/33a0c1fb73a515c4.webp?v=3cb12392fe 480w, /assets/images/articles/33a0c1fb73a515c4.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="Use this hotel customer journey map for better guest experiences" width="600" height="338" loading="lazy" decoding="async">
+            <img src="/assets/images/articles/33a0c1fb73a515c4.webp?v=f9f8f0abcd" srcset="/assets/images/articles/33a0c1fb73a515c4.webp?v=f9f8f0abcd 480w, /assets/images/articles/33a0c1fb73a515c4.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="Use this hotel customer journey map for better guest experiences" width="600" height="338" loading="lazy" decoding="async">
           </div>
         </div>
         
@@ -1208,7 +1217,7 @@ ul,ol{list-style:none}
 
 
 <section class="cta">
-  <img src="/assets/images/patterns/cta-pattern.webp?v=3cb12392fe" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600">
+  <img src="/assets/images/patterns/cta-pattern.webp?v=f9f8f0abcd" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600">
   <div class="container">
     <div class="cta__inner">
       <h2 class="cta__title title-gradient-light">Stay in the know</h2>
@@ -1288,7 +1297,7 @@ ul,ol{list-style:none}
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=3cb12392fe" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=f9f8f0abcd" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
         <div class="footer__social">
           <a href="https://www.linkedin.com/company/ivvy/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1454,7 +1463,7 @@ ul,ol{list-style:none}
 
 
 
-<script src="/assets/js/scripts.js?v=3cb12392fe" defer></script>
+<script src="/assets/js/scripts.js?v=f9f8f0abcd" defer></script>
 
 
 
