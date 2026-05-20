@@ -1,15 +1,15 @@
-<!-- build:26193990615-1420 -->
+<!-- build:26194646382-1421 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=4a2409fd04">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=4a2409fd04">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=4a2409fd04">
-  <link rel="alternate icon" href="/assets/images/favicon.ico?v=4a2409fd04">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=4a2409fd04">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=4a2409fd04">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=4a2409fd04">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=14a610f7a0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=14a610f7a0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=14a610f7a0">
+  <link rel="alternate icon" href="/assets/images/favicon.ico?v=14a610f7a0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=14a610f7a0">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=14a610f7a0">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=14a610f7a0">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>iVvy</title>
   <meta name="description" content="">
@@ -250,11 +250,21 @@ ul,ol{list-style:none}
 @media(min-width:1024px){.article-detail{padding:64px 0 80px}}
 .article-detail__inner{max-width:896px;margin:0 auto}
 .article-detail__back{display:flex;align-items:center;gap:4px;font-size:14px;font-weight:700;font-family:'Nunito','Nunito Fallback',sans-serif;color:rgba(255,255,255,0.8);text-decoration:none;margin-bottom:2.5rem;width:fit-content;min-height:22px}
-.article-detail__title{font-size:30px;font-weight:700;font-family:'Poppins','Poppins Fallback',sans-serif;line-height:1.2;margin-bottom:24px;min-height:calc(30px * 1.2 * 3);background:linear-gradient(135deg,hsl(85,54%,56%),hsl(85,54%,75%));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+/* Mobile reserve = 5 lines (long titles like "iVvy and Lightwave Connect Event Management with Automated Energy Control"
+   wrap to 4-5 lines at 375px width once the Poppins web font swaps in). Tablet drops to 3 lines, desktop to 2.
+   This eliminates the 0.17+ CLS regression Lighthouse mobile flagged on long-title blog posts. */
+.article-detail__title{font-size:30px;font-weight:700;font-family:'Poppins','Poppins Fallback',sans-serif;line-height:1.2;margin-bottom:24px;min-height:calc(30px * 1.2 * 5);background:linear-gradient(135deg,hsl(85,54%,56%),hsl(85,54%,75%));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+@media(min-width:600px){.article-detail__title{min-height:calc(30px * 1.2 * 4)}}
+@media(min-width:768px){.article-detail__title{min-height:calc(30px * 1.2 * 3)}}
 @media(min-width:1024px){.article-detail__title{font-size:48px;min-height:calc(48px * 1.2 * 2)}}
-.article-detail__excerpt{font-size:18px;font-family:'Nunito','Nunito Fallback',sans-serif;line-height:1.6;border-left:4px solid #99CC52;padding-left:16px;margin-top:2.5em;margin-bottom:32px;color:rgba(255,255,255,0.7);min-height:calc(18px * 1.6 * 2)}
+/* Excerpts wrap to ~4 lines on mobile for typical 200-280 char excerpts. */
+.article-detail__excerpt{font-size:18px;font-family:'Nunito','Nunito Fallback',sans-serif;line-height:1.6;border-left:4px solid #99CC52;padding-left:16px;margin-top:2.5em;margin-bottom:32px;color:rgba(255,255,255,0.7);min-height:calc(18px * 1.6 * 4)}
+@media(min-width:768px){.article-detail__excerpt{min-height:calc(18px * 1.6 * 3)}}
+@media(min-width:1024px){.article-detail__excerpt{min-height:calc(18px * 1.6 * 2)}}
 .article-detail__meta{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:16px;min-height:20px}
-.article-share{display:flex;align-items:center;gap:12px;margin-bottom:24px;min-height:32px;flex-wrap:wrap}
+/* Share row wraps label + 4 buttons onto 2 lines under ~480px. Reserve both rows on mobile. */
+.article-share{display:flex;align-items:center;gap:12px;margin-bottom:24px;min-height:76px;flex-wrap:wrap}
+@media(min-width:600px){.article-share{min-height:32px}}
 .article-hero-cta{margin-bottom:24px;min-height:48px}
 .article-hero-cta a{display:inline-block;padding:14px 36px;border-radius:9999px;background:linear-gradient(135deg,hsl(85,54%,56%),hsl(85,60%,50%));color:hsl(147,55%,13%);font-family:'Nunito Sans','Nunito Sans Fallback',sans-serif;font-size:14px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none}
 .reading-progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:9999;background:transparent;pointer-events:none}
@@ -567,7 +577,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__left">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=4a2409fd04" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=14a610f7a0" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
         </a>
         <nav class="nav">
           
@@ -830,8 +840,8 @@ ul,ol{list-style:none}
 <main class="lp-page">
   
 <section class="lp-two-col" style="background:radial-gradient(ellipse 80% 60% at 50% 40%,hsl(140 35% 22%) 0%,transparent 60%),radial-gradient(ellipse 100% 100% at 50% 50%,hsl(147 45% 16%) 0%,hsl(150 55% 8%) 100%);color:#ffffff;padding:30px 0px 30px 0px;">  <div class="container" style="display:grid;grid-template-columns:50fr 50fr;gap:32px">    <div><div class="lp-richtext" style="padding:16"><h2><span style="color: rgb(255, 255, 255);"><strong>Thank you for getting in contact.</strong></span><strong> </strong><span style="color: rgb(153, 200, 82);"><strong>Someone will be in contact or book in some time for a call now!</strong></span></h2><p></p></div></div>    <div><section class="lp-meetings" style="padding:0px">  <div class="container" style="max-width:768px;margin:0 auto">    <div class="lp-embed-shell" data-ready="false"><!-- Start of Meetings Embed Script -->
-    <div class="meetings-iframe-container" data-src="/assets/images/landing-pages/061e5f4d2a6c692e.webp?v=4a2409fd04"></div>
-    <script type="text/javascript" src="/assets/images/landing-pages/80c769b2041fc58e.webp?v=4a2409fd04"></script>
+    <div class="meetings-iframe-container" data-src="/assets/images/landing-pages/061e5f4d2a6c692e.webp?v=14a610f7a0"></div>
+    <script type="text/javascript" src="/assets/images/landing-pages/80c769b2041fc58e.webp?v=14a610f7a0"></script>
   <!-- End of Meetings Embed Script --></div>  </div></section></div>  </div></section>
 
 
@@ -843,7 +853,7 @@ ul,ol{list-style:none}
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=4a2409fd04" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=14a610f7a0" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
         <div class="footer__social">
           <a href="https://www.linkedin.com/company/ivvy/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1010,7 +1020,7 @@ ul,ol{list-style:none}
 </div>
 
 
-<script src="/assets/js/scripts.js?v=4a2409fd04" defer></script>
+<script src="/assets/js/scripts.js?v=14a610f7a0" defer></script>
 
 
 <script type="application/ld+json">

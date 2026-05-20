@@ -1,16 +1,16 @@
-<!-- build:26193990615-1420 -->
+<!-- build:26194646382-1421 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=4a2409fd04">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=4a2409fd04">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=4a2409fd04">
-  <link rel="alternate icon" href="/assets/images/favicon.ico?v=4a2409fd04">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=4a2409fd04">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=4a2409fd04">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=4a2409fd04">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=14a610f7a0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=14a610f7a0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=14a610f7a0">
+  <link rel="alternate icon" href="/assets/images/favicon.ico?v=14a610f7a0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=14a610f7a0">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=14a610f7a0">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=14a610f7a0">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Event &amp; venue management software: 5 ways slow responses hurt your venue | iVvy Blog</title>
   <meta name="description" content="Slow replies can cost you opportunities and reputation, especially when using event &amp; venue management software. Here are five major ways delayed responses can harm your venue operations.">
@@ -266,11 +266,21 @@ ul,ol{list-style:none}
 @media(min-width:1024px){.article-detail{padding:64px 0 80px}}
 .article-detail__inner{max-width:896px;margin:0 auto}
 .article-detail__back{display:flex;align-items:center;gap:4px;font-size:14px;font-weight:700;font-family:'Nunito','Nunito Fallback',sans-serif;color:rgba(255,255,255,0.8);text-decoration:none;margin-bottom:2.5rem;width:fit-content;min-height:22px}
-.article-detail__title{font-size:30px;font-weight:700;font-family:'Poppins','Poppins Fallback',sans-serif;line-height:1.2;margin-bottom:24px;min-height:calc(30px * 1.2 * 3);background:linear-gradient(135deg,hsl(85,54%,56%),hsl(85,54%,75%));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+/* Mobile reserve = 5 lines (long titles like "iVvy and Lightwave Connect Event Management with Automated Energy Control"
+   wrap to 4-5 lines at 375px width once the Poppins web font swaps in). Tablet drops to 3 lines, desktop to 2.
+   This eliminates the 0.17+ CLS regression Lighthouse mobile flagged on long-title blog posts. */
+.article-detail__title{font-size:30px;font-weight:700;font-family:'Poppins','Poppins Fallback',sans-serif;line-height:1.2;margin-bottom:24px;min-height:calc(30px * 1.2 * 5);background:linear-gradient(135deg,hsl(85,54%,56%),hsl(85,54%,75%));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+@media(min-width:600px){.article-detail__title{min-height:calc(30px * 1.2 * 4)}}
+@media(min-width:768px){.article-detail__title{min-height:calc(30px * 1.2 * 3)}}
 @media(min-width:1024px){.article-detail__title{font-size:48px;min-height:calc(48px * 1.2 * 2)}}
-.article-detail__excerpt{font-size:18px;font-family:'Nunito','Nunito Fallback',sans-serif;line-height:1.6;border-left:4px solid #99CC52;padding-left:16px;margin-top:2.5em;margin-bottom:32px;color:rgba(255,255,255,0.7);min-height:calc(18px * 1.6 * 2)}
+/* Excerpts wrap to ~4 lines on mobile for typical 200-280 char excerpts. */
+.article-detail__excerpt{font-size:18px;font-family:'Nunito','Nunito Fallback',sans-serif;line-height:1.6;border-left:4px solid #99CC52;padding-left:16px;margin-top:2.5em;margin-bottom:32px;color:rgba(255,255,255,0.7);min-height:calc(18px * 1.6 * 4)}
+@media(min-width:768px){.article-detail__excerpt{min-height:calc(18px * 1.6 * 3)}}
+@media(min-width:1024px){.article-detail__excerpt{min-height:calc(18px * 1.6 * 2)}}
 .article-detail__meta{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:16px;min-height:20px}
-.article-share{display:flex;align-items:center;gap:12px;margin-bottom:24px;min-height:32px;flex-wrap:wrap}
+/* Share row wraps label + 4 buttons onto 2 lines under ~480px. Reserve both rows on mobile. */
+.article-share{display:flex;align-items:center;gap:12px;margin-bottom:24px;min-height:76px;flex-wrap:wrap}
+@media(min-width:600px){.article-share{min-height:32px}}
 .article-hero-cta{margin-bottom:24px;min-height:48px}
 .article-hero-cta a{display:inline-block;padding:14px 36px;border-radius:9999px;background:linear-gradient(135deg,hsl(85,54%,56%),hsl(85,60%,50%));color:hsl(147,55%,13%);font-family:'Nunito Sans','Nunito Sans Fallback',sans-serif;font-size:14px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none}
 .reading-progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:9999;background:transparent;pointer-events:none}
@@ -369,7 +379,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__left">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=4a2409fd04" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=14a610f7a0" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
         </a>
         <nav class="nav">
           
@@ -653,9 +663,17 @@ ul,ol{list-style:none}
 
 
 
+
+
 <section class="article-hero">
   <div class="article-hero__image">
-    <img src="/assets/images/articles/e46d50823d578090.webp?v=4a2409fd04" srcset="/assets/images/articles/e46d50823d578090.webp?v=4a2409fd04 480w, /assets/images/articles/e46d50823d578090.webp 1920w" sizes="100vw" alt="Event &amp; venue management software: 5 ways slow responses hurt your venue" width="1920" height="600" loading="eager" fetchpriority="high" decoding="async">
+    <img
+      src="/assets/images/articles/e46d50823d578090.webp?v=14a610f7a0"
+      srcset="/assets/images/articles/e46d50823d578090.webp?v=14a610f7a0 480w, /assets/images/articles/e46d50823d578090.webp 768w, /assets/images/articles/e46d50823d578090.webp 1280w, /assets/images/articles/e46d50823d578090.webp 1920w"
+      sizes="100vw"
+      alt="Event &amp; venue management software: 5 ways slow responses hurt your venue"
+      width="1920" height="600"
+      loading="eager" fetchpriority="high" decoding="async">
     <div class="article-hero__overlay"></div>
   </div>
 </section>
@@ -735,7 +753,7 @@ ul,ol{list-style:none}
           
           
           <div class="article-detail__content article-rich-content">
-            <p>Every moment counts when an event planner reaches out. Contacting a lead within five minutes can make you&nbsp;<strong>21 times more likely to qualify</strong>&nbsp;that lead. compared to waiting 30 minutes. Meanwhile, studies show&nbsp;<strong>78% of customers buy from the first business to respond</strong>.&nbsp;&nbsp;</p><p>Find out more about the impact of delayed responses, and how to fix them using <a target="_blank" rel="noopener noreferrer nofollow" class="text-primary underline" href="/venue-event-management-software">event &amp; venue management software</a>.</p><h3>How your venue is impacted by slow response times</h3><h4>5. Your reputation takes a hit</h4><p>A slow response does not just cost you a&nbsp;venue&nbsp;booking in the moment. It can shape how people talk about your venue long after the enquiry has gone quiet. When&nbsp;event&nbsp;planners feel ignored or left waiting, that <a target="_blank" rel="noopener noreferrer nofollow" class="text-primary underline" href="/blog/how-to-handle-criticism-as-an-event-manager/">frustration</a> often gets shared.&nbsp;&nbsp;</p><p><strong>14% of people who experience poor customer service will post about it on social media</strong>, and&nbsp;<strong>20% will leave an online review</strong>.&nbsp;Planners talk to each other, and one&nbsp;bad experience&nbsp;can ripple through industry networks, damaging your&nbsp;venue’s&nbsp;reputation.&nbsp;</p><img src="/assets/images/articles/c270b6c7d13ca982.webp?v=4a2409fd04" width="858" height="315" containerstyle="position: relative; width: 858px; height: auto; cursor: pointer; margin: 0px auto 0px 0px;" wrapperstyle="display: flex;" alt="f"><h4>4. Event planners won’t&nbsp;stay loyal&nbsp;</h4><p>Repeat business is the lifeblood of most venues. In fact,&nbsp;<a target="_blank" rel="noopener noreferrer nofollow" class="text-primary underline" href="https://venuesuite.com/en/blog/venue-benchmark-from-speed-to-loyalty"><strong>85%</strong></a><strong>&nbsp;of all bookings come from existing customers</strong>, who convert at a&nbsp;<strong>13% higher rate than new prospects</strong>. For meeting venues, more than&nbsp;<strong>90% of medium and large venues rely on repeat clients</strong>, while hotels see just over&nbsp;<strong>50%</strong>.&nbsp;&nbsp;</p><p>Slow responses signal poor service and make event planners question whether they can trust you to deliver, making them more likely to book with a venue that <a target="_blank" rel="noopener noreferrer nofollow" class="text-primary underline" href="/blog/what-is-the-average-venue-response-time/">responds faster</a>.&nbsp;</p><h4>3. You lose leads before they convert</h4><p>Event planners&nbsp;aren't&nbsp;just reaching out to your venue. They are contacting an average of&nbsp;<strong>10 different spaces</strong>&nbsp;during the venue sourcing process. The number one factor that&nbsp;determines&nbsp;whether they move forward with a venue is simple;&nbsp;it’s&nbsp;the one that responds first.&nbsp;</p><p>If your team takes hours or even days to reply,&nbsp;you’re&nbsp;giving competitors a head start. Planners&nbsp;operate&nbsp;under pressure and&nbsp;don’t&nbsp;have time to chase venues for answers, expecting a response in&nbsp;<strong>48 hours or less</strong>.&nbsp;Every&nbsp;slow&nbsp;response is a missed opportunity to secure&nbsp;a&nbsp;<a target="_blank" rel="noopener noreferrer nofollow" class="text-primary underline" href="/blog/15-metrics-for-more-venue-bookings/">venue booking</a>. Over time, these lost leads add up, reducing your pipeline and making it harder to hit revenue targets.</p><img src="/assets/images/articles/f177f16550baceb9.webp?v=4a2409fd04" width="858" height="483" containerstyle="width: 858px; height: auto; cursor: pointer; " wrapperstyle="display: flex" alt="f"><h4>2. Venue revenue suffers&nbsp;</h4><p>Every enquiry is a potential booking. However, slow responses significantly reduce your chances of conversion. Data shows that <a target="_blank" rel="noopener noreferrer nofollow" class="text-primary underline" href="https://salesso.com/blog/bdr-response-time-statistics/"><strong>78%</strong></a><strong>&nbsp;of buyers choose the vendor that responds first</strong>, and responding within a minute can boost conversions by&nbsp;<strong>up to 391%</strong>&nbsp;compared to slower replies.&nbsp;&nbsp;</p><p>Slow follow-ups effectively hand business to the competition,&nbsp;impacting&nbsp;team momentum. Over time, this compounds shrinking revenue and making it harder to hit targets. <a target="_blank" rel="noopener noreferrer nofollow" class="text-primary underline" href="/blog/7-mistakes-venues-make-that-slow-response-times/">Fast replies</a> help your venue stay top-of-mind, improve sales efficiency, and convert more enquiries into events.&nbsp;</p><h4>1. Frustrations are shared</h4><p>Event planners expect clear and prompt communication. According to&nbsp;Gitnux,&nbsp;<a target="_blank" rel="noopener noreferrer nofollow" class="text-primary underline" href="https://gitnux.org/speed-to-lead-statistics/"><strong>82%</strong></a><strong>&nbsp;of consumers believe an immediate response is important</strong>, typically defining that as within ten minutes. When your team delays, planners feel ignored and may even question your ability to deliver when it counts.&nbsp;&nbsp;</p><p>Slow replies create stress and erode confidence in your reliability. In contrast, a fast, informative reply meets expectations and sets a positive tone for the entire booking process, building trust from the start.&nbsp;</p><h3>How to fix&nbsp;slow venue responses:&nbsp;AI and automation&nbsp;</h3><p>The good news? Improving response time is easier than you think. <a target="_blank" rel="noopener noreferrer nofollow" class="text-primary underline" href="/blog/how-ivvyai-automates-venue-enquiry-management/">AI and automation</a> within your event &amp; venue management software can transform how venues handle enquiries, giving planners the answers they need, fast. Using automated responses means enquiries are&nbsp;instantly&nbsp;acknowledged, while AI-powered systems can qualify leads, provide accurate availability, and even suggest packages without human intervention.</p><p>Using AI and automation within your event &amp; venue management software, your venue benefits from</p><ul><li><p><span style="color: rgb(153, 200, 82);"><strong>Faster response times</strong></span></p></li><li><p><span style="color: rgb(153, 200, 82);"><strong>Fewer lost leads</strong></span></p></li><li><p><span style="color: rgb(153, 200, 82);"><strong>Increased conversions</strong></span></p></li><li><p><span style="color: rgb(153, 200, 82);"><strong>Improved customer experience</strong></span></p></li><li><p><span style="color: rgb(153, 200, 82);"><strong>Greater trust and loyalty&nbsp;</strong></span></p></li></ul><h3>Meet iVvyAI Instant Proposal, powered by hivr.ai&nbsp;</h3><p><strong>iVvy now combines AI and automation to streamline your venue operations.</strong></p><p><a target="_blank" rel="noopener noreferrer" class="text-primary underline" href="https://www.ivvy.com/ivvyai/">iVvyAI</a> frees your team from repetitive admin, speeds up the sales process, and provides the clarity you need to grow revenue with confidence.</p><p>Our first product, Instant Proposal powered by <a target="_blank" rel="noopener noreferrer" class="text-primary underline" href="http://hivr.ai/">hivr.ai</a>, uses AI to read every inbound email enquiry, extract key details, qualify leads, and automatically enter event data into iVvy—so your team can create tailored proposals in minutes.</p><p>Your team can respond faster than competitors, win the first reply, and protect your sales pipeline without adding extra workload.</p><p>Venues using iVvyAI Instant Proposal have reduced response times by 30–50%, achieved up to 70% revenue growth, and increased conversions by 2–3x.&nbsp;</p>
+            <p>Every moment counts when an event planner reaches out. Contacting a lead within five minutes can make you&nbsp;<strong>21 times more likely to qualify</strong>&nbsp;that lead. compared to waiting 30 minutes. Meanwhile, studies show&nbsp;<strong>78% of customers buy from the first business to respond</strong>.&nbsp;&nbsp;</p><p>Find out more about the impact of delayed responses, and how to fix them using <a target="_blank" rel="noopener noreferrer nofollow" class="text-primary underline" href="/venue-event-management-software">event &amp; venue management software</a>.</p><h3>How your venue is impacted by slow response times</h3><h4>5. Your reputation takes a hit</h4><p>A slow response does not just cost you a&nbsp;venue&nbsp;booking in the moment. It can shape how people talk about your venue long after the enquiry has gone quiet. When&nbsp;event&nbsp;planners feel ignored or left waiting, that <a target="_blank" rel="noopener noreferrer nofollow" class="text-primary underline" href="/blog/how-to-handle-criticism-as-an-event-manager/">frustration</a> often gets shared.&nbsp;&nbsp;</p><p><strong>14% of people who experience poor customer service will post about it on social media</strong>, and&nbsp;<strong>20% will leave an online review</strong>.&nbsp;Planners talk to each other, and one&nbsp;bad experience&nbsp;can ripple through industry networks, damaging your&nbsp;venue’s&nbsp;reputation.&nbsp;</p><img src="/assets/images/articles/c270b6c7d13ca982.webp?v=14a610f7a0" width="858" height="315" containerstyle="position: relative; width: 858px; height: auto; cursor: pointer; margin: 0px auto 0px 0px;" wrapperstyle="display: flex;" alt="f"><h4>4. Event planners won’t&nbsp;stay loyal&nbsp;</h4><p>Repeat business is the lifeblood of most venues. In fact,&nbsp;<a target="_blank" rel="noopener noreferrer nofollow" class="text-primary underline" href="https://venuesuite.com/en/blog/venue-benchmark-from-speed-to-loyalty"><strong>85%</strong></a><strong>&nbsp;of all bookings come from existing customers</strong>, who convert at a&nbsp;<strong>13% higher rate than new prospects</strong>. For meeting venues, more than&nbsp;<strong>90% of medium and large venues rely on repeat clients</strong>, while hotels see just over&nbsp;<strong>50%</strong>.&nbsp;&nbsp;</p><p>Slow responses signal poor service and make event planners question whether they can trust you to deliver, making them more likely to book with a venue that <a target="_blank" rel="noopener noreferrer nofollow" class="text-primary underline" href="/blog/what-is-the-average-venue-response-time/">responds faster</a>.&nbsp;</p><h4>3. You lose leads before they convert</h4><p>Event planners&nbsp;aren't&nbsp;just reaching out to your venue. They are contacting an average of&nbsp;<strong>10 different spaces</strong>&nbsp;during the venue sourcing process. The number one factor that&nbsp;determines&nbsp;whether they move forward with a venue is simple;&nbsp;it’s&nbsp;the one that responds first.&nbsp;</p><p>If your team takes hours or even days to reply,&nbsp;you’re&nbsp;giving competitors a head start. Planners&nbsp;operate&nbsp;under pressure and&nbsp;don’t&nbsp;have time to chase venues for answers, expecting a response in&nbsp;<strong>48 hours or less</strong>.&nbsp;Every&nbsp;slow&nbsp;response is a missed opportunity to secure&nbsp;a&nbsp;<a target="_blank" rel="noopener noreferrer nofollow" class="text-primary underline" href="/blog/15-metrics-for-more-venue-bookings/">venue booking</a>. Over time, these lost leads add up, reducing your pipeline and making it harder to hit revenue targets.</p><img src="/assets/images/articles/f177f16550baceb9.webp?v=14a610f7a0" width="858" height="483" containerstyle="width: 858px; height: auto; cursor: pointer; " wrapperstyle="display: flex" alt="f"><h4>2. Venue revenue suffers&nbsp;</h4><p>Every enquiry is a potential booking. However, slow responses significantly reduce your chances of conversion. Data shows that <a target="_blank" rel="noopener noreferrer nofollow" class="text-primary underline" href="https://salesso.com/blog/bdr-response-time-statistics/"><strong>78%</strong></a><strong>&nbsp;of buyers choose the vendor that responds first</strong>, and responding within a minute can boost conversions by&nbsp;<strong>up to 391%</strong>&nbsp;compared to slower replies.&nbsp;&nbsp;</p><p>Slow follow-ups effectively hand business to the competition,&nbsp;impacting&nbsp;team momentum. Over time, this compounds shrinking revenue and making it harder to hit targets. <a target="_blank" rel="noopener noreferrer nofollow" class="text-primary underline" href="/blog/7-mistakes-venues-make-that-slow-response-times/">Fast replies</a> help your venue stay top-of-mind, improve sales efficiency, and convert more enquiries into events.&nbsp;</p><h4>1. Frustrations are shared</h4><p>Event planners expect clear and prompt communication. According to&nbsp;Gitnux,&nbsp;<a target="_blank" rel="noopener noreferrer nofollow" class="text-primary underline" href="https://gitnux.org/speed-to-lead-statistics/"><strong>82%</strong></a><strong>&nbsp;of consumers believe an immediate response is important</strong>, typically defining that as within ten minutes. When your team delays, planners feel ignored and may even question your ability to deliver when it counts.&nbsp;&nbsp;</p><p>Slow replies create stress and erode confidence in your reliability. In contrast, a fast, informative reply meets expectations and sets a positive tone for the entire booking process, building trust from the start.&nbsp;</p><h3>How to fix&nbsp;slow venue responses:&nbsp;AI and automation&nbsp;</h3><p>The good news? Improving response time is easier than you think. <a target="_blank" rel="noopener noreferrer nofollow" class="text-primary underline" href="/blog/how-ivvyai-automates-venue-enquiry-management/">AI and automation</a> within your event &amp; venue management software can transform how venues handle enquiries, giving planners the answers they need, fast. Using automated responses means enquiries are&nbsp;instantly&nbsp;acknowledged, while AI-powered systems can qualify leads, provide accurate availability, and even suggest packages without human intervention.</p><p>Using AI and automation within your event &amp; venue management software, your venue benefits from</p><ul><li><p><span style="color: rgb(153, 200, 82);"><strong>Faster response times</strong></span></p></li><li><p><span style="color: rgb(153, 200, 82);"><strong>Fewer lost leads</strong></span></p></li><li><p><span style="color: rgb(153, 200, 82);"><strong>Increased conversions</strong></span></p></li><li><p><span style="color: rgb(153, 200, 82);"><strong>Improved customer experience</strong></span></p></li><li><p><span style="color: rgb(153, 200, 82);"><strong>Greater trust and loyalty&nbsp;</strong></span></p></li></ul><h3>Meet iVvyAI Instant Proposal, powered by hivr.ai&nbsp;</h3><p><strong>iVvy now combines AI and automation to streamline your venue operations.</strong></p><p><a target="_blank" rel="noopener noreferrer" class="text-primary underline" href="https://www.ivvy.com/ivvyai/">iVvyAI</a> frees your team from repetitive admin, speeds up the sales process, and provides the clarity you need to grow revenue with confidence.</p><p>Our first product, Instant Proposal powered by <a target="_blank" rel="noopener noreferrer" class="text-primary underline" href="http://hivr.ai/">hivr.ai</a>, uses AI to read every inbound email enquiry, extract key details, qualify leads, and automatically enter event data into iVvy—so your team can create tailored proposals in minutes.</p><p>Your team can respond faster than competitors, win the first reply, and protect your sales pipeline without adding extra workload.</p><p>Venues using iVvyAI Instant Proposal have reduced response times by 30–50%, achieved up to 70% revenue growth, and increased conversions by 2–3x.&nbsp;</p>
           </div>
           
 
@@ -1127,7 +1145,7 @@ ul,ol{list-style:none}
         
         <div class="article-card__image-wrap">
           <div class="article-card__image">
-            <img src="/assets/images/articles/a09559ad6cd2d527.webp?v=4a2409fd04" srcset="/assets/images/articles/a09559ad6cd2d527.webp?v=4a2409fd04 480w, /assets/images/articles/a09559ad6cd2d527.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="The cost of a manual venue proposal process" width="600" height="338" loading="lazy" decoding="async">
+            <img src="/assets/images/articles/a09559ad6cd2d527.webp?v=14a610f7a0" srcset="/assets/images/articles/a09559ad6cd2d527.webp?v=14a610f7a0 480w, /assets/images/articles/a09559ad6cd2d527.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="The cost of a manual venue proposal process" width="600" height="338" loading="lazy" decoding="async">
           </div>
         </div>
         
@@ -1158,7 +1176,7 @@ ul,ol{list-style:none}
         
         <div class="article-card__image-wrap">
           <div class="article-card__image">
-            <img src="/assets/images/articles/e3888d454160f2ca.webp?v=4a2409fd04" srcset="/assets/images/articles/e3888d454160f2ca.webp?v=4a2409fd04 480w, /assets/images/articles/e3888d454160f2ca.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="What happens when you use Excel as your venue CRM" width="600" height="338" loading="lazy" decoding="async">
+            <img src="/assets/images/articles/e3888d454160f2ca.webp?v=14a610f7a0" srcset="/assets/images/articles/e3888d454160f2ca.webp?v=14a610f7a0 480w, /assets/images/articles/e3888d454160f2ca.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="What happens when you use Excel as your venue CRM" width="600" height="338" loading="lazy" decoding="async">
           </div>
         </div>
         
@@ -1189,7 +1207,7 @@ ul,ol{list-style:none}
         
         <div class="article-card__image-wrap">
           <div class="article-card__image">
-            <img src="/assets/images/articles/e7f870aa6db1fe9d.webp?v=4a2409fd04" srcset="/assets/images/articles/e7f870aa6db1fe9d.webp?v=4a2409fd04 480w, /assets/images/articles/e7f870aa6db1fe9d.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="AI for venue sales: what it does (and doesn&#39;t)" width="600" height="338" loading="lazy" decoding="async">
+            <img src="/assets/images/articles/e7f870aa6db1fe9d.webp?v=14a610f7a0" srcset="/assets/images/articles/e7f870aa6db1fe9d.webp?v=14a610f7a0 480w, /assets/images/articles/e7f870aa6db1fe9d.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="AI for venue sales: what it does (and doesn&#39;t)" width="600" height="338" loading="lazy" decoding="async">
           </div>
         </div>
         
@@ -1223,7 +1241,7 @@ ul,ol{list-style:none}
 
 
 <section class="cta">
-  <img src="/assets/images/patterns/cta-pattern.webp?v=4a2409fd04" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600">
+  <img src="/assets/images/patterns/cta-pattern.webp?v=14a610f7a0" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600">
   <div class="container">
     <div class="cta__inner">
       <h2 class="cta__title title-gradient-light">Stay in the know</h2>
@@ -1232,37 +1250,28 @@ ul,ol{list-style:none}
       <div class="blog-cta-form" id="blog-cta-newsletter-form" style="max-width: 420px; margin: 0 auto;"></div>
       <script>
         (function() {
-          var container = document.getElementById('blog-cta-newsletter-form');
-          if (!container) return;
-          if (container.childElementCount > 0) return;
-          // Lazy-load HubSpot form: only fetch when section nears viewport.
-          // Saves ~80KB of JS + tracking calls on initial blog page load → big INP win on mobile.
-          function loadForm() {
-            if (container.childElementCount > 0) return;
-            var s = document.createElement('script');
-            s.src = '//js.hsforms.net/forms/embed/v2.js';
-            s.charset = 'utf-8';
-            s.async = true;
-            s.onload = function() {
-              if (window.hbspt) {
-                window.hbspt.forms.create({
-                  portalId: '5854099',
-                  formId: '77777de4-4d60-4623-ac28-8812df0dd6f7',
-                  region: 'na1',
-                  target: '#blog-cta-newsletter-form'
-                });
-              }
-            };
-            document.head.appendChild(s);
+          var el = document.getElementById('blog-cta-newsletter-form');
+          if (!el || el.childElementCount > 0) return;
+          // Lazy-load HubSpot newsletter form via the shared sitewide loader.
+          // The loader defers v2.js injection until window.load + idle so
+          // mobile TBT isn't impacted on blog detail pages.
+          var opts = {
+            portalId: '5854099',
+            formId: '77777de4-4d60-4623-ac28-8812df0dd6f7',
+            region: 'na1',
+            target: '#blog-cta-newsletter-form'
+          };
+          function load() {
+            if (el.childElementCount > 0) return;
+            if (window.ivvyLoadHubSpotForm) window.ivvyLoadHubSpotForm(opts);
+            else (window.__ivvyHbspQueue = window.__ivvyHbspQueue || []).push(opts);
           }
           if ('IntersectionObserver' in window) {
             var io = new IntersectionObserver(function(entries) {
-              if (entries[0].isIntersecting) { io.disconnect(); loadForm(); }
+              if (entries[0].isIntersecting) { io.disconnect(); load(); }
             }, { rootMargin: '300px' });
-            io.observe(container);
-          } else {
-            loadForm();
-          }
+            io.observe(el);
+          } else { load(); }
         })();
       </script>
     </div>
@@ -1303,7 +1312,7 @@ ul,ol{list-style:none}
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=4a2409fd04" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=14a610f7a0" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
         <div class="footer__social">
           <a href="https://www.linkedin.com/company/ivvy/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1469,7 +1478,7 @@ ul,ol{list-style:none}
 
 
 
-<script src="/assets/js/scripts.js?v=4a2409fd04" defer></script>
+<script src="/assets/js/scripts.js?v=14a610f7a0" defer></script>
 
 
 
