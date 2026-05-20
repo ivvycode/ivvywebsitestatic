@@ -1,16 +1,16 @@
-<!-- build:26150013295-1405 -->
+<!-- build:26151930184-1406 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=99f663db15">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=99f663db15">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=99f663db15">
-  <link rel="alternate icon" href="/assets/images/favicon.ico?v=99f663db15">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=99f663db15">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=99f663db15">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=99f663db15">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=19c8050480">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=19c8050480">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=19c8050480">
+  <link rel="alternate icon" href="/assets/images/favicon.ico?v=19c8050480">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=19c8050480">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=19c8050480">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=19c8050480">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Swiftpos by Oolio Integration | iVvy</title>
   <meta name="description" content="Connect iVvy with Swiftpos for seamless event billing and hospitality operations.">
@@ -224,11 +224,44 @@ ul,ol{list-style:none}
 .integration-hero-logos__line{display:block;width:2rem;height:2px;background:linear-gradient(90deg,rgba(153,204,82,0.2),#99CC52)}
 .integration-hero-logos__icon{display:flex;align-items:center;justify-content:center;width:2.25rem;height:2.25rem;border-radius:50%;border:1px solid rgba(153,204,82,0.3);background:rgba(255,255,255,0.1);color:#99CC52;font-size:1rem;font-weight:700}
 @media(min-width:1024px){.integration-hero-logos{gap:2.5rem}.integration-hero-logos__card{width:180px;height:88px}.integration-hero-logos__card img{height:3.5rem}.integration-hero-logos__line{width:3rem}}
+/* CLS guard: foundational section layout primitives must be reserved in critical CSS — otherwise
+   the async stylesheet arrival activates grid layout / typography sizing on every .section__grid,
+   pushing content vertically by 100-400px. Fixes residual CLS on /security/, /request-demo/, /faqs/,
+   /blog/<slug>/ and any 2-col content section that was previously stacked block-flow at first paint. */
+.section__grid{display:grid;grid-template-columns:1fr;gap:48px;align-items:center}
+.section__grid--top{align-items:start}
+.section__grid--vcenter{align-items:center}
+@media(min-width:1024px){.section__grid--2col{grid-template-columns:1fr 1fr}}
+.section__title{font-size:30px;font-weight:800;color:#103620;margin-bottom:32px;line-height:1.2}
+@media(min-width:1024px){.section__title{font-size:44px}}
+.section__eyebrow{display:inline-flex;align-items:center;padding:4px 12px;border-radius:9999px;font-size:13px;font-weight:600;font-family:'Nunito','Nunito Fallback',sans-serif;text-transform:uppercase;letter-spacing:0.05em;background:rgba(153,204,82,0.1);color:#103620;margin-bottom:12px;min-height:26px}
+.section__eyebrow--green{color:#103620}
+.section__lead{font-size:18px;color:#103620;margin-bottom:16px;line-height:1.6}
+.section__text{font-size:16px;color:#666;line-height:1.8;margin-bottom:16px}
+.section__header{margin-bottom:32px}
+.section__header--center{text-align:center}
+.page-title{font-size:32px;color:#103620;margin-bottom:16px;line-height:1.1;font-weight:800;min-height:calc(32px * 1.1 * 2)}
+@media(min-width:768px){.page-title{font-size:40px;min-height:calc(40px * 1.1 * 2)}}
+.page-title--highlight{color:#99CC52}
+/* FAQ list — reserves card geometry so async styles-pages.css cannot shift /faqs/ on first paint. */
+.faq-container{max-width:880px;margin:0 auto}
+.faq-category{margin-bottom:48px}
+.faq-category__title{font-size:22px;font-weight:700;color:#103620;margin-bottom:16px;line-height:1.2}
+.faq-list{display:flex;flex-direction:column;gap:12px}
+.faq-card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden}
+.faq-card__question{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 24px;font-family:'Nunito','Nunito Fallback',sans-serif;font-weight:600;font-size:16px;color:#103620;cursor:pointer;list-style:none;min-height:62px}
+.faq-card__question::-webkit-details-marker{display:none}
+.faq-card__answer{padding:0 24px 20px;font-size:15px;color:#666;line-height:1.7}
+/* Checklist — reserves bullet row height for /request-demo/ left column before async CSS arrives. */
+.checklist{list-style:none;display:flex;flex-direction:column;gap:12px}
+.checklist__item{display:flex;align-items:flex-start;gap:12px;font-size:16px;color:#103620;line-height:1.6;min-height:26px}
+/* Article container — reserves blog post layout so async CSS cannot shift /blog/<slug>/ above the fold. */
+.article-detail__wrapper,.article-detail__container,.article-body{max-width:760px;margin:0 auto}
 </style>
 
   
-  <link rel="preload" href="/assets/css/page/p-a66a906d7d.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/css/page/p-a66a906d7d.css"></noscript>
+  <link rel="preload" href="/assets/css/page/p-4df6c4c364.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/page/p-4df6c4c364.css"></noscript>
   
   
   <noscript></noscript>
@@ -308,7 +341,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__left">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=99f663db15" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=19c8050480" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
         </a>
         <nav class="nav">
           
@@ -575,7 +608,7 @@ ul,ol{list-style:none}
     <div class="page-hero__content">
       <div class="integration-hero-logos">
         <div class="integration-hero-logos__card">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=99f663db15" alt="iVvy" width="120" height="56" loading="eager" decoding="async">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=19c8050480" alt="iVvy" width="120" height="56" loading="eager" decoding="async">
         </div>
         <div class="integration-hero-logos__connector">
           <span class="integration-hero-logos__line"></span>
@@ -583,7 +616,7 @@ ul,ol{list-style:none}
           <span class="integration-hero-logos__line"></span>
         </div>
         <div class="integration-hero-logos__card">
-          <img src="/assets/images/integrations/swiftpos.webp?v=99f663db15" alt="Swiftpos by Oolio" width="120" height="56" loading="eager" decoding="async">
+          <img src="/assets/images/integrations/swiftpos.webp?v=19c8050480" alt="Swiftpos by Oolio" width="120" height="56" loading="eager" decoding="async">
         </div>
       </div>
       <h1 class="page-hero__title">
@@ -631,7 +664,7 @@ ul,ol{list-style:none}
       <div class="data-flow-card">
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/ivvy-logo-venues.webp?v=99f663db15" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/ivvy-logo-venues.webp?v=19c8050480" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Bookings</span>
         </div>
@@ -647,7 +680,7 @@ ul,ol{list-style:none}
         </div>
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/integrations/swiftpos.webp?v=99f663db15" alt="Swiftpos by Oolio" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/integrations/swiftpos.webp?v=19c8050480" alt="Swiftpos by Oolio" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Account</span>
         </div>
@@ -656,7 +689,7 @@ ul,ol{list-style:none}
       <div class="data-flow-card">
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/ivvy-logo-venues.webp?v=99f663db15" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/ivvy-logo-venues.webp?v=19c8050480" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Additional Items</span>
         </div>
@@ -672,7 +705,7 @@ ul,ol{list-style:none}
         </div>
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/integrations/swiftpos.webp?v=99f663db15" alt="Swiftpos by Oolio" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/integrations/swiftpos.webp?v=19c8050480" alt="Swiftpos by Oolio" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Saleable Items</span>
         </div>
@@ -681,7 +714,7 @@ ul,ol{list-style:none}
       <div class="data-flow-card">
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/ivvy-logo-venues.webp?v=99f663db15" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/ivvy-logo-venues.webp?v=19c8050480" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Invoice &amp; Payment</span>
         </div>
@@ -697,7 +730,7 @@ ul,ol{list-style:none}
         </div>
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/integrations/swiftpos.webp?v=99f663db15" alt="Swiftpos by Oolio" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/integrations/swiftpos.webp?v=19c8050480" alt="Swiftpos by Oolio" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Payments</span>
         </div>
@@ -744,7 +777,7 @@ ul,ol{list-style:none}
 
 <section class="cta">
   
-  <img src="/assets/images/patterns/cta-pattern.webp?v=99f663db15" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35;mix-blend-mode:soft-light;pointer-events:none;">
+  <img src="/assets/images/patterns/cta-pattern.webp?v=19c8050480" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35;mix-blend-mode:soft-light;pointer-events:none;">
   <div class="container">
     <div class="cta__inner">
       <h2 class="cta__title">Ready to integrate <span class="scroll-color-text scroll-color-text--from-white">Swiftpos by Oolio</span> with iVvy?</h2>
@@ -910,7 +943,7 @@ ul,ol{list-style:none}
       
       <a href="/integrations/bepoz/" class="integration-related-card">
         <div class="integration-related-card__logo">
-          <img src="/assets/images/integrations/bepoz.webp?v=99f663db15" alt="Bepoz by Oolio" width="96" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/integrations/bepoz.webp?v=19c8050480" alt="Bepoz by Oolio" width="96" height="48" loading="lazy" decoding="async">
         </div>
         <h3 class="integration-related-card__name">Bepoz by Oolio</h3>
         <p class="integration-related-card__subtitle">Streamline your point of sale operations</p>
@@ -918,7 +951,7 @@ ul,ol{list-style:none}
       
       <a href="/integrations/handl/" class="integration-related-card">
         <div class="integration-related-card__logo">
-          <img src="/assets/images/integrations/handl.webp?v=99f663db15" alt="H&amp;L" width="96" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/integrations/handl.webp?v=19c8050480" alt="H&amp;L" width="96" height="48" loading="lazy" decoding="async">
         </div>
         <h3 class="integration-related-card__name">H&amp;L</h3>
         <p class="integration-related-card__subtitle">Hospitality POS integration</p>
@@ -926,7 +959,7 @@ ul,ol{list-style:none}
       
       <a href="/integrations/xero/" class="integration-related-card">
         <div class="integration-related-card__logo">
-          <img src="/assets/images/integrations/xero.webp?v=99f663db15" alt="Xero" width="96" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/integrations/xero.webp?v=19c8050480" alt="Xero" width="96" height="48" loading="lazy" decoding="async">
         </div>
         <h3 class="integration-related-card__name">Xero</h3>
         <p class="integration-related-card__subtitle">Get realtime Invoices and Payments directly into your Xero Account.</p>
@@ -934,7 +967,7 @@ ul,ol{list-style:none}
       
       <a href="/integrations/myob/" class="integration-related-card">
         <div class="integration-related-card__logo">
-          <img src="/assets/images/integrations/myob.webp?v=99f663db15" alt="MYOB" width="96" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/integrations/myob.webp?v=19c8050480" alt="MYOB" width="96" height="48" loading="lazy" decoding="async">
         </div>
         <h3 class="integration-related-card__name">MYOB</h3>
         <p class="integration-related-card__subtitle">Synchronise invoices, contacts, payments &amp; refunds</p>
@@ -942,7 +975,7 @@ ul,ol{list-style:none}
       
       <a href="/integrations/opera-cloud/" class="integration-related-card">
         <div class="integration-related-card__logo">
-          <img src="/assets/images/integrations/opera-cloud.webp?v=99f663db15" alt="Oracle Opera Cloud" width="96" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/integrations/opera-cloud.webp?v=19c8050480" alt="Oracle Opera Cloud" width="96" height="48" loading="lazy" decoding="async">
         </div>
         <h3 class="integration-related-card__name">Oracle Opera Cloud</h3>
         <p class="integration-related-card__subtitle">Full visibility of available accommodation</p>
@@ -950,7 +983,7 @@ ul,ol{list-style:none}
       
       <a href="/integrations/mews/" class="integration-related-card">
         <div class="integration-related-card__logo">
-          <img src="/assets/images/integrations/mews.webp?v=99f663db15" alt="Mews" width="96" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/integrations/mews.webp?v=19c8050480" alt="Mews" width="96" height="48" loading="lazy" decoding="async">
         </div>
         <h3 class="integration-related-card__name">Mews</h3>
         <p class="integration-related-card__subtitle">Full visibility of available accommodation</p>
@@ -967,7 +1000,7 @@ ul,ol{list-style:none}
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=99f663db15" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=19c8050480" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
         <div class="footer__social">
           <a href="https://www.linkedin.com/company/ivvy/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1133,7 +1166,7 @@ ul,ol{list-style:none}
 
 
 
-<script src="/assets/js/scripts.js?v=99f663db15" defer></script>
+<script src="/assets/js/scripts.js?v=19c8050480" defer></script>
 
 
 

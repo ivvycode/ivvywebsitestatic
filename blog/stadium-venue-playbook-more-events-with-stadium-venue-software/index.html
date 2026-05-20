@@ -1,16 +1,16 @@
-<!-- build:26150013295-1405 -->
+<!-- build:26151930184-1406 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=99f663db15">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=99f663db15">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=99f663db15">
-  <link rel="alternate icon" href="/assets/images/favicon.ico?v=99f663db15">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=99f663db15">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=99f663db15">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=99f663db15">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=19c8050480">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=19c8050480">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=19c8050480">
+  <link rel="alternate icon" href="/assets/images/favicon.ico?v=19c8050480">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=19c8050480">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=19c8050480">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=19c8050480">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Stadium venue playbook: more events with stadium venue software | iVvy Blog</title>
   <meta name="description" content="Our stadium venue playbook covers the booking strategies, marketing methods, and stadium venue software guidance that arena and stadium teams need to keep their event calendars full year-round.">
@@ -224,11 +224,44 @@ ul,ol{list-style:none}
 .integration-hero-logos__line{display:block;width:2rem;height:2px;background:linear-gradient(90deg,rgba(153,204,82,0.2),#99CC52)}
 .integration-hero-logos__icon{display:flex;align-items:center;justify-content:center;width:2.25rem;height:2.25rem;border-radius:50%;border:1px solid rgba(153,204,82,0.3);background:rgba(255,255,255,0.1);color:#99CC52;font-size:1rem;font-weight:700}
 @media(min-width:1024px){.integration-hero-logos{gap:2.5rem}.integration-hero-logos__card{width:180px;height:88px}.integration-hero-logos__card img{height:3.5rem}.integration-hero-logos__line{width:3rem}}
+/* CLS guard: foundational section layout primitives must be reserved in critical CSS — otherwise
+   the async stylesheet arrival activates grid layout / typography sizing on every .section__grid,
+   pushing content vertically by 100-400px. Fixes residual CLS on /security/, /request-demo/, /faqs/,
+   /blog/<slug>/ and any 2-col content section that was previously stacked block-flow at first paint. */
+.section__grid{display:grid;grid-template-columns:1fr;gap:48px;align-items:center}
+.section__grid--top{align-items:start}
+.section__grid--vcenter{align-items:center}
+@media(min-width:1024px){.section__grid--2col{grid-template-columns:1fr 1fr}}
+.section__title{font-size:30px;font-weight:800;color:#103620;margin-bottom:32px;line-height:1.2}
+@media(min-width:1024px){.section__title{font-size:44px}}
+.section__eyebrow{display:inline-flex;align-items:center;padding:4px 12px;border-radius:9999px;font-size:13px;font-weight:600;font-family:'Nunito','Nunito Fallback',sans-serif;text-transform:uppercase;letter-spacing:0.05em;background:rgba(153,204,82,0.1);color:#103620;margin-bottom:12px;min-height:26px}
+.section__eyebrow--green{color:#103620}
+.section__lead{font-size:18px;color:#103620;margin-bottom:16px;line-height:1.6}
+.section__text{font-size:16px;color:#666;line-height:1.8;margin-bottom:16px}
+.section__header{margin-bottom:32px}
+.section__header--center{text-align:center}
+.page-title{font-size:32px;color:#103620;margin-bottom:16px;line-height:1.1;font-weight:800;min-height:calc(32px * 1.1 * 2)}
+@media(min-width:768px){.page-title{font-size:40px;min-height:calc(40px * 1.1 * 2)}}
+.page-title--highlight{color:#99CC52}
+/* FAQ list — reserves card geometry so async styles-pages.css cannot shift /faqs/ on first paint. */
+.faq-container{max-width:880px;margin:0 auto}
+.faq-category{margin-bottom:48px}
+.faq-category__title{font-size:22px;font-weight:700;color:#103620;margin-bottom:16px;line-height:1.2}
+.faq-list{display:flex;flex-direction:column;gap:12px}
+.faq-card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden}
+.faq-card__question{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 24px;font-family:'Nunito','Nunito Fallback',sans-serif;font-weight:600;font-size:16px;color:#103620;cursor:pointer;list-style:none;min-height:62px}
+.faq-card__question::-webkit-details-marker{display:none}
+.faq-card__answer{padding:0 24px 20px;font-size:15px;color:#666;line-height:1.7}
+/* Checklist — reserves bullet row height for /request-demo/ left column before async CSS arrives. */
+.checklist{list-style:none;display:flex;flex-direction:column;gap:12px}
+.checklist__item{display:flex;align-items:flex-start;gap:12px;font-size:16px;color:#103620;line-height:1.6;min-height:26px}
+/* Article container — reserves blog post layout so async CSS cannot shift /blog/<slug>/ above the fold. */
+.article-detail__wrapper,.article-detail__container,.article-body{max-width:760px;margin:0 auto}
 </style>
 
   
-  <link rel="preload" href="/assets/css/page/p-ab1e9e1737.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/css/page/p-ab1e9e1737.css"></noscript>
+  <link rel="preload" href="/assets/css/page/p-23ce58b856.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/page/p-23ce58b856.css"></noscript>
   
   
   <noscript></noscript>
@@ -308,7 +341,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__left">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=99f663db15" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=19c8050480" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
         </a>
         <nav class="nav">
           
@@ -594,7 +627,7 @@ ul,ol{list-style:none}
 
 <section class="article-hero">
   <div class="article-hero__image">
-    <img src="/assets/images/articles/ec91ecb571e1c153.webp?v=99f663db15" srcset="/assets/images/articles/ec91ecb571e1c153.webp?v=99f663db15 480w, /assets/images/articles/ec91ecb571e1c153.webp 1920w" sizes="100vw" alt="Stadium venue playbook: more events with stadium venue software" width="1920" height="600" loading="eager" fetchpriority="high" decoding="async">
+    <img src="/assets/images/articles/ec91ecb571e1c153.webp?v=19c8050480" srcset="/assets/images/articles/ec91ecb571e1c153.webp?v=19c8050480 480w, /assets/images/articles/ec91ecb571e1c153.webp 1920w" sizes="100vw" alt="Stadium venue playbook: more events with stadium venue software" width="1920" height="600" loading="eager" fetchpriority="high" decoding="async">
     <div class="article-hero__overlay"></div>
   </div>
 </section>
@@ -1138,7 +1171,7 @@ ul,ol{list-style:none}
         
         <div class="article-card__image-wrap">
           <div class="article-card__image">
-            <img src="/assets/images/articles/76b9cf8f157c4f03.webp?v=99f663db15" srcset="/assets/images/articles/76b9cf8f157c4f03.webp?v=99f663db15 480w, /assets/images/articles/76b9cf8f157c4f03.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="Do&#39;s &amp; don&#39;ts of BEOs (+ free BEO template for event planners)" width="600" height="338" loading="lazy" decoding="async">
+            <img src="/assets/images/articles/76b9cf8f157c4f03.webp?v=19c8050480" srcset="/assets/images/articles/76b9cf8f157c4f03.webp?v=19c8050480 480w, /assets/images/articles/76b9cf8f157c4f03.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="Do&#39;s &amp; don&#39;ts of BEOs (+ free BEO template for event planners)" width="600" height="338" loading="lazy" decoding="async">
           </div>
         </div>
         
@@ -1169,7 +1202,7 @@ ul,ol{list-style:none}
         
         <div class="article-card__image-wrap">
           <div class="article-card__image">
-            <img src="/assets/images/articles/acc72d4ee52b9c3d.webp?v=99f663db15" srcset="/assets/images/articles/acc72d4ee52b9c3d.webp?v=99f663db15 480w, /assets/images/articles/acc72d4ee52b9c3d.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="Venue booking negotiation guide for event managers" width="600" height="338" loading="lazy" decoding="async">
+            <img src="/assets/images/articles/acc72d4ee52b9c3d.webp?v=19c8050480" srcset="/assets/images/articles/acc72d4ee52b9c3d.webp?v=19c8050480 480w, /assets/images/articles/acc72d4ee52b9c3d.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="Venue booking negotiation guide for event managers" width="600" height="338" loading="lazy" decoding="async">
           </div>
         </div>
         
@@ -1200,7 +1233,7 @@ ul,ol{list-style:none}
         
         <div class="article-card__image-wrap">
           <div class="article-card__image">
-            <img src="/assets/images/articles/33a0c1fb73a515c4.webp?v=99f663db15" srcset="/assets/images/articles/33a0c1fb73a515c4.webp?v=99f663db15 480w, /assets/images/articles/33a0c1fb73a515c4.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="Use this hotel customer journey map for better guest experiences" width="600" height="338" loading="lazy" decoding="async">
+            <img src="/assets/images/articles/33a0c1fb73a515c4.webp?v=19c8050480" srcset="/assets/images/articles/33a0c1fb73a515c4.webp?v=19c8050480 480w, /assets/images/articles/33a0c1fb73a515c4.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="Use this hotel customer journey map for better guest experiences" width="600" height="338" loading="lazy" decoding="async">
           </div>
         </div>
         
@@ -1234,7 +1267,7 @@ ul,ol{list-style:none}
 
 
 <section class="cta">
-  <img src="/assets/images/patterns/cta-pattern.webp?v=99f663db15" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600">
+  <img src="/assets/images/patterns/cta-pattern.webp?v=19c8050480" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600">
   <div class="container">
     <div class="cta__inner">
       <h2 class="cta__title title-gradient-light">Stay in the know</h2>
@@ -1314,7 +1347,7 @@ ul,ol{list-style:none}
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=99f663db15" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=19c8050480" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
         <div class="footer__social">
           <a href="https://www.linkedin.com/company/ivvy/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1480,7 +1513,7 @@ ul,ol{list-style:none}
 
 
 
-<script src="/assets/js/scripts.js?v=99f663db15" defer></script>
+<script src="/assets/js/scripts.js?v=19c8050480" defer></script>
 
 
 
