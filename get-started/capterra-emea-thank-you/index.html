@@ -1,15 +1,15 @@
-<!-- build:26194646382-1421 -->
+<!-- build:26195932493-1422 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=14a610f7a0">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=14a610f7a0">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=14a610f7a0">
-  <link rel="alternate icon" href="/assets/images/favicon.ico?v=14a610f7a0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=14a610f7a0">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=14a610f7a0">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=14a610f7a0">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=328e487da8">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=328e487da8">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=328e487da8">
+  <link rel="alternate icon" href="/assets/images/favicon.ico?v=328e487da8">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=328e487da8">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=328e487da8">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=328e487da8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>iVvy</title>
   <meta name="description" content="">
@@ -279,12 +279,20 @@ ul,ol{list-style:none}
 .section__title--light{color:#fff}
 .agent-tab{padding:12px 24px;border-radius:9999px;font-size:14px;font-weight:700;font-family:'Nunito','Nunito Fallback',sans-serif;border:none;background:transparent;color:#666;cursor:pointer;min-height:42px}
 .agent-tab--active{background:#99CC52;color:#fff;box-shadow:0 4px 12px rgba(153,204,82,0.3)}
+/* Blog special-section carousel dots (eBooks, Templates & Resources) — inlined so they paint as
+   round green/grey circles immediately instead of as default square buttons before the async
+   stylesheet arrives. Matches the React /blog/ implementation. */
+.special-carousel__dots{display:flex;justify-content:center;align-items:center;gap:10px;margin-top:40px}
+.special-carousel__dot{width:10px;height:10px;border-radius:50%;border:none;padding:0;cursor:pointer;background:rgba(107,114,128,0.4);appearance:none;-webkit-appearance:none}
+.special-carousel__dot--active{background:#99CC52;transform:scale(1.25)}
+.special-category-section--dark .special-carousel__dot{background:rgba(255,255,255,0.3)}
+.special-category-section--dark .special-carousel__dot--active{background:#99CC52}
 </style>
 
   
   
   
-  <link rel="stylesheet" href="/assets/css/page/p-224e151f60.css">
+  <link rel="stylesheet" href="/assets/css/page/p-dd91ac5203.css">
   
 
   
@@ -335,20 +343,21 @@ ul,ol{list-style:none}
     *, *::before, *::after { box-sizing: border-box; }
     html { scroll-behavior: smooth; scroll-padding-top: 96px; }
     .lp-anchor-target { scroll-margin-top: 96px; }
-    body { margin: 0; padding: 0; font-family: var(--font-body); color: #666; font-weight: 400; }
+    /* body rule scoped so it does not override the main-site body when
+       this style block is extracted into layout-landing.njk */
+    .lp-page { font-family: var(--font-body); color: #666; font-weight: 400; }
     .lp-page, .lp-page p, .lp-page li, .lp-page div { font-family: var(--font-body); }
     .lp-page p, .lp-page li { font-weight: 400; color: #666; }
-    img { max-width: 100%; height: auto; }
-    iframe { max-width: 100%; }
-    h1, h2, h3, h4 { font-family: var(--font-heading); margin: 0; }
+    .lp-page img { max-width: 100%; height: auto; }
+    .lp-page iframe { max-width: 100%; }
     .lp-page h1, .lp-page h2, .lp-page h3, .lp-page h4, .lp-page h5, .lp-page h6 { font-family: var(--font-heading); color: var(--dark-green); margin: 0; font-weight: 800; }
     /* Spans inside headings must inherit the heading font/weight (was being clobbered by .lp-page span) */
     .lp-page h1 span, .lp-page h2 span, .lp-page h3 span, .lp-page h4 span, .lp-page h5 span, .lp-page h6 span { font-family: inherit; font-weight: inherit; line-height: inherit; }
     /* Body spans use Nunito by default but defer to inline styles */
     .lp-page span { font-family: var(--font-body); }
-    .container { width: 100%; margin: 0 auto; padding: 0 16px; }
-    @media (min-width: 768px) { .container { padding: 0 32px; } }
-    @media (min-width: 1536px) { .container { max-width: 1400px; } }
+    .lp-page .container { width: 100%; margin: 0 auto; padding: 0 16px; }
+    @media (min-width: 768px) { .lp-page .container { padding: 0 32px; } }
+    @media (min-width: 1536px) { .lp-page .container { max-width: 1400px; } }
     .lp-page { overflow-x: clip; }
     .lp-hero { position: relative; }
     .lp-hero h1 { font-size: clamp(2rem, 5vw, 3.75rem); font-weight: 800; line-height: 1.1; margin: 0 0 16px; }
@@ -458,7 +467,7 @@ ul,ol{list-style:none}
     }
     @media (max-width: 480px) {
       /* ─── Global rhythm ─── */
-      .container { padding: 0 16px !important; }
+      .lp-page .container { padding: 0 16px !important; }
       .lp-page section { padding-left: 0 !important; padding-right: 0 !important; }
       /* Hero: tighten oversized type and reduce vertical padding */
       .lp-hero h1, .lp-hero-centred h1, .lp-hero-split h1 { font-size: clamp(1.75rem, 8vw, 2.25rem) !important; line-height: 1.15 !important; }
@@ -576,7 +585,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__left">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=14a610f7a0" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=328e487da8" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
         </a>
         <nav class="nav">
           
@@ -838,7 +847,7 @@ ul,ol{list-style:none}
 
 <main class="lp-page">
   
-<section class="lp-two-col" style="padding:32px;">  <div class="container" style="display:grid;grid-template-columns:50fr 50fr;gap:32px">    <div><div class="lp-richtext" style="padding:16"><h2><span style="color: rgb(255, 255, 255);"><strong>Thank you for getting in contact.</strong></span><strong> </strong><span style="color: rgb(153, 200, 82);"><strong>Someone will be in contact or book in some time for a call now!</strong></span></h2><p></p></div></div>    <div></div>  </div></section>
+<section class="lp-two-col" style="background:radial-gradient(ellipse 80% 60% at 50% 40%,hsl(140 35% 22%) 0%,transparent 60%),radial-gradient(ellipse 100% 100% at 50% 50%,hsl(147 45% 16%) 0%,hsl(150 55% 8%) 100%);color:#ffffff;padding:32px;">  <div class="container" style="display:grid;grid-template-columns:50fr 50fr;gap:32px">    <div><div class="lp-richtext" style="padding:16"><h2><span style="color: rgb(255, 255, 255);"><strong>Thank you for getting in contact.</strong></span><strong> </strong><span style="color: rgb(153, 200, 82);"><strong>Someone will be in contact or book in some time for a call now!</strong></span></h2><p></p></div></div>    <div></div>  </div></section>
 
 
 </main>
@@ -849,7 +858,7 @@ ul,ol{list-style:none}
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=14a610f7a0" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=328e487da8" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
         <div class="footer__social">
           <a href="https://www.linkedin.com/company/ivvy/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1016,7 +1025,7 @@ ul,ol{list-style:none}
 </div>
 
 
-<script src="/assets/js/scripts.js?v=14a610f7a0" defer></script>
+<script src="/assets/js/scripts.js?v=328e487da8" defer></script>
 
 
 <script type="application/ld+json">
