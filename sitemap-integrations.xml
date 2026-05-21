@@ -14,7 +14,7 @@
   </url>
   
   <url>
-    <loc>https://www.ivvy.com/integrations/opera/</loc>
+    <loc>https://www.ivvy.com/integrations/opera-cloud/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -176,7 +176,7 @@
   </url>
   
   <url>
-    <loc>https://www.ivvy.com/integrations/profit-sword/</loc>
+    <loc>https://www.ivvy.com/integrations/profitsword/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
