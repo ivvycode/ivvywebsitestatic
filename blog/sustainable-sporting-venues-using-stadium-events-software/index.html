@@ -1,16 +1,16 @@
-<!-- build:26266482810-1453 -->
+<!-- build:26269110046-1454 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=f06d65af17">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=f06d65af17">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=f06d65af17">
-  <link rel="alternate icon" href="/assets/images/favicon.ico?v=f06d65af17">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=f06d65af17">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=f06d65af17">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=f06d65af17">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=374178a788">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=374178a788">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=374178a788">
+  <link rel="alternate icon" href="/assets/images/favicon.ico?v=374178a788">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=374178a788">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=374178a788">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=374178a788">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Sustainable sporting venues using stadium events software | iVvy Blog</title>
   <meta name="description" content="In a time when going green is more of a must-do than a maybe, stadiums are stepping up to the plate. These aren&#39;t just venues for sports anymore; they are eco-friendly venues for events that want to do more than just impress, but make an impact.">
@@ -31,6 +31,13 @@
 
 
   
+  
+    
+  <link rel="preload" as="image" fetchpriority="high"
+        href="/assets/images/articles/6eb7753eaf6bf885.webp?v=374178a788"
+        imagesrcset="/assets/images/articles/6eb7753eaf6bf885.webp?v=374178a788 480w, /assets/images/articles/6eb7753eaf6bf885.webp 1920w"
+        imagesizes="100vw">
+    
   
   
 
@@ -305,11 +312,70 @@ ul,ol{list-style:none}
 .special-carousel__dot--active{background:#99CC52;transform:scale(1.25)}
 .special-category-section--dark .special-carousel__dot{background:rgba(255,255,255,0.3)}
 .special-category-section--dark .special-carousel__dot--active{background:#99CC52}
+/* Article rich content layout primitives — inlined so the async styles-pages.css activating
+   18px / line-height 1.8 body, 28px h2, 22px h3, 1.25em paragraph margins, 2.5em p+p gaps,
+   list padding and embedded media aspect-ratios cannot reflow the article body on first paint.
+   This eliminates the ~0.17 mobile CLS regression Lighthouse flagged on /blog/<slug>/ pages
+   where the body content grew tall after async CSS arrived. */
+.article-detail__content.article-rich-content{font-family:'Nunito','Nunito Fallback',sans-serif;font-size:18px;line-height:1.8;color:#666666}
+.article-detail__content.article-rich-content h2,.article-detail__content.article-rich-content h3,.article-detail__content.article-rich-content h4{font-family:'Poppins','Poppins Fallback',sans-serif;font-weight:800;color:#0a1a10;margin-top:2em;margin-bottom:0.75em;line-height:1.2}
+.article-detail__content.article-rich-content h2{font-size:28px}
+.article-detail__content.article-rich-content h3{font-size:22px}
+.article-detail__content.article-rich-content p{margin-bottom:1.25em;white-space:pre-wrap}
+.article-detail__content.article-rich-content > p:first-of-type{font-weight:700;color:#0a1a10}
+.article-detail__content.article-rich-content p + p{margin-top:2.5em}
+.article-detail__content.article-rich-content p:empty{display:block;min-height:1.5em}
+.article-detail__content.article-rich-content br{display:block;content:"";margin-top:0.5em}
+.article-detail__content.article-rich-content a{color:#99CC52;text-decoration:underline}
+.article-detail__content.article-rich-content img{border-radius:12px;margin:1.5em 0;max-width:100%;height:auto}
+.article-detail__content.article-rich-content img:not([width]):not([height]),.article-detail__content.article-rich-content img[width=""],.article-detail__content.article-rich-content img[height=""]{aspect-ratio:16/9;width:100%;object-fit:cover}
+.article-detail__content.article-rich-content iframe,.article-detail__content.article-rich-content video,.article-detail__content.article-rich-content embed,.article-detail__content.article-rich-content object{display:block;width:100%;aspect-ratio:16/9;height:auto;border:0;border-radius:12px;margin:1.5em 0}
+.article-detail__content.article-rich-content blockquote{border-left:4px solid #99CC52;padding-left:16px;color:#666666;font-style:italic;margin:1.5em 0}
+.article-detail__content.article-rich-content ul{padding-left:1.5em;margin-bottom:1.25em;list-style:disc}
+.article-detail__content.article-rich-content ol{padding-left:1.5em;margin-bottom:1.25em;list-style:decimal}
+.article-detail__content.article-rich-content li{margin-bottom:0.5em;font-weight:400;color:inherit}
+.article-detail__content.article-rich-content strong{color:#0a1a10}
+.article-detail__content.article-rich-content blockquote strong{color:inherit}
+.article-detail__content.article-rich-content table{width:100%;margin:1.5em 0;border-collapse:collapse}
+.article-detail__content.article-rich-content th,.article-detail__content.article-rich-content td{border:1px solid #e5e7eb;padding:14px 16px;vertical-align:top}
+.article-detail__content.article-rich-content th{background:#f3f4f6;color:#0a1a10;font-family:'Poppins','Poppins Fallback',sans-serif}
+/* /security/ page primitives — inlined so async styles.css / styles-pages.css activating
+   the 3-col security cards grid, security diagram / protection cards, features-grid 3-col
+   layout, and feature-card glass geometry cannot reflow the page on first paint. This
+   eliminates the ~0.77 desktop CLS Lighthouse flagged on /security/. */
+.security-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:32px}
+@media(max-width:639px){.security-cards{grid-template-columns:1fr}}
+.security-cards__item{display:flex;flex-direction:column;align-items:center;text-align:center;padding:16px;border-radius:16px;background:rgba(243,244,246,0.6);color:#103620;font-family:'Nunito','Nunito Fallback',sans-serif;font-size:14px}
+.security-diagram{background:rgba(243,244,246,0.6);border-radius:16px;padding:32px 48px;width:100%;max-width:400px;margin:0 auto}
+.security-diagram__item{display:flex;align-items:center;gap:16px;font-size:14px;color:#4b5563;font-family:'Nunito','Nunito Fallback',sans-serif;padding:12px 0}
+.security-diagram__item + .security-diagram__item{margin-top:8px}
+.security-diagram__dot{width:12px;height:12px;border-radius:50%;background:#99CC52;flex-shrink:0}
+.security-diagram__footer{display:flex;align-items:center;gap:12px;font-size:14px;color:#103620;font-weight:600;font-family:'Poppins','Poppins Fallback',sans-serif;margin-top:24px;padding-top:24px;border-top:1px solid rgba(0,0,0,0.1)}
+.security-protection-card{background:rgba(243,244,246,0.6);border-radius:16px;padding:32px 48px;max-width:400px;margin:0 auto}
+.security-protection-card__title{font-size:20px;font-weight:700;color:#103620;margin:24px 0 16px}
+.security-protection-card__list{list-style:none;padding:0;margin:0}
+.security-protection-card__list li{display:flex;align-items:flex-start;gap:8px;font-size:14px;color:#666;font-family:'Nunito','Nunito Fallback',sans-serif;padding:6px 0}
+.section__download-link{display:inline-flex;align-items:center;gap:8px;margin-top:32px;color:#99CC52;font-weight:600;font-family:'Nunito','Nunito Fallback',sans-serif}
+/* Features-grid layout used by /security/, /about/, /faqs/ etc. */
+.features-grid__grid{display:grid;grid-template-columns:1fr;gap:16px;max-width:1152px;margin:0 auto}
+@media(min-width:640px){.features-grid__grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.features-grid__grid{grid-template-columns:repeat(4,1fr);gap:20px}}
+.features-grid__grid--3col{grid-template-columns:1fr}
+@media(min-width:768px){.features-grid__grid--3col{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.features-grid__grid--3col{grid-template-columns:repeat(3,1fr)}}
+.feature-card{padding:24px;background:rgba(255,255,255,0.6);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:16px;border:1px solid rgba(255,255,255,0.4);box-shadow:0 4px 12px rgba(0,0,0,0.04)}
+@media(min-width:1024px){.feature-card{padding:24px 32px}}
+.feature-card--centered{text-align:center}
+.feature-card__icon-wrap{width:56px;height:56px;border-radius:12px;background:#CCE3A8;display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.feature-card--centered .feature-card__icon-wrap{margin:0 auto 20px}
+.feature-card__title{font-size:16px;font-weight:700;font-family:'Nunito Sans','Nunito Sans Fallback','Nunito',sans-serif;color:#103620;margin-bottom:8px}
+.feature-card--centered .feature-card__title{color:#99CC52;font-size:20px}
+.feature-card__desc{font-size:14px;color:#666;line-height:1.6}
 </style>
 
   
-  <link rel="preload" href="/assets/css/page/p-d135eafc91.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/css/page/p-d135eafc91.css"></noscript>
+  <link rel="preload" href="/assets/css/page/p-214c288fb6.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/page/p-214c288fb6.css"></noscript>
   
   
   <noscript></noscript>
@@ -389,7 +455,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__left">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=f06d65af17" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=374178a788" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
         </a>
         <nav class="nav">
           
@@ -676,8 +742,8 @@ ul,ol{list-style:none}
 <section class="article-hero">
   <div class="article-hero__image">
     <img
-      src="/assets/images/articles/6eb7753eaf6bf885.webp?v=f06d65af17"
-      srcset="/assets/images/articles/6eb7753eaf6bf885.webp?v=f06d65af17 480w, /assets/images/articles/6eb7753eaf6bf885.webp 1920w"
+      src="/assets/images/articles/6eb7753eaf6bf885.webp?v=374178a788"
+      srcset="/assets/images/articles/6eb7753eaf6bf885.webp?v=374178a788 480w, /assets/images/articles/6eb7753eaf6bf885.webp 1920w"
       sizes="100vw"
       alt="Sustainable sporting venues using stadium events software"
       width="1920" height="600"
@@ -1153,7 +1219,7 @@ ul,ol{list-style:none}
         
         <div class="article-card__image-wrap">
           <div class="article-card__image">
-            <img src="/assets/images/articles/a09559ad6cd2d527.webp?v=f06d65af17" srcset="/assets/images/articles/a09559ad6cd2d527.webp?v=f06d65af17 480w, /assets/images/articles/a09559ad6cd2d527.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="The cost of a manual venue proposal process" width="600" height="338" loading="lazy" decoding="async">
+            <img src="/assets/images/articles/a09559ad6cd2d527.webp?v=374178a788" srcset="/assets/images/articles/a09559ad6cd2d527.webp?v=374178a788 480w, /assets/images/articles/a09559ad6cd2d527.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="The cost of a manual venue proposal process" width="600" height="338" loading="lazy" decoding="async">
           </div>
         </div>
         
@@ -1184,7 +1250,7 @@ ul,ol{list-style:none}
         
         <div class="article-card__image-wrap">
           <div class="article-card__image">
-            <img src="/assets/images/articles/e3888d454160f2ca.webp?v=f06d65af17" srcset="/assets/images/articles/e3888d454160f2ca.webp?v=f06d65af17 480w, /assets/images/articles/e3888d454160f2ca.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="What happens when you use Excel as your venue CRM" width="600" height="338" loading="lazy" decoding="async">
+            <img src="/assets/images/articles/e3888d454160f2ca.webp?v=374178a788" srcset="/assets/images/articles/e3888d454160f2ca.webp?v=374178a788 480w, /assets/images/articles/e3888d454160f2ca.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="What happens when you use Excel as your venue CRM" width="600" height="338" loading="lazy" decoding="async">
           </div>
         </div>
         
@@ -1215,7 +1281,7 @@ ul,ol{list-style:none}
         
         <div class="article-card__image-wrap">
           <div class="article-card__image">
-            <img src="/assets/images/articles/e7f870aa6db1fe9d.webp?v=f06d65af17" srcset="/assets/images/articles/e7f870aa6db1fe9d.webp?v=f06d65af17 480w, /assets/images/articles/e7f870aa6db1fe9d.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="AI for venue sales: what it does (and doesn&#39;t)" width="600" height="338" loading="lazy" decoding="async">
+            <img src="/assets/images/articles/e7f870aa6db1fe9d.webp?v=374178a788" srcset="/assets/images/articles/e7f870aa6db1fe9d.webp?v=374178a788 480w, /assets/images/articles/e7f870aa6db1fe9d.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="AI for venue sales: what it does (and doesn&#39;t)" width="600" height="338" loading="lazy" decoding="async">
           </div>
         </div>
         
@@ -1249,7 +1315,7 @@ ul,ol{list-style:none}
 
 
 <section class="cta">
-  <img src="/assets/images/patterns/cta-pattern.webp?v=f06d65af17" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600">
+  <img src="/assets/images/patterns/cta-pattern.webp?v=374178a788" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600">
   <div class="container">
     <div class="cta__inner">
       <h2 class="cta__title title-gradient-light">Stay in the know</h2>
@@ -1320,7 +1386,7 @@ ul,ol{list-style:none}
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=f06d65af17" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=374178a788" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
         <div class="footer__social">
           <a href="https://www.linkedin.com/company/ivvy/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1486,7 +1552,7 @@ ul,ol{list-style:none}
 
 
 
-<script src="/assets/js/scripts.js?v=f06d65af17" defer></script>
+<script src="/assets/js/scripts.js?v=374178a788" defer></script>
 
 
 

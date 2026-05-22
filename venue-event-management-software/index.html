@@ -1,16 +1,16 @@
-<!-- build:26266482810-1453 -->
+<!-- build:26269110046-1454 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=f06d65af17">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=f06d65af17">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=f06d65af17">
-  <link rel="alternate icon" href="/assets/images/favicon.ico?v=f06d65af17">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=f06d65af17">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=f06d65af17">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=f06d65af17">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=374178a788">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=374178a788">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=374178a788">
+  <link rel="alternate icon" href="/assets/images/favicon.ico?v=374178a788">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=374178a788">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=374178a788">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=374178a788">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Venue Management Software | Event Sales & Booking | iVvy</title>
   <meta name="description" content="Venue management software that helps you sell event spaces faster. Manage bookings, send instant quotes, and grow revenue with iVvy's all-in-one platform.">
@@ -33,7 +33,7 @@
   
   
     
-  <link rel="preload" href="/assets/images/video-posters/explainer.webp?v=f06d65af17" as="image" fetchpriority="high">
+  <link rel="preload" href="/assets/images/video-posters/explainer.webp?v=374178a788" as="image" fetchpriority="high">
     
   
   
@@ -309,11 +309,70 @@ ul,ol{list-style:none}
 .special-carousel__dot--active{background:#99CC52;transform:scale(1.25)}
 .special-category-section--dark .special-carousel__dot{background:rgba(255,255,255,0.3)}
 .special-category-section--dark .special-carousel__dot--active{background:#99CC52}
+/* Article rich content layout primitives — inlined so the async styles-pages.css activating
+   18px / line-height 1.8 body, 28px h2, 22px h3, 1.25em paragraph margins, 2.5em p+p gaps,
+   list padding and embedded media aspect-ratios cannot reflow the article body on first paint.
+   This eliminates the ~0.17 mobile CLS regression Lighthouse flagged on /blog/<slug>/ pages
+   where the body content grew tall after async CSS arrived. */
+.article-detail__content.article-rich-content{font-family:'Nunito','Nunito Fallback',sans-serif;font-size:18px;line-height:1.8;color:#666666}
+.article-detail__content.article-rich-content h2,.article-detail__content.article-rich-content h3,.article-detail__content.article-rich-content h4{font-family:'Poppins','Poppins Fallback',sans-serif;font-weight:800;color:#0a1a10;margin-top:2em;margin-bottom:0.75em;line-height:1.2}
+.article-detail__content.article-rich-content h2{font-size:28px}
+.article-detail__content.article-rich-content h3{font-size:22px}
+.article-detail__content.article-rich-content p{margin-bottom:1.25em;white-space:pre-wrap}
+.article-detail__content.article-rich-content > p:first-of-type{font-weight:700;color:#0a1a10}
+.article-detail__content.article-rich-content p + p{margin-top:2.5em}
+.article-detail__content.article-rich-content p:empty{display:block;min-height:1.5em}
+.article-detail__content.article-rich-content br{display:block;content:"";margin-top:0.5em}
+.article-detail__content.article-rich-content a{color:#99CC52;text-decoration:underline}
+.article-detail__content.article-rich-content img{border-radius:12px;margin:1.5em 0;max-width:100%;height:auto}
+.article-detail__content.article-rich-content img:not([width]):not([height]),.article-detail__content.article-rich-content img[width=""],.article-detail__content.article-rich-content img[height=""]{aspect-ratio:16/9;width:100%;object-fit:cover}
+.article-detail__content.article-rich-content iframe,.article-detail__content.article-rich-content video,.article-detail__content.article-rich-content embed,.article-detail__content.article-rich-content object{display:block;width:100%;aspect-ratio:16/9;height:auto;border:0;border-radius:12px;margin:1.5em 0}
+.article-detail__content.article-rich-content blockquote{border-left:4px solid #99CC52;padding-left:16px;color:#666666;font-style:italic;margin:1.5em 0}
+.article-detail__content.article-rich-content ul{padding-left:1.5em;margin-bottom:1.25em;list-style:disc}
+.article-detail__content.article-rich-content ol{padding-left:1.5em;margin-bottom:1.25em;list-style:decimal}
+.article-detail__content.article-rich-content li{margin-bottom:0.5em;font-weight:400;color:inherit}
+.article-detail__content.article-rich-content strong{color:#0a1a10}
+.article-detail__content.article-rich-content blockquote strong{color:inherit}
+.article-detail__content.article-rich-content table{width:100%;margin:1.5em 0;border-collapse:collapse}
+.article-detail__content.article-rich-content th,.article-detail__content.article-rich-content td{border:1px solid #e5e7eb;padding:14px 16px;vertical-align:top}
+.article-detail__content.article-rich-content th{background:#f3f4f6;color:#0a1a10;font-family:'Poppins','Poppins Fallback',sans-serif}
+/* /security/ page primitives — inlined so async styles.css / styles-pages.css activating
+   the 3-col security cards grid, security diagram / protection cards, features-grid 3-col
+   layout, and feature-card glass geometry cannot reflow the page on first paint. This
+   eliminates the ~0.77 desktop CLS Lighthouse flagged on /security/. */
+.security-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:32px}
+@media(max-width:639px){.security-cards{grid-template-columns:1fr}}
+.security-cards__item{display:flex;flex-direction:column;align-items:center;text-align:center;padding:16px;border-radius:16px;background:rgba(243,244,246,0.6);color:#103620;font-family:'Nunito','Nunito Fallback',sans-serif;font-size:14px}
+.security-diagram{background:rgba(243,244,246,0.6);border-radius:16px;padding:32px 48px;width:100%;max-width:400px;margin:0 auto}
+.security-diagram__item{display:flex;align-items:center;gap:16px;font-size:14px;color:#4b5563;font-family:'Nunito','Nunito Fallback',sans-serif;padding:12px 0}
+.security-diagram__item + .security-diagram__item{margin-top:8px}
+.security-diagram__dot{width:12px;height:12px;border-radius:50%;background:#99CC52;flex-shrink:0}
+.security-diagram__footer{display:flex;align-items:center;gap:12px;font-size:14px;color:#103620;font-weight:600;font-family:'Poppins','Poppins Fallback',sans-serif;margin-top:24px;padding-top:24px;border-top:1px solid rgba(0,0,0,0.1)}
+.security-protection-card{background:rgba(243,244,246,0.6);border-radius:16px;padding:32px 48px;max-width:400px;margin:0 auto}
+.security-protection-card__title{font-size:20px;font-weight:700;color:#103620;margin:24px 0 16px}
+.security-protection-card__list{list-style:none;padding:0;margin:0}
+.security-protection-card__list li{display:flex;align-items:flex-start;gap:8px;font-size:14px;color:#666;font-family:'Nunito','Nunito Fallback',sans-serif;padding:6px 0}
+.section__download-link{display:inline-flex;align-items:center;gap:8px;margin-top:32px;color:#99CC52;font-weight:600;font-family:'Nunito','Nunito Fallback',sans-serif}
+/* Features-grid layout used by /security/, /about/, /faqs/ etc. */
+.features-grid__grid{display:grid;grid-template-columns:1fr;gap:16px;max-width:1152px;margin:0 auto}
+@media(min-width:640px){.features-grid__grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.features-grid__grid{grid-template-columns:repeat(4,1fr);gap:20px}}
+.features-grid__grid--3col{grid-template-columns:1fr}
+@media(min-width:768px){.features-grid__grid--3col{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.features-grid__grid--3col{grid-template-columns:repeat(3,1fr)}}
+.feature-card{padding:24px;background:rgba(255,255,255,0.6);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:16px;border:1px solid rgba(255,255,255,0.4);box-shadow:0 4px 12px rgba(0,0,0,0.04)}
+@media(min-width:1024px){.feature-card{padding:24px 32px}}
+.feature-card--centered{text-align:center}
+.feature-card__icon-wrap{width:56px;height:56px;border-radius:12px;background:#CCE3A8;display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.feature-card--centered .feature-card__icon-wrap{margin:0 auto 20px}
+.feature-card__title{font-size:16px;font-weight:700;font-family:'Nunito Sans','Nunito Sans Fallback','Nunito',sans-serif;color:#103620;margin-bottom:8px}
+.feature-card--centered .feature-card__title{color:#99CC52;font-size:20px}
+.feature-card__desc{font-size:14px;color:#666;line-height:1.6}
 </style>
 
   
-  <link rel="preload" href="/assets/css/page/p-ddbc61daf5.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/css/page/p-ddbc61daf5.css"></noscript>
+  <link rel="preload" href="/assets/css/page/p-0cd23dc983.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/page/p-0cd23dc983.css"></noscript>
   
 
   
@@ -390,7 +449,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__left">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=f06d65af17" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=374178a788" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
         </a>
         <nav class="nav">
           
@@ -677,7 +736,7 @@ ul,ol{list-style:none}
   <div class="page-hero__bg">
     <div class="page-hero__bg-left"></div>
     <div class="page-hero__bg-right" style="background:radial-gradient(ellipse at 50% 50%,hsl(140,35%,22%) 0%,hsl(147,45%,16%) 40%,hsl(150,55%,8%) 100%);">
-      <img src="/assets/images/patterns/cta-pattern.webp?v=f06d65af17" alt="" aria-hidden="true" width="1200" height="400" loading="lazy" fetchpriority="low" decoding="async" style="opacity:0.2;mix-blend-mode:soft-light;width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
+      <img src="/assets/images/patterns/cta-pattern.webp?v=374178a788" alt="" aria-hidden="true" width="1200" height="400" loading="lazy" fetchpriority="low" decoding="async" style="opacity:0.2;mix-blend-mode:soft-light;width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
     </div>
   </div>
   <div class="container">
@@ -706,7 +765,7 @@ ul,ol{list-style:none}
     data-vimeo-hash="04e7aec1c5"
     aria-label="Play iVvy Explainer"
     style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;background:#103620;cursor:pointer;display:flex;align-items:center;justify-content:center;">
-    <img src="/assets/images/video-posters/explainer.webp?v=f06d65af17" alt="iVvy Explainer" width="640" height="360" loading="eager" decoding="sync" fetchpriority="high" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
+    <img src="/assets/images/video-posters/explainer.webp?v=374178a788" alt="iVvy Explainer" width="640" height="360" loading="eager" decoding="sync" fetchpriority="high" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
     <svg width="68" height="48" viewBox="0 0 68 48" aria-hidden="true" style="position:relative;z-index:1;opacity:0.85;">
       <path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55C3.97 2.33 2.27 4.81 1.48 7.74.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#99CC52"/>
       <path d="M45 24 27 14v20" fill="#fff"/>
@@ -799,7 +858,7 @@ ul,ol{list-style:none}
         
       </div>
       <div class="benefit__image-wrapper">
-        <img src="/assets/images/benefits/speed.webp?v=f06d65af17" alt="Speed dashboard preview" class="benefit__image" loading="lazy" width="600" height="500" decoding="async">
+        <img src="/assets/images/benefits/speed.webp?v=374178a788" alt="Speed dashboard preview" class="benefit__image" loading="lazy" width="600" height="500" decoding="async">
       </div>
     </div>
   </div>
@@ -837,7 +896,7 @@ ul,ol{list-style:none}
         
       </div>
       <div class="benefit__image-wrapper">
-        <img src="/assets/images/benefits/visibility.webp?v=f06d65af17" alt="Visibility dashboard preview" class="benefit__image" loading="lazy" width="600" height="500" decoding="async">
+        <img src="/assets/images/benefits/visibility.webp?v=374178a788" alt="Visibility dashboard preview" class="benefit__image" loading="lazy" width="600" height="500" decoding="async">
       </div>
     </div>
   </div>
@@ -885,7 +944,7 @@ ul,ol{list-style:none}
         
       </div>
       <div class="benefit__image-wrapper">
-        <img src="/assets/images/benefits/productivity.webp?v=f06d65af17" alt="Productivity dashboard preview" class="benefit__image" loading="lazy" width="600" height="500" decoding="async">
+        <img src="/assets/images/benefits/productivity.webp?v=374178a788" alt="Productivity dashboard preview" class="benefit__image" loading="lazy" width="600" height="500" decoding="async">
       </div>
     </div>
   </div>
@@ -1093,7 +1152,7 @@ ul,ol{list-style:none}
         
         <div class="testimonial__slide testimonial__slide--image testimonial__slide--active" data-index="0">
           <div class="testimonial__slide-image">
-            <img src="/assets/images/case-studies/avc-hero-thumb.webp?v=f06d65af17" alt="Australian Venue Co." loading="lazy" width="600" height="450" decoding="async">
+            <img src="/assets/images/case-studies/avc-hero-thumb.webp?v=374178a788" alt="Australian Venue Co." loading="lazy" width="600" height="450" decoding="async">
           </div>
           <div class="testimonial__slide-content">
             <p class="testimonial__quote"><span class="quote-mark">&ldquo;</span>We&#39;ve worked with systems before, but iVvy is the best in-market for price capability and flexibility.<span class="quote-mark">&rdquo;</span></p>
@@ -1106,7 +1165,7 @@ ul,ol{list-style:none}
         
         <div class="testimonial__slide testimonial__slide--image" data-index="1">
           <div class="testimonial__slide-image">
-            <img src="/assets/images/case-studies/goodwood-hero-thumb.webp?v=f06d65af17" alt="Goodwood Estate" loading="lazy" width="600" height="450" decoding="async">
+            <img src="/assets/images/case-studies/goodwood-hero-thumb.webp?v=374178a788" alt="Goodwood Estate" loading="lazy" width="600" height="450" decoding="async">
           </div>
           <div class="testimonial__slide-content">
             <p class="testimonial__quote"><span class="quote-mark">&ldquo;</span>What I love most about iVvy is its versatility. I love the fact that we can plan events on our motor circuit on it, as well as also being able to host weddings using its functionality. I love the diary management, and I also love the ability to see other events across all of our venues.<span class="quote-mark">&rdquo;</span></p>
@@ -1119,7 +1178,7 @@ ul,ol{list-style:none}
         
         <div class="testimonial__slide testimonial__slide--image" data-index="2">
           <div class="testimonial__slide-image">
-            <img src="/assets/images/case-studies/best-western-hero-thumb.webp?v=f06d65af17" alt="Best Western Boulder Falls Inn" loading="lazy" width="600" height="450" decoding="async">
+            <img src="/assets/images/case-studies/best-western-hero-thumb.webp?v=374178a788" alt="Best Western Boulder Falls Inn" loading="lazy" width="600" height="450" decoding="async">
           </div>
           <div class="testimonial__slide-content">
             <p class="testimonial__quote"><span class="quote-mark">&ldquo;</span>With iVvy&#39;s reporting capabilities, we gained visibility into the performance of individual event spaces. This allowed us to identify two underutilized rooms and adjust our marketing strategy to focus on them. As a result, we&#39;ve seen a 43% increase in revenue from those spaces over the past eight months.<span class="quote-mark">&rdquo;</span></p>
@@ -1131,7 +1190,7 @@ ul,ol{list-style:none}
         
         <div class="testimonial__slide testimonial__slide--image" data-index="3">
           <div class="testimonial__slide-image">
-            <img src="/assets/images/case-studies/central-hall-hero-thumb.webp?v=f06d65af17" alt="Central Hall Venues" loading="lazy" width="600" height="450" decoding="async">
+            <img src="/assets/images/case-studies/central-hall-hero-thumb.webp?v=374178a788" alt="Central Hall Venues" loading="lazy" width="600" height="450" decoding="async">
           </div>
           <div class="testimonial__slide-content">
             <p class="testimonial__quote"><span class="quote-mark">&ldquo;</span>With iVvy software we have seen response times to enquiries increase 3x<span class="quote-mark">&rdquo;</span></p>
@@ -1144,7 +1203,7 @@ ul,ol{list-style:none}
         
         <div class="testimonial__slide testimonial__slide--image" data-index="4">
           <div class="testimonial__slide-image">
-            <img src="/assets/images/case-studies/mantra-hero-thumb.webp?v=f06d65af17" alt="Mantra Hotel Group (Accor)" loading="lazy" width="600" height="450" decoding="async">
+            <img src="/assets/images/case-studies/mantra-hero-thumb.webp?v=374178a788" alt="Mantra Hotel Group (Accor)" loading="lazy" width="600" height="450" decoding="async">
           </div>
           <div class="testimonial__slide-content">
             <p class="testimonial__quote"><span class="quote-mark">&ldquo;</span>iVvy&#39;s platform has been a game changer for the Mantra Group. We are now able to deliver an enhanced customer experience, optimised revenue management and greater transparency across divisions.<span class="quote-mark">&rdquo;</span></p>
@@ -1193,7 +1252,7 @@ ul,ol{list-style:none}
     data-vimeo-hash="789c9142db"
     aria-label="Play Goodwood Customer Success Story"
     style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;background:#103620;cursor:pointer;display:flex;align-items:center;justify-content:center;">
-    <img src="/assets/images/video-posters/goodwood.webp?v=f06d65af17" alt="Goodwood Customer Success Story" width="640" height="360" loading="eager" decoding="sync" fetchpriority="high" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
+    <img src="/assets/images/video-posters/goodwood.webp?v=374178a788" alt="Goodwood Customer Success Story" width="640" height="360" loading="eager" decoding="sync" fetchpriority="high" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
     <svg width="68" height="48" viewBox="0 0 68 48" aria-hidden="true" style="position:relative;z-index:1;opacity:0.85;">
       <path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55C3.97 2.33 2.27 4.81 1.48 7.74.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#99CC52"/>
       <path d="M45 24 27 14v20" fill="#fff"/>
@@ -1218,7 +1277,7 @@ ul,ol{list-style:none}
     data-vimeo-hash="47a413ec06"
     aria-label="Play TFE Hotel Chain Customer Success Story"
     style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;background:#103620;cursor:pointer;display:flex;align-items:center;justify-content:center;">
-    <img src="/assets/images/video-posters/tfe.webp?v=f06d65af17" alt="TFE Hotel Chain Customer Success Story" width="640" height="360" loading="eager" decoding="sync" fetchpriority="high" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
+    <img src="/assets/images/video-posters/tfe.webp?v=374178a788" alt="TFE Hotel Chain Customer Success Story" width="640" height="360" loading="eager" decoding="sync" fetchpriority="high" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
     <svg width="68" height="48" viewBox="0 0 68 48" aria-hidden="true" style="position:relative;z-index:1;opacity:0.85;">
       <path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55C3.97 2.33 2.27 4.81 1.48 7.74.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#99CC52"/>
       <path d="M45 24 27 14v20" fill="#fff"/>
@@ -1243,7 +1302,7 @@ ul,ol{list-style:none}
     data-vimeo-hash="cc169bdcb5"
     aria-label="Play Oakwood Premier Customer Success Story"
     style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;background:#103620;cursor:pointer;display:flex;align-items:center;justify-content:center;">
-    <img src="/assets/images/video-posters/oakwood.webp?v=f06d65af17" alt="Oakwood Premier Customer Success Story" width="640" height="360" loading="eager" decoding="sync" fetchpriority="high" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
+    <img src="/assets/images/video-posters/oakwood.webp?v=374178a788" alt="Oakwood Premier Customer Success Story" width="640" height="360" loading="eager" decoding="sync" fetchpriority="high" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
     <svg width="68" height="48" viewBox="0 0 68 48" aria-hidden="true" style="position:relative;z-index:1;opacity:0.85;">
       <path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55C3.97 2.33 2.27 4.81 1.48 7.74.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#99CC52"/>
       <path d="M45 24 27 14v20" fill="#fff"/>
@@ -1268,7 +1327,7 @@ ul,ol{list-style:none}
     data-vimeo-hash="967b916b94"
     aria-label="Play The Strato Customer Success Story"
     style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;background:#103620;cursor:pointer;display:flex;align-items:center;justify-content:center;">
-    <img src="/assets/images/video-posters/strato.webp?v=f06d65af17" alt="The Strato Customer Success Story" width="640" height="360" loading="eager" decoding="sync" fetchpriority="high" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
+    <img src="/assets/images/video-posters/strato.webp?v=374178a788" alt="The Strato Customer Success Story" width="640" height="360" loading="eager" decoding="sync" fetchpriority="high" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
     <svg width="68" height="48" viewBox="0 0 68 48" aria-hidden="true" style="position:relative;z-index:1;opacity:0.85;">
       <path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55C3.97 2.33 2.27 4.81 1.48 7.74.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#99CC52"/>
       <path d="M45 24 27 14v20" fill="#fff"/>
@@ -1293,7 +1352,7 @@ ul,ol{list-style:none}
     data-vimeo-hash="252cff617b"
     aria-label="Play The George on Collins Customer Success Story"
     style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;background:#103620;cursor:pointer;display:flex;align-items:center;justify-content:center;">
-    <img src="/assets/images/video-posters/george.webp?v=f06d65af17" alt="The George on Collins Customer Success Story" width="640" height="360" loading="eager" decoding="sync" fetchpriority="high" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
+    <img src="/assets/images/video-posters/george.webp?v=374178a788" alt="The George on Collins Customer Success Story" width="640" height="360" loading="eager" decoding="sync" fetchpriority="high" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
     <svg width="68" height="48" viewBox="0 0 68 48" aria-hidden="true" style="position:relative;z-index:1;opacity:0.85;">
       <path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55C3.97 2.33 2.27 4.81 1.48 7.74.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#99CC52"/>
       <path d="M45 24 27 14v20" fill="#fff"/>
@@ -1318,7 +1377,7 @@ ul,ol{list-style:none}
     data-vimeo-hash="af1ad27b43"
     aria-label="Play Comwell Hotels Customer Success Story"
     style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;background:#103620;cursor:pointer;display:flex;align-items:center;justify-content:center;">
-    <img src="/assets/images/video-posters/comwell.webp?v=f06d65af17" alt="Comwell Hotels Customer Success Story" width="640" height="360" loading="eager" decoding="sync" fetchpriority="high" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
+    <img src="/assets/images/video-posters/comwell.webp?v=374178a788" alt="Comwell Hotels Customer Success Story" width="640" height="360" loading="eager" decoding="sync" fetchpriority="high" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
     <svg width="68" height="48" viewBox="0 0 68 48" aria-hidden="true" style="position:relative;z-index:1;opacity:0.85;">
       <path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55C3.97 2.33 2.27 4.81 1.48 7.74.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#99CC52"/>
       <path d="M45 24 27 14v20" fill="#fff"/>
@@ -1339,7 +1398,7 @@ ul,ol{list-style:none}
 
 <section class="cta">
   
-  <img src="/assets/images/patterns/cta-pattern.webp?v=f06d65af17" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35;mix-blend-mode:soft-light;pointer-events:none;">
+  <img src="/assets/images/patterns/cta-pattern.webp?v=374178a788" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35;mix-blend-mode:soft-light;pointer-events:none;">
   <div class="container">
     <div class="cta__inner">
       <h2 class="cta__title">Start seeing <span class="scroll-color-text scroll-color-text--from-white">your results</span></h2>
@@ -1413,7 +1472,7 @@ ul,ol{list-style:none}
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=f06d65af17" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=374178a788" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
         <div class="footer__social">
           <a href="https://www.linkedin.com/company/ivvy/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1579,7 +1638,7 @@ ul,ol{list-style:none}
 
 
 
-<script src="/assets/js/scripts.js?v=f06d65af17" defer></script>
+<script src="/assets/js/scripts.js?v=374178a788" defer></script>
 
 
 

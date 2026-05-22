@@ -1,16 +1,16 @@
-<!-- build:26266482810-1453 -->
+<!-- build:26269110046-1454 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=f06d65af17">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=f06d65af17">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=f06d65af17">
-  <link rel="alternate icon" href="/assets/images/favicon.ico?v=f06d65af17">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=f06d65af17">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=f06d65af17">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=f06d65af17">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=374178a788">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=374178a788">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=374178a788">
+  <link rel="alternate icon" href="/assets/images/favicon.ico?v=374178a788">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=374178a788">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=374178a788">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=374178a788">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Integrations | Connect Event Software with 55+ Apps | iVvy</title>
   <meta name="description" content="Maximize your tools with iVvy integrations. Connect event management software with Property Management System, Point of Sale, payment gateways, CRM, and accounting systems.">
@@ -305,11 +305,70 @@ ul,ol{list-style:none}
 .special-carousel__dot--active{background:#99CC52;transform:scale(1.25)}
 .special-category-section--dark .special-carousel__dot{background:rgba(255,255,255,0.3)}
 .special-category-section--dark .special-carousel__dot--active{background:#99CC52}
+/* Article rich content layout primitives — inlined so the async styles-pages.css activating
+   18px / line-height 1.8 body, 28px h2, 22px h3, 1.25em paragraph margins, 2.5em p+p gaps,
+   list padding and embedded media aspect-ratios cannot reflow the article body on first paint.
+   This eliminates the ~0.17 mobile CLS regression Lighthouse flagged on /blog/<slug>/ pages
+   where the body content grew tall after async CSS arrived. */
+.article-detail__content.article-rich-content{font-family:'Nunito','Nunito Fallback',sans-serif;font-size:18px;line-height:1.8;color:#666666}
+.article-detail__content.article-rich-content h2,.article-detail__content.article-rich-content h3,.article-detail__content.article-rich-content h4{font-family:'Poppins','Poppins Fallback',sans-serif;font-weight:800;color:#0a1a10;margin-top:2em;margin-bottom:0.75em;line-height:1.2}
+.article-detail__content.article-rich-content h2{font-size:28px}
+.article-detail__content.article-rich-content h3{font-size:22px}
+.article-detail__content.article-rich-content p{margin-bottom:1.25em;white-space:pre-wrap}
+.article-detail__content.article-rich-content > p:first-of-type{font-weight:700;color:#0a1a10}
+.article-detail__content.article-rich-content p + p{margin-top:2.5em}
+.article-detail__content.article-rich-content p:empty{display:block;min-height:1.5em}
+.article-detail__content.article-rich-content br{display:block;content:"";margin-top:0.5em}
+.article-detail__content.article-rich-content a{color:#99CC52;text-decoration:underline}
+.article-detail__content.article-rich-content img{border-radius:12px;margin:1.5em 0;max-width:100%;height:auto}
+.article-detail__content.article-rich-content img:not([width]):not([height]),.article-detail__content.article-rich-content img[width=""],.article-detail__content.article-rich-content img[height=""]{aspect-ratio:16/9;width:100%;object-fit:cover}
+.article-detail__content.article-rich-content iframe,.article-detail__content.article-rich-content video,.article-detail__content.article-rich-content embed,.article-detail__content.article-rich-content object{display:block;width:100%;aspect-ratio:16/9;height:auto;border:0;border-radius:12px;margin:1.5em 0}
+.article-detail__content.article-rich-content blockquote{border-left:4px solid #99CC52;padding-left:16px;color:#666666;font-style:italic;margin:1.5em 0}
+.article-detail__content.article-rich-content ul{padding-left:1.5em;margin-bottom:1.25em;list-style:disc}
+.article-detail__content.article-rich-content ol{padding-left:1.5em;margin-bottom:1.25em;list-style:decimal}
+.article-detail__content.article-rich-content li{margin-bottom:0.5em;font-weight:400;color:inherit}
+.article-detail__content.article-rich-content strong{color:#0a1a10}
+.article-detail__content.article-rich-content blockquote strong{color:inherit}
+.article-detail__content.article-rich-content table{width:100%;margin:1.5em 0;border-collapse:collapse}
+.article-detail__content.article-rich-content th,.article-detail__content.article-rich-content td{border:1px solid #e5e7eb;padding:14px 16px;vertical-align:top}
+.article-detail__content.article-rich-content th{background:#f3f4f6;color:#0a1a10;font-family:'Poppins','Poppins Fallback',sans-serif}
+/* /security/ page primitives — inlined so async styles.css / styles-pages.css activating
+   the 3-col security cards grid, security diagram / protection cards, features-grid 3-col
+   layout, and feature-card glass geometry cannot reflow the page on first paint. This
+   eliminates the ~0.77 desktop CLS Lighthouse flagged on /security/. */
+.security-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:32px}
+@media(max-width:639px){.security-cards{grid-template-columns:1fr}}
+.security-cards__item{display:flex;flex-direction:column;align-items:center;text-align:center;padding:16px;border-radius:16px;background:rgba(243,244,246,0.6);color:#103620;font-family:'Nunito','Nunito Fallback',sans-serif;font-size:14px}
+.security-diagram{background:rgba(243,244,246,0.6);border-radius:16px;padding:32px 48px;width:100%;max-width:400px;margin:0 auto}
+.security-diagram__item{display:flex;align-items:center;gap:16px;font-size:14px;color:#4b5563;font-family:'Nunito','Nunito Fallback',sans-serif;padding:12px 0}
+.security-diagram__item + .security-diagram__item{margin-top:8px}
+.security-diagram__dot{width:12px;height:12px;border-radius:50%;background:#99CC52;flex-shrink:0}
+.security-diagram__footer{display:flex;align-items:center;gap:12px;font-size:14px;color:#103620;font-weight:600;font-family:'Poppins','Poppins Fallback',sans-serif;margin-top:24px;padding-top:24px;border-top:1px solid rgba(0,0,0,0.1)}
+.security-protection-card{background:rgba(243,244,246,0.6);border-radius:16px;padding:32px 48px;max-width:400px;margin:0 auto}
+.security-protection-card__title{font-size:20px;font-weight:700;color:#103620;margin:24px 0 16px}
+.security-protection-card__list{list-style:none;padding:0;margin:0}
+.security-protection-card__list li{display:flex;align-items:flex-start;gap:8px;font-size:14px;color:#666;font-family:'Nunito','Nunito Fallback',sans-serif;padding:6px 0}
+.section__download-link{display:inline-flex;align-items:center;gap:8px;margin-top:32px;color:#99CC52;font-weight:600;font-family:'Nunito','Nunito Fallback',sans-serif}
+/* Features-grid layout used by /security/, /about/, /faqs/ etc. */
+.features-grid__grid{display:grid;grid-template-columns:1fr;gap:16px;max-width:1152px;margin:0 auto}
+@media(min-width:640px){.features-grid__grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.features-grid__grid{grid-template-columns:repeat(4,1fr);gap:20px}}
+.features-grid__grid--3col{grid-template-columns:1fr}
+@media(min-width:768px){.features-grid__grid--3col{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.features-grid__grid--3col{grid-template-columns:repeat(3,1fr)}}
+.feature-card{padding:24px;background:rgba(255,255,255,0.6);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:16px;border:1px solid rgba(255,255,255,0.4);box-shadow:0 4px 12px rgba(0,0,0,0.04)}
+@media(min-width:1024px){.feature-card{padding:24px 32px}}
+.feature-card--centered{text-align:center}
+.feature-card__icon-wrap{width:56px;height:56px;border-radius:12px;background:#CCE3A8;display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.feature-card--centered .feature-card__icon-wrap{margin:0 auto 20px}
+.feature-card__title{font-size:16px;font-weight:700;font-family:'Nunito Sans','Nunito Sans Fallback','Nunito',sans-serif;color:#103620;margin-bottom:8px}
+.feature-card--centered .feature-card__title{color:#99CC52;font-size:20px}
+.feature-card__desc{font-size:14px;color:#666;line-height:1.6}
 </style>
 
   
-  <link rel="preload" href="/assets/css/page/p-55f4ab59bb.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/css/page/p-55f4ab59bb.css"></noscript>
+  <link rel="preload" href="/assets/css/page/p-9a72825cda.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/page/p-9a72825cda.css"></noscript>
   
   
   <noscript></noscript>
@@ -389,7 +448,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__left">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=f06d65af17" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=374178a788" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
         </a>
         <nav class="nav">
           
@@ -918,7 +977,7 @@ ul,ol{list-style:none}
           
       <a href="https://www.adyen.com/" class="integration-card" data-categories='["Payment Gateway"]' data-software-type='[&quot;Venue &amp; Event Management&quot;]' data-countries='["Australia","New Zealand","United States of America"]' target="_blank" rel="noopener noreferrer">
         
-        <img src="/assets/images/integrations/adyen.webp?v=f06d65af17" alt="Adyen" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/adyen.webp?v=374178a788" alt="Adyen" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">Adyen</span>
       </a>
           
@@ -929,7 +988,7 @@ ul,ol{list-style:none}
           
       <a href="https://www.afterpay.com/" class="integration-card" data-categories='["Payment Gateway"]' data-software-type='[&quot;Venue &amp; Event Management&quot;]' data-countries='["Australia","New Zealand","United States of America"]' target="_blank" rel="noopener noreferrer">
         
-        <img src="/assets/images/integrations/afterpay.webp?v=f06d65af17" alt="Afterpay" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/afterpay.webp?v=374178a788" alt="Afterpay" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">Afterpay</span>
       </a>
           
@@ -938,7 +997,7 @@ ul,ol{list-style:none}
         
         
       <a href="/integrations/visualone/" class="integration-card" data-categories='["Property Management System"]' data-software-type='["Venue & Event Management"]' data-countries='["United States of America"]'>
-        <img src="/assets/images/integrations/agilysys.webp?v=f06d65af17" alt="Agilysys Visual One" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/agilysys.webp?v=374178a788" alt="Agilysys Visual One" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">Agilysys Visual One</span>
       </a>
         
@@ -948,7 +1007,7 @@ ul,ol{list-style:none}
           
       <a href="https://www.authorize.net/" class="integration-card" data-categories='["Payment Gateway"]' data-software-type='[&quot;Venue &amp; Event Management&quot;]' data-countries='["United States of America"]' target="_blank" rel="noopener noreferrer">
         
-        <img src="/assets/images/integrations/authorize-net.webp?v=f06d65af17" alt="authorize.net" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/authorize-net.webp?v=374178a788" alt="authorize.net" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">authorize.net</span>
       </a>
           
@@ -957,7 +1016,7 @@ ul,ol{list-style:none}
         
         
       <a href="/integrations/bepoz/" class="integration-card" data-categories='["Point of Sale"]' data-software-type='["Venue & Event Management"]' data-countries='["Australia"]'>
-        <img src="/assets/images/integrations/bepoz.webp?v=f06d65af17" alt="Bepoz by Oolio" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/bepoz.webp?v=374178a788" alt="Bepoz by Oolio" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">Bepoz by Oolio</span>
       </a>
         
@@ -965,7 +1024,7 @@ ul,ol{list-style:none}
         
         
       <a href="/pdfs/factsheet-events-cvent.pdf" class="integration-card" data-categories='["CRM"]' data-software-type='["Ticketed Events"]' data-countries='["Australia","Canada","Europe","Ireland","New Zealand","United Kingdom","United States of America"]' target="_blank" rel="noopener noreferrer">
-        <img src="/assets/images/integrations/cvent.webp?v=f06d65af17" alt="Cvent" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/cvent.webp?v=374178a788" alt="Cvent" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">Cvent</span>
       </a>
         
@@ -973,7 +1032,7 @@ ul,ol{list-style:none}
         
         
       <a href="/integrations/eventflow/" class="integration-card" data-categories='["Customer Portal"]' data-software-type='["Venue & Event Management"]' data-countries='["Australia","New Zealand","United States of America","United Kingdom"]'>
-        <img src="/assets/images/integrations/eventflow.webp?v=f06d65af17" alt="EventFlow" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/eventflow.webp?v=374178a788" alt="EventFlow" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">EventFlow</span>
       </a>
         
@@ -983,7 +1042,7 @@ ul,ol{list-style:none}
           
       <a href="https://www.eway.com.au/" class="integration-card" data-categories='["Payment Gateway"]' data-software-type='[&quot;Venue &amp; Event Management&quot;]' data-countries='["Australia"]' target="_blank" rel="noopener noreferrer">
         
-        <img src="/assets/images/integrations/eway.webp?v=f06d65af17" alt="Eway" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/eway.webp?v=374178a788" alt="Eway" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">Eway</span>
       </a>
           
@@ -992,7 +1051,7 @@ ul,ol{list-style:none}
         
         
       <a href="/integrations/fourwindsinteractive/" class="integration-card" data-categories='["Signage"]' data-software-type='["Venue & Event Management"]' data-countries='["Australia"]'>
-        <img src="/assets/images/integrations/fourwinds.webp?v=f06d65af17" alt="FourWinds Interactive" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/fourwinds.webp?v=374178a788" alt="FourWinds Interactive" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">FourWinds Interactive</span>
       </a>
         
@@ -1002,7 +1061,7 @@ ul,ol{list-style:none}
           
       <a href="https://corporate.freedompay.com/" class="integration-card" data-categories='["Payment Gateway"]' data-software-type='[&quot;Venue &amp; Event Management&quot;]' data-countries='["United States of America"]' target="_blank" rel="noopener noreferrer">
         
-        <img src="/assets/images/integrations/freedompay.webp?v=f06d65af17" alt="Freedom Pay" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/freedompay.webp?v=374178a788" alt="Freedom Pay" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">Freedom Pay</span>
       </a>
           
@@ -1013,7 +1072,7 @@ ul,ol{list-style:none}
           
       <a href="https://www.globalpaymentsinc.com/" class="integration-card" data-categories='["Payment Gateway"]' data-software-type='[&quot;Venue &amp; Event Management&quot;]' data-countries='["Australia","New Zealand","Canada"]' target="_blank" rel="noopener noreferrer">
         
-        <img src="/assets/images/integrations/global-payments.webp?v=f06d65af17" alt="Global Payments" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/global-payments.webp?v=374178a788" alt="Global Payments" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">Global Payments</span>
       </a>
           
@@ -1022,7 +1081,7 @@ ul,ol{list-style:none}
         
         
       <a href="/integrations/googleanalytics/" class="integration-card" data-categories='["Essential Apps"]' data-software-type='["Venue & Event Management"]' data-countries='["Australia","Canada","Europe","Ireland","New Zealand","United Kingdom","United States of America"]'>
-        <img src="/assets/images/integrations/google-analytics.webp?v=f06d65af17" alt="Google Analytics" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/google-analytics.webp?v=374178a788" alt="Google Analytics" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">Google Analytics</span>
       </a>
         
@@ -1030,7 +1089,7 @@ ul,ol{list-style:none}
         
         
       <a href="/pdfs/factsheet-events-google.pdf" class="integration-card" data-categories='["Essential Apps"]' data-software-type='["Ticketed Events"]' data-countries='["Australia","Canada","Europe","Ireland","New Zealand","United Kingdom","United States of America"]' target="_blank" rel="noopener noreferrer">
-        <img src="/assets/images/integrations/events-google-analytics.webp?v=f06d65af17" alt="Google Analytics (Event Ticketing)" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/events-google-analytics.webp?v=374178a788" alt="Google Analytics (Event Ticketing)" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">Google Analytics (Event Ticketing)</span>
       </a>
         
@@ -1038,7 +1097,7 @@ ul,ol{list-style:none}
         
         
       <a href="/integrations/googlecalendar/" class="integration-card" data-categories='["Essential Apps"]' data-software-type='["Venue & Event Management"]' data-countries='["Australia","Canada","Europe","Ireland","New Zealand","United Kingdom","United States of America"]'>
-        <img src="/assets/images/integrations/google-calendar.webp?v=f06d65af17" alt="Google Calendar" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/google-calendar.webp?v=374178a788" alt="Google Calendar" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">Google Calendar</span>
       </a>
         
@@ -1046,7 +1105,7 @@ ul,ol{list-style:none}
         
         
       <a href="/integrations/googletagmanager/" class="integration-card" data-categories='["Essential Apps"]' data-software-type='["Venue & Event Management"]' data-countries='["Australia","Canada","Europe","Ireland","New Zealand","United Kingdom","United States of America"]'>
-        <img src="/assets/images/integrations/google-tag-manager.webp?v=f06d65af17" alt="Google Tag Manager" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/google-tag-manager.webp?v=374178a788" alt="Google Tag Manager" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">Google Tag Manager</span>
       </a>
         
@@ -1054,7 +1113,7 @@ ul,ol{list-style:none}
         
         
       <a href="/pdfs/factsheet-events-google.pdf" class="integration-card" data-categories='["Essential Apps"]' data-software-type='["Ticketed Events"]' data-countries='["Australia","Canada","Europe","Ireland","New Zealand","United Kingdom","United States of America"]' target="_blank" rel="noopener noreferrer">
-        <img src="/assets/images/integrations/events-google-tag-manager.webp?v=f06d65af17" alt="Google Tag Manager (Event Ticketing)" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/events-google-tag-manager.webp?v=374178a788" alt="Google Tag Manager (Event Ticketing)" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">Google Tag Manager (Event Ticketing)</span>
       </a>
         
@@ -1062,7 +1121,7 @@ ul,ol{list-style:none}
         
         
       <a href="/integrations/handl/" class="integration-card" data-categories='["Point of Sale"]' data-software-type='["Venue & Event Management"]' data-countries='["Australia"]'>
-        <img src="/assets/images/integrations/handl.webp?v=f06d65af17" alt="H&amp;L" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/handl.webp?v=374178a788" alt="H&amp;L" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">H&amp;L</span>
       </a>
         
@@ -1072,7 +1131,7 @@ ul,ol{list-style:none}
           
       <a href="http://hubspot.com/" class="integration-card" data-categories='["CRM"]' data-software-type='[&quot;Venue &amp; Event Management&quot;]' data-countries='[]' target="_blank" rel="noopener noreferrer">
         <span class="integration-card__badge">Coming Soon</span>
-        <img src="/assets/images/integrations/hubspot.webp?v=f06d65af17" alt="HubSpot" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/hubspot.webp?v=374178a788" alt="HubSpot" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">HubSpot</span>
       </a>
           
@@ -1081,7 +1140,7 @@ ul,ol{list-style:none}
         
         
       <a href="/integrations/infor/" class="integration-card" data-categories='["Property Management System"]' data-software-type='["Venue & Event Management"]' data-countries='["United States of America"]'>
-        <img src="/assets/images/integrations/infor.webp?v=f06d65af17" alt="Infor" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/infor.webp?v=374178a788" alt="Infor" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">Infor</span>
       </a>
         
@@ -1091,7 +1150,7 @@ ul,ol{list-style:none}
           
       <a href="/ivvy-pay/" class="integration-card" data-categories='["Payment Gateway","Essential Apps"]' data-software-type='["Venue & Event Management","Ticketed Events"]' data-countries='["Australia","New Zealand","United States of America"]'>
         
-        <img src="/assets/images/integrations/ivvy-pay.webp?v=f06d65af17" alt="iVvyPay" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/ivvy-pay.webp?v=374178a788" alt="iVvyPay" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">iVvyPay</span>
       </a>
           
@@ -1100,7 +1159,7 @@ ul,ol{list-style:none}
         
         
       <a href="/integrations/janus/" class="integration-card" data-categories='["Signage"]' data-software-type='["Venue & Event Management"]' data-countries='["Australia"]'>
-        <img src="/assets/images/integrations/janus.webp?v=f06d65af17" alt="Janus Displays" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/janus.webp?v=374178a788" alt="Janus Displays" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">Janus Displays</span>
       </a>
         
@@ -1108,7 +1167,7 @@ ul,ol{list-style:none}
         
         
       <a href="/integrations/jonas-chorum/" class="integration-card" data-categories='["Property Management System"]' data-software-type='["Venue & Event Management"]' data-countries='["United States of America"]'>
-        <img src="/assets/images/integrations/jonas-chorum.webp?v=f06d65af17" alt="Jonas Chorum" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/jonas-chorum.webp?v=374178a788" alt="Jonas Chorum" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">Jonas Chorum</span>
       </a>
         
@@ -1116,7 +1175,7 @@ ul,ol{list-style:none}
         
         
       <a href="/integrations/lightwave/" class="integration-card" data-categories='["Sustainability"]' data-software-type='["Venue & Event Management"]' data-countries='["United Kingdom","Europe"]'>
-        <img src="/assets/images/integrations/lightwave.webp?v=f06d65af17" alt="Lightwave" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/lightwave.webp?v=374178a788" alt="Lightwave" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">Lightwave</span>
       </a>
         
@@ -1124,7 +1183,7 @@ ul,ol{list-style:none}
         
         
       <a href="/integrations/mews/" class="integration-card" data-categories='["Property Management System"]' data-software-type='["Venue & Event Management"]' data-countries='["United States of America","Canada","United Kingdom","Europe"]'>
-        <img src="/assets/images/integrations/mews.webp?v=f06d65af17" alt="Mews" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/mews.webp?v=374178a788" alt="Mews" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">Mews</span>
       </a>
         
@@ -1134,7 +1193,7 @@ ul,ol{list-style:none}
           
       <a href="https://www.microsoft.com/en-us/dynamics-365/products/business-central" class="integration-card" data-categories='["Accounting & ERP"]' data-software-type='[&quot;Venue &amp; Event Management&quot;]' data-countries='["Australia","Canada","Europe","Ireland","New Zealand","United Kingdom"]' target="_blank" rel="noopener noreferrer">
         <span class="integration-card__badge">Coming Soon</span>
-        <img src="/assets/images/integrations/business-central.webp?v=f06d65af17" alt="Microsoft Business Central" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/business-central.webp?v=374178a788" alt="Microsoft Business Central" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">Microsoft Business Central</span>
       </a>
           
@@ -1145,7 +1204,7 @@ ul,ol{list-style:none}
           
       <a href="https://www.microsoft.com/en-us/dynamics-365" class="integration-card" data-categories='["CRM"]' data-software-type='[&quot;Venue &amp; Event Management&quot;]' data-countries='[]' target="_blank" rel="noopener noreferrer">
         <span class="integration-card__badge">Coming Soon</span>
-        <img src="/assets/images/integrations/microsoft-dynamics-365.webp?v=f06d65af17" alt="Microsoft Dynamics 365" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/microsoft-dynamics-365.webp?v=374178a788" alt="Microsoft Dynamics 365" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">Microsoft Dynamics 365</span>
       </a>
           
@@ -1154,7 +1213,7 @@ ul,ol{list-style:none}
         
         
       <a href="/integrations/myob/" class="integration-card" data-categories='["Accounting & ERP"]' data-software-type='["Venue & Event Management"]' data-countries='["Australia","New Zealand"]'>
-        <img src="/assets/images/integrations/myob.webp?v=f06d65af17" alt="MYOB" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/myob.webp?v=374178a788" alt="MYOB" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">MYOB</span>
       </a>
         
@@ -1164,7 +1223,7 @@ ul,ol{list-style:none}
           
       <a href="https://www.nab.com.au/business/payments-and-merchants/ecommerce-and-online-payments/nab-transact" class="integration-card" data-categories='["Payment Gateway"]' data-software-type='[&quot;Venue &amp; Event Management&quot;]' data-countries='["Australia"]' target="_blank" rel="noopener noreferrer">
         
-        <img src="/assets/images/integrations/nab-transact.webp?v=f06d65af17" alt="NAB Transact" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/nab-transact.webp?v=374178a788" alt="NAB Transact" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">NAB Transact</span>
       </a>
           
@@ -1175,7 +1234,7 @@ ul,ol{list-style:none}
           
       <a href="https://www.opayo.co.uk/" class="integration-card" data-categories='["Payment Gateway"]' data-software-type='[&quot;Venue &amp; Event Management&quot;]' data-countries='["United Kingdom"]' target="_blank" rel="noopener noreferrer">
         
-        <img src="/assets/images/integrations/opayo.webp?v=f06d65af17" alt="Opayo by Elavon" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/opayo.webp?v=374178a788" alt="Opayo by Elavon" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">Opayo by Elavon</span>
       </a>
           
@@ -1184,7 +1243,7 @@ ul,ol{list-style:none}
         
         
       <a href="/integrations/opera-cloud/" class="integration-card" data-categories='["Property Management System"]' data-software-type='["Venue & Event Management"]' data-countries='["Australia","Canada","Europe","Ireland","New Zealand","United Kingdom","United States of America"]'>
-        <img src="/assets/images/integrations/opera-cloud.webp?v=f06d65af17" alt="Opera" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/opera-cloud.webp?v=374178a788" alt="Opera" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">Opera</span>
       </a>
         
@@ -1192,7 +1251,7 @@ ul,ol{list-style:none}
         
         
       <a href="/integrations/netsuite-accounting/" class="integration-card" data-categories='["Accounting & ERP"]' data-software-type='["Venue & Event Management"]' data-countries='["Australia","New Zealand","Canada","United Kingdom","Ireland","Europe"]'>
-        <img src="/assets/images/integrations/netsuite.webp?v=f06d65af17" alt="Oracle NetSuite" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/netsuite.webp?v=374178a788" alt="Oracle NetSuite" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">Oracle NetSuite</span>
       </a>
         
@@ -1200,7 +1259,7 @@ ul,ol{list-style:none}
         
         
       <a href="/integrations/outlook/" class="integration-card" data-categories='["Essential Apps"]' data-software-type='["Venue & Event Management"]' data-countries='["Australia","Canada","Europe","Ireland","New Zealand","United Kingdom","United States of America"]'>
-        <img src="/assets/images/integrations/outlook.webp?v=f06d65af17" alt="Outlook - Tasks &amp; Activities" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/outlook.webp?v=374178a788" alt="Outlook - Tasks &amp; Activities" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">Outlook - Tasks &amp; Activities</span>
       </a>
         
@@ -1208,7 +1267,7 @@ ul,ol{list-style:none}
         
         
       <a href="/integrations/outlook-calendar/" class="integration-card" data-categories='["Essential Apps"]' data-software-type='["Venue & Event Management"]' data-countries='["Australia","Canada","Europe","Ireland","New Zealand","United Kingdom","United States of America"]'>
-        <img src="/assets/images/integrations/outlook.webp?v=f06d65af17" alt="Outlook Calendar" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/outlook.webp?v=374178a788" alt="Outlook Calendar" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">Outlook Calendar</span>
       </a>
         
@@ -1218,7 +1277,7 @@ ul,ol{list-style:none}
           
       <a href="https://www.paypal.com/au/home" class="integration-card" data-categories='["Payment Gateway"]' data-software-type='[&quot;Venue &amp; Event Management&quot;]' data-countries='["Australia","New Zealand","United States of America","Canada"]' target="_blank" rel="noopener noreferrer">
         
-        <img src="/assets/images/integrations/paypal.webp?v=f06d65af17" alt="Paypal" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/paypal.webp?v=374178a788" alt="Paypal" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">Paypal</span>
       </a>
           
@@ -1229,7 +1288,7 @@ ul,ol{list-style:none}
           
       <a href="https://www.paypal.com/webapps/mpp/payflow-payment-gateway" class="integration-card" data-categories='["Payment Gateway"]' data-software-type='[&quot;Venue &amp; Event Management&quot;]' data-countries='["Australia"]' target="_blank" rel="noopener noreferrer">
         
-        <img src="/assets/images/integrations/paypal-payflow.webp?v=f06d65af17" alt="Paypal Payflow" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/paypal-payflow.webp?v=374178a788" alt="Paypal Payflow" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">Paypal Payflow</span>
       </a>
           
@@ -1240,7 +1299,7 @@ ul,ol{list-style:none}
           
       <a href="https://www2.paystation.co.nz/" class="integration-card" data-categories='["Payment Gateway"]' data-software-type='[&quot;Venue &amp; Event Management&quot;]' data-countries='["New Zealand"]' target="_blank" rel="noopener noreferrer">
         
-        <img src="/assets/images/integrations/paystation.webp?v=f06d65af17" alt="Paystation" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/paystation.webp?v=374178a788" alt="Paystation" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">Paystation</span>
       </a>
           
@@ -1249,7 +1308,7 @@ ul,ol{list-style:none}
         
         
       <a href="/integrations/profitsword/" class="integration-card" data-categories='["Revenue Management"]' data-software-type='["Venue & Event Management"]' data-countries='["United States of America"]'>
-        <img src="/assets/images/integrations/profit-sword.webp?v=f06d65af17" alt="ProfitSword by Actabl" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/profit-sword.webp?v=374178a788" alt="ProfitSword by Actabl" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">ProfitSword by Actabl</span>
       </a>
         
@@ -1257,7 +1316,7 @@ ul,ol{list-style:none}
         
         
       <a href="/integrations/protel/" class="integration-card" data-categories='["Property Management System"]' data-software-type='["Venue & Event Management"]' data-countries='["United Kingdom","Europe"]'>
-        <img src="/assets/images/integrations/protel.webp?v=f06d65af17" alt="Protel Air" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/protel.webp?v=374178a788" alt="Protel Air" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">Protel Air</span>
       </a>
         
@@ -1265,7 +1324,7 @@ ul,ol{list-style:none}
         
         
       <a href="/integrations/quickbooks/" class="integration-card" data-categories='["Accounting & ERP"]' data-software-type='["Venue & Event Management"]' data-countries='["Australia","Canada","Europe","Ireland","New Zealand","United Kingdom"]'>
-        <img src="/assets/images/integrations/quickbooks.webp?v=f06d65af17" alt="Quickbooks" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/quickbooks.webp?v=374178a788" alt="Quickbooks" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">Quickbooks</span>
       </a>
         
@@ -1273,7 +1332,7 @@ ul,ol{list-style:none}
         
         
       <a href="/integrations/rms/" class="integration-card" data-categories='["Property Management System"]' data-software-type='["Venue & Event Management"]' data-countries='["Australia","New Zealand"]'>
-        <img src="/assets/images/integrations/rms.webp?v=f06d65af17" alt="RMS" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/rms.webp?v=374178a788" alt="RMS" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">RMS</span>
       </a>
         
@@ -1281,7 +1340,7 @@ ul,ol{list-style:none}
         
         
       <a href="/integrations/sabre/" class="integration-card" data-categories='["CRM"]' data-software-type='["Venue & Event Management"]' data-countries='["Australia","Canada","Europe","Ireland","New Zealand","United Kingdom","United States of America"]'>
-        <img src="/assets/images/integrations/sabre.webp?v=f06d65af17" alt="Sabre" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/sabre.webp?v=374178a788" alt="Sabre" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">Sabre</span>
       </a>
         
@@ -1291,7 +1350,7 @@ ul,ol{list-style:none}
           
       <a href="https://www.sage.com/en-au/sage-business-cloud/intacct/" class="integration-card" data-categories='["Accounting & ERP"]' data-software-type='[&quot;Venue &amp; Event Management&quot;]' data-countries='["Australia","New Zealand","Canada","United Kingdom","Ireland","Europe"]' target="_blank" rel="noopener noreferrer">
         <span class="integration-card__badge">Coming Soon</span>
-        <img src="/assets/images/integrations/sage-intacct.webp?v=f06d65af17" alt="Sage Intacct" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/sage-intacct.webp?v=374178a788" alt="Sage Intacct" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">Sage Intacct</span>
       </a>
           
@@ -1300,7 +1359,7 @@ ul,ol{list-style:none}
         
         
       <a href="/integrations/salesforce/" class="integration-card" data-categories='["CRM"]' data-software-type='["Venue & Event Management"]' data-countries='["Australia","Canada","New Zealand","United Kingdom","United States of America"]'>
-        <img src="/assets/images/integrations/salesforce.webp?v=f06d65af17" alt="Salesforce" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/salesforce.webp?v=374178a788" alt="Salesforce" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">Salesforce</span>
       </a>
         
@@ -1310,7 +1369,7 @@ ul,ol{list-style:none}
           
       <a href="https://www.sap.com/products/erp/business-one.html" class="integration-card" data-categories='["Accounting & ERP"]' data-software-type='[&quot;Venue &amp; Event Management&quot;]' data-countries='["Australia","New Zealand","Canada","United Kingdom","Ireland"]' target="_blank" rel="noopener noreferrer">
         <span class="integration-card__badge">Coming Soon</span>
-        <img src="/assets/images/integrations/sap-business-one.webp?v=f06d65af17" alt="SAP Business One" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/sap-business-one.webp?v=374178a788" alt="SAP Business One" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">SAP Business One</span>
       </a>
           
@@ -1321,7 +1380,7 @@ ul,ol{list-style:none}
           
       <a href="https://auspost.com.au/mypost-business/registration?context=pay" class="integration-card" data-categories='["Payment Gateway"]' data-software-type='[&quot;Venue &amp; Event Management&quot;]' data-countries='["Australia"]' target="_blank" rel="noopener noreferrer">
         
-        <img src="/assets/images/integrations/securepay.webp?v=f06d65af17" alt="Securepay" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/securepay.webp?v=374178a788" alt="Securepay" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">Securepay</span>
       </a>
           
@@ -1330,7 +1389,7 @@ ul,ol{list-style:none}
         
         
       <a href="/integrations/sevenrooms/" class="integration-card" data-categories='["Restaurant Reservations"]' data-software-type='["Venue & Event Management"]' data-countries='["Australia","United States of America"]'>
-        <img src="/assets/images/integrations/sevenrooms.webp?v=f06d65af17" alt="SevenRooms" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/sevenrooms.webp?v=374178a788" alt="SevenRooms" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">SevenRooms</span>
       </a>
         
@@ -1338,7 +1397,7 @@ ul,ol{list-style:none}
         
         
       <a href="/integrations/smartspace/" class="integration-card" data-categories='["Revenue Management"]' data-software-type='["Venue & Event Management"]' data-countries='["United Kingdom"]'>
-        <img src="/assets/images/integrations/smartspace.webp?v=f06d65af17" alt="SmartSpace" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/smartspace.webp?v=374178a788" alt="SmartSpace" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">SmartSpace</span>
       </a>
         
@@ -1346,7 +1405,7 @@ ul,ol{list-style:none}
         
         
       <a href="/integrations/sms/" class="integration-card" data-categories='["Property Management System"]' data-software-type='["Venue & Event Management"]' data-countries='["United States of America"]'>
-        <img src="/assets/images/integrations/sms.webp?v=f06d65af17" alt="SMS" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/sms.webp?v=374178a788" alt="SMS" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">SMS</span>
       </a>
         
@@ -1354,7 +1413,7 @@ ul,ol{list-style:none}
         
         
       <a href="/integrations/stayntouch/" class="integration-card" data-categories='["Property Management System"]' data-software-type='["Venue & Event Management"]' data-countries='["United States of America"]'>
-        <img src="/assets/images/integrations/stayntouch.webp?v=f06d65af17" alt="StayNTouch" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/stayntouch.webp?v=374178a788" alt="StayNTouch" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">StayNTouch</span>
       </a>
         
@@ -1364,7 +1423,7 @@ ul,ol{list-style:none}
           
       <a href="https://stripe.com/au" class="integration-card" data-categories='["Payment Gateway"]' data-software-type='[&quot;Venue &amp; Event Management&quot;]' data-countries='["Australia","Canada","Europe","Ireland","New Zealand","United Kingdom","United States of America"]' target="_blank" rel="noopener noreferrer">
         
-        <img src="/assets/images/integrations/stripe.webp?v=f06d65af17" alt="Stripe" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/stripe.webp?v=374178a788" alt="Stripe" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">Stripe</span>
       </a>
           
@@ -1373,7 +1432,7 @@ ul,ol{list-style:none}
         
         
       <a href="/integrations/swiftpos/" class="integration-card" data-categories='["Point of Sale"]' data-software-type='["Venue & Event Management"]' data-countries='["Australia"]'>
-        <img src="/assets/images/integrations/swiftpos.webp?v=f06d65af17" alt="Swiftpos by Oolio" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/swiftpos.webp?v=374178a788" alt="Swiftpos by Oolio" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">Swiftpos by Oolio</span>
       </a>
         
@@ -1383,7 +1442,7 @@ ul,ol{list-style:none}
           
       <a href="https://tillpayments.com/" class="integration-card" data-categories='["Payment Gateway"]' data-software-type='[&quot;Venue &amp; Event Management&quot;]' data-countries='["Australia"]' target="_blank" rel="noopener noreferrer">
         
-        <img src="/assets/images/integrations/till-payments.webp?v=f06d65af17" alt="Till Payments" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/till-payments.webp?v=374178a788" alt="Till Payments" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">Till Payments</span>
       </a>
           
@@ -1392,7 +1451,7 @@ ul,ol{list-style:none}
         
         
       <a href="/integrations/venue-directory/" class="integration-card" data-categories='["CRM"]' data-software-type='["Venue & Event Management"]' data-countries='["United Kingdom"]'>
-        <img src="/assets/images/integrations/venue-directory.webp?v=f06d65af17" alt="Venue Directory" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/venue-directory.webp?v=374178a788" alt="Venue Directory" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">Venue Directory</span>
       </a>
         
@@ -1402,7 +1461,7 @@ ul,ol{list-style:none}
           
       <a href="https://www.payway.com.au/about" class="integration-card" data-categories='["Payment Gateway"]' data-software-type='[&quot;Venue &amp; Event Management&quot;]' data-countries='["Australia"]' target="_blank" rel="noopener noreferrer">
         
-        <img src="/assets/images/integrations/westpac-payway.webp?v=f06d65af17" alt="Westpac PayWay" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/westpac-payway.webp?v=374178a788" alt="Westpac PayWay" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">Westpac PayWay</span>
       </a>
           
@@ -1413,7 +1472,7 @@ ul,ol{list-style:none}
           
       <a href="https://www.windcave.com/" class="integration-card" data-categories='["Payment Gateway"]' data-software-type='[&quot;Venue &amp; Event Management&quot;]' data-countries='["Australia","New Zealand"]' target="_blank" rel="noopener noreferrer">
         
-        <img src="/assets/images/integrations/windcave.webp?v=f06d65af17" alt="Windcave" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/windcave.webp?v=374178a788" alt="Windcave" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">Windcave</span>
       </a>
           
@@ -1422,7 +1481,7 @@ ul,ol{list-style:none}
         
         
       <a href="/integrations/xero/" class="integration-card" data-categories='["Accounting & ERP"]' data-software-type='["Venue & Event Management"]' data-countries='["Australia","New Zealand","Canada","United Kingdom","Ireland","Europe"]'>
-        <img src="/assets/images/integrations/xero.webp?v=f06d65af17" alt="Xero" width="120" height="60" loading="lazy" decoding="async">
+        <img src="/assets/images/integrations/xero.webp?v=374178a788" alt="Xero" width="120" height="60" loading="lazy" decoding="async">
         <span class="integration-card__name">Xero</span>
       </a>
         
@@ -1461,7 +1520,7 @@ ul,ol{list-style:none}
 
 <section class="cta">
   
-  <img src="/assets/images/patterns/cta-pattern.webp?v=f06d65af17" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35;mix-blend-mode:soft-light;pointer-events:none;">
+  <img src="/assets/images/patterns/cta-pattern.webp?v=374178a788" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35;mix-blend-mode:soft-light;pointer-events:none;">
   <div class="container">
     <div class="cta__inner">
       <h2 class="cta__title"><span class="scroll-color-text scroll-color-text--from-white">Ready to revolutionise</span> your business with iVvy?</h2>
@@ -1729,7 +1788,7 @@ ul,ol{list-style:none}
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=f06d65af17" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=374178a788" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
         <div class="footer__social">
           <a href="https://www.linkedin.com/company/ivvy/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1895,7 +1954,7 @@ ul,ol{list-style:none}
 
 
 
-<script src="/assets/js/scripts.js?v=f06d65af17" defer></script>
+<script src="/assets/js/scripts.js?v=374178a788" defer></script>
 
 
 
