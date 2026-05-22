@@ -1,16 +1,16 @@
-<!-- build:26269110046-1454 -->
+<!-- build:26269730066-1455 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=374178a788">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=374178a788">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=374178a788">
-  <link rel="alternate icon" href="/assets/images/favicon.ico?v=374178a788">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=374178a788">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=374178a788">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=374178a788">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=cac4f7ebf0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=cac4f7ebf0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=cac4f7ebf0">
+  <link rel="alternate icon" href="/assets/images/favicon.ico?v=cac4f7ebf0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=cac4f7ebf0">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=cac4f7ebf0">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=cac4f7ebf0">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>How venue booking software can help hotel staff turnover | iVvy Blog</title>
   <meta name="description" content="In the hospitality industry, staff turnover is a constant challenge. The fluid nature of hotel operations often leads to high employee turnover rates. Here&#39;s how venue booking software can help with staffing issues.">
@@ -34,10 +34,11 @@
   
     
   <link rel="preload" as="image" fetchpriority="high"
-        href="/assets/images/articles/30808d75eea13a7d.webp?v=374178a788"
-        imagesrcset="/assets/images/articles/30808d75eea13a7d.webp?v=374178a788 480w, /assets/images/articles/30808d75eea13a7d.webp 1920w"
+        href="/assets/images/articles/30808d75eea13a7d.webp?v=cac4f7ebf0"
+        imagesrcset="/assets/images/articles/30808d75eea13a7d.webp?v=cac4f7ebf0 480w, /assets/images/articles/30808d75eea13a7d.webp 1920w"
         imagesizes="100vw">
     
+  
   
   
 
@@ -214,6 +215,17 @@ ul,ol{list-style:none}
 @media(min-width:1024px){.section{padding:112px 0}}
 .section--grey{background:hsl(0 0% 96%)}
 .section--white{background:#fff}
+/* CLS guard: integrations grid layout — without these inlined, the async styles.css arrival
+   reshapes ~60 cards from default block-stacked anchors into a 6-col flex grid, producing
+   a 0.6+ desktop CLS on /integrations/. Reserve the card geometry at first paint. */
+.integration-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:16px}
+.integration-grid>*{width:calc(50% - 8px)}
+@media(min-width:768px){.integration-grid>*{width:calc(25% - 12px)}}
+@media(min-width:1024px){.integration-grid>*{width:calc(16.666% - 14px)}}
+.integration-card{position:relative;display:flex;flex-direction:column;align-items:center;padding:16px;background:#fff;border:none;border-radius:16px;box-shadow:0 4px 20px -2px rgba(0,0,0,0.12),0 2px 8px -2px rgba(0,0,0,0.08);min-height:160px}
+.integration-card img{max-height:120px;max-width:100%;width:120px;height:60px;object-fit:contain}
+.integration-card__name{font-size:14px;font-weight:700;font-family:'Nunito','Nunito Fallback',sans-serif;color:#103620;text-align:center;margin-top:auto;padding-top:8px}
+.integration-card__badge{position:absolute;top:8px;right:8px;background:rgba(153,204,82,0.15);color:#103620;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;padding:2px 8px;border-radius:9999px}
 .intro__inner{margin:0 auto;text-align:center}
 .intro__title{font-size:30px;font-weight:700;color:#103620;margin-bottom:32px;line-height:1.2;letter-spacing:-0.02em;min-height:calc(30px * 1.2 * 3);text-wrap:balance}
 @media(min-width:1024px){.intro__title{font-size:44px;min-height:calc(44px * 1.2 * 2)}}
@@ -282,10 +294,17 @@ ul,ol{list-style:none}
 @media(min-width:600px){.article-detail__title{min-height:calc(30px * 1.2 * 4)}}
 @media(min-width:768px){.article-detail__title{min-height:calc(30px * 1.2 * 3)}}
 @media(min-width:1024px){.article-detail__title{font-size:48px;min-height:calc(48px * 1.2 * 2)}}
-/* Excerpts wrap to ~4 lines on mobile for typical 200-280 char excerpts. */
-.article-detail__excerpt{font-size:18px;font-family:'Nunito','Nunito Fallback',sans-serif;line-height:1.6;border-left:4px solid #99CC52;padding-left:16px;margin-top:2.5em;margin-bottom:32px;color:rgba(255,255,255,0.7);min-height:calc(18px * 1.6 * 4)}
+/* Excerpts wrap longer than expected on narrow mobile (≤414px) for ~200-280 char excerpts.
+   Reserve 6 lines on mobile so longer excerpts (e.g. AI for venue sales) do not shift the
+   share row + below-fold content when the async stylesheet polishes wrapping. */
+.article-detail__excerpt{font-size:18px;font-family:'Nunito','Nunito Fallback',sans-serif;line-height:1.6;border-left:4px solid #99CC52;padding-left:16px;margin-top:2.5em;margin-bottom:32px;color:rgba(255,255,255,0.7);min-height:calc(18px * 1.6 * 6)}
+@media(min-width:600px){.article-detail__excerpt{min-height:calc(18px * 1.6 * 4)}}
 @media(min-width:768px){.article-detail__excerpt{min-height:calc(18px * 1.6 * 3)}}
 @media(min-width:1024px){.article-detail__excerpt{min-height:calc(18px * 1.6 * 2)}}
+/* Hero category pill (.article-card__category reused in article hero) — inline padding +
+   border-radius so the pill paints rounded with vertical chrome at first paint instead of
+   gaining ~10px height when async styles arrive. */
+.article-detail__pre-content .article-card__category,.article-hero+*+* .article-card__category{padding:4px 12px;border-radius:9999px;display:inline-flex;align-items:center;line-height:1.4;min-height:22px}
 .article-detail__meta{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:16px;min-height:20px}
 /* Share row wraps label + 4 buttons onto 2 lines under ~480px. Reserve both rows on mobile. */
 .article-share{display:flex;align-items:center;gap:12px;margin-bottom:24px;min-height:76px;flex-wrap:wrap}
@@ -371,11 +390,34 @@ ul,ol{list-style:none}
 .feature-card__title{font-size:16px;font-weight:700;font-family:'Nunito Sans','Nunito Sans Fallback','Nunito',sans-serif;color:#103620;margin-bottom:8px}
 .feature-card--centered .feature-card__title{color:#99CC52;font-size:20px}
 .feature-card__desc{font-size:14px;color:#666;line-height:1.6}
+/* Legal pages (/marketplace-terms/, /website-terms/, /credit-terms/, /events-terms/) — inline structural styles so the long dl/ol/ul body paints in final layout and avoids ~0.13 desktop CLS when async CSS arrives. */
+.legal-content{max-width:800px;margin:0 auto}
+.legal-content h2{font-size:24px;color:#103620;margin-top:48px;margin-bottom:16px;font-family:'Poppins','Poppins Fallback',sans-serif;font-weight:800;line-height:1.2}
+@media(min-width:768px){.legal-content h2{font-size:28px}}
+.legal-content h3{font-size:18px;color:#103620;margin-top:24px;margin-bottom:12px;font-family:'Poppins','Poppins Fallback',sans-serif;font-weight:800;line-height:1.2}
+@media(min-width:768px){.legal-content h3{font-size:20px}}
+.legal-content p{font-size:16px;color:#666;line-height:1.8;margin-bottom:16px}
+.legal-content strong{color:#103620}
+.legal-content ol,.legal-content ul{padding-left:24px;margin-bottom:16px}
+.legal-content ol{list-style:decimal}
+.legal-content ul{list-style:disc}
+.legal-content li{font-size:16px;color:#666;line-height:1.8;margin-bottom:8px}
+.legal-content dl{margin-bottom:24px}
+.legal-content dt{font-weight:600;color:#103620;display:inline}
+.legal-content dd{display:inline;color:#666;margin-left:0}
+.legal-content dl>div{margin-bottom:8px}
+.legal-table-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin-bottom:24px}
+.legal-table{width:100%;border-collapse:collapse;margin-bottom:0;min-width:480px}
+.legal-table th,.legal-table td{padding:12px 16px;border:1px solid #e5e7eb;text-align:left;font-size:14px}
+@media(min-width:768px){.legal-table th,.legal-table td{padding:16px;font-size:16px}}
+.legal-table th{background:#f3f4f6;font-family:'Poppins','Poppins Fallback',sans-serif;font-weight:600;white-space:nowrap}
+.legal-table td{color:#666}
+.legal-table tr:nth-child(even) td{background:#f9fafb}
 </style>
 
   
-  <link rel="preload" href="/assets/css/page/p-70a1b90da5.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/css/page/p-70a1b90da5.css"></noscript>
+  <link rel="preload" href="/assets/css/page/p-7d9c1d16aa.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/page/p-7d9c1d16aa.css"></noscript>
   
   
   <noscript></noscript>
@@ -455,7 +497,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__left">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=374178a788" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=cac4f7ebf0" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
         </a>
         <nav class="nav">
           
@@ -742,8 +784,8 @@ ul,ol{list-style:none}
 <section class="article-hero">
   <div class="article-hero__image">
     <img
-      src="/assets/images/articles/30808d75eea13a7d.webp?v=374178a788"
-      srcset="/assets/images/articles/30808d75eea13a7d.webp?v=374178a788 480w, /assets/images/articles/30808d75eea13a7d.webp 1920w"
+      src="/assets/images/articles/30808d75eea13a7d.webp?v=cac4f7ebf0"
+      srcset="/assets/images/articles/30808d75eea13a7d.webp?v=cac4f7ebf0 480w, /assets/images/articles/30808d75eea13a7d.webp 1920w"
       sizes="100vw"
       alt="How venue booking software can help hotel staff turnover"
       width="1920" height="600"
@@ -1219,7 +1261,7 @@ ul,ol{list-style:none}
         
         <div class="article-card__image-wrap">
           <div class="article-card__image">
-            <img src="/assets/images/articles/a09559ad6cd2d527.webp?v=374178a788" srcset="/assets/images/articles/a09559ad6cd2d527.webp?v=374178a788 480w, /assets/images/articles/a09559ad6cd2d527.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="The cost of a manual venue proposal process" width="600" height="338" loading="lazy" decoding="async">
+            <img src="/assets/images/articles/a09559ad6cd2d527.webp?v=cac4f7ebf0" srcset="/assets/images/articles/a09559ad6cd2d527.webp?v=cac4f7ebf0 480w, /assets/images/articles/a09559ad6cd2d527.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="The cost of a manual venue proposal process" width="600" height="338" loading="lazy" decoding="async">
           </div>
         </div>
         
@@ -1250,7 +1292,7 @@ ul,ol{list-style:none}
         
         <div class="article-card__image-wrap">
           <div class="article-card__image">
-            <img src="/assets/images/articles/e3888d454160f2ca.webp?v=374178a788" srcset="/assets/images/articles/e3888d454160f2ca.webp?v=374178a788 480w, /assets/images/articles/e3888d454160f2ca.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="What happens when you use Excel as your venue CRM" width="600" height="338" loading="lazy" decoding="async">
+            <img src="/assets/images/articles/e3888d454160f2ca.webp?v=cac4f7ebf0" srcset="/assets/images/articles/e3888d454160f2ca.webp?v=cac4f7ebf0 480w, /assets/images/articles/e3888d454160f2ca.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="What happens when you use Excel as your venue CRM" width="600" height="338" loading="lazy" decoding="async">
           </div>
         </div>
         
@@ -1281,7 +1323,7 @@ ul,ol{list-style:none}
         
         <div class="article-card__image-wrap">
           <div class="article-card__image">
-            <img src="/assets/images/articles/e7f870aa6db1fe9d.webp?v=374178a788" srcset="/assets/images/articles/e7f870aa6db1fe9d.webp?v=374178a788 480w, /assets/images/articles/e7f870aa6db1fe9d.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="AI for venue sales: what it does (and doesn&#39;t)" width="600" height="338" loading="lazy" decoding="async">
+            <img src="/assets/images/articles/e7f870aa6db1fe9d.webp?v=cac4f7ebf0" srcset="/assets/images/articles/e7f870aa6db1fe9d.webp?v=cac4f7ebf0 480w, /assets/images/articles/e7f870aa6db1fe9d.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="AI for venue sales: what it does (and doesn&#39;t)" width="600" height="338" loading="lazy" decoding="async">
           </div>
         </div>
         
@@ -1315,7 +1357,7 @@ ul,ol{list-style:none}
 
 
 <section class="cta">
-  <img src="/assets/images/patterns/cta-pattern.webp?v=374178a788" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600">
+  <img src="/assets/images/patterns/cta-pattern.webp?v=cac4f7ebf0" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600">
   <div class="container">
     <div class="cta__inner">
       <h2 class="cta__title title-gradient-light">Stay in the know</h2>
@@ -1386,7 +1428,7 @@ ul,ol{list-style:none}
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=374178a788" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=cac4f7ebf0" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
         <div class="footer__social">
           <a href="https://www.linkedin.com/company/ivvy/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1552,7 +1594,7 @@ ul,ol{list-style:none}
 
 
 
-<script src="/assets/js/scripts.js?v=374178a788" defer></script>
+<script src="/assets/js/scripts.js?v=cac4f7ebf0" defer></script>
 
 
 
