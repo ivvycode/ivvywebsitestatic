@@ -1,16 +1,16 @@
-<!-- build:26374453543-1512 -->
+<!-- build:26374503174-1513 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=96a95e00fb">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=96a95e00fb">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=96a95e00fb">
-  <link rel="alternate icon" href="/assets/images/favicon.ico?v=96a95e00fb">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=96a95e00fb">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=96a95e00fb">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=96a95e00fb">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=cc95510b85">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=cc95510b85">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=cc95510b85">
+  <link rel="alternate icon" href="/assets/images/favicon.ico?v=cc95510b85">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=cc95510b85">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=cc95510b85">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=cc95510b85">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Restaurant Event Management Software</title>
   <meta name="description" content="Event software for restaurants and catering companies. Create quotes 80% faster and book 25% more events with iVvy venue management.">
@@ -34,8 +34,8 @@
   
     
   <link rel="preload" as="image" fetchpriority="high"
-        href="/assets/images/heroes/restaurants-hero.webp?v=96a95e00fb"
-        imagesrcset="/assets/images/heroes/restaurants-hero-960w.webp?v=96a95e00fb 960w, /assets/images/heroes/restaurants-hero-1280w.webp 1280w, /assets/images/heroes/restaurants-hero.webp 1920w"
+        href="/assets/images/heroes/restaurants-hero.webp?v=cc95510b85"
+        imagesrcset="/assets/images/heroes/restaurants-hero-960w.webp?v=cc95510b85 960w, /assets/images/heroes/restaurants-hero-1280w.webp 1280w, /assets/images/heroes/restaurants-hero.webp 1920w"
         imagesizes="(min-width: 1024px) 50vw, 0px">
     
   
@@ -181,8 +181,10 @@ ul,ol{list-style:none}
 .page-hero--centered .page-hero__title{min-height:calc(36px * 1.1 * 3)}
 @media(min-width:768px){.page-hero--centered .page-hero__title{min-height:calc(40px * 1.1 * 2)}}
 @media(min-width:1024px){.page-hero--centered .page-hero__title{min-height:calc(50px * 1.1 * 2)}}
-.page-hero--centered .page-hero__subtitle{min-height:calc(18px * 1.6 * 2)}
-@media(min-width:768px){.page-hero--centered .page-hero__subtitle{min-height:calc(18px * 1.6 * 1)}}
+/* Centered hero default: most centered hero pages have shorter subtitles than split
+   hero pages, so default to fewer reserved lines. Pages with longer subtitles
+   (e.g. /about/) override via --ph-subtitle-lines on the partial include. */
+.page-hero--centered{--ph-subtitle-lines:2;--ph-subtitle-lines-md:1;--ph-subtitle-lines-lg:1}
 .page-hero--split{position:relative;min-height:420px;height:auto;display:flex;align-items:center;padding:80px 0;background:#103620}
 @media(min-width:1024px){.page-hero--split{min-height:520px;padding:64px 0}}
 .page-hero--split .page-hero__bg{position:absolute;inset:0;display:flex;z-index:0}
@@ -223,10 +225,16 @@ ul,ol{list-style:none}
 .page-hero__title-base{color:#fff;display:inline}
 .page-hero__title-highlight{color:#99CC52;display:inline}
 .page-hero__title-pill{display:inline-flex;align-items:center;padding:4px 12px;border-radius:9999px;font-size:13px;font-weight:600;font-family:'Nunito','Nunito Fallback',sans-serif;text-transform:uppercase;letter-spacing:0.05em;background:rgba(153,204,82,0.15);color:#99CC52;margin-bottom:20px;min-height:26px}
-/* CLS guard: reserve subtitle height so font-swap from Nunito Fallback to Nunito 400 cannot change box height. Mobile vertical/product subtitles wrap to ~3 lines worst case. */
-.page-hero__subtitle{font-size:18px;color:rgba(255,255,255,0.9);margin-bottom:32px;max-width:600px;line-height:1.6;min-height:calc(18px * 1.6 * 3)}
-@media(min-width:768px){.page-hero__subtitle{min-height:calc(18px * 1.6 * 2)}}
-@media(min-width:1024px){.page-hero__subtitle{min-height:calc(18px * 1.6 * 2)}}
+/* CLS guard (belt-and-braces): the subtitle reserves vertical space based on a
+   per-instance --ph-subtitle-lines / --ph-subtitle-lines-md / --ph-subtitle-lines-lg
+   custom property, falling back to safe worst-case values. This locks layout even
+   if the Nunito web font request fails entirely and the fallback metrics differ —
+   the box always reserves the maximum lines the page's longest subtitle can wrap to
+   at that breakpoint. Pages with shorter copy override via inline style to avoid
+   dead space (e.g. style="--ph-subtitle-lines:2;--ph-subtitle-lines-md:1"). */
+.page-hero__subtitle{font-size:18px;color:rgba(255,255,255,0.9);margin-bottom:32px;max-width:600px;line-height:1.6;min-height:calc(18px * 1.6 * var(--ph-subtitle-lines, 4))}
+@media(min-width:768px){.page-hero__subtitle{min-height:calc(18px * 1.6 * var(--ph-subtitle-lines-md, 3))}}
+@media(min-width:1024px){.page-hero__subtitle{min-height:calc(18px * 1.6 * var(--ph-subtitle-lines-lg, 2))}}
 .page-hero--split .page-hero__subtitle{margin-left:auto;margin-right:auto}
 @media(min-width:1024px){.page-hero--split .page-hero__subtitle{margin-left:0;margin-right:0}}
 .page-hero--centered .page-hero__subtitle{margin-left:auto;margin-right:auto;max-width:none}
@@ -281,7 +289,17 @@ ul,ol{list-style:none}
 .section__grid--top{align-items:start}
 .section__grid--vcenter{align-items:center}
 @media(min-width:1024px){.section__grid--2col{grid-template-columns:1fr 1fr}}
-.section__title{font-size:30px;font-weight:800;color:#103620;margin-bottom:32px;line-height:1.2}
+/* CLS guard (belt-and-braces): reserve 2 lines of section title height using em
+   so the box scales with font-size at every breakpoint. Most section h2s wrap to
+   1-2 lines worst case; reserving 2 absorbs any Poppins fallback→webfont metric
+   variance even on a cold/failed font load. Pages with longer headings (e.g.
+   "Connect with your favourite tools and platforms" wrapping to 3 lines on
+   narrow mobile) can opt in via inline style="--sec-title-lines:3".
+   Also: `contain: layout` on .section scopes any internal reflow so a late font
+   swap inside one section cannot shift sibling sections — net positive for perf
+   (layout work stays local) with no rendering or paint cost. */
+.section{contain:layout}
+.section__title{font-size:30px;font-weight:800;color:#103620;margin-bottom:32px;line-height:1.2;min-height:calc(1.2em * var(--sec-title-lines, 2));text-wrap:balance}
 @media(min-width:1024px){.section__title{font-size:44px}}
 .section__eyebrow{display:inline-flex;align-items:center;padding:4px 12px;border-radius:9999px;font-size:13px;font-weight:600;font-family:'Nunito','Nunito Fallback',sans-serif;text-transform:uppercase;letter-spacing:0.05em;background:rgba(153,204,82,0.1);color:#103620;margin-bottom:12px;min-height:26px}
 .section__eyebrow--green{color:#103620}
@@ -289,6 +307,7 @@ ul,ol{list-style:none}
 .section__text{font-size:16px;color:#666;line-height:1.8;margin-bottom:16px}
 .section__header{margin-bottom:32px}
 .section__header--center{text-align:center}
+.section__header h2{min-height:calc(1.2em * var(--sec-title-lines, 2));text-wrap:balance}
 .page-title{font-size:32px;color:#103620;margin-bottom:16px;line-height:1.1;font-weight:800;min-height:calc(32px * 1.1 * 2)}
 @media(min-width:768px){.page-title{font-size:40px;min-height:calc(40px * 1.1 * 2)}}
 .page-title--highlight{color:#99CC52}
@@ -443,8 +462,8 @@ ul,ol{list-style:none}
 </style>
 
   
-  <link rel="preload" href="/assets/css/page/p-89116051c1.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/css/page/p-89116051c1.css"></noscript>
+  <link rel="preload" href="/assets/css/page/p-312a34c873.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/page/p-312a34c873.css"></noscript>
   
   
   <noscript></noscript>
@@ -524,7 +543,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__left">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=96a95e00fb" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=cc95510b85" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
         </a>
         <nav class="nav">
           
@@ -808,7 +827,7 @@ ul,ol{list-style:none}
       <picture>
         <source
           media="(min-width: 1024px)"
-          srcset="/assets/images/heroes/restaurants-hero-960w.webp?v=96a95e00fb 960w, /assets/images/heroes/restaurants-hero-1280w.webp 1280w, /assets/images/heroes/restaurants-hero.webp 1920w"
+          srcset="/assets/images/heroes/restaurants-hero-960w.webp?v=cc95510b85 960w, /assets/images/heroes/restaurants-hero-1280w.webp 1280w, /assets/images/heroes/restaurants-hero.webp 1920w"
           sizes="50vw">
         <img
           src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221%22%20height%3D%221%22%2F%3E"
@@ -863,49 +882,49 @@ ul,ol{list-style:none}
       
       
       
-      <img src="/assets/images/logos/accor.png?v=96a95e00fb" alt="Accor Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/accor.png?v=cc95510b85" alt="Accor Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/minor-hotels.webp?v=96a95e00fb" alt="Minor Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/minor-hotels.webp?v=cc95510b85" alt="Minor Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/alh-group.webp?v=96a95e00fb" alt="ALH Group" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/alh-group.webp?v=cc95510b85" alt="ALH Group" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/allianz-stadium.webp?v=96a95e00fb" alt="Allianz Stadium" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/allianz-stadium.webp?v=cc95510b85" alt="Allianz Stadium" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/goodwood.webp?v=96a95e00fb" alt="Goodwood Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/goodwood.webp?v=cc95510b85" alt="Goodwood Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/event.webp?v=96a95e00fb" alt="Event" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/event.webp?v=cc95510b85" alt="Event" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/tfe-hotels.webp?v=96a95e00fb" alt="TFE Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/tfe-hotels.webp?v=cc95510b85" alt="TFE Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/comwell.webp?v=96a95e00fb" alt="Comwell" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/comwell.webp?v=cc95510b85" alt="Comwell" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/village.webp?v=96a95e00fb" alt="Village Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/village.webp?v=cc95510b85" alt="Village Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/howard-smith.webp?v=96a95e00fb" alt="Howard Smith Wharves" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/howard-smith.webp?v=cc95510b85" alt="Howard Smith Wharves" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/solotel.webp?v=96a95e00fb" alt="Solotel" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/solotel.webp?v=cc95510b85" alt="Solotel" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/avc.webp?v=96a95e00fb" alt="AVC" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/avc.webp?v=cc95510b85" alt="AVC" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/central-hall.webp?v=96a95e00fb" alt="Central Hall Westminster" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/central-hall.webp?v=cc95510b85" alt="Central Hall Westminster" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/murrayfield.webp?v=96a95e00fb" alt="Murrayfield" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/murrayfield.webp?v=cc95510b85" alt="Murrayfield" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/tottenham.webp?v=96a95e00fb" alt="Tottenham Hotspur" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/tottenham.webp?v=cc95510b85" alt="Tottenham Hotspur" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/elior.webp?v=96a95e00fb" alt="Elior" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/elior.webp?v=cc95510b85" alt="Elior" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/sheffield.webp?v=96a95e00fb" alt="Sheffield" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/sheffield.webp?v=cc95510b85" alt="Sheffield" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/southern-cross.webp?v=96a95e00fb" alt="Southern Cross" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/southern-cross.webp?v=cc95510b85" alt="Southern Cross" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/queensland-gov.webp?v=96a95e00fb" alt="University of Queensland" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/queensland-gov.webp?v=cc95510b85" alt="University of Queensland" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/victoria.webp?v=96a95e00fb" alt="University of Victoria" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/victoria.webp?v=cc95510b85" alt="University of Victoria" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/australian-government.webp?v=96a95e00fb" alt="Australian Government" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/australian-government.webp?v=cc95510b85" alt="Australian Government" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/qld-education.webp?v=96a95e00fb" alt="Dept of Education" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/qld-education.webp?v=cc95510b85" alt="Dept of Education" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
     </div>
   </div>
@@ -997,7 +1016,7 @@ ul,ol{list-style:none}
         
       </div>
       <div class="venue-intro__image">
-        <img src="/assets/images/pages/restaurant-1.webp?v=96a95e00fb" alt="Restaurant Dashboard" width="600" height="400" loading="lazy" decoding="async">
+        <img src="/assets/images/pages/restaurant-1.webp?v=cc95510b85" alt="Restaurant Dashboard" width="600" height="400" loading="lazy" decoding="async">
       </div>
     </div>
   </div>
@@ -1193,7 +1212,7 @@ ul,ol{list-style:none}
         </div>
       </div>
       <div class="venue-intro__image">
-        <img src="/assets/images/benefits/speed.webp?v=96a95e00fb" alt="Why choose iVvy" width="600" height="400" loading="lazy" decoding="async">
+        <img src="/assets/images/benefits/speed.webp?v=cc95510b85" alt="Why choose iVvy" width="600" height="400" loading="lazy" decoding="async">
       </div>
     </div>
   </div>
@@ -1212,11 +1231,11 @@ ul,ol{list-style:none}
       <a href="/customers/the-george-on-collins/" class="cs-card-link">
         <div class="cs-card">
           <div class="cs-card__image">
-            <img src="/assets/images/case-studies/george-collins-hero-thumb.webp?v=96a95e00fb" alt="" width="400" height="300" loading="lazy" decoding="async">
+            <img src="/assets/images/case-studies/george-collins-hero-thumb.webp?v=cc95510b85" alt="" width="400" height="300" loading="lazy" decoding="async">
           </div>
           <div class="cs-card__body">
             <div class="cs-card__logo-wrap">
-              <img src="/assets/images/logos/george-collins-logo.webp?v=96a95e00fb" alt="" width="160" height="64" loading="lazy" decoding="async">
+              <img src="/assets/images/logos/george-collins-logo.webp?v=cc95510b85" alt="" width="160" height="64" loading="lazy" decoding="async">
             </div>
             
             <h3 class="cs-card__name">The George on Collins</h3>
@@ -1240,11 +1259,11 @@ ul,ol{list-style:none}
       <a href="/customers/strato-melbourne/" class="cs-card-link">
         <div class="cs-card">
           <div class="cs-card__image">
-            <img src="/assets/images/case-studies/strato-hero-thumb.webp?v=96a95e00fb" alt="" width="400" height="300" loading="lazy" decoding="async">
+            <img src="/assets/images/case-studies/strato-hero-thumb.webp?v=cc95510b85" alt="" width="400" height="300" loading="lazy" decoding="async">
           </div>
           <div class="cs-card__body">
             <div class="cs-card__logo-wrap">
-              <img src="/assets/images/logos/strato-logo.webp?v=96a95e00fb" alt="" width="160" height="64" loading="lazy" decoding="async">
+              <img src="/assets/images/logos/strato-logo.webp?v=cc95510b85" alt="" width="160" height="64" loading="lazy" decoding="async">
             </div>
             
             <h3 class="cs-card__name">Strato Melbourne</h3>
@@ -1268,11 +1287,11 @@ ul,ol{list-style:none}
       <a href="/customers/the-athenaeum/" class="cs-card-link">
         <div class="cs-card">
           <div class="cs-card__image">
-            <img src="/assets/images/case-studies/athenaeum-hero-thumb.webp?v=96a95e00fb" alt="" width="400" height="300" loading="lazy" decoding="async">
+            <img src="/assets/images/case-studies/athenaeum-hero-thumb.webp?v=cc95510b85" alt="" width="400" height="300" loading="lazy" decoding="async">
           </div>
           <div class="cs-card__body">
             <div class="cs-card__logo-wrap">
-              <img src="/assets/images/logos/athenaeum-logo.webp?v=96a95e00fb" alt="" width="160" height="64" loading="lazy" decoding="async">
+              <img src="/assets/images/logos/athenaeum-logo.webp?v=cc95510b85" alt="" width="160" height="64" loading="lazy" decoding="async">
             </div>
             
             <h3 class="cs-card__name">The Athenaeum</h3>
@@ -1369,7 +1388,7 @@ ul,ol{list-style:none}
 
 <section class="cta">
   
-  <img src="/assets/images/patterns/cta-pattern.webp?v=96a95e00fb" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35;mix-blend-mode:soft-light;pointer-events:none;">
+  <img src="/assets/images/patterns/cta-pattern.webp?v=cc95510b85" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35;mix-blend-mode:soft-light;pointer-events:none;">
   <div class="container">
     <div class="cta__inner">
       <h2 class="cta__title">Start seeing <span class="scroll-color-text scroll-color-text--from-white">your results</span></h2>
@@ -1430,7 +1449,7 @@ ul,ol{list-style:none}
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=96a95e00fb" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=cc95510b85" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
         <div class="footer__social">
           <a href="https://www.linkedin.com/company/ivvy/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1596,7 +1615,7 @@ ul,ol{list-style:none}
 
 
 
-<script src="/assets/js/scripts.js?v=96a95e00fb" defer></script>
+<script src="/assets/js/scripts.js?v=cc95510b85" defer></script>
 
 
 
