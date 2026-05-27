@@ -1,16 +1,16 @@
-<!-- build:26484651404-1549 -->
+<!-- build:26485141662-1550 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=3259560351">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=3259560351">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=3259560351">
-  <link rel="alternate icon" href="/assets/images/favicon.ico?v=3259560351">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=3259560351">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=3259560351">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=3259560351">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=628d8d2c55">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=628d8d2c55">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=628d8d2c55">
+  <link rel="alternate icon" href="/assets/images/favicon.ico?v=628d8d2c55">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=628d8d2c55">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=628d8d2c55">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=628d8d2c55">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Close deals faster: venue sales follow-up checklist | iVvy Blog</title>
   <meta name="description" content="Boost your venue sales and get more bookings in your calendar with a smart sales strategy and free follow-up checklist. You’ve just aced a sales call.">
@@ -34,8 +34,8 @@
   
     
   <link rel="preload" as="image" fetchpriority="high"
-        href="/assets/images/articles/3734c58fe062ebe0-480w.webp?v=3259560351"
-        imagesrcset="/assets/images/articles/3734c58fe062ebe0-480w.webp?v=3259560351 480w, /assets/images/articles/3734c58fe062ebe0-1200w.webp 1200w"
+        href="/assets/images/articles/3734c58fe062ebe0-480w.webp?v=628d8d2c55"
+        imagesrcset="/assets/images/articles/3734c58fe062ebe0-480w.webp?v=628d8d2c55 480w, /assets/images/articles/3734c58fe062ebe0-1200w.webp 1200w"
         imagesizes="100vw">
     
   
@@ -189,6 +189,9 @@ ul,ol{list-style:none}
    visible element, drop its margin-bottom so the section's own top/bottom padding
    defines the spacing — top-to-H1 equals subtitle-to-bottom. */
 .page-hero--centered .page-hero__subtitle:last-child{margin-bottom:0}
+/* Secondary subtitle paragraph: no min-height reservation, sits directly under the first.
+   Used by /customers/ where heroSubtitle is split across two paragraphs. */
+.page-hero__subtitle--secondary{min-height:0;margin-top:-12px}
 .page-hero--split{position:relative;min-height:420px;height:auto;display:flex;align-items:center;padding:80px 0;background:#103620}
 @media(min-width:1024px){.page-hero--split{min-height:520px;padding:64px 0}}
 .page-hero--split .page-hero__bg{position:absolute;inset:0;display:flex;z-index:0}
@@ -210,14 +213,14 @@ ul,ol{list-style:none}
 /* CLS guard: reserve lines of h1 so font-swap from Poppins Fallback to Poppins 800 cannot change box height.
    h1 line-height is overridden to 1.1 via !important — use that value in all min-height calcs.
    Mobile titles wrap to 3+ lines; tablet/desktop fit in 2. */
-.page-hero__title{font-size:36px;color:#fff;margin-bottom:16px;line-height:1.1;font-weight:800;min-height:calc(36px * 1.1 * 4);text-wrap:balance}
+.page-hero__title{font-size:36px;color:#fff;margin-bottom:16px;line-height:1.1;font-weight:800;min-height:calc(36px * 1.1 * var(--ph-title-lines, 3));text-wrap:balance}
 .page-hero__title .gradient-text,.page-hero__title .gradient-text--dark{display:inline}
-@media(min-width:768px){.page-hero__title{font-size:40px;min-height:calc(40px * 1.1 * 3)}}
-@media(min-width:1024px){.page-hero__title{font-size:50px;min-height:calc(50px * 1.1 * 2)}}
+@media(min-width:768px){.page-hero__title{font-size:40px;min-height:calc(40px * 1.1 * var(--ph-title-lines-md, 2))}}
+@media(min-width:1024px){.page-hero__title{font-size:50px;min-height:calc(50px * 1.1 * var(--ph-title-lines-lg, 1))}}
 /* iVvyAI hero title is longer — reserve 4 lines on mobile, 3 on tablet, 3 on desktop */
-.ivvyai-hero__title{min-height:calc(36px * 1.1 * 4)}
-@media(min-width:768px){.ivvyai-hero__title{min-height:calc(40px * 1.1 * 3)}}
-@media(min-width:1024px){.ivvyai-hero__title{font-size:50px;min-height:calc(50px * 1.1 * 3)}}
+.ivvyai-hero__title{min-height:calc(36px * 1.1 * 3)}
+@media(min-width:768px){.ivvyai-hero__title{min-height:calc(40px * 1.1 * 2)}}
+@media(min-width:1024px){.ivvyai-hero__title{font-size:50px;min-height:calc(50px * 1.1 * 1)}}
 .benefit__eyebrow{display:inline-flex;align-items:center;padding:4px 12px;border-radius:9999px;font-size:13px;font-weight:600;font-family:'Nunito','Nunito Fallback',sans-serif;text-transform:uppercase;letter-spacing:0.05em;background:rgba(153,204,82,0.1);color:#103620;margin-bottom:20px;min-height:26px}
 .section-pill{display:inline-flex;align-items:center;padding:4px 12px;border-radius:9999px;font-size:13px;font-weight:600;font-family:'Nunito','Nunito Fallback',sans-serif;text-transform:uppercase;letter-spacing:0.05em;background:rgba(153,204,82,0.1);color:#103620;margin-bottom:12px;min-height:26px}
 /* Industry / iVvyPay hero eyebrow + title parts + subtitle + note — inlined so the
@@ -469,8 +472,8 @@ ul,ol{list-style:none}
 </style>
 
   
-  <link rel="preload" href="/assets/css/page/p-49e9c02436.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/css/page/p-49e9c02436.css"></noscript>
+  <link rel="preload" href="/assets/css/page/p-3fa9d99412.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/page/p-3fa9d99412.css"></noscript>
   
   
   <noscript></noscript>
@@ -550,7 +553,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__left">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=3259560351" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=628d8d2c55" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
         </a>
         <nav class="nav">
           
@@ -838,8 +841,8 @@ ul,ol{list-style:none}
 <section class="article-hero">
   <div class="article-hero__image">
     <img
-      src="/assets/images/articles/3734c58fe062ebe0-480w.webp?v=3259560351"
-      srcset="/assets/images/articles/3734c58fe062ebe0-480w.webp?v=3259560351 480w, /assets/images/articles/3734c58fe062ebe0-1200w.webp 1200w"
+      src="/assets/images/articles/3734c58fe062ebe0-480w.webp?v=628d8d2c55"
+      srcset="/assets/images/articles/3734c58fe062ebe0-480w.webp?v=628d8d2c55 480w, /assets/images/articles/3734c58fe062ebe0-1200w.webp 1200w"
       sizes="100vw"
       alt="Close deals faster: venue sales follow-up checklist"
       width="1920" height="600"
@@ -1388,7 +1391,7 @@ ul,ol{list-style:none}
         
         <div class="article-card__image-wrap">
           <div class="article-card__image">
-            <img src="/assets/images/articles/76b9cf8f157c4f03-480w.webp?v=3259560351" srcset="/assets/images/articles/76b9cf8f157c4f03-480w.webp?v=3259560351 480w, /assets/images/articles/76b9cf8f157c4f03-1200w.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="Do&#39;s &amp; don&#39;ts of BEOs (+ free BEO template for event planners)" width="600" height="338" loading="lazy" decoding="async">
+            <img src="/assets/images/articles/76b9cf8f157c4f03-480w.webp?v=628d8d2c55" srcset="/assets/images/articles/76b9cf8f157c4f03-480w.webp?v=628d8d2c55 480w, /assets/images/articles/76b9cf8f157c4f03-1200w.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="Do&#39;s &amp; don&#39;ts of BEOs (+ free BEO template for event planners)" width="600" height="338" loading="lazy" decoding="async">
           </div>
         </div>
         
@@ -1420,7 +1423,7 @@ ul,ol{list-style:none}
         
         <div class="article-card__image-wrap">
           <div class="article-card__image">
-            <img src="/assets/images/articles/acc72d4ee52b9c3d-480w.webp?v=3259560351" srcset="/assets/images/articles/acc72d4ee52b9c3d-480w.webp?v=3259560351 480w, /assets/images/articles/acc72d4ee52b9c3d-1200w.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="Venue booking negotiation guide for event managers" width="600" height="338" loading="lazy" decoding="async">
+            <img src="/assets/images/articles/acc72d4ee52b9c3d-480w.webp?v=628d8d2c55" srcset="/assets/images/articles/acc72d4ee52b9c3d-480w.webp?v=628d8d2c55 480w, /assets/images/articles/acc72d4ee52b9c3d-1200w.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="Venue booking negotiation guide for event managers" width="600" height="338" loading="lazy" decoding="async">
           </div>
         </div>
         
@@ -1452,7 +1455,7 @@ ul,ol{list-style:none}
         
         <div class="article-card__image-wrap">
           <div class="article-card__image">
-            <img src="/assets/images/articles/33a0c1fb73a515c4-480w.webp?v=3259560351" srcset="/assets/images/articles/33a0c1fb73a515c4-480w.webp?v=3259560351 480w, /assets/images/articles/33a0c1fb73a515c4-1200w.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="Use this hotel customer journey map for better guest experiences" width="600" height="338" loading="lazy" decoding="async">
+            <img src="/assets/images/articles/33a0c1fb73a515c4-480w.webp?v=628d8d2c55" srcset="/assets/images/articles/33a0c1fb73a515c4-480w.webp?v=628d8d2c55 480w, /assets/images/articles/33a0c1fb73a515c4-1200w.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="Use this hotel customer journey map for better guest experiences" width="600" height="338" loading="lazy" decoding="async">
           </div>
         </div>
         
@@ -1486,7 +1489,7 @@ ul,ol{list-style:none}
 
 
 <section class="cta">
-  <img src="/assets/images/patterns/cta-pattern.webp?v=3259560351" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600">
+  <img src="/assets/images/patterns/cta-pattern.webp?v=628d8d2c55" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600">
   <div class="container">
     <div class="cta__inner">
       <h2 class="cta__title title-gradient-light">Stay in the know</h2>
@@ -1557,7 +1560,7 @@ ul,ol{list-style:none}
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=3259560351" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=628d8d2c55" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
         <div class="footer__social">
           <a href="https://www.linkedin.com/company/ivvy/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1723,7 +1726,7 @@ ul,ol{list-style:none}
 
 
 
-<script src="/assets/js/scripts.js?v=3259560351" defer></script>
+<script src="/assets/js/scripts.js?v=628d8d2c55" defer></script>
 
 
 
