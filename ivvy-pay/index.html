@@ -1,16 +1,16 @@
-<!-- build:27115205262-1744 -->
+<!-- build:27115618503-1745 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=dd827f6ec2">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=dd827f6ec2">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=dd827f6ec2">
-  <link rel="alternate icon" href="/assets/images/favicon.ico?v=dd827f6ec2">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=dd827f6ec2">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=dd827f6ec2">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=dd827f6ec2">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=bdc7878c39">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=bdc7878c39">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=bdc7878c39">
+  <link rel="alternate icon" href="/assets/images/favicon.ico?v=bdc7878c39">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=bdc7878c39">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=bdc7878c39">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=bdc7878c39">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>iVvyPay | Venue Payment Platform Powered by Worldpay</title>
   <meta name="description" content="Automate payments, reduce admin, and get paid faster with iVvyPay. Venue payment platform with competitive rates, powered by Worldpay.">
@@ -33,7 +33,7 @@
   
   
     
-  <link rel="preload" href="/assets/images/heroes/ivvy-pay-hero-new.webp?v=dd827f6ec2" as="image" fetchpriority="high">
+  <link rel="preload" href="/assets/images/heroes/ivvy-pay-hero-new.webp?v=bdc7878c39" as="image" fetchpriority="high">
     
   
   
@@ -186,9 +186,12 @@ ul,ol{list-style:none}
    visible element, drop its margin-bottom so the section's own top/bottom padding
    defines the spacing — top-to-H1 equals subtitle-to-bottom. */
 .page-hero--centered .page-hero__subtitle:last-child{margin-bottom:0}
-/* Secondary subtitle paragraph: no min-height reservation, sits directly under the first.
-   Used by /customers/ where heroSubtitle is split across two paragraphs. */
-.page-hero__subtitle--secondary{min-height:0;margin-top:-12px}
+/* Secondary subtitle paragraph: sits directly under the first; reserves its own
+   line-based vertical space via --ph-subtitle2-lines* so the Nunito font swap
+   cannot reflow sections below. Used by /customers/. */
+.page-hero__subtitle--secondary{min-height:calc(18px * 1.6 * var(--ph-subtitle2-lines, 6));margin-top:-12px}
+@media(min-width:768px){.page-hero__subtitle--secondary{min-height:calc(18px * 1.6 * var(--ph-subtitle2-lines-md, 4))}}
+@media(min-width:1024px){.page-hero__subtitle--secondary{min-height:calc(18px * 1.6 * var(--ph-subtitle2-lines-lg, 3))}}
 .page-hero--split{position:relative;min-height:420px;height:auto;display:flex;align-items:center;padding:80px 0;background:#103620}
 @media(min-width:1024px){.page-hero--split{min-height:520px;padding:64px 0}}
 .page-hero--split .page-hero__bg{position:absolute;inset:0;display:flex;z-index:0}
@@ -215,9 +218,9 @@ ul,ol{list-style:none}
 @media(min-width:768px){.page-hero__title{font-size:40px;min-height:calc(40px * 1.1 * var(--ph-title-lines-md, 2))}}
 @media(min-width:1024px){.page-hero__title{font-size:50px;min-height:calc(50px * 1.1 * var(--ph-title-lines-lg, 1))}}
 /* iVvyAI hero title is longer — reserve 4 lines on mobile, 3 on tablet, 3 on desktop */
-.ivvyai-hero__title{min-height:calc(36px * 1.1 * 3)}
-@media(min-width:768px){.ivvyai-hero__title{min-height:calc(40px * 1.1 * 2)}}
-@media(min-width:1024px){.ivvyai-hero__title{font-size:50px;min-height:calc(50px * 1.1 * 1)}}
+.ivvyai-hero__title{min-height:calc(36px * 1.1 * 4)}
+@media(min-width:768px){.ivvyai-hero__title{min-height:calc(40px * 1.1 * 3)}}
+@media(min-width:1024px){.ivvyai-hero__title{font-size:50px;min-height:calc(50px * 1.1 * 3)}}
 .benefit__eyebrow{display:inline-flex;align-items:center;padding:4px 12px;border-radius:9999px;font-size:13px;font-weight:600;font-family:'Nunito','Nunito Fallback',sans-serif;text-transform:uppercase;letter-spacing:0.05em;background:rgba(153,204,82,0.1);color:#103620;margin-bottom:20px;min-height:26px}
 .section-pill{display:inline-flex;align-items:center;padding:4px 12px;border-radius:9999px;font-size:13px;font-weight:600;font-family:'Nunito','Nunito Fallback',sans-serif;text-transform:uppercase;letter-spacing:0.05em;background:rgba(153,204,82,0.1);color:#103620;margin-bottom:12px;min-height:26px}
 /* Industry / iVvyPay hero eyebrow + title parts + subtitle + note — inlined so the
@@ -550,7 +553,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__left">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=dd827f6ec2" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=bdc7878c39" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
         </a>
         <nav class="nav">
           
@@ -619,7 +622,7 @@ ul,ol{list-style:none}
             <button class="nav__link">Venues <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
             <div class="nav__dropdown nav__dropdown--venues">
               <div class="nav__dropdown-inner">
-                <div style="padding:0 16px 8px;margin-bottom:4px;border-bottom:1px solid var(--border,#e5e7eb);"><span style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted,#666);font-family:var(--font-body);">Primary Venue Types</span></div>
+              <div style="padding:0 16px 8px;margin-bottom:4px;border-bottom:1px solid var(--border,#e5e7eb);"><span style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted,#666);font-family:var(--font-body);">WE WORK WITH</span></div>
                 <div class="nav__dropdown-venues-grid">
                   
                   <a href="/hotel-sales-catering-software/" class="nav__dropdown-link nav__dropdown-link--with-icon">
@@ -820,7 +823,7 @@ ul,ol{list-style:none}
       <picture>
         <source
           media="(min-width: 1024px)"
-          srcset="/assets/images/heroes/ivvy-pay-hero-new-960w.webp?v=dd827f6ec2 960w, /assets/images/heroes/ivvy-pay-hero-new.webp 1920w"
+          srcset="/assets/images/heroes/ivvy-pay-hero-new-960w.webp?v=bdc7878c39 960w, /assets/images/heroes/ivvy-pay-hero-new.webp 1920w"
           sizes="50vw">
         <img
           src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221%22%20height%3D%221%22%2F%3E"
@@ -831,7 +834,7 @@ ul,ol{list-style:none}
     </div>
   </div>
   <div class="container">
-    <div class="page-hero__content" style="--ph-title-lines:2;--ph-title-lines-md:1;--ph-title-lines-lg:1;--ph-subtitle-lines:1;--ph-subtitle-lines-md:1;--ph-subtitle-lines-lg:1;">
+    <div class="page-hero__content" style="--ph-title-lines:4;--ph-title-lines-md:3;--ph-title-lines-lg:3;--ph-subtitle-lines:2;--ph-subtitle-lines-md:1;--ph-subtitle-lines-lg:1;">
       <p class="page-hero__eyebrow">iVvyPay</p>
       <h1 class="page-hero__title"><span class="page-hero__title-highlight">Venue payment platform</span> <span class="page-hero__title-base">powered by Worldpay</span></h1>
       <p class="page-hero__subtitle"><strong>Smarter payments for venues and event spaces.</strong></p>
@@ -850,11 +853,11 @@ ul,ol{list-style:none}
         <p>iVvyPay is your venue's all-in-one payment platform, designed to streamline event billing, improve cash flow, and deliver a frictionless online payment experience.</p>
       </div>
       <div style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:32px;margin-top:48px;">
-        <img src="/assets/images/payment-logos/visa.webp?v=dd827f6ec2" alt="Visa" width="80" height="40" style="height:32px;width:auto;object-fit:contain;" loading="lazy" decoding="async">
-        <img src="/assets/images/payment-logos/mastercard.webp?v=dd827f6ec2" alt="Mastercard" width="80" height="40" style="height:32px;width:auto;object-fit:contain;" loading="lazy" decoding="async">
-        <img src="/assets/images/payment-logos/amex.webp?v=dd827f6ec2" alt="American Express" width="80" height="40" style="height:32px;width:auto;object-fit:contain;" loading="lazy" decoding="async">
-        <img src="/assets/images/payment-logos/gpay.webp?v=dd827f6ec2" alt="Google Pay" width="80" height="40" style="height:32px;width:auto;object-fit:contain;" loading="lazy" decoding="async">
-        <img src="/assets/images/payment-logos/apay.webp?v=dd827f6ec2" alt="Apple Pay" width="80" height="40" style="height:32px;width:auto;object-fit:contain;" loading="lazy" decoding="async">
+        <img src="/assets/images/payment-logos/visa.webp?v=bdc7878c39" alt="Visa" width="80" height="40" style="height:32px;width:auto;object-fit:contain;" loading="lazy" decoding="async">
+        <img src="/assets/images/payment-logos/mastercard.webp?v=bdc7878c39" alt="Mastercard" width="80" height="40" style="height:32px;width:auto;object-fit:contain;" loading="lazy" decoding="async">
+        <img src="/assets/images/payment-logos/amex.webp?v=bdc7878c39" alt="American Express" width="80" height="40" style="height:32px;width:auto;object-fit:contain;" loading="lazy" decoding="async">
+        <img src="/assets/images/payment-logos/gpay.webp?v=bdc7878c39" alt="Google Pay" width="80" height="40" style="height:32px;width:auto;object-fit:contain;" loading="lazy" decoding="async">
+        <img src="/assets/images/payment-logos/apay.webp?v=bdc7878c39" alt="Apple Pay" width="80" height="40" style="height:32px;width:auto;object-fit:contain;" loading="lazy" decoding="async">
       </div>
     </div>
   </div>
@@ -887,7 +890,7 @@ ul,ol{list-style:none}
         
       </div>
       <div class="benefit__image-wrapper">
-        <img src="/assets/images/badges/ivvy-pay-badge-5.webp?v=dd827f6ec2" alt="iVvyPay" class="benefit__image" loading="lazy" width="600" height="500" decoding="async">
+        <img src="/assets/images/badges/ivvy-pay-badge-5.webp?v=bdc7878c39" alt="iVvyPay" class="benefit__image" loading="lazy" width="600" height="500" decoding="async">
       </div>
     </div>
   </div>
@@ -906,7 +909,7 @@ ul,ol{list-style:none}
         <p class="benefit__desc" style="font-size:14px;margin-top:16px;">For more information on Worldpay for payments, visit <a href="https://platforms.worldpay.com/en/" target="_blank" rel="noopener noreferrer" style="color:var(--ivvy-primary);">www.platforms.worldpay.com/en/</a></p>
       </div>
       <div class="benefit__image-wrapper benefit__image-wrapper--logo">
-        <img src="/assets/images/logos/worldpay-logo.webp?v=dd827f6ec2" alt="Worldpay" class="benefit__image benefit__image--logo" loading="lazy" width="400" height="120" decoding="async">
+        <img src="/assets/images/logos/worldpay-logo.webp?v=bdc7878c39" alt="Worldpay" class="benefit__image benefit__image--logo" loading="lazy" width="400" height="120" decoding="async">
       </div>
     </div>
   </div>
@@ -925,7 +928,7 @@ ul,ol{list-style:none}
         <p class="benefit__desc"><strong>Whatever suits your venue best.</strong></p>
       </div>
       <div class="benefit__image-wrapper">
-        <img src="/assets/images/badges/ivvy-pay-badge-3.webp?v=dd827f6ec2" alt="iVvyPay Fees" class="benefit__image" loading="lazy" width="600" height="500" decoding="async">
+        <img src="/assets/images/badges/ivvy-pay-badge-3.webp?v=bdc7878c39" alt="iVvyPay Fees" class="benefit__image" loading="lazy" width="600" height="500" decoding="async">
       </div>
     </div>
   </div>
@@ -936,7 +939,7 @@ ul,ol{list-style:none}
   <div class="container">
     <div class="section__grid section__grid--2col">
       <div>
-        <img src="/assets/images/badges/ivvy-pay-badge-4.webp?v=dd827f6ec2" alt="Billing Automation" class="section__image" loading="lazy" width="600" height="500" decoding="async">
+        <img src="/assets/images/badges/ivvy-pay-badge-4.webp?v=bdc7878c39" alt="Billing Automation" class="section__image" loading="lazy" width="600" height="500" decoding="async">
       </div>
       <div>
         <h2 class="section__title"><span class="gradient-text gradient-text--dark">What is Billing Automation?</span></h2>
@@ -991,7 +994,7 @@ ul,ol{list-style:none}
 
 
 <section class="cta" id="getstarted" style="padding-bottom:80px;">
-  <img src="/assets/images/patterns/cta-pattern.webp?v=dd827f6ec2" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600">
+  <img src="/assets/images/patterns/cta-pattern.webp?v=bdc7878c39" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600">
   <div class="container">
     <div class="cta__inner">
       <h2 class="cta__title"><span class="scroll-color-text scroll-color-text--from-white">Smarter venue payments</span> start with iVvyPay</h2>
@@ -1054,7 +1057,7 @@ ul,ol{list-style:none}
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=dd827f6ec2" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=bdc7878c39" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
         <div class="footer__social">
           <a href="https://linkedin.com/company/ivvy-pty-ltd/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1220,7 +1223,7 @@ ul,ol{list-style:none}
 
 
 
-<script src="/assets/js/scripts.js?v=dd827f6ec2" defer></script>
+<script src="/assets/js/scripts.js?v=bdc7878c39" defer></script>
 
 
 
