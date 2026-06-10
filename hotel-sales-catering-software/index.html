@@ -1,16 +1,16 @@
-<!-- build:27246922945-1784 -->
+<!-- build:27250795449-1785 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=0343436dc6">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=0343436dc6">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=0343436dc6">
-  <link rel="alternate icon" href="/assets/images/favicon.ico?v=0343436dc6">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=0343436dc6">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=0343436dc6">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=0343436dc6">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=bcea12ce9b">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=bcea12ce9b">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=bcea12ce9b">
+  <link rel="alternate icon" href="/assets/images/favicon.ico?v=bcea12ce9b">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=bcea12ce9b">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=bcea12ce9b">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=bcea12ce9b">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Sales &amp; Catering Software for Hotels | Event Sales | iVvy</title>
   <meta name="description" content="Sales and catering software for hotels. Streamline event sales, manage bookings, send instant quotes, and grow venue revenue with iVvy.">
@@ -34,8 +34,8 @@
   
     
   <link rel="preload" as="image" fetchpriority="high"
-        href="/assets/images/heroes/hotels-hero.webp?v=0343436dc6"
-        imagesrcset="/assets/images/heroes/hotels-hero-960w.webp?v=0343436dc6 960w, /assets/images/heroes/hotels-hero-1280w.webp 1280w, /assets/images/heroes/hotels-hero.webp 1920w"
+        href="/assets/images/heroes/hotels-hero.webp?v=bcea12ce9b"
+        imagesrcset="/assets/images/heroes/hotels-hero-960w.webp?v=bcea12ce9b 960w, /assets/images/heroes/hotels-hero-1280w.webp 1280w, /assets/images/heroes/hotels-hero.webp 1920w"
         imagesizes="(min-width: 1024px) 50vw, 0px">
     
   
@@ -238,6 +238,7 @@ ul,ol{list-style:none}
 .page-hero__title-base{color:#fff;display:inline}
 .page-hero__title-highlight{color:#99CC52;display:inline}
 .page-hero__title-pill{display:inline-flex;align-items:center;padding:4px 12px;border-radius:9999px;font-size:13px;font-weight:600;font-family:'Nunito','Nunito Fallback',sans-serif;text-transform:uppercase;letter-spacing:0.05em;background:rgba(153,204,82,0.15);color:#99CC52;margin-bottom:20px;min-height:26px}
+.page-hero__eyebrow-pill{display:inline-flex;align-items:center;padding:4px 12px;border-radius:9999px;font-size:13px;font-weight:600;font-family:'Nunito','Nunito Fallback',sans-serif;text-transform:uppercase;letter-spacing:0.05em;background:rgba(153,204,82,0.15);color:#99CC52;margin-bottom:20px;min-height:26px;box-sizing:border-box}
 /* CLS guard (belt-and-braces): the subtitle reserves vertical space based on a
    per-instance --ph-subtitle-lines / --ph-subtitle-lines-md / --ph-subtitle-lines-lg
    custom property, falling back to safe worst-case values. This locks layout even
@@ -278,11 +279,14 @@ ul,ol{list-style:none}
 .integration-card__name{font-size:14px;font-weight:700;font-family:'Nunito','Nunito Fallback',sans-serif;color:#103620;text-align:center;margin-top:auto;padding-top:8px}
 .integration-card__badge{position:absolute;top:8px;right:8px;background:rgba(153,204,82,0.15);color:#103620;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;padding:2px 8px;border-radius:9999px}
 .intro__inner{margin:0 auto;text-align:center}
-.intro__title{font-size:30px;font-weight:700;color:#103620;margin-bottom:32px;line-height:1.2;letter-spacing:-0.02em;min-height:calc(30px * 1.2 * 3);text-wrap:balance}
-@media(min-width:1024px){.intro__title{font-size:44px;min-height:calc(44px * 1.2 * 2)}}
+.intro__title{font-size:30px;font-weight:700;color:#103620;margin-bottom:32px;line-height:1.3;letter-spacing:-0.02em;min-height:calc(30px * 1.3 * 3);text-wrap:balance}
+@media(min-width:1024px){.intro__title{font-size:44px;min-height:calc(44px * 1.3 * 2)}}
 .intro__title span:not(.scroll-color-text){color:#99CC52}
-/* CLS guard: intro__text body copy — without these, the async styles.css activates 16/18px sizing and line-height 1.625 over the inherited body styling, shifting the section below. */
-.intro__text{font-size:16px;color:#666;line-height:1.625}
+/* CLS guard: intro__text body copy — sizing + max-width + text-wrap:pretty inlined so the
+   async styles.css cannot re-wrap the paragraph when the Nunito web font swaps in over the
+   Arial-based 'Nunito Fallback'. Capping line length to ~720px keeps per-line character count
+   low enough that fallback→real font metric variance cannot add/remove a line. */
+.intro__text{font-size:16px;color:#666;line-height:1.625;max-width:720px;margin-left:auto;margin-right:auto;text-wrap:pretty}
 @media(min-width:1024px){.intro__text{font-size:18px}}
 .intro__text p + p{margin-top:8px}
 @media(min-width:1024px){.intro__text p + p{margin-top:20px}}
@@ -302,6 +306,39 @@ ul,ol{list-style:none}
 .integration-hero-logos__line{display:block;width:2rem;height:2px;background:linear-gradient(90deg,rgba(153,204,82,0.2),#99CC52)}
 .integration-hero-logos__icon{display:flex;align-items:center;justify-content:center;width:2.25rem;height:2.25rem;border-radius:50%;border:1px solid rgba(153,204,82,0.3);background:rgba(255,255,255,0.1);color:#99CC52;font-size:1rem;font-weight:700}
 @media(min-width:1024px){.integration-hero-logos{gap:2.5rem}.integration-hero-logos__card{width:180px;height:88px}.integration-hero-logos__card img{height:3.5rem}.integration-hero-logos__line{width:3rem}}
+/* CLS guard: trust-logos marquee — without these inlined, the 23 logo <img> tags render in
+   default block flow (wrapping across many rows = ~600-800px tall) until styles.css arrives,
+   then collapse into a single-row flex marquee (~220px). That collapse pushes every section
+   below upward, producing 0.15 CLS on every venue/industry page that uses trust-logos. */
+.trust-logos{padding:48px 0 80px;background:hsl(0 0% 96% / 0.3);overflow:hidden;position:relative;min-height:220px;contain:layout style}
+@media(min-width:768px){.trust-logos{min-height:230px}}
+@media(min-width:1024px){.trust-logos{padding:56px 0 96px;min-height:240px}}
+.trust-logos__wrapper{position:relative;width:100%;overflow:hidden}
+.trust-logos__track{display:flex;width:max-content;gap:48px}
+@media(min-width:768px){.trust-logos__track{gap:80px}}
+.trust-logos__logo{flex-shrink:0;height:32px;width:120px;object-fit:contain;filter:grayscale(100%);opacity:0.6}
+@media(min-width:768px){.trust-logos__logo{height:40px}}
+/* CLS guard: /customers/ case-study grids — without these inlined the async styles.css
+   reshapes the cards from block stacking into a 3/4-col grid with aspect-ratio image
+   wells, producing a ~0.06 CLS as the page below the hero collapses upward. */
+.case-study-grid{display:grid;grid-template-columns:1fr;gap:24px}
+.case-study-grid--4col,.case-study-grid--3col{grid-template-columns:1fr}
+@media(min-width:768px){.case-study-grid,.case-study-grid--4col,.case-study-grid--3col{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.case-study-grid,.case-study-grid--3col{grid-template-columns:repeat(3,1fr)}.case-study-grid--4col{grid-template-columns:repeat(4,1fr)}}
+.case-study-card{display:block;position:relative;border-radius:24px;overflow:hidden;box-shadow:0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -4px rgba(0,0,0,0.1)}
+.case-study-card--white{background:#fff;display:flex;flex-direction:column}
+.case-study-card__image{position:relative;aspect-ratio:4/3;overflow:hidden;background-color:#e5e7eb}
+@media(max-width:639px){.case-study-card__image{aspect-ratio:16/9}}
+.case-study-card__image img{width:100%;height:100%;object-fit:cover}
+/* CLS guard: lock card body text height so Poppins/Nunito font-swap cannot reflow card
+   rows on /customers/. Each text block reserves an exact px height (line-height * lines),
+   and the headline is clamped to 3 lines so longer copy can't grow the card either. */
+.case-study-card--white .case-study-card__body{min-height:184px}
+.case-study-card--white .case-study-card__logo-wrap{height:40px;margin-bottom:8px}
+.case-study-card__company{min-height:21px;line-height:21px;margin-bottom:8px}
+.case-study-card--white .case-study-card__headline--dark{min-height:63px;line-height:21px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:16px}
+.case-study-card--white .case-study-card__link{min-height:21px;line-height:21px;display:inline-block}
+@media(max-width:639px){.case-study-card--white .case-study-card__body{min-height:120px}.case-study-card--white .case-study-card__headline--dark{display:none;min-height:0}}
 /* CLS guard: foundational section layout primitives must be reserved in critical CSS — otherwise
    the async stylesheet arrival activates grid layout / typography sizing on every .section__grid,
    pushing content vertically by 100-400px. Fixes residual CLS on /security/, /request-demo/, /faqs/,
@@ -326,21 +363,27 @@ ul,ol{list-style:none}
 .section__eyebrow--green{color:#103620}
 .section__lead{font-size:18px;color:#103620;margin-bottom:16px;line-height:1.6}
 .section__text{font-size:16px;color:#666;line-height:1.8;margin-bottom:16px}
+.section__text-block{max-width:100%}
+.section__text-block p{font-size:16px;color:#666;line-height:1.8;margin-bottom:16px}
 .section__header{margin-bottom:32px}
 .section__header--center{text-align:center}
 .section__header h2{min-height:calc(1.2em * var(--sec-title-lines, 2));text-wrap:balance}
 .page-title{font-size:32px;color:#103620;margin-bottom:16px;line-height:1.1;font-weight:800;min-height:calc(32px * 1.1 * 2)}
 @media(min-width:768px){.page-title{font-size:40px;min-height:calc(40px * 1.1 * 2)}}
 .page-title--highlight{color:#99CC52}
-/* FAQ list — reserves card geometry so async styles-pages.css cannot shift /faqs/ on first paint. */
-.faq-container{max-width:880px;margin:0 auto}
+/* FAQ list — reserves card geometry so async styles-pages.css cannot shift /faqs/ on first paint.
+   Values mirror styles-pages.css exactly: 768px wrapper, gray-50 cards with no border, Poppins
+   question font (matches --font-heading), so font-swap and stylesheet arrival cause no reflow. */
+.faq-container{max-width:768px;margin:0 auto}
 .faq-category{margin-bottom:48px}
-.faq-category__title{font-size:22px;font-weight:700;color:#103620;margin-bottom:16px;line-height:1.2}
+.faq-category:last-child{margin-bottom:0}
+.faq-category__title{font-size:24px;font-weight:700;color:#103620;margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid #99CC52;line-height:1.2}
 .faq-list{display:flex;flex-direction:column;gap:12px}
-.faq-card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden}
-.faq-card__question{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 24px;font-family:'Nunito','Nunito Fallback',sans-serif;font-weight:600;font-size:16px;color:#103620;cursor:pointer;list-style:none;min-height:62px}
+.faq-card{background:#f5f5f5;border:none;border-radius:12px;padding:0 24px}
+.faq-card__question{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 0;font-family:'Poppins','Poppins Fallback',sans-serif;font-weight:600;font-size:16px;color:#103620;cursor:pointer;list-style:none;text-align:left;min-height:62px}
 .faq-card__question::-webkit-details-marker{display:none}
-.faq-card__answer{padding:0 24px 20px;font-size:15px;color:#666;line-height:1.7}
+.faq-card__chevron{flex-shrink:0;margin-left:16px;color:#666;width:16px;height:16px}
+.faq-card__answer{font-family:'Nunito','Nunito Fallback',sans-serif;font-size:16px;color:#666;line-height:1.6;padding:0 0 20px;margin:0}
 /* Checklist — reserves bullet row height for /request-demo/ left column before async CSS arrives. */
 .checklist{list-style:none;display:flex;flex-direction:column;gap:12px}
 .checklist__item{display:flex;align-items:flex-start;gap:12px;font-size:16px;color:#103620;line-height:1.6;min-height:26px}
@@ -398,6 +441,19 @@ ul,ol{list-style:none}
 .special-carousel__dot--active{background:#99CC52;transform:scale(1.25)}
 .special-category-section--dark .special-carousel__dot{background:rgba(255,255,255,0.3)}
 .special-category-section--dark .special-carousel__dot--active{background:#99CC52}
+/* CLS guard: testimonial-slider crossfade — without these inlined, all 3 testimonial slides
+   render as block elements stacked vertically (~600-900px) until styles-pages.css arrives and
+   collapses them into a single grid cell (~200-320px). That collapse pushes the section below
+   upward by ~400-700px, producing 0.15+ CLS on /request-demo/ and every venue page that uses
+   the testimonial slider. */
+.testimonial-slider{max-width:1152px;margin:0 auto;text-align:center;position:relative;min-height:320px;display:grid;grid-template-columns:1fr}
+.testimonial-banner .testimonial-slider{min-height:auto}
+.testimonial-slide{grid-column:1;grid-row:1;opacity:0;visibility:hidden;pointer-events:none}
+.testimonial-slide--active{opacity:1;visibility:visible;pointer-events:auto}
+.testimonial-slider__controls{grid-column:1;grid-row:2;display:flex;align-items:center;justify-content:center;gap:16px;margin-top:16px;width:100%}
+.testimonial-slider__dots{display:flex;gap:8px;justify-content:center;width:100%}
+.testimonial-slider__dot{width:10px;height:10px;padding:0;border-radius:50%;background:#666;border:none;cursor:pointer;opacity:0.4}
+.testimonial-slider__dot--active{background:#99CC52;opacity:1}
 /* Article rich content layout primitives — inlined so the async styles-pages.css activating
    18px / line-height 1.8 body, 28px h2, 22px h3, 1.25em paragraph margins, 2.5em p+p gaps,
    list padding and embedded media aspect-ratios cannot reflow the article body on first paint.
@@ -483,11 +539,71 @@ ul,ol{list-style:none}
 /* Cookie consent — inline so it stays out-of-flow from first paint and never contributes to CLS while styles.css loads async */
 .cookie-consent{position:fixed;inset:auto 0 0 0;z-index:9999;display:flex;justify-content:center;padding:1rem;pointer-events:none;visibility:hidden;opacity:0;transform:translateZ(0);contain:layout style size}
 .cookie-consent.is-visible{visibility:visible;opacity:1}
+/* CLS guard: /integrations/<slug>/ — the data-flow-list, integration-features-grid,
+   and integration-related-card geometry all live in styles-pages.css (async). Without
+   inlined layout, each section paints as default block flow then collapses into its
+   grid/card layout, producing ~0.10 CLS. Inline minimal layout + locked card heights
+   so cards land at final geometry on first paint. */
+.data-flow-list{max-width:56rem;margin:0 auto;display:flex;flex-direction:column;gap:1.5rem}
+.data-flow-card{display:grid;grid-template-columns:1fr auto 1fr;gap:1rem;align-items:center;padding:1.5rem 2rem;background:#fff;border:1px solid #e5e7eb;border-radius:1rem;min-height:120px}
+@media(max-width:639px){.data-flow-card{grid-template-columns:1fr;text-align:center;gap:0.75rem;padding:1.25rem;min-height:260px}}
+.data-flow-card__side{display:flex;flex-direction:column;align-items:center;gap:0.75rem;min-height:88px}
+.data-flow-card__logo-wrap{width:120px;height:56px;display:inline-flex;align-items:center;justify-content:center}
+.data-flow-card__label{font-size:0.9375rem;line-height:20px;min-height:20px}
+.data-flow-card__arrow{display:flex;flex-direction:column;align-items:center;gap:0.5rem;min-height:60px}
+.integration-features-grid{max-width:64rem;margin:0 auto;display:grid;gap:1.5rem;grid-template-columns:1fr}
+@media(min-width:768px){.integration-features-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.integration-features-grid{grid-template-columns:repeat(3,1fr)}}
+.integration-feature-card{background:#fff;border:1px solid #e5e7eb;border-radius:1rem;padding:1.5rem;min-height:160px}
+.integration-feature-card__icon{width:2.5rem;height:2.5rem;border-radius:0.75rem;margin-bottom:1rem;display:flex;align-items:center;justify-content:center}
+.integration-feature-card__text{line-height:1.6;margin:0;min-height:calc(16px * 1.6 * 3);display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
+.integration-related-card{display:block;border-radius:16px;padding:24px;background:rgba(255,255,255,0.8);border:1px solid rgba(0,0,0,0.06);min-height:212px}
+.integration-related-card__logo{background:#f9fafb;border-radius:12px;padding:16px;display:flex;align-items:center;justify-content:center;height:80px;margin-bottom:16px}
+.integration-related-card__name{font-weight:700;color:#103620;margin-bottom:4px;min-height:24px;line-height:24px}
+.integration-related-card__subtitle{font-size:14px;color:#666;line-height:20px;min-height:40px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+/* CLS guard: /ivvy-pay/ + /venue-event-management-software/ + every product page that uses
+   `.benefit` sections. The 2-col grid, image aspect ratio, and feature row geometry all live
+   in styles.css (async). Without these inlined, the cards paint as default block flow then
+   collapse into a 1fr 1fr grid at >=1024px, producing 0.07-0.10 CLS per stacked benefit. */
+.benefit{padding:80px 0}
+@media(min-width:1024px){.benefit{padding:112px 0}}
+.benefit > .container{display:grid;grid-template-columns:1fr;gap:48px;align-items:center}
+@media(min-width:1024px){.benefit > .container{grid-template-columns:1fr 1fr;gap:64px}.benefit--reverse .benefit__content{order:2}.benefit--reverse .benefit__image-wrapper{order:1}}
+.benefit__title{font-size:30px;font-weight:800;color:#103620;margin-bottom:32px;line-height:1.15;letter-spacing:-0.02em;min-height:calc(30px * 1.15 * 2);text-wrap:balance}
+@media(min-width:768px){.benefit__title{font-size:36px;min-height:calc(36px * 1.15 * 2)}}
+@media(min-width:1024px){.benefit__title{font-size:40px;min-height:calc(40px * 1.15 * 2)}}
+.benefit__subtitle{font-size:16px;color:#666;margin-bottom:24px;line-height:1.5;min-height:24px}
+.benefit__desc{font-size:16px;color:#666;line-height:1.6;margin-bottom:16px}
+.benefit__features{margin-bottom:32px}
+.benefit__feature{display:flex;align-items:flex-start;gap:12px;font-size:16px;color:#374151;margin-bottom:12px;line-height:1.5;min-height:24px}
+.benefit__feature svg{flex-shrink:0;margin-top:4px}
+.benefit__image-wrapper{aspect-ratio:6/5;overflow:hidden;contain:layout style}
+@media(min-width:1024px){.benefit__image-wrapper{display:flex;align-items:center;justify-content:center}}
+.benefit__image{width:100%;height:auto;object-fit:contain;aspect-ratio:6/5}
+.benefit__image-wrapper--logo{display:flex;align-items:center;justify-content:center}
+.benefit__image--logo{max-width:75%;height:auto;object-fit:contain;aspect-ratio:auto}
+/* CLS guard: .cta block at page bottom — title and subtitle font-sizes come from styles.css
+   so on async load they grow from 16px default → 30/44px, shifting the form/buttons below. */
+.cta{padding:80px 0;position:relative;overflow:hidden}
+@media(min-width:1024px){.cta{padding:112px 0}}
+.cta__pattern{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35;pointer-events:none}
+.cta__inner{text-align:center;position:relative;z-index:2}
+.cta__title{font-size:30px;font-weight:700;color:#fff;margin-bottom:24px;line-height:1.15;letter-spacing:-0.02em;min-height:calc(30px * 1.15 * 2);text-wrap:balance}
+@media(min-width:1024px){.cta__title{font-size:44px;min-height:calc(44px * 1.15 * 2)}}
+.cta__subtitle{font-size:16px;color:rgba(255,255,255,0.8);max-width:672px;margin:0 auto 40px;line-height:1.6;min-height:calc(16px * 1.6 * 2)}
+/* CLS guard: FAQ accordion lives in styles-pages.css (async). Without inlined geometry, each
+   <details> renders with default chrome then collapses into the styled accordion row, shifting
+   the CTA below. Min-height reserves the closed-state row height. */
+.faq-accordion{border-bottom:1px solid #e5e7eb}
+.faq-accordion__trigger{display:flex;align-items:center;justify-content:space-between;width:100%;padding:16px 0;font-family:'Poppins','Poppins Fallback',sans-serif;font-size:16px;font-weight:600;color:#103620;cursor:pointer;list-style:none;text-align:left;gap:16px;min-height:56px}
+.faq-accordion__trigger::-webkit-details-marker{display:none}
+.faq-accordion__chevron{flex-shrink:0;color:#666}
+.faq-accordion__content{font-size:16px;color:#555;line-height:1.8;padding-bottom:16px;margin:0}
 </style>
 
   
-  <link rel="preload" href="/assets/css/page/p-75065250ec.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/css/page/p-75065250ec.css"></noscript>
+  <link rel="preload" href="/assets/css/page/p-e2e894e064.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/page/p-e2e894e064.css"></noscript>
   
   
   <noscript></noscript>
@@ -567,7 +683,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__left">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=0343436dc6" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=bcea12ce9b" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
         </a>
         <nav class="nav">
           
@@ -836,7 +952,7 @@ ul,ol{list-style:none}
       <picture>
         <source
           media="(min-width: 1024px)"
-          srcset="/assets/images/heroes/hotels-hero-960w.webp?v=0343436dc6 960w, /assets/images/heroes/hotels-hero-1280w.webp 1280w, /assets/images/heroes/hotels-hero.webp 1920w"
+          srcset="/assets/images/heroes/hotels-hero-960w.webp?v=bcea12ce9b 960w, /assets/images/heroes/hotels-hero-1280w.webp 1280w, /assets/images/heroes/hotels-hero.webp 1920w"
           sizes="50vw">
         <img
           src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221920%22%20height%3D%221080%22%2F%3E"
@@ -891,49 +1007,49 @@ ul,ol{list-style:none}
       
       
       
-      <img src="/assets/images/logos/accor.png?v=0343436dc6" alt="Accor Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/accor.png?v=bcea12ce9b" alt="Accor Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/minor-hotels.webp?v=0343436dc6" alt="Minor Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/minor-hotels.webp?v=bcea12ce9b" alt="Minor Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/alh-group.webp?v=0343436dc6" alt="ALH Group" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/alh-group.webp?v=bcea12ce9b" alt="ALH Group" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/allianz-stadium.webp?v=0343436dc6" alt="Allianz Stadium" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/allianz-stadium.webp?v=bcea12ce9b" alt="Allianz Stadium" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/goodwood.webp?v=0343436dc6" alt="Goodwood Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/goodwood.webp?v=bcea12ce9b" alt="Goodwood Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/event.webp?v=0343436dc6" alt="Event" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/event.webp?v=bcea12ce9b" alt="Event" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/tfe-hotels.webp?v=0343436dc6" alt="TFE Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/tfe-hotels.webp?v=bcea12ce9b" alt="TFE Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/comwell.webp?v=0343436dc6" alt="Comwell" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/comwell.webp?v=bcea12ce9b" alt="Comwell" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/village.webp?v=0343436dc6" alt="Village Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/village.webp?v=bcea12ce9b" alt="Village Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/howard-smith.webp?v=0343436dc6" alt="Howard Smith Wharves" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/howard-smith.webp?v=bcea12ce9b" alt="Howard Smith Wharves" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/solotel.webp?v=0343436dc6" alt="Solotel" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/solotel.webp?v=bcea12ce9b" alt="Solotel" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/avc.webp?v=0343436dc6" alt="AVC" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/avc.webp?v=bcea12ce9b" alt="AVC" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/central-hall.webp?v=0343436dc6" alt="Central Hall Westminster" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/central-hall.webp?v=bcea12ce9b" alt="Central Hall Westminster" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/murrayfield.webp?v=0343436dc6" alt="Murrayfield" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/murrayfield.webp?v=bcea12ce9b" alt="Murrayfield" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/tottenham.webp?v=0343436dc6" alt="Tottenham Hotspur" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/tottenham.webp?v=bcea12ce9b" alt="Tottenham Hotspur" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/elior.webp?v=0343436dc6" alt="Elior" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/elior.webp?v=bcea12ce9b" alt="Elior" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/sheffield.webp?v=0343436dc6" alt="Sheffield" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/sheffield.webp?v=bcea12ce9b" alt="Sheffield" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/southern-cross.webp?v=0343436dc6" alt="Southern Cross" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/southern-cross.webp?v=bcea12ce9b" alt="Southern Cross" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/queensland-gov.webp?v=0343436dc6" alt="University of Queensland" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/queensland-gov.webp?v=bcea12ce9b" alt="University of Queensland" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/victoria.webp?v=0343436dc6" alt="University of Victoria" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/victoria.webp?v=bcea12ce9b" alt="University of Victoria" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/australian-government.webp?v=0343436dc6" alt="Australian Government" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/australian-government.webp?v=bcea12ce9b" alt="Australian Government" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/qld-education.webp?v=0343436dc6" alt="Dept of Education" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/qld-education.webp?v=bcea12ce9b" alt="Dept of Education" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
     </div>
   </div>
@@ -1025,7 +1141,7 @@ ul,ol{list-style:none}
         
       </div>
       <div class="venue-intro__image">
-        <img src="/assets/images/pages/hotels-1.webp?v=0343436dc6" alt="Hotels Software Dashboard" width="600" height="400" loading="lazy" decoding="async">
+        <img src="/assets/images/pages/hotels-1.webp?v=bcea12ce9b" alt="Hotels Software Dashboard" width="600" height="400" loading="lazy" decoding="async">
       </div>
     </div>
   </div>
@@ -1221,7 +1337,7 @@ ul,ol{list-style:none}
         </div>
       </div>
       <div class="venue-intro__image">
-        <img src="/assets/images/benefits/speed.webp?v=0343436dc6" alt="Why choose iVvy" width="600" height="400" loading="lazy" decoding="async">
+        <img src="/assets/images/benefits/speed.webp?v=bcea12ce9b" alt="Why choose iVvy" width="600" height="400" loading="lazy" decoding="async">
       </div>
     </div>
   </div>
@@ -1240,11 +1356,11 @@ ul,ol{list-style:none}
       <a href="/customers/mantra-group/" class="cs-card-link">
         <div class="cs-card">
           <div class="cs-card__image">
-            <img src="/assets/images/case-studies/mantra-hero-thumb.webp?v=0343436dc6" alt="" width="400" height="300" loading="lazy" decoding="async">
+            <img src="/assets/images/case-studies/mantra-hero-thumb.webp?v=bcea12ce9b" alt="" width="400" height="300" loading="lazy" decoding="async">
           </div>
           <div class="cs-card__body">
             <div class="cs-card__logo-wrap">
-              <img src="/assets/images/logos/mantra-logo.webp?v=0343436dc6" alt="" width="160" height="64" loading="lazy" decoding="async">
+              <img src="/assets/images/logos/mantra-logo.webp?v=bcea12ce9b" alt="" width="160" height="64" loading="lazy" decoding="async">
             </div>
             
             <h3 class="cs-card__name">Mantra Group</h3>
@@ -1268,11 +1384,11 @@ ul,ol{list-style:none}
       <a href="/customers/tfe/" class="cs-card-link">
         <div class="cs-card">
           <div class="cs-card__image">
-            <img src="/assets/images/case-studies/tfe-hero-thumb.webp?v=0343436dc6" alt="" width="400" height="300" loading="lazy" decoding="async">
+            <img src="/assets/images/case-studies/tfe-hero-thumb.webp?v=bcea12ce9b" alt="" width="400" height="300" loading="lazy" decoding="async">
           </div>
           <div class="cs-card__body">
             <div class="cs-card__logo-wrap">
-              <img src="/assets/images/logos/tfe-logo.webp?v=0343436dc6" alt="" width="160" height="64" loading="lazy" decoding="async">
+              <img src="/assets/images/logos/tfe-logo.webp?v=bcea12ce9b" alt="" width="160" height="64" loading="lazy" decoding="async">
             </div>
             
             <h3 class="cs-card__name">TFE Hotels</h3>
@@ -1296,11 +1412,11 @@ ul,ol{list-style:none}
       <a href="/customers/best-western-boulder-falls/" class="cs-card-link">
         <div class="cs-card">
           <div class="cs-card__image">
-            <img src="/assets/images/case-studies/best-western-hero-thumb.webp?v=0343436dc6" alt="" width="400" height="300" loading="lazy" decoding="async">
+            <img src="/assets/images/case-studies/best-western-hero-thumb.webp?v=bcea12ce9b" alt="" width="400" height="300" loading="lazy" decoding="async">
           </div>
           <div class="cs-card__body">
             <div class="cs-card__logo-wrap">
-              <img src="/assets/images/logos/best-western-logo.webp?v=0343436dc6" alt="" width="160" height="64" loading="lazy" decoding="async">
+              <img src="/assets/images/logos/best-western-logo.webp?v=bcea12ce9b" alt="" width="160" height="64" loading="lazy" decoding="async">
             </div>
             
             <h3 class="cs-card__name">Best Western Boulder Falls Inn</h3>
@@ -1756,7 +1872,7 @@ ul,ol{list-style:none}
 
 <section class="cta">
   
-  <img src="/assets/images/patterns/cta-pattern.webp?v=0343436dc6" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35;mix-blend-mode:soft-light;pointer-events:none;">
+  <img src="/assets/images/patterns/cta-pattern.webp?v=bcea12ce9b" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35;mix-blend-mode:soft-light;pointer-events:none;">
   <div class="container">
     <div class="cta__inner">
       <h2 class="cta__title">Start seeing <span class="scroll-color-text scroll-color-text--from-white">your results</span></h2>
@@ -1817,7 +1933,7 @@ ul,ol{list-style:none}
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=0343436dc6" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=bcea12ce9b" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
         <div class="footer__social">
           <a href="https://linkedin.com/company/ivvy-pty-ltd/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1981,7 +2097,7 @@ ul,ol{list-style:none}
 
 
 
-<script src="/assets/js/scripts.js?v=0343436dc6" defer></script>
+<script src="/assets/js/scripts.js?v=bcea12ce9b" defer></script>
 
 
 
