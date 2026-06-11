@@ -1,16 +1,16 @@
-<!-- build:27328336711-1819 -->
+<!-- build:27329019318-1820 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=fc3775b726">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=fc3775b726">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=fc3775b726">
-  <link rel="alternate icon" href="/assets/images/favicon.ico?v=fc3775b726">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=fc3775b726">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=fc3775b726">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=fc3775b726">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=e5021a6d84">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=e5021a6d84">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=e5021a6d84">
+  <link rel="alternate icon" href="/assets/images/favicon.ico?v=e5021a6d84">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=e5021a6d84">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=e5021a6d84">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=e5021a6d84">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Bepoz by Oolio Integration | iVvy</title>
   <meta name="description" content="Connect iVvy with Bepoz POS for seamless event billing and transaction management.">
@@ -123,8 +123,8 @@ ul,ol{list-style:none}
 .nav{display:none}@media(min-width:1200px){.nav{display:flex;align-items:center;gap:0;min-height:40px;flex-shrink:0;contain:layout}}
 .nav__item{position:relative;flex:1;display:flex;justify-content:center}
 .nav__link{display:inline-flex;align-items:center;justify-content:center;gap:4px;height:40px;padding:8px 16px;font-family:'Nunito','Nunito Fallback',sans-serif;font-size:14px;font-weight:500;color:#666666;border-radius:0;background:none;border:none;text-transform:none;letter-spacing:normal;white-space:nowrap}
-.nav__dropdown{position:absolute;top:100%;left:0;opacity:0;visibility:hidden;pointer-events:none;padding-top:8px;min-width:220px;z-index:1000}
-.nav__item:hover .nav__dropdown{opacity:1;visibility:visible;pointer-events:auto}
+  .nav__dropdown{position:absolute;top:100%;left:50%;--dd-shift:0px;transform:translateX(calc(-50% + var(--dd-shift))) translateY(-10px);opacity:0;visibility:hidden;pointer-events:none;padding-top:8px;min-width:220px;z-index:1000}
+  .nav__item:hover .nav__dropdown{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(calc(-50% + var(--dd-shift))) translateY(0)}
 .login-dropdown{position:relative}
 .login-dropdown__menu{display:none;position:absolute}
 .login-dropdown:not(.login-dropdown--mobile):hover .login-dropdown__menu,.login-dropdown.open .login-dropdown__menu{display:block}
@@ -280,7 +280,7 @@ ul,ol{list-style:none}
    async styles.css cannot re-wrap the paragraph when the Nunito web font swaps in over the
    Arial-based 'Nunito Fallback'. Capping line length to ~720px keeps per-line character count
    low enough that fallback→real font metric variance cannot add/remove a line. */
-.intro__text{font-size:16px;color:#666;line-height:1.625;max-width:720px;margin-left:auto;margin-right:auto;text-wrap:pretty}
+.intro__text{font-size:16px;color:#666;line-height:1.625;margin-left:auto;margin-right:auto;text-wrap:pretty}
 @media(min-width:1024px){.intro__text{font-size:18px}}
 .intro__text p + p{margin-top:8px}
 @media(min-width:1024px){.intro__text p + p{margin-top:20px}}
@@ -601,8 +601,8 @@ ul,ol{list-style:none}
 </style>
 
   
-  <link rel="preload" href="/assets/css/page/p-2b4c68eff6.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/css/page/p-2b4c68eff6.css"></noscript>
+  <link rel="preload" href="/assets/css/page/p-def28f5037.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/page/p-def28f5037.css"></noscript>
   
   
   <noscript></noscript>
@@ -682,7 +682,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__logo-wrap">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=fc3775b726" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=e5021a6d84" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
         </a>
       </div>
       <nav class="nav">
@@ -930,7 +930,7 @@ ul,ol{list-style:none}
     <div class="page-hero__content">
       <div class="integration-hero-logos" style="min-height:72px;">
         <div class="integration-hero-logos__card">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=fc3775b726" alt="iVvy" width="120" height="56" loading="eager" decoding="async">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=e5021a6d84" alt="iVvy" width="120" height="56" loading="eager" decoding="async">
         </div>
         <div class="integration-hero-logos__connector">
           <span class="integration-hero-logos__line"></span>
@@ -938,7 +938,7 @@ ul,ol{list-style:none}
           <span class="integration-hero-logos__line"></span>
         </div>
         <div class="integration-hero-logos__card">
-          <img src="/assets/images/integrations/bepoz.webp?v=fc3775b726" alt="Bepoz by Oolio" width="120" height="56" loading="eager" decoding="async">
+          <img src="/assets/images/integrations/bepoz.webp?v=e5021a6d84" alt="Bepoz by Oolio" width="120" height="56" loading="eager" decoding="async">
         </div>
       </div>
       <h1 class="page-hero__title" style="--ph-title-lines:3;--ph-title-lines-md:2;--ph-title-lines-lg:2;">
@@ -986,7 +986,7 @@ ul,ol{list-style:none}
       <div class="data-flow-card">
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/ivvy-logo-venues.webp?v=fc3775b726" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/ivvy-logo-venues.webp?v=e5021a6d84" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Bookings</span>
         </div>
@@ -1002,7 +1002,7 @@ ul,ol{list-style:none}
         </div>
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/integrations/bepoz.webp?v=fc3775b726" alt="Bepoz by Oolio" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/integrations/bepoz.webp?v=e5021a6d84" alt="Bepoz by Oolio" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Account</span>
         </div>
@@ -1011,7 +1011,7 @@ ul,ol{list-style:none}
       <div class="data-flow-card">
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/ivvy-logo-venues.webp?v=fc3775b726" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/ivvy-logo-venues.webp?v=e5021a6d84" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Additional Items</span>
         </div>
@@ -1027,7 +1027,7 @@ ul,ol{list-style:none}
         </div>
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/integrations/bepoz.webp?v=fc3775b726" alt="Bepoz by Oolio" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/integrations/bepoz.webp?v=e5021a6d84" alt="Bepoz by Oolio" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Saleable Items</span>
         </div>
@@ -1036,7 +1036,7 @@ ul,ol{list-style:none}
       <div class="data-flow-card">
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/ivvy-logo-venues.webp?v=fc3775b726" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/ivvy-logo-venues.webp?v=e5021a6d84" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Invoice &amp; Payment</span>
         </div>
@@ -1052,7 +1052,7 @@ ul,ol{list-style:none}
         </div>
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/integrations/bepoz.webp?v=fc3775b726" alt="Bepoz by Oolio" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/integrations/bepoz.webp?v=e5021a6d84" alt="Bepoz by Oolio" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Payments</span>
         </div>
@@ -1099,7 +1099,7 @@ ul,ol{list-style:none}
 
 <section class="cta">
   
-  <img src="/assets/images/patterns/cta-pattern.webp?v=fc3775b726" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35;mix-blend-mode:soft-light;pointer-events:none;">
+  <img src="/assets/images/patterns/cta-pattern.webp?v=e5021a6d84" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35;mix-blend-mode:soft-light;pointer-events:none;">
   <div class="container">
     <div class="cta__inner">
       <h2 class="cta__title">Ready to integrate <span class="scroll-color-text scroll-color-text--from-white">Bepoz by Oolio</span> with iVvy?</h2>
@@ -1281,7 +1281,7 @@ ul,ol{list-style:none}
       
       <a href="/integrations/handl/" class="integration-related-card">
         <div class="integration-related-card__logo">
-          <img src="/assets/images/integrations/handl.webp?v=fc3775b726" alt="H&amp;L" width="96" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/integrations/handl.webp?v=e5021a6d84" alt="H&amp;L" width="96" height="48" loading="lazy" decoding="async">
         </div>
         <h3 class="integration-related-card__name">H&amp;L</h3>
         <p class="integration-related-card__subtitle">Hospitality POS integration</p>
@@ -1289,7 +1289,7 @@ ul,ol{list-style:none}
       
       <a href="/integrations/swiftpos/" class="integration-related-card">
         <div class="integration-related-card__logo">
-          <img src="/assets/images/integrations/swiftpos.webp?v=fc3775b726" alt="Swiftpos by Oolio" width="96" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/integrations/swiftpos.webp?v=e5021a6d84" alt="Swiftpos by Oolio" width="96" height="48" loading="lazy" decoding="async">
         </div>
         <h3 class="integration-related-card__name">Swiftpos by Oolio</h3>
         <p class="integration-related-card__subtitle">Hospitality POS integration</p>
@@ -1297,7 +1297,7 @@ ul,ol{list-style:none}
       
       <a href="/integrations/xero/" class="integration-related-card">
         <div class="integration-related-card__logo">
-          <img src="/assets/images/integrations/xero.webp?v=fc3775b726" alt="Xero" width="96" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/integrations/xero.webp?v=e5021a6d84" alt="Xero" width="96" height="48" loading="lazy" decoding="async">
         </div>
         <h3 class="integration-related-card__name">Xero</h3>
         <p class="integration-related-card__subtitle">Get realtime Invoices and Payments directly into your Xero Account.</p>
@@ -1305,7 +1305,7 @@ ul,ol{list-style:none}
       
       <a href="/integrations/myob/" class="integration-related-card">
         <div class="integration-related-card__logo">
-          <img src="/assets/images/integrations/myob.webp?v=fc3775b726" alt="MYOB" width="96" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/integrations/myob.webp?v=e5021a6d84" alt="MYOB" width="96" height="48" loading="lazy" decoding="async">
         </div>
         <h3 class="integration-related-card__name">MYOB</h3>
         <p class="integration-related-card__subtitle">Synchronise invoices, contacts, payments &amp; refunds</p>
@@ -1313,7 +1313,7 @@ ul,ol{list-style:none}
       
       <a href="/integrations/opera-cloud/" class="integration-related-card">
         <div class="integration-related-card__logo">
-          <img src="/assets/images/integrations/opera-cloud.webp?v=fc3775b726" alt="Opera" width="96" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/integrations/opera-cloud.webp?v=e5021a6d84" alt="Opera" width="96" height="48" loading="lazy" decoding="async">
         </div>
         <h3 class="integration-related-card__name">Opera</h3>
         <p class="integration-related-card__subtitle">Save time and effort by managing event-related accommodation bookings on a single platform.</p>
@@ -1321,7 +1321,7 @@ ul,ol{list-style:none}
       
       <a href="/integrations/mews/" class="integration-related-card">
         <div class="integration-related-card__logo">
-          <img src="/assets/images/integrations/mews.webp?v=fc3775b726" alt="Mews" width="96" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/integrations/mews.webp?v=e5021a6d84" alt="Mews" width="96" height="48" loading="lazy" decoding="async">
         </div>
         <h3 class="integration-related-card__name">Mews</h3>
         <p class="integration-related-card__subtitle">Full visibility of available accommodation</p>
@@ -1338,7 +1338,7 @@ ul,ol{list-style:none}
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=fc3775b726" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=e5021a6d84" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
         <div class="footer__social">
           <a href="https://linkedin.com/company/ivvy-pty-ltd/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1498,7 +1498,7 @@ ul,ol{list-style:none}
 
 
 
-<script src="/assets/js/scripts.js?v=fc3775b726" defer></script>
+<script src="/assets/js/scripts.js?v=e5021a6d84" defer></script>
 
 
 
