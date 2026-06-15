@@ -1,16 +1,16 @@
-<!-- build:27522057831-1894 -->
+<!-- build:27526976326-1895 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=ef06614fe8">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=ef06614fe8">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=ef06614fe8">
-  <link rel="alternate icon" href="/assets/images/favicon.ico?v=ef06614fe8">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=ef06614fe8">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=ef06614fe8">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=ef06614fe8">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=bf53614310">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=bf53614310">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=bf53614310">
+  <link rel="alternate icon" href="/assets/images/favicon.ico?v=bf53614310">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=bf53614310">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=bf53614310">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=bf53614310">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Venue Directory Integration | iVvy</title>
   <meta name="description" content="List your venue on the Venue Directory to attract more bookings and increase visibility.">
@@ -187,6 +187,12 @@ ul,ol{list-style:none}
 /* /integrations/ has a very long 3-line title plus subtitle; lock outer to absorb
    font-swap wrap variance in the Poppins title (CLS guard, PSI desktop 0.103). */
 @media(min-width:1024px){.page-hero--integrations{min-height:600px}}
+/* Integration detail hero: logos + title + subtitle + meta badges. Lock outer
+   height so Poppins title font-swap line-wrap variance cannot grow the hero
+   and shift sections below (CLS guard, PSI desktop /integrations/googlecalendar/ 0.104). */
+.page-hero--integration-detail{min-height:440px}
+@media(min-width:768px){.page-hero--integration-detail{min-height:480px}}
+@media(min-width:1024px){.page-hero--integration-detail{min-height:520px}}
 .page-hero--centered .page-hero__content{margin:0 auto;max-width:896px}
 /* Centered hero content is narrower (896px) and typically shorter than split hero.
    Tighten title/subtitle reservations so short legal/terms titles don't leave dead space. */
@@ -698,7 +704,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__logo-wrap">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=ef06614fe8" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=bf53614310" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
         </a>
       </div>
       <nav class="nav">
@@ -941,12 +947,12 @@ ul,ol{list-style:none}
 <main>
   
 
-<section class="page-hero page-hero--gradient page-hero--centered">
+<section class="page-hero page-hero--gradient page-hero--centered page-hero--integration-detail">
   <div class="container">
     <div class="page-hero__content">
       <div class="integration-hero-logos" style="min-height:72px;">
         <div class="integration-hero-logos__card">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=ef06614fe8" alt="iVvy" width="120" height="56" loading="eager" decoding="async">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=bf53614310" alt="iVvy" width="120" height="56" loading="eager" decoding="async">
         </div>
         <div class="integration-hero-logos__connector">
           <span class="integration-hero-logos__line"></span>
@@ -954,7 +960,7 @@ ul,ol{list-style:none}
           <span class="integration-hero-logos__line"></span>
         </div>
         <div class="integration-hero-logos__card">
-          <img src="/assets/images/integrations/venue-directory.webp?v=ef06614fe8" alt="Venue Directory" width="120" height="56" loading="eager" decoding="async">
+          <img src="/assets/images/integrations/venue-directory.webp?v=bf53614310" alt="Venue Directory" width="120" height="56" loading="eager" decoding="async">
         </div>
       </div>
       <h1 class="page-hero__title" style="--ph-title-lines:3;--ph-title-lines-md:2;--ph-title-lines-lg:2;">
@@ -1002,7 +1008,7 @@ ul,ol{list-style:none}
       <div class="data-flow-card">
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/ivvy-logo-venues.webp?v=ef06614fe8" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/ivvy-logo-venues.webp?v=bf53614310" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Contracts</span>
         </div>
@@ -1018,7 +1024,7 @@ ul,ol{list-style:none}
         </div>
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/integrations/venue-directory.webp?v=ef06614fe8" alt="Venue Directory" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/integrations/venue-directory.webp?v=bf53614310" alt="Venue Directory" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Contracts</span>
         </div>
@@ -1027,7 +1033,7 @@ ul,ol{list-style:none}
       <div class="data-flow-card">
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/ivvy-logo-venues.webp?v=ef06614fe8" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/ivvy-logo-venues.webp?v=bf53614310" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Company</span>
         </div>
@@ -1043,7 +1049,7 @@ ul,ol{list-style:none}
         </div>
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/integrations/venue-directory.webp?v=ef06614fe8" alt="Venue Directory" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/integrations/venue-directory.webp?v=bf53614310" alt="Venue Directory" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Clients</span>
         </div>
@@ -1052,7 +1058,7 @@ ul,ol{list-style:none}
       <div class="data-flow-card">
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/ivvy-logo-venues.webp?v=ef06614fe8" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/ivvy-logo-venues.webp?v=bf53614310" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Opportunity</span>
         </div>
@@ -1068,7 +1074,7 @@ ul,ol{list-style:none}
         </div>
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/integrations/venue-directory.webp?v=ef06614fe8" alt="Venue Directory" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/integrations/venue-directory.webp?v=bf53614310" alt="Venue Directory" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Enquiry</span>
         </div>
@@ -1077,7 +1083,7 @@ ul,ol{list-style:none}
       <div class="data-flow-card">
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/ivvy-logo-venues.webp?v=ef06614fe8" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/ivvy-logo-venues.webp?v=bf53614310" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Cost Centre / Price / Tax</span>
         </div>
@@ -1093,7 +1099,7 @@ ul,ol{list-style:none}
         </div>
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/integrations/venue-directory.webp?v=ef06614fe8" alt="Venue Directory" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/integrations/venue-directory.webp?v=bf53614310" alt="Venue Directory" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Cost Centre / Price / Tax</span>
         </div>
@@ -1102,7 +1108,7 @@ ul,ol{list-style:none}
       <div class="data-flow-card">
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/ivvy-logo-venues.webp?v=ef06614fe8" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/ivvy-logo-venues.webp?v=bf53614310" alt="iVvy" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Packages</span>
         </div>
@@ -1118,7 +1124,7 @@ ul,ol{list-style:none}
         </div>
         <div class="data-flow-card__side">
           <div class="data-flow-card__logo-wrap">
-            <img src="/assets/images/integrations/venue-directory.webp?v=ef06614fe8" alt="Venue Directory" width="80" height="32" loading="lazy" decoding="async">
+            <img src="/assets/images/integrations/venue-directory.webp?v=bf53614310" alt="Venue Directory" width="80" height="32" loading="lazy" decoding="async">
           </div>
           <span class="data-flow-card__label">Packages</span>
         </div>
@@ -1165,7 +1171,7 @@ ul,ol{list-style:none}
 
 <section class="cta" style="content-visibility:auto;contain-intrinsic-size:0 800px;">
   
-  <img src="/assets/images/patterns/cta-pattern.webp?v=ef06614fe8" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35;mix-blend-mode:soft-light;pointer-events:none;">
+  <img src="/assets/images/patterns/cta-pattern.webp?v=bf53614310" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35;mix-blend-mode:soft-light;pointer-events:none;">
   <div class="container">
     <div class="cta__inner">
       <h2 class="cta__title">Ready to integrate <span class="scroll-color-text scroll-color-text--from-white">Venue Directory</span> with iVvy?</h2>
@@ -1283,7 +1289,7 @@ ul,ol{list-style:none}
       
       <a href="/integrations/googlecalendar/" class="integration-related-card">
         <div class="integration-related-card__logo">
-          <img src="/assets/images/integrations/google-calendar.webp?v=ef06614fe8" alt="Google Calendar" width="96" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/integrations/google-calendar.webp?v=bf53614310" alt="Google Calendar" width="96" height="48" loading="lazy" decoding="async">
         </div>
         <h3 class="integration-related-card__name">Google Calendar</h3>
         <p class="integration-related-card__subtitle">Sync your iVvy events with Google Calendar</p>
@@ -1291,7 +1297,7 @@ ul,ol{list-style:none}
       
       <a href="/integrations/outlook/" class="integration-related-card">
         <div class="integration-related-card__logo">
-          <img src="/assets/images/integrations/outlook.webp?v=ef06614fe8" alt="Outlook - Tasks &amp; Activities" width="96" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/integrations/outlook.webp?v=bf53614310" alt="Outlook - Tasks &amp; Activities" width="96" height="48" loading="lazy" decoding="async">
         </div>
         <h3 class="integration-related-card__name">Outlook - Tasks &amp; Activities</h3>
         <p class="integration-related-card__subtitle">Sync tasks and activities</p>
@@ -1299,7 +1305,7 @@ ul,ol{list-style:none}
       
       <a href="/integrations/outlook-calendar/" class="integration-related-card">
         <div class="integration-related-card__logo">
-          <img src="/assets/images/integrations/outlook.webp?v=ef06614fe8" alt="Outlook Calendar" width="96" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/integrations/outlook.webp?v=bf53614310" alt="Outlook Calendar" width="96" height="48" loading="lazy" decoding="async">
         </div>
         <h3 class="integration-related-card__name">Outlook Calendar</h3>
         <p class="integration-related-card__subtitle">Bring your venue diary into Outlook Calendar</p>
@@ -1307,7 +1313,7 @@ ul,ol{list-style:none}
       
       <a href="/integrations/sabre/" class="integration-related-card">
         <div class="integration-related-card__logo">
-          <img src="/assets/images/integrations/sabre.webp?v=ef06614fe8" alt="Sabre" width="96" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/integrations/sabre.webp?v=bf53614310" alt="Sabre" width="96" height="48" loading="lazy" decoding="async">
         </div>
         <h3 class="integration-related-card__name">Sabre</h3>
         <p class="integration-related-card__subtitle">Global distribution system integration</p>
@@ -1315,7 +1321,7 @@ ul,ol{list-style:none}
       
       <a href="/integrations/smartspace/" class="integration-related-card">
         <div class="integration-related-card__logo">
-          <img src="/assets/images/integrations/smartspace.webp?v=ef06614fe8" alt="SmartSpace" width="96" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/integrations/smartspace.webp?v=bf53614310" alt="SmartSpace" width="96" height="48" loading="lazy" decoding="async">
         </div>
         <h3 class="integration-related-card__name">SmartSpace</h3>
         <p class="integration-related-card__subtitle">Intelligent space management</p>
@@ -1323,7 +1329,7 @@ ul,ol{list-style:none}
       
       <a href="/integrations/lightwave/" class="integration-related-card">
         <div class="integration-related-card__logo">
-          <img src="/assets/images/integrations/lightwave.webp?v=ef06614fe8" alt="Lightwave" width="96" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/integrations/lightwave.webp?v=bf53614310" alt="Lightwave" width="96" height="48" loading="lazy" decoding="async">
         </div>
         <h3 class="integration-related-card__name">Lightwave</h3>
         <p class="integration-related-card__subtitle">Reduce energy waste and optimise efficiency across every function space</p>
@@ -1340,7 +1346,7 @@ ul,ol{list-style:none}
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=ef06614fe8" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=bf53614310" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
         <div class="footer__social">
           <a href="https://linkedin.com/company/ivvy-pty-ltd/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1500,7 +1506,7 @@ ul,ol{list-style:none}
 
 
 
-<script src="/assets/js/scripts.js?v=ef06614fe8" defer></script>
+<script src="/assets/js/scripts.js?v=bf53614310" defer></script>
 
 
 
