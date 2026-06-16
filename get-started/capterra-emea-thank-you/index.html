@@ -1,15 +1,16 @@
-<!-- build:27653011660-1917 -->
+<!-- build:27655320516-1918 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=845d877a10">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=845d877a10">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=845d877a10">
-  <link rel="alternate icon" href="/assets/images/favicon.ico?v=845d877a10">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=845d877a10">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=845d877a10">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=845d877a10">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: blob: https:; font-src 'self' data: https:; media-src 'self' blob: https:; frame-src https:; connect-src 'self' https: wss:; object-src 'none'; base-uri 'self'; form-action 'self' https:; frame-ancestors 'self'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types default dompurify 'allow-duplicates'">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=48c7b547ea">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=48c7b547ea">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=48c7b547ea">
+  <link rel="alternate icon" href="/assets/images/favicon.ico?v=48c7b547ea">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=48c7b547ea">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=48c7b547ea">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=48c7b547ea">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>iVvy</title>
   <meta name="description" content="">
@@ -592,45 +593,7 @@ ul,ol{list-style:none}
   
 
   
-  <style>
-    *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    img { max-width: 100%; height: auto; }
-    iframe { max-width: 100%; }
-    /* Define design tokens at .lp-page so var() resolves consistently between editor + static */
-    .lp-page { --font-body: 'Nunito Sans', 'Nunito Sans Fallback', sans-serif; --font-heading: 'Poppins', 'Poppins Fallback', sans-serif; --dark-green: #103620; --color-primary: #99CC52; }
-    body { font-family: 'Nunito Sans', 'Nunito Sans Fallback', sans-serif; color: #666; font-weight: 400; }
-    .lp-page, .lp-page p, .lp-page li, .lp-page div { font-family: var(--font-body); }
-    .lp-page p, .lp-page li { font-weight: 400; color: #666; }
-    .lp-page span { font-family: var(--font-body); }
-    .lp-page h1, .lp-page h2, .lp-page h3, .lp-page h4, .lp-page h5, .lp-page h6 { font-family: var(--font-heading); color: var(--dark-green); margin: 0; font-weight: 800; line-height: 1.1; }
-    .lp-page h1 span, .lp-page h2 span, .lp-page h3 span, .lp-page h4 span, .lp-page h5 span, .lp-page h6 span { font-family: inherit; font-weight: inherit; line-height: inherit; color: inherit; }
-    .lp-page .btn { display: inline-flex; align-items: center; justify-content: center; height: auto; padding: 16px 32px; border-radius: 9999px; font-family: var(--font-body); font-weight: 700; font-size: 16px; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none; transition: transform 0.2s ease, opacity 0.2s ease; cursor: pointer; border: none; position: relative; overflow: hidden; isolation: isolate; }
-    .lp-page .btn--primary { background: linear-gradient(135deg, hsl(85,54%,56%), hsl(85,60%,50%)); color: var(--dark-green); box-shadow: 0 4px 14px rgba(153,204,82,0.3); }
-    .lp-page .btn--primary:hover { background: var(--dark-green); color: #99CC52; box-shadow: 0 8px 24px rgba(153,204,82,0.4); }
-    .lp-page .btn--secondary { background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.3); backdrop-filter: blur(4px); }
-    .lp-page .btn--outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.3); }
-    .lp-page .lp-pill { display: inline-flex; align-items: center; padding: 6px 16px; border-radius: 9999px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 20px; font-family: var(--font-body); }
-    .lp-page .lp-pill--light { background: rgba(153,204,82,0.15); color: var(--dark-green); }
-    .lp-page .lp-pill--dark { background: rgba(255,255,255,0.15); color: #fff; }
-    /* Align landing-page content edges with the site header logo.
-       Header uses container mx-auto px-4 lg:px-8 with a 1400px max container,
-       so the logo's outer edge sits at max(16px, (vw-1400)/2 + 16px) on mobile
-       and max(32px, (vw-1400)/2 + 32px) on lg+. Mirror that on landing sections. */
-    .lp-page .container { width: 100%; margin: 0 auto; padding: 0; max-width: 1400px; }
-    .lp-page section[style*="padding"][class^="lp-"],
-    .lp-page section[style*="padding"][class*=" lp-"] {
-      padding-left: max(16px, calc((100vw - 1400px) / 2 + 16px)) !important;
-      padding-right: max(16px, calc((100vw - 1400px) / 2 + 16px)) !important;
-    }
-    @media (min-width: 1024px) {
-      .lp-page section[style*="padding"][class^="lp-"],
-      .lp-page section[style*="padding"][class*=" lp-"] {
-        padding-left: max(32px, calc((100vw - 1400px) / 2 + 32px)) !important;
-        padding-right: max(32px, calc((100vw - 1400px) / 2 + 32px)) !important;
-      }
-    }
-  </style>
+  <style>*,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth}img{max-width:100%;height:auto}iframe{max-width:100%}.lp-page{--font-body:'Nunito Sans','Nunito Sans Fallback',sans-serif;--font-heading:'Poppins','Poppins Fallback',sans-serif;--dark-green:#103620;--color-primary:#99CC52}body{font-family:'Nunito Sans','Nunito Sans Fallback',sans-serif;color:#666;font-weight:400}.lp-page,.lp-page p,.lp-page li,.lp-page div{font-family:var(--font-body)}.lp-page p,.lp-page li{font-weight:400;color:#666}.lp-page span{font-family:var(--font-body)}.lp-page h1,.lp-page h2,.lp-page h3,.lp-page h4,.lp-page h5,.lp-page h6{font-family:var(--font-heading);color:var(--dark-green);margin:0;font-weight:800;line-height:1.1}.lp-page h1 span,.lp-page h2 span,.lp-page h3 span,.lp-page h4 span,.lp-page h5 span,.lp-page h6 span{font-family:inherit;font-weight:inherit;line-height:inherit;color:inherit}.lp-page .btn{display:inline-flex;align-items:center;justify-content:center;height:auto;padding:16px 32px;border-radius:9999px;font-family:var(--font-body);font-weight:700;font-size:16px;text-transform:uppercase;letter-spacing:0.05em;text-decoration:none;transition:transform .2s ease,opacity .2s ease;cursor:pointer;border:none;position:relative;overflow:hidden;isolation:isolate}.lp-page .btn--primary{background:linear-gradient(135deg,hsl(85,54%,56%),hsl(85,60%,50%));color:var(--dark-green);box-shadow:0 4px 14px rgba(153,204,82,0.3)}.lp-page .btn--primary:hover{background:var(--dark-green);color:#99CC52;box-shadow:0 8px 24px rgba(153,204,82,0.4)}.lp-page .btn--secondary{background:rgba(255,255,255,0.1);color:#fff;border:1px solid rgba(255,255,255,0.3);backdrop-filter:blur(4px)}.lp-page .btn--outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.3)}.lp-page .lp-pill{display:inline-flex;align-items:center;padding:6px 16px;border-radius:9999px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:20px;font-family:var(--font-body)}.lp-page .lp-pill--light{background:rgba(153,204,82,0.15);color:var(--dark-green)}.lp-page .lp-pill--dark{background:rgba(255,255,255,0.15);color:#fff}.lp-page .container{width:100%;margin:0 auto;padding:0;max-width:1400px}.lp-page section[style*="padding"][class^="lp-"],.lp-page section[style*="padding"][class*=" lp-"]{padding-left:max(16px,calc((100vw - 1400px)/2 + 16px))!important;padding-right:max(16px,calc((100vw - 1400px)/2 + 16px))!important}@media(min-width:1024px){.lp-page section[style*="padding"][class^="lp-"],.lp-page section[style*="padding"][class*=" lp-"]{padding-left:max(32px,calc((100vw - 1400px)/2 + 32px))!important;padding-right:max(32px,calc((100vw - 1400px)/2 + 32px))!important}}</style>
 
   
   
@@ -881,7 +844,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__logo-wrap">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=845d877a10" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=48c7b547ea" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
         </a>
       </div>
       <nav class="nav">
@@ -1135,7 +1098,7 @@ ul,ol{list-style:none}
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=845d877a10" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=48c7b547ea" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
         <div class="footer__social">
           <a href="https://linkedin.com/company/ivvy-pty-ltd/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1296,7 +1259,7 @@ ul,ol{list-style:none}
 </div>
 
 
-<script src="/assets/js/scripts.js?v=845d877a10" defer></script>
+<script src="/assets/js/scripts.js?v=48c7b547ea" defer></script>
 
 
 <script type="application/ld+json">
