@@ -1,16 +1,16 @@
-<!-- build:28147260270-2049 -->
+<!-- build:28148124647-2050 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=174e8fe957">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=174e8fe957">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=174e8fe957">
-  <link rel="alternate icon" href="/assets/images/favicon.ico?v=174e8fe957">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=174e8fe957">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=174e8fe957">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=174e8fe957">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=d61fdede6d">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=d61fdede6d">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=d61fdede6d">
+  <link rel="alternate icon" href="/assets/images/favicon.ico?v=d61fdede6d">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=d61fdede6d">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=d61fdede6d">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=d61fdede6d">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Integration Partnerships | Become an iVvy Partner</title>
   <meta name="description" content="Become an iVvy integration partner. Connect your solution to iVvy's event management platform powering venue and event sales for hospitality businesses worldwide.">
@@ -119,8 +119,8 @@ ul,ol{list-style:none}
 .nav{display:none}@media(min-width:1200px){.nav{display:flex;align-items:center;gap:0;min-height:40px;flex-shrink:0;contain:layout}}
 .nav__item{position:relative;flex:1;display:flex;justify-content:center}
 .nav__link{display:inline-flex;align-items:center;justify-content:center;gap:4px;height:40px;padding:8px 16px;font-family:'Nunito','Nunito Fallback',sans-serif;font-size:14px;font-weight:500;color:#666666;border-radius:0;background:none;border:none;text-transform:none;letter-spacing:normal;white-space:nowrap}
-  .nav__dropdown{position:absolute;top:100%;left:50%;--dd-shift:0px;transform:translateX(calc(-50% + var(--dd-shift))) translateY(-10px);opacity:0;visibility:hidden;pointer-events:none;padding-top:8px;min-width:220px;z-index:1000}
-  .nav__item:hover .nav__dropdown{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(calc(-50% + var(--dd-shift))) translateY(0)}
+  .nav__dropdown{position:absolute;top:100%;left:50%;--dd-tx:-50%;transform:translateX(var(--dd-tx)) translateY(-10px);opacity:0;visibility:hidden;pointer-events:none;padding-top:8px;min-width:220px;z-index:1000}
+  .nav__item:hover .nav__dropdown{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(var(--dd-tx)) translateY(0)}
 .login-dropdown{position:relative}
 .login-dropdown__menu{display:none;position:absolute}
 .login-dropdown:not(.login-dropdown--mobile):hover .login-dropdown__menu,.login-dropdown.open .login-dropdown__menu{display:block}
@@ -600,8 +600,8 @@ ul,ol{list-style:none}
 @media(min-width:1024px){.cta{padding:112px 0}}
 .cta__pattern{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35;pointer-events:none}
 .cta__inner{text-align:center;position:relative;z-index:2}
-.cta__title{font-size:30px;font-weight:700;color:#fff;margin-bottom:24px;line-height:1.15;letter-spacing:-0.02em;min-height:calc(30px * 1.15 * 2);text-wrap:balance}
-@media(min-width:1024px){.cta__title{font-size:44px;min-height:calc(44px * 1.15 * 2)}}
+.cta__title{font-size:30px;font-weight:700;color:#fff;margin-bottom:24px;line-height:1.15;letter-spacing:-0.02em;text-wrap:balance}
+@media(min-width:1024px){.cta__title{font-size:44px}}
 .cta__subtitle{font-size:16px;color:rgba(255,255,255,0.8);max-width:672px;margin:0 auto 40px;line-height:1.6;min-height:calc(16px * 1.6 * 2)}
 /* CLS guard: FAQ accordion lives in styles-pages.css (async). Without inlined geometry, each
    <details> renders with default chrome then collapses into the styled accordion row, shifting
@@ -619,8 +619,8 @@ ul,ol{list-style:none}
 </style>
 
   
-  <link rel="preload" href="/assets/css/page/p-f5648b4d46.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/css/page/p-f5648b4d46.css"></noscript>
+  <link rel="preload" href="/assets/css/page/p-e65daa47ef.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/page/p-e65daa47ef.css"></noscript>
   
   
   <noscript></noscript>
@@ -700,7 +700,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__logo-wrap">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=174e8fe957" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=d61fdede6d" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
         </a>
       </div>
       <nav class="nav">
@@ -1096,17 +1096,42 @@ ul,ol{list-style:none}
     justify-content: center;
     gap: 16px;
   }
-  .target-audience-flex .feature-card {
+  .ta-card {
     flex: 0 0 calc(50% - 8px);
     max-width: 220px;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    transition: transform .3s ease, box-shadow .3s ease;
+  }
+  .ta-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  }
+  .ta-card svg {
+    display: block;
+    margin: 0 auto 12px;
+    color: #99CC52;
+  }
+  .ta-card__label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #103620;
+    line-height: 1.3;
   }
   @media (min-width: 640px) {
-    .target-audience-flex .feature-card {
+    .ta-card {
       flex: 0 0 calc(33.333% - 11px);
     }
   }
   @media (min-width: 1024px) {
-    .target-audience-flex .feature-card {
+    .ta-card {
       flex: 0 0 calc(25% - 12px);
     }
   }
@@ -1117,42 +1142,70 @@ ul,ol{list-style:none}
     <div class="section__header section__header--center">
       <p class="section__eyebrow section__eyebrow--green">Reach</p>
       <h2 class="section__title">Target audience</h2>
-      
     </div>
     <div class="target-audience-flex" style="max-width: 900px; margin: 0 auto;">
-      <div class="feature-card feature-card--centered">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#99CC52" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
-        <h3 class="feature-card__title">Hotels & Resorts</h3>
+      <div class="ta-card">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+        <span class="ta-card__label">Hotels &amp; Resorts</span>
       </div>
-      <div class="feature-card feature-card--centered">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#99CC52" stroke-width="1.5"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6h4"/><path d="M18 12h2a2 2 0 0 1 2 2v6h-4"/></svg>
-        <h3 class="feature-card__title">Conference Centres</h3>
+      <div class="ta-card">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
+        <span class="ta-card__label">Conference Centres</span>
       </div>
-      <div class="feature-card feature-card--centered">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#99CC52" stroke-width="1.5"><path d="M3 2v20"/><path d="M21 2v20"/><path d="M3 6h18"/><path d="M3 12h18"/><path d="M3 18h18"/></svg>
-        <h3 class="feature-card__title">Hospitality Groups</h3>
+      <div class="ta-card">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+        <span class="ta-card__label">Hospitality Groups</span>
       </div>
-      <div class="feature-card feature-card--centered">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#99CC52" stroke-width="1.5"><path d="M2 20a2.4 2.4 0 0 0 2 1a2.4 2.4 0 0 0 2 1a2.4 2.4 0 0 0 2-1"/><path d="M4 17v-1a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v1"/><path d="M14 20a2.4 2.4 0 0 0 2-1a2.4 2.4 0 0 0 2 1"/><circle cx="12" cy="10" r="3"/></svg>
-        <h3 class="feature-card__title">Function Venues</h3>
+      <div class="ta-card">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5.8 11.3 2 22l10.7-3.79"/><path d="M4 3h.01"/><path d="M22 8h.01"/><path d="M15 2h.01"/><path d="M22 20h.01"/><path d="m22 2-2.24.75a2.9 2.9 0 0 0-1.96 3.12c.1.86-.57 1.63-1.45 1.63h-.38c-.86 0-1.6.6-1.76 1.44L14 10"/><path d="m22 13-1.99-.94c-.3-.14-.49-.43-.49-.75v-.62c0-.95-.77-1.69-1.69-1.69h-.39c-.32 0-.63-.13-.86-.36L15 7.74"/><path d="M9 14a4 4 0 0 1-.62-1.69"/><path d="M11.46 9.63A4 4 0 0 1 13 9"/><path d="M18 12a3 3 0 0 1 0-6"/></svg>
+        <span class="ta-card__label">Function Venues</span>
       </div>
-      <div class="feature-card feature-card--centered">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#99CC52" stroke-width="1.5"><path d="M10 10v.2A3 3 0 0 1 8.9 16v0H5v0a3 3 0 0 1-1-5.8V10a3 3 0 0 1 6 0Z"/><path d="M7 16v6"/><path d="M13 19v3"/><path d="M12 19h8.3a1 1 0 0 0 .7-1.7L18 14h.3a1 1 0 0 0 .7-1.7L16 9h.3a1 1 0 0 0 .7-1.7L13 4l-1.4 1.4a2 2 0 0 0-.3 2.3l1 1.7-1.5 1.6a1 1 0 0 0 0 1.4l1 1Z"/></svg>
-        <h3 class="feature-card__title">Stadiums</h3>
+      <div class="ta-card">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 18v-7"/><path d="M11.12 2.198a2 2 0 0 1 1.76.006l7.866 3.847c.476.233.31.949-.22.949H3.474c-.53 0-.695-.716-.22-.949z"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M3 22h18"/><path d="M6 18v-7"/></svg>
+        <span class="ta-card__label">Stadiums</span>
       </div>
-      <div class="feature-card feature-card--centered">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#99CC52" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        <h3 class="feature-card__title">Galleries & Museums</h3>
+      <div class="ta-card">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+        <span class="ta-card__label">Galleries &amp; Museums</span>
       </div>
-      <div class="feature-card feature-card--centered">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#99CC52" stroke-width="1.5"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
-        <h3 class="feature-card__title">Corporate Event Spaces</h3>
+      <div class="ta-card">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
+        <span class="ta-card__label">Corporate Event Spaces</span>
       </div>
     </div>
   </div>
 </section>
 
 
+
+<style>
+  .check-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .check-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: var(--ivvy-text-muted, #5a6760);
+    font-size: 16px;
+    line-height: 1.625;
+  }
+  .check-list li::before {
+    content: "";
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin-top: 3px;
+    background-color: #99CC52;
+    -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>") no-repeat center / contain;
+            mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>") no-repeat center / contain;
+  }
+</style>
 <section class="section">
   <div class="container">
     <div class="section__header section__header--center">
@@ -1171,6 +1224,72 @@ ul,ol{list-style:none}
 </section>
 
 
+
+<style>
+  .process-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 672px;
+    margin: 0 auto;
+  }
+  .process-card {
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+  }
+  @media (min-width: 1024px) {
+    .process-card { padding: 32px; }
+  }
+  .process-card__pill {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: rgba(153, 204, 82, 0.15);
+    color: #99CC52;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 16px;
+  }
+  .process-card__title {
+    font-family: var(--font-heading, inherit);
+    font-weight: 700;
+    font-size: 20px;
+    color: #103620;
+    margin: 0 0 12px;
+  }
+  .process-card__items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .process-card__items li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--ivvy-text-muted, #5a6760);
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .process-card__items li::before {
+    content: "";
+    flex-shrink: 0;
+    width: 6px;
+    height: 6px;
+    margin-top: 8px;
+    border-radius: 999px;
+    background: #99CC52;
+  }
+</style>
 <section class="section section--grey">
   <div class="container">
     <div class="section__header section__header--center">
@@ -1178,74 +1297,53 @@ ul,ol{list-style:none}
       <h2 class="section__title">What's the process</h2>
       <p class="section__text">Five steps from conversation to live partner.</p>
     </div>
-    <div class="faq-container" style="max-width: 672px; margin: 0 auto;">
-      <div class="faq-list">
-        <details class="faq-card">
-          <summary class="faq-card__question">
-            <span><strong>Step 1 —</strong> Discovery call</span>
-            <svg class="faq-card__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </summary>
-          <div class="faq-card__answer">
-            <ul class="check-list">
-              <li>Meet the Partnerships team</li>
-              <li>Discuss how your solution complements iVvy's platform</li>
-              <li>Align on business case and assess fit</li>
-            </ul>
-          </div>
-        </details>
-        <details class="faq-card">
-          <summary class="faq-card__question">
-            <span><strong>Step 2 —</strong> Connectivity</span>
-            <svg class="faq-card__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </summary>
-          <div class="faq-card__answer">
-            <ul class="check-list">
-              <li>Receive iVvy API documentation</li>
-              <li>Outline technical requirements to get the integration underway</li>
-            </ul>
-          </div>
-        </details>
-        <details class="faq-card">
-          <summary class="faq-card__question">
-            <span><strong>Step 3 —</strong> Approved integration</span>
-            <svg class="faq-card__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </summary>
-          <div class="faq-card__answer">
-            <ul class="check-list">
-              <li>Technical review with iVvy connectivity team</li>
-              <li>Integration certified once it meets iVvy's standards</li>
-            </ul>
-          </div>
-        </details>
-        <details class="faq-card">
-          <summary class="faq-card__question">
-            <span><strong>Step 4 —</strong> Pilot testing</span>
-            <svg class="faq-card__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </summary>
-          <div class="faq-card__answer">
-            <ul class="check-list">
-              <li>Pilot run with mutual clients</li>
-              <li>Validate smooth, successful launch before going live</li>
-            </ul>
-          </div>
-        </details>
-        <details class="faq-card">
-          <summary class="faq-card__question">
-            <span><strong>Step 5 —</strong> Go live</span>
-            <svg class="faq-card__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </summary>
-          <div class="faq-card__answer">
-            <ul class="check-list">
-              <li>Integration is live — thousands of iVvy customers can discover your solution</li>
-              <li>Co-marketing begins, listing goes live</li>
-              <li>Partnerships team stays engaged to grow the relationship</li>
-            </ul>
-          </div>
-        </details>
+    <div class="process-list">
+      <div class="process-card">
+        <span class="process-card__pill">Step 1</span>
+        <h3 class="process-card__title">Discovery call</h3>
+        <ul class="process-card__items">
+          <li>Meet the Partnerships team</li>
+          <li>Discuss how your solution complements iVvy's platform</li>
+          <li>Align on business case and assess fit</li>
+        </ul>
+      </div>
+      <div class="process-card">
+        <span class="process-card__pill">Step 2</span>
+        <h3 class="process-card__title">Connectivity</h3>
+        <ul class="process-card__items">
+          <li>Receive iVvy API documentation</li>
+          <li>Outline technical requirements to get the integration underway</li>
+        </ul>
+      </div>
+      <div class="process-card">
+        <span class="process-card__pill">Step 3</span>
+        <h3 class="process-card__title">Approved integration</h3>
+        <ul class="process-card__items">
+          <li>Technical review with iVvy connectivity team</li>
+          <li>Integration certified once it meets iVvy's standards</li>
+        </ul>
+      </div>
+      <div class="process-card">
+        <span class="process-card__pill">Step 4</span>
+        <h3 class="process-card__title">Pilot testing</h3>
+        <ul class="process-card__items">
+          <li>Pilot run with mutual clients</li>
+          <li>Validate smooth, successful launch before going live</li>
+        </ul>
+      </div>
+      <div class="process-card">
+        <span class="process-card__pill">Step 5</span>
+        <h3 class="process-card__title">Go live</h3>
+        <ul class="process-card__items">
+          <li>Integration is live — thousands of iVvy customers can discover your solution</li>
+          <li>Co-marketing begins, listing goes live</li>
+          <li>Partnerships team stays engaged to grow the relationship</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
+
 
 
 <section class="section">
@@ -1280,7 +1378,7 @@ ul,ol{list-style:none}
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=174e8fe957" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=d61fdede6d" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
         <div class="footer__social">
           <a href="https://linkedin.com/company/ivvy-pty-ltd/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1442,7 +1540,7 @@ ul,ol{list-style:none}
 
 
 
-<script src="/assets/js/scripts.js?v=174e8fe957" defer></script>
+<script src="/assets/js/scripts.js?v=d61fdede6d" defer></script>
 
 
 
