@@ -1,16 +1,16 @@
-<!-- build:28756964543-2249 -->
+<!-- build:28758364342-2250 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=f4be026fd4">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=f4be026fd4">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=f4be026fd4">
-  <link rel="alternate icon" href="/assets/images/favicon.ico?v=f4be026fd4">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=f4be026fd4">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=f4be026fd4">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=f4be026fd4">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=8c6f992522">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=8c6f992522">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=8c6f992522">
+  <link rel="alternate icon" href="/assets/images/favicon.ico?v=8c6f992522">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=8c6f992522">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=8c6f992522">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=8c6f992522">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>The revenue impact hiding in your venue’s enquiry response time | iVvy Blog</title>
   <meta name="description" content="Find out how much additional revenue your venue could gain by speeding up your enquiry response time.">
@@ -34,8 +34,8 @@
   
     
   <link rel="preload" as="image" fetchpriority="high"
-        href="/assets/images/articles/ca9ede3ffa975eb6-480w.webp?v=f4be026fd4"
-        imagesrcset="/assets/images/articles/ca9ede3ffa975eb6-480w.webp?v=f4be026fd4 480w, /assets/images/articles/ca9ede3ffa975eb6-1200w.webp 1200w"
+        href="/assets/images/articles/ca9ede3ffa975eb6-480w.webp?v=8c6f992522"
+        imagesrcset="/assets/images/articles/ca9ede3ffa975eb6-480w.webp?v=8c6f992522 480w, /assets/images/articles/ca9ede3ffa975eb6-1200w.webp 1200w"
         imagesizes="100vw">
     
   
@@ -184,18 +184,20 @@ ul,ol{list-style:none}
 @media(min-width:1024px){.page-hero--centered{min-height:480px}}
 /* /customers/ has two long subtitles; lock outer height so font-swap line-wrap variance
    in the secondary subtitle cannot grow the hero and shift sections below (CLS guard,
-   PSI desktop reported 0.279 attributed to .page-hero__subtitle--secondary). */
-.page-hero--customers{min-height:560px}
-@media(min-width:1024px){.page-hero--customers{min-height:560px}}
+   PSI desktop reported 0.279 attributed to .page-hero__subtitle--secondary).
+   Selector is doubled (.page-hero.page-hero--customers) so the async styles.css
+   .page-hero--centered rule can't beat it on same-specificity cascade order. */
+.page-hero.page-hero--customers{min-height:560px}
+@media(min-width:1024px){.page-hero.page-hero--customers{min-height:560px}}
 /* /integrations/ has a very long 3-line title plus subtitle; lock outer to absorb
    font-swap wrap variance in the Poppins title (CLS guard, PSI desktop 0.103). */
-@media(min-width:1024px){.page-hero--integrations{min-height:600px}}
+@media(min-width:1024px){.page-hero.page-hero--integrations{min-height:600px}}
 /* Integration detail hero: logos + title + subtitle + meta badges. Lock outer
    height so Poppins title font-swap line-wrap variance cannot grow the hero
    and shift sections below (CLS guard, PSI desktop /integrations/googlecalendar/ 0.104). */
-.page-hero--integration-detail{min-height:440px}
-@media(min-width:768px){.page-hero--integration-detail{min-height:480px}}
-@media(min-width:1024px){.page-hero--integration-detail{min-height:520px}}
+.page-hero.page-hero--integration-detail{min-height:440px}
+@media(min-width:768px){.page-hero.page-hero--integration-detail{min-height:480px}}
+@media(min-width:1024px){.page-hero.page-hero--integration-detail{min-height:520px}}
 .page-hero--centered .page-hero__content{margin:0 auto;max-width:896px}
 /* Centered hero content is narrower (896px) and typically shorter than split hero.
    Tighten title/subtitle reservations so short legal/terms titles don't leave dead space. */
@@ -212,10 +214,15 @@ ul,ol{list-style:none}
 .page-hero--centered .page-hero__subtitle:last-child{margin-bottom:0}
 /* Secondary subtitle paragraph: sits directly under the first; reserves its own
    line-based vertical space via --ph-subtitle2-lines* so the Nunito font swap
-   cannot reflow sections below. Used by /customers/. */
-.page-hero__subtitle--secondary{min-height:calc(18px * 1.6 * var(--ph-subtitle2-lines, 6));margin-top:-12px}
-@media(min-width:768px){.page-hero__subtitle--secondary{min-height:calc(18px * 1.6 * var(--ph-subtitle2-lines-md, 4))}}
-@media(min-width:1024px){.page-hero__subtitle--secondary{min-height:calc(18px * 1.6 * var(--ph-subtitle2-lines-lg, 3))}}
+   cannot reflow sections below. Used by /customers/. Selector is doubled
+   (.page-hero__subtitle.page-hero__subtitle--secondary) so it beats the base
+   .page-hero__subtitle min-height rule defined further down (same specificity,
+   later in the file). Without the specificity bump, the /customers/ hero
+   secondary subtitle only reserved 1 line (28.8px) instead of 4 (115.2px),
+   causing a ~90px CLS shift when the Nunito 400 web font arrived. */
+.page-hero__subtitle.page-hero__subtitle--secondary{min-height:calc(18px * 1.6 * var(--ph-subtitle2-lines, 6));margin-top:-12px}
+@media(min-width:768px){.page-hero__subtitle.page-hero__subtitle--secondary{min-height:calc(18px * 1.6 * var(--ph-subtitle2-lines-md, 4))}}
+@media(min-width:1024px){.page-hero__subtitle.page-hero__subtitle--secondary{min-height:calc(18px * 1.6 * var(--ph-subtitle2-lines-lg, 3))}}
 .page-hero--split{position:relative;min-height:380px;height:auto;display:flex;align-items:center;padding:48px 0;background:#103620}
 @media(min-width:768px){.page-hero--split{min-height:440px}}
 @media(min-width:1024px){.page-hero--split{min-height:520px;padding:64px 0}}
@@ -626,8 +633,8 @@ ul,ol{list-style:none}
 </style>
 
   
-  <link rel="preload" href="/assets/css/page/p-c13654a666.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/css/page/p-c13654a666.css"></noscript>
+  <link rel="preload" href="/assets/css/page/p-c2620d4931.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/page/p-c2620d4931.css"></noscript>
   
   
   <noscript></noscript>
@@ -707,7 +714,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__logo-wrap">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=f4be026fd4" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=8c6f992522" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
         </a>
       </div>
       <nav class="nav">
@@ -983,8 +990,8 @@ ul,ol{list-style:none}
 <section class="article-hero">
   <div class="article-hero__image">
     <img
-      src="/assets/images/articles/ca9ede3ffa975eb6-480w.webp?v=f4be026fd4"
-      srcset="/assets/images/articles/ca9ede3ffa975eb6-480w.webp?v=f4be026fd4 480w, /assets/images/articles/ca9ede3ffa975eb6-1200w.webp 1200w"
+      src="/assets/images/articles/ca9ede3ffa975eb6-480w.webp?v=8c6f992522"
+      srcset="/assets/images/articles/ca9ede3ffa975eb6-480w.webp?v=8c6f992522 480w, /assets/images/articles/ca9ede3ffa975eb6-1200w.webp 1200w"
       sizes="100vw"
       alt="The revenue impact hiding in your venue’s enquiry response time"
       width="1920" height="600"
@@ -1155,18 +1162,14 @@ ul,ol{list-style:none}
 
 
   
-    
-      
-    
+
   
 
   
-    
+
   
 
   
-    
-      
     
   
 
@@ -1177,11 +1180,15 @@ ul,ol{list-style:none}
   
 
   
-
+    
+      
+    
   
 
   
-
+    
+      
+    
   
 
   
@@ -1479,13 +1486,13 @@ ul,ol{list-style:none}
     <h2 class="related-articles__heading">Related articles</h2>
     <div class="related-articles__grid">
       
-      <a href="/blog/venue-booking-software-for-quotes-and-contracts-what-to-look-for/" class="article-card" data-publish-at="2026-07-27T22:00:00+00:00">
+      <a href="/blog/will-venue-ai-make-my-venue-feel-less-personal/" class="article-card" data-publish-at="2026-06-15T23:00:00+00:00">
         
         
         
         <div class="article-card__image-wrap">
           <div class="article-card__image">
-            <img src="https://sqfmzstjyifqdajustwt.supabase.co/storage/v1/render/image/public/article-images/featured/1782183335053-480w.webp?width=480&amp;resize=cover&amp;quality=80" srcset="https://sqfmzstjyifqdajustwt.supabase.co/storage/v1/render/image/public/article-images/featured/1782183335053-480w.webp?width=480&amp;resize=cover&amp;quality=80 480w, /assets/images/articles/0e68e5253253b00e-1200w.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="Venue booking software for quotes and contracts: what to look for" width="600" height="338" loading="lazy" decoding="async">
+            <img src="/assets/images/articles/50258f43ae4bbcd2-480w.webp?v=8c6f992522" srcset="/assets/images/articles/50258f43ae4bbcd2-480w.webp?v=8c6f992522 480w, /assets/images/articles/50258f43ae4bbcd2-1200w.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="Will AI make my venue feel less personal?" width="600" height="338" loading="lazy" decoding="async">
           </div>
         </div>
         
@@ -1493,31 +1500,31 @@ ul,ol{list-style:none}
           
           <span class="article-card__category">Venue Management</span>
           
-          <h3 class="article-card__title">Venue booking software for quotes and contracts: what to look for</h3>
+          <h3 class="article-card__title">Will AI make my venue feel less personal?</h3>
           <div class="article-card__dateline">
             
-            <time datetime="2026-07-27T22:00:00+00:00">July 27, 2026</time>
+            <time datetime="2026-06-15T23:00:00+00:00">June 15, 2026</time>
             
             <span class="article-card__readtime">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              13 min read
+              10 min read
             </span>
             
           </div>
           
-          <p class="article-card__excerpt">This guide covers how venue management software automates the quote-to-contract workflow, what features to prioritise, and the questions worth asking before you commit to a platform.</p>
+          <p class="article-card__excerpt">The concern that venue AI might flatten the personal experience is understandable. In practice, venues using it well find the opposite: less admin and more capacity to be attentive.</p>
           
           <span class="article-card__link">Read article →</span>
         </div>
       </a>
       
-      <a href="/blog/why-manual-venue-booking-processes-fail-and-what-it-costs-you/" class="article-card" data-publish-at="2026-07-13T22:00:00+00:00">
+      <a href="/blog/event-management-software-pricing-what-should-you-expect-to-pay-/" class="article-card" data-publish-at="2026-06-08T23:00:00+00:00">
         
         
         
         <div class="article-card__image-wrap">
           <div class="article-card__image">
-            <img src="https://sqfmzstjyifqdajustwt.supabase.co/storage/v1/render/image/public/article-images/featured/1782171826712-480w.webp?width=480&amp;resize=cover&amp;quality=80" srcset="https://sqfmzstjyifqdajustwt.supabase.co/storage/v1/render/image/public/article-images/featured/1782171826712-480w.webp?width=480&amp;resize=cover&amp;quality=80 480w, /assets/images/articles/4182960f3e17aa27-1200w.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="Why manual venue booking processes fail and what it costs you" width="600" height="338" loading="lazy" decoding="async">
+            <img src="https://sqfmzstjyifqdajustwt.supabase.co/storage/v1/render/image/public/article-images/featured/1779324827836-480w.webp?width=480&amp;resize=cover&amp;quality=80" srcset="https://sqfmzstjyifqdajustwt.supabase.co/storage/v1/render/image/public/article-images/featured/1779324827836-480w.webp?width=480&amp;resize=cover&amp;quality=80 480w, /assets/images/articles/f85d830cb911640f-1200w.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="Event management software pricing: what should you expect to pay?" width="600" height="338" loading="lazy" decoding="async">
           </div>
         </div>
         
@@ -1525,31 +1532,31 @@ ul,ol{list-style:none}
           
           <span class="article-card__category">Venue Management</span>
           
-          <h3 class="article-card__title">Why manual venue booking processes fail and what it costs you</h3>
+          <h3 class="article-card__title">Event management software pricing: what should you expect to pay?</h3>
           <div class="article-card__dateline">
             
-            <time datetime="2026-07-13T22:00:00+00:00">July 13, 2026</time>
+            <time datetime="2026-06-08T23:00:00+00:00">June 8, 2026</time>
             
             <span class="article-card__readtime">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              5 min read
+              9 min read
             </span>
             
           </div>
           
-          <p class="article-card__excerpt">Without the right software, venue booking problems tend to stay hidden until they are already costing you. Discover where manual processes fail and how it can play out for venues.</p>
+          <p class="article-card__excerpt">This guide breaks down realistic cost ranges, hidden fees, and questions to ask before signing for event management software.</p>
           
           <span class="article-card__link">Read article →</span>
         </div>
       </a>
       
-      <a href="/blog/why-event-venue-invoices-get-paid-late-and-how-to-fix-it/" class="article-card" data-publish-at="2026-07-06T22:00:00+00:00">
+      <a href="/blog/why-venues-lose-bookings-and-how-event-sales-ai-can-help/" class="article-card" data-publish-at="2026-06-01T23:00:00+00:00">
         
         
         
         <div class="article-card__image-wrap">
           <div class="article-card__image">
-            <img src="https://sqfmzstjyifqdajustwt.supabase.co/storage/v1/render/image/public/article-images/featured/1782099066584-480w.webp?width=480&amp;resize=cover&amp;quality=80" srcset="https://sqfmzstjyifqdajustwt.supabase.co/storage/v1/render/image/public/article-images/featured/1782099066584-480w.webp?width=480&amp;resize=cover&amp;quality=80 480w, /assets/images/articles/74437fd7ea125d5b-1200w.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="Why event venue invoices get paid late - and how to fix it" width="600" height="338" loading="lazy" decoding="async">
+            <img src="https://sqfmzstjyifqdajustwt.supabase.co/storage/v1/render/image/public/article-images/featured/1779328797351-480w.webp?width=480&amp;resize=cover&amp;quality=80" srcset="https://sqfmzstjyifqdajustwt.supabase.co/storage/v1/render/image/public/article-images/featured/1779328797351-480w.webp?width=480&amp;resize=cover&amp;quality=80 480w, /assets/images/articles/5dcfadfa60868206-1200w.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 32px)" alt="Why venues lose bookings (and how event sales AI can help)" width="600" height="338" loading="lazy" decoding="async">
           </div>
         </div>
         
@@ -1557,10 +1564,10 @@ ul,ol{list-style:none}
           
           <span class="article-card__category">Venue Management</span>
           
-          <h3 class="article-card__title">Why event venue invoices get paid late - and how to fix it</h3>
+          <h3 class="article-card__title">Why venues lose bookings (and how event sales AI can help)</h3>
           <div class="article-card__dateline">
             
-            <time datetime="2026-07-06T22:00:00+00:00">July 6, 2026</time>
+            <time datetime="2026-06-01T23:00:00+00:00">June 1, 2026</time>
             
             <span class="article-card__readtime">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -1569,7 +1576,7 @@ ul,ol{list-style:none}
             
           </div>
           
-          <p class="article-card__excerpt">Payment follow-up is one of the most time-consuming tasks for venue teams. This article looks at where the problem originates and what venue operators can do to get event venue invoices paid on time and easily.</p>
+          <p class="article-card__excerpt">Most venues rank response speed as a priority. Few have a process that delivers it. Here is what happens in the first 60 minutes after an enquiry arrives, and why it determines whether you win the business.</p>
           
           <span class="article-card__link">Read article →</span>
         </div>
@@ -1583,7 +1590,7 @@ ul,ol{list-style:none}
 
 
 <section class="cta">
-  <img src="/assets/images/patterns/cta-pattern.webp?v=f4be026fd4" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600">
+  <img src="/assets/images/patterns/cta-pattern.webp?v=8c6f992522" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600">
   <div class="container">
     <div class="cta__inner">
       <h2 class="cta__title" style="color: var(--ivvy-primary);">Stay in the know</h2>
@@ -1655,7 +1662,7 @@ ul,ol{list-style:none}
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=f4be026fd4" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=8c6f992522" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
         <div class="footer__social">
           <a href="https://linkedin.com/company/ivvy-pty-ltd/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1817,7 +1824,7 @@ ul,ol{list-style:none}
 
 
 
-<script src="/assets/js/scripts.js?v=f4be026fd4" defer></script>
+<script src="/assets/js/scripts.js?v=8c6f992522" defer></script>
 
 
 

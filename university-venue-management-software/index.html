@@ -1,16 +1,16 @@
-<!-- build:28756964543-2249 -->
+<!-- build:28758364342-2250 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=f4be026fd4">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=f4be026fd4">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=f4be026fd4">
-  <link rel="alternate icon" href="/assets/images/favicon.ico?v=f4be026fd4">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=f4be026fd4">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=f4be026fd4">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=f4be026fd4">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=8c6f992522">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=8c6f992522">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=8c6f992522">
+  <link rel="alternate icon" href="/assets/images/favicon.ico?v=8c6f992522">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=8c6f992522">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=8c6f992522">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=8c6f992522">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>University Venue Management Software</title>
   <meta name="description" content="Streamline campus events with iVvy venue management software. Centralize bookings for lecture halls, auditoriums, and study rooms.">
@@ -34,8 +34,8 @@
   
     
   <link rel="preload" as="image" fetchpriority="high"
-        href="/assets/images/heroes/universities-hero.webp?v=f4be026fd4"
-        imagesrcset="/assets/images/heroes/universities-hero-960w.webp?v=f4be026fd4 960w, /assets/images/heroes/universities-hero-1280w.webp 1280w, /assets/images/heroes/universities-hero.webp 1920w"
+        href="/assets/images/heroes/universities-hero.webp?v=8c6f992522"
+        imagesrcset="/assets/images/heroes/universities-hero-960w.webp?v=8c6f992522 960w, /assets/images/heroes/universities-hero-1280w.webp 1280w, /assets/images/heroes/universities-hero.webp 1920w"
         imagesizes="(min-width: 1024px) 50vw, 0px">
     
   
@@ -184,18 +184,20 @@ ul,ol{list-style:none}
 @media(min-width:1024px){.page-hero--centered{min-height:480px}}
 /* /customers/ has two long subtitles; lock outer height so font-swap line-wrap variance
    in the secondary subtitle cannot grow the hero and shift sections below (CLS guard,
-   PSI desktop reported 0.279 attributed to .page-hero__subtitle--secondary). */
-.page-hero--customers{min-height:560px}
-@media(min-width:1024px){.page-hero--customers{min-height:560px}}
+   PSI desktop reported 0.279 attributed to .page-hero__subtitle--secondary).
+   Selector is doubled (.page-hero.page-hero--customers) so the async styles.css
+   .page-hero--centered rule can't beat it on same-specificity cascade order. */
+.page-hero.page-hero--customers{min-height:560px}
+@media(min-width:1024px){.page-hero.page-hero--customers{min-height:560px}}
 /* /integrations/ has a very long 3-line title plus subtitle; lock outer to absorb
    font-swap wrap variance in the Poppins title (CLS guard, PSI desktop 0.103). */
-@media(min-width:1024px){.page-hero--integrations{min-height:600px}}
+@media(min-width:1024px){.page-hero.page-hero--integrations{min-height:600px}}
 /* Integration detail hero: logos + title + subtitle + meta badges. Lock outer
    height so Poppins title font-swap line-wrap variance cannot grow the hero
    and shift sections below (CLS guard, PSI desktop /integrations/googlecalendar/ 0.104). */
-.page-hero--integration-detail{min-height:440px}
-@media(min-width:768px){.page-hero--integration-detail{min-height:480px}}
-@media(min-width:1024px){.page-hero--integration-detail{min-height:520px}}
+.page-hero.page-hero--integration-detail{min-height:440px}
+@media(min-width:768px){.page-hero.page-hero--integration-detail{min-height:480px}}
+@media(min-width:1024px){.page-hero.page-hero--integration-detail{min-height:520px}}
 .page-hero--centered .page-hero__content{margin:0 auto;max-width:896px}
 /* Centered hero content is narrower (896px) and typically shorter than split hero.
    Tighten title/subtitle reservations so short legal/terms titles don't leave dead space. */
@@ -212,10 +214,15 @@ ul,ol{list-style:none}
 .page-hero--centered .page-hero__subtitle:last-child{margin-bottom:0}
 /* Secondary subtitle paragraph: sits directly under the first; reserves its own
    line-based vertical space via --ph-subtitle2-lines* so the Nunito font swap
-   cannot reflow sections below. Used by /customers/. */
-.page-hero__subtitle--secondary{min-height:calc(18px * 1.6 * var(--ph-subtitle2-lines, 6));margin-top:-12px}
-@media(min-width:768px){.page-hero__subtitle--secondary{min-height:calc(18px * 1.6 * var(--ph-subtitle2-lines-md, 4))}}
-@media(min-width:1024px){.page-hero__subtitle--secondary{min-height:calc(18px * 1.6 * var(--ph-subtitle2-lines-lg, 3))}}
+   cannot reflow sections below. Used by /customers/. Selector is doubled
+   (.page-hero__subtitle.page-hero__subtitle--secondary) so it beats the base
+   .page-hero__subtitle min-height rule defined further down (same specificity,
+   later in the file). Without the specificity bump, the /customers/ hero
+   secondary subtitle only reserved 1 line (28.8px) instead of 4 (115.2px),
+   causing a ~90px CLS shift when the Nunito 400 web font arrived. */
+.page-hero__subtitle.page-hero__subtitle--secondary{min-height:calc(18px * 1.6 * var(--ph-subtitle2-lines, 6));margin-top:-12px}
+@media(min-width:768px){.page-hero__subtitle.page-hero__subtitle--secondary{min-height:calc(18px * 1.6 * var(--ph-subtitle2-lines-md, 4))}}
+@media(min-width:1024px){.page-hero__subtitle.page-hero__subtitle--secondary{min-height:calc(18px * 1.6 * var(--ph-subtitle2-lines-lg, 3))}}
 .page-hero--split{position:relative;min-height:380px;height:auto;display:flex;align-items:center;padding:48px 0;background:#103620}
 @media(min-width:768px){.page-hero--split{min-height:440px}}
 @media(min-width:1024px){.page-hero--split{min-height:520px;padding:64px 0}}
@@ -626,8 +633,8 @@ ul,ol{list-style:none}
 </style>
 
   
-  <link rel="preload" href="/assets/css/page/p-615cde5548.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/css/page/p-615cde5548.css"></noscript>
+  <link rel="preload" href="/assets/css/page/p-b6d507320d.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/page/p-b6d507320d.css"></noscript>
   
   
   <noscript></noscript>
@@ -707,7 +714,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__logo-wrap">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=f4be026fd4" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=8c6f992522" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
         </a>
       </div>
       <nav class="nav">
@@ -985,7 +992,7 @@ ul,ol{list-style:none}
       <picture>
         <source
           media="(min-width: 1024px)"
-          srcset="/assets/images/heroes/universities-hero-960w.webp?v=f4be026fd4 960w, /assets/images/heroes/universities-hero-1280w.webp 1280w, /assets/images/heroes/universities-hero.webp 1920w"
+          srcset="/assets/images/heroes/universities-hero-960w.webp?v=8c6f992522 960w, /assets/images/heroes/universities-hero-1280w.webp 1280w, /assets/images/heroes/universities-hero.webp 1920w"
           sizes="50vw">
         <img
           src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221920%22%20height%3D%221080%22%2F%3E"
@@ -1040,49 +1047,49 @@ ul,ol{list-style:none}
       
       
       
-      <img src="/assets/images/logos/accor.png?v=f4be026fd4" alt="Accor Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/accor.png?v=8c6f992522" alt="Accor Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/minor-hotels.webp?v=f4be026fd4" alt="Minor Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/minor-hotels.webp?v=8c6f992522" alt="Minor Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/alh-group.webp?v=f4be026fd4" alt="ALH Group" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/alh-group.webp?v=8c6f992522" alt="ALH Group" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/allianz-stadium.webp?v=f4be026fd4" alt="Allianz Stadium" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/allianz-stadium.webp?v=8c6f992522" alt="Allianz Stadium" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/goodwood.webp?v=f4be026fd4" alt="Goodwood Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/goodwood.webp?v=8c6f992522" alt="Goodwood Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/event.webp?v=f4be026fd4" alt="Event" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/event.webp?v=8c6f992522" alt="Event" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/tfe-hotels.webp?v=f4be026fd4" alt="TFE Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/tfe-hotels.webp?v=8c6f992522" alt="TFE Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/comwell.webp?v=f4be026fd4" alt="Comwell" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/comwell.webp?v=8c6f992522" alt="Comwell" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/village.webp?v=f4be026fd4" alt="Village Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/village.webp?v=8c6f992522" alt="Village Hotels" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/howard-smith.webp?v=f4be026fd4" alt="Howard Smith Wharves" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/howard-smith.webp?v=8c6f992522" alt="Howard Smith Wharves" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/solotel.webp?v=f4be026fd4" alt="Solotel" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/solotel.webp?v=8c6f992522" alt="Solotel" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/avc.webp?v=f4be026fd4" alt="AVC" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/avc.webp?v=8c6f992522" alt="AVC" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/central-hall.webp?v=f4be026fd4" alt="Central Hall Westminster" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/central-hall.webp?v=8c6f992522" alt="Central Hall Westminster" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/murrayfield.webp?v=f4be026fd4" alt="Murrayfield" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/murrayfield.webp?v=8c6f992522" alt="Murrayfield" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/tottenham.webp?v=f4be026fd4" alt="Tottenham Hotspur" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/tottenham.webp?v=8c6f992522" alt="Tottenham Hotspur" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/elior.webp?v=f4be026fd4" alt="Elior" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/elior.webp?v=8c6f992522" alt="Elior" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/sheffield.webp?v=f4be026fd4" alt="Sheffield" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/sheffield.webp?v=8c6f992522" alt="Sheffield" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/southern-cross.webp?v=f4be026fd4" alt="Southern Cross" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/southern-cross.webp?v=8c6f992522" alt="Southern Cross" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/queensland-gov.webp?v=f4be026fd4" alt="University of Queensland" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/queensland-gov.webp?v=8c6f992522" alt="University of Queensland" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/victoria.webp?v=f4be026fd4" alt="University of Victoria" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/victoria.webp?v=8c6f992522" alt="University of Victoria" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/australian-government.webp?v=f4be026fd4" alt="Australian Government" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/australian-government.webp?v=8c6f992522" alt="Australian Government" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
-      <img src="/assets/images/logos/qld-education.webp?v=f4be026fd4" alt="Dept of Education" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
+      <img src="/assets/images/logos/qld-education.webp?v=8c6f992522" alt="Dept of Education" class="trust-logos__logo" loading="lazy" width="120" height="40" decoding="async">
       
     </div>
   </div>
@@ -1172,7 +1179,7 @@ ul,ol{list-style:none}
         
       </div>
       <div class="venue-intro__image">
-        <img src="/assets/images/pages/university-1.webp?v=f4be026fd4" alt="University Dashboard" width="600" height="400" loading="lazy" decoding="async">
+        <img src="/assets/images/pages/university-1.webp?v=8c6f992522" alt="University Dashboard" width="600" height="400" loading="lazy" decoding="async">
       </div>
     </div>
   </div>
@@ -1368,7 +1375,7 @@ ul,ol{list-style:none}
         </div>
       </div>
       <div class="venue-intro__image">
-        <img src="/assets/images/benefits/speed.webp?v=f4be026fd4" alt="Why choose iVvy" width="600" height="400" loading="lazy" decoding="async">
+        <img src="/assets/images/benefits/speed.webp?v=8c6f992522" alt="Why choose iVvy" width="600" height="400" loading="lazy" decoding="async">
       </div>
     </div>
   </div>
@@ -1387,11 +1394,11 @@ ul,ol{list-style:none}
       <a href="/customers/southern-cross/" class="cs-card-link">
         <div class="cs-card">
           <div class="cs-card__image">
-            <img src="/assets/images/case-studies/southern-cross-hero-thumb.webp?v=f4be026fd4" alt="" width="400" height="300" loading="lazy" decoding="async">
+            <img src="/assets/images/case-studies/southern-cross-hero-thumb.webp?v=8c6f992522" alt="" width="400" height="300" loading="lazy" decoding="async">
           </div>
           <div class="cs-card__body">
             <div class="cs-card__logo-wrap">
-              <img src="/assets/images/logos/southern-cross-logo.png?v=f4be026fd4" alt="" width="160" height="64" loading="lazy" decoding="async">
+              <img src="/assets/images/logos/southern-cross-logo.png?v=8c6f992522" alt="" width="160" height="64" loading="lazy" decoding="async">
             </div>
             
             <h3 class="cs-card__name">Southern Cross University</h3>
@@ -1415,11 +1422,11 @@ ul,ol{list-style:none}
       <a href="/customers/queensland-department-of-education/" class="cs-card-link">
         <div class="cs-card">
           <div class="cs-card__image">
-            <img src="/assets/images/case-studies/qld-education-hero-thumb.webp?v=f4be026fd4" alt="" width="400" height="300" loading="lazy" decoding="async">
+            <img src="/assets/images/case-studies/qld-education-hero-thumb.webp?v=8c6f992522" alt="" width="400" height="300" loading="lazy" decoding="async">
           </div>
           <div class="cs-card__body">
             <div class="cs-card__logo-wrap">
-              <img src="/assets/images/logos/qld-education-logo.webp?v=f4be026fd4" alt="" width="160" height="64" loading="lazy" decoding="async">
+              <img src="/assets/images/logos/qld-education-logo.webp?v=8c6f992522" alt="" width="160" height="64" loading="lazy" decoding="async">
             </div>
             
             <h3 class="cs-card__name">Queensland Department of Education &amp; Training</h3>
@@ -1516,7 +1523,7 @@ ul,ol{list-style:none}
 
 <section class="cta" style="content-visibility:auto;contain-intrinsic-size:0 800px;">
   
-  <img src="/assets/images/patterns/cta-pattern.webp?v=f4be026fd4" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35;mix-blend-mode:soft-light;pointer-events:none;">
+  <img src="/assets/images/patterns/cta-pattern.webp?v=8c6f992522" alt="" class="cta__pattern" loading="lazy" decoding="async" width="1200" height="600" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35;mix-blend-mode:soft-light;pointer-events:none;">
   <div class="container">
     <div class="cta__inner">
       <h2 class="cta__title">Start seeing <span class="scroll-color-text scroll-color-text--from-white">your results</span></h2>
@@ -1578,7 +1585,7 @@ ul,ol{list-style:none}
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=f4be026fd4" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=8c6f992522" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
         <div class="footer__social">
           <a href="https://linkedin.com/company/ivvy-pty-ltd/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1740,7 +1747,7 @@ ul,ol{list-style:none}
 
 
 
-<script src="/assets/js/scripts.js?v=f4be026fd4" defer></script>
+<script src="/assets/js/scripts.js?v=8c6f992522" defer></script>
 
 
 
