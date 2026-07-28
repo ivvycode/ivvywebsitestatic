@@ -1,17 +1,17 @@
-<!-- build:29305543364-2411 -->
+<!-- build:30317955012-2706 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: blob: https:; font-src 'self' data: https:; media-src 'self' blob: https:; frame-src https:; connect-src 'self' https: wss:; object-src 'none'; base-uri 'self'; form-action 'self' https:; upgrade-insecure-requests">
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=efecf91b91">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=efecf91b91">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=efecf91b91">
-  <link rel="alternate icon" href="/assets/images/favicon.ico?v=efecf91b91">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=efecf91b91">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=efecf91b91">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=efecf91b91">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=ff212c3a6e">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=ff212c3a6e">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=ff212c3a6e">
+  <link rel="alternate icon" href="/assets/images/favicon.ico?v=ff212c3a6e">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=ff212c3a6e">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=ff212c3a6e">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=ff212c3a6e">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>iVvy</title>
   <meta name="description" content="">
@@ -736,7 +736,7 @@ ul,ol{list-style:none}
     pointer-events: none;
   }
 
-  #venue-calc .vc-field input {
+  #venue-calc .vc-field input[type="number"] {
     width: 100%;
     padding: 11px 72px 11px 14px;
     font-size: 15px;
@@ -749,9 +749,9 @@ ul,ol{list-style:none}
     transition: border-color 0.2s, box-shadow 0.2s;
   }
 
-  #venue-calc .vc-field input.has-prefix { padding-left: 28px; }
+  #venue-calc .vc-field input[type="number"].has-prefix { padding-left: 28px; }
 
-  #venue-calc .vc-field input:focus {
+  #venue-calc .vc-field input[type="number"]:focus {
     border-color: var(--green-mid);
     box-shadow: 0 0 0 3px rgba(153,200,82,0.15);
   }
@@ -772,143 +772,93 @@ ul,ol{list-style:none}
     color: var(--dark-green);
   }
 
-  #venue-calc .vc-results {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  #venue-calc .vc-result-card {
-    border-radius: 10px;
-    padding: 20px;
-  }
-
-  #venue-calc .vc-result-card.light {
-    background: var(--white);
-    border: 1.5px solid var(--light-gray);
-  }
-
-  #venue-calc .vc-result-card.dark {
-    background: var(--card-dark);
-    border: none;
-  }
-
-  #venue-calc .vc-card-label {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-    font-family: 'Poppins', Arial, sans-serif;
-    margin-bottom: 16px;
-  }
-
-  #venue-calc .vc-result-card.light .vc-card-label { color: var(--body-dark); }
-  #venue-calc .vc-result-card.dark .vc-card-label { color: var(--green-light); }
-
-  #venue-calc .vc-cols {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-bottom: 16px;
-  }
-
-  #venue-calc .vc-col-label {
-    font-size: 11px;
-    margin-bottom: 4px;
-    font-family: 'Nunito Sans', Arial, sans-serif;
-  }
-
-  #venue-calc .vc-result-card.light .vc-col-label { color: var(--body-dark); }
-  #venue-calc .vc-result-card.dark .vc-col-label { color: rgba(255,255,255,0.5); }
-
-  #venue-calc .vc-col-value {
-    font-size: 22px;
-    font-weight: 700;
-    font-family: 'Poppins', Arial, sans-serif;
-    line-height: 1.1;
-  }
-
-  #venue-calc .vc-result-card.light .vc-col-value.manual { color: var(--dark-green); }
-  #venue-calc .vc-result-card.dark .vc-col-value.manual { color: var(--body-light); }
-  #venue-calc .vc-col-value.automated { color: var(--green-mid); }
-
-  #venue-calc .vc-saving-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 12px;
-  }
-
-  #venue-calc .vc-result-card.light .vc-saving-row { border-top: 1px solid var(--light-gray); }
-  #venue-calc .vc-result-card.dark .vc-saving-row { border-top: 1px solid rgba(255,255,255,0.1); }
-
-  #venue-calc .vc-saving-label {
-    font-size: 12px;
-    font-family: 'Nunito Sans', Arial, sans-serif;
-  }
-
-  #venue-calc .vc-result-card.light .vc-saving-label { color: var(--body-dark); }
-  #venue-calc .vc-result-card.dark .vc-saving-label { color: rgba(255,255,255,0.5); }
-
-  #venue-calc .vc-saving-value {
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--green-mid);
-    font-family: 'Poppins', Arial, sans-serif;
-  }
-
-  #venue-calc .vc-annual {
-    margin-top: 16px;
-    background: var(--green-mid);
-    border-radius: 10px;
-    padding: 24px;
-    text-align: center;
-  }
-
-  #venue-calc .vc-annual-label {
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.75);
-    font-family: 'Poppins', Arial, sans-serif;
-    margin-bottom: 8px;
-  }
-
-  #venue-calc .vc-annual-value {
-    font-size: 42px;
-    font-weight: 700;
-    color: var(--white);
-    font-family: 'Poppins', Arial, sans-serif;
-    line-height: 1;
-    margin-bottom: 6px;
-  }
-
-  #venue-calc .vc-annual-sub {
-    font-size: 14px;
-    color: rgba(255,255,255,0.85);
-    font-family: 'Nunito Sans', Arial, sans-serif;
-  }
-
-  #venue-calc .vc-cta {
+  #venue-calc .vc-show-btn {
     margin-top: 16px;
     width: 100%;
-    background: var(--dark-green);
-    color: var(--white);
+    background: var(--green-mid);
+    color: var(--dark-green);
     border: none;
     border-radius: 6px;
     padding: 14px 28px;
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 700;
     font-family: 'Poppins', Arial, sans-serif;
     cursor: pointer;
     transition: background 0.2s, transform 0.1s;
   }
 
-  #venue-calc .vc-cta:hover {
-    background: #0a2415;
+  #venue-calc .vc-show-btn:hover {
+    background: #88b548;
     transform: translateY(-1px);
   }
+
+  /* Gate */
+  #venue-calc .vc-gate {
+    background: var(--white);
+    border-radius: 10px;
+    border: 1.5px solid var(--light-gray);
+    padding: 32px 28px;
+    display: none;
+  }
+
+  #venue-calc .vc-gate.visible { display: block; }
+
+  /* Thank you state */
+  #venue-calc .vc-thankyou {
+    background: var(--dark-green);
+    border-radius: 10px;
+    padding: 40px 28px;
+    text-align: center;
+    display: none;
+  }
+
+  #venue-calc .vc-thankyou.visible { display: block; }
+
+  #venue-calc .vc-thankyou-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--green-mid);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 22px;
+  }
+
+  #venue-calc .vc-thankyou h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+    font-family: 'Poppins', Arial, sans-serif;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  #venue-calc .vc-thankyou p {
+    font-size: 14px;
+    color: var(--body-light);
+    line-height: 1.6;
+    margin-bottom: 24px;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #venue-calc .vc-thankyou a {
+    display: inline-block;
+    background: var(--green-mid);
+    color: var(--dark-green);
+    border-radius: 6px;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Poppins', Arial, sans-serif;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  #venue-calc .vc-thankyou a:hover { background: #88b548; }
 </style>
   
 
@@ -927,7 +877,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__logo-wrap">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=efecf91b91" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=ff212c3a6e" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
         </a>
       </div>
       <nav class="nav">
@@ -1178,11 +1128,12 @@ ul,ol{list-style:none}
 <main class="lp-page">
   
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="/assets/images/landing-pages/b68cbda9b4e2c380.webp?v=efecf91b91"
+<noscript><iframe src="/assets/images/landing-pages/b68cbda9b4e2c380.webp?v=ff212c3a6e"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <main class="lp-page">
 <section class="lp-one-col" style="padding:32px;">  <div class="container"><div style="padding:16px 0"><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="/assets/images/landing-pages/1710ebfc1d1c67ea.webp?v=ff212c3a6e" defer></script>
 
 <style>
   :root {
@@ -1313,7 +1264,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     pointer-events: none;
   }
 
-  #venue-calc .vc-field input {
+  #venue-calc .vc-field input[type="number"] {
     width: 100%;
     padding: 11px 72px 11px 14px;
     font-size: 15px;
@@ -1326,9 +1277,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     transition: border-color 0.2s, box-shadow 0.2s;
   }
 
-  #venue-calc .vc-field input.has-prefix { padding-left: 28px; }
+  #venue-calc .vc-field input[type="number"].has-prefix { padding-left: 28px; }
 
-  #venue-calc .vc-field input:focus {
+  #venue-calc .vc-field input[type="number"]:focus {
     border-color: var(--green-mid);
     box-shadow: 0 0 0 3px rgba(153,200,82,0.15);
   }
@@ -1349,143 +1300,93 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     color: var(--dark-green);
   }
 
-  #venue-calc .vc-results {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  #venue-calc .vc-result-card {
-    border-radius: 10px;
-    padding: 20px;
-  }
-
-  #venue-calc .vc-result-card.light {
-    background: var(--white);
-    border: 1.5px solid var(--light-gray);
-  }
-
-  #venue-calc .vc-result-card.dark {
-    background: var(--card-dark);
-    border: none;
-  }
-
-  #venue-calc .vc-card-label {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-    font-family: 'Poppins', Arial, sans-serif;
-    margin-bottom: 16px;
-  }
-
-  #venue-calc .vc-result-card.light .vc-card-label { color: var(--body-dark); }
-  #venue-calc .vc-result-card.dark .vc-card-label { color: var(--green-light); }
-
-  #venue-calc .vc-cols {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-bottom: 16px;
-  }
-
-  #venue-calc .vc-col-label {
-    font-size: 11px;
-    margin-bottom: 4px;
-    font-family: 'Nunito Sans', Arial, sans-serif;
-  }
-
-  #venue-calc .vc-result-card.light .vc-col-label { color: var(--body-dark); }
-  #venue-calc .vc-result-card.dark .vc-col-label { color: rgba(255,255,255,0.5); }
-
-  #venue-calc .vc-col-value {
-    font-size: 22px;
-    font-weight: 700;
-    font-family: 'Poppins', Arial, sans-serif;
-    line-height: 1.1;
-  }
-
-  #venue-calc .vc-result-card.light .vc-col-value.manual { color: var(--dark-green); }
-  #venue-calc .vc-result-card.dark .vc-col-value.manual { color: var(--body-light); }
-  #venue-calc .vc-col-value.automated { color: var(--green-mid); }
-
-  #venue-calc .vc-saving-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 12px;
-  }
-
-  #venue-calc .vc-result-card.light .vc-saving-row { border-top: 1px solid var(--light-gray); }
-  #venue-calc .vc-result-card.dark .vc-saving-row { border-top: 1px solid rgba(255,255,255,0.1); }
-
-  #venue-calc .vc-saving-label {
-    font-size: 12px;
-    font-family: 'Nunito Sans', Arial, sans-serif;
-  }
-
-  #venue-calc .vc-result-card.light .vc-saving-label { color: var(--body-dark); }
-  #venue-calc .vc-result-card.dark .vc-saving-label { color: rgba(255,255,255,0.5); }
-
-  #venue-calc .vc-saving-value {
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--green-mid);
-    font-family: 'Poppins', Arial, sans-serif;
-  }
-
-  #venue-calc .vc-annual {
-    margin-top: 16px;
-    background: var(--green-mid);
-    border-radius: 10px;
-    padding: 24px;
-    text-align: center;
-  }
-
-  #venue-calc .vc-annual-label {
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.75);
-    font-family: 'Poppins', Arial, sans-serif;
-    margin-bottom: 8px;
-  }
-
-  #venue-calc .vc-annual-value {
-    font-size: 42px;
-    font-weight: 700;
-    color: var(--white);
-    font-family: 'Poppins', Arial, sans-serif;
-    line-height: 1;
-    margin-bottom: 6px;
-  }
-
-  #venue-calc .vc-annual-sub {
-    font-size: 14px;
-    color: rgba(255,255,255,0.85);
-    font-family: 'Nunito Sans', Arial, sans-serif;
-  }
-
-  #venue-calc .vc-cta {
+  #venue-calc .vc-show-btn {
     margin-top: 16px;
     width: 100%;
-    background: var(--dark-green);
-    color: var(--white);
+    background: var(--green-mid);
+    color: var(--dark-green);
     border: none;
     border-radius: 6px;
     padding: 14px 28px;
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 700;
     font-family: 'Poppins', Arial, sans-serif;
     cursor: pointer;
     transition: background 0.2s, transform 0.1s;
   }
 
-  #venue-calc .vc-cta:hover {
-    background: #0a2415;
+  #venue-calc .vc-show-btn:hover {
+    background: #88b548;
     transform: translateY(-1px);
   }
+
+  /* Gate */
+  #venue-calc .vc-gate {
+    background: var(--white);
+    border-radius: 10px;
+    border: 1.5px solid var(--light-gray);
+    padding: 32px 28px;
+    display: none;
+  }
+
+  #venue-calc .vc-gate.visible { display: block; }
+
+  /* Thank you state */
+  #venue-calc .vc-thankyou {
+    background: var(--dark-green);
+    border-radius: 10px;
+    padding: 40px 28px;
+    text-align: center;
+    display: none;
+  }
+
+  #venue-calc .vc-thankyou.visible { display: block; }
+
+  #venue-calc .vc-thankyou-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--green-mid);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 22px;
+  }
+
+  #venue-calc .vc-thankyou h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+    font-family: 'Poppins', Arial, sans-serif;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  #venue-calc .vc-thankyou p {
+    font-size: 14px;
+    color: var(--body-light);
+    line-height: 1.6;
+    margin-bottom: 24px;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #venue-calc .vc-thankyou a {
+    display: inline-block;
+    background: var(--green-mid);
+    color: var(--dark-green);
+    border-radius: 6px;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Poppins', Arial, sans-serif;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  #venue-calc .vc-thankyou a:hover { background: #88b548; }
 </style>
 
 <div id="venue-calc">
@@ -1498,6 +1399,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="vc-body">
     <div class="vc-grid">
 
+      <!-- Inputs -->
       <div class="vc-input-card">
         <p class="vc-section-label">Your venue details</p>
 
@@ -1550,58 +1452,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="vc-note">
           <strong>Instant Proposal</strong> is priced at <strong>$2 per opportunity</strong>. Automation assumes ~2 minutes of staff review time per proposal.
         </div>
+
+        <button class="vc-show-btn" id="showResultsBtn">Send my results →</button>
       </div>
 
+      <!-- Right column -->
       <div>
-        <p class="vc-section-label" style="margin-bottom:16px;">Your monthly breakdown</p>
 
-        <div class="vc-results">
-          <div class="vc-result-card light">
-            <p class="vc-card-label">Time spent on proposals</p>
-            <div class="vc-cols">
-              <div>
-                <p class="vc-col-label">Manual</p>
-                <p class="vc-col-value manual" id="timeManual">—</p>
-              </div>
-              <div>
-                <p class="vc-col-label">With automation</p>
-                <p class="vc-col-value automated" id="timeAuto">—</p>
-              </div>
-            </div>
-            <div class="vc-saving-row">
-              <span class="vc-saving-label">Monthly saving</span>
-              <span class="vc-saving-value" id="timeSaving">—</span>
-            </div>
-          </div>
-
-          <div class="vc-result-card dark">
-            <p class="vc-card-label">Cost of creating proposals</p>
-            <div class="vc-cols">
-              <div>
-                <p class="vc-col-label">Manual</p>
-                <p class="vc-col-value manual" id="costManual">—</p>
-              </div>
-              <div>
-                <p class="vc-col-label">With automation</p>
-                <p class="vc-col-value automated" id="costAuto">—</p>
-              </div>
-            </div>
-            <div class="vc-saving-row">
-              <span class="vc-saving-label">Monthly saving</span>
-              <span class="vc-saving-value" id="costSaving">—</span>
-            </div>
+        <!-- Gate: HubSpot form -->
+        <div class="vc-gate" id="vcGate">
+          <div class="hs-form-frame"
+            data-region="na1"
+            data-form-id="f598d636-7040-4b72-8c11-fd6c23f6da3b"
+            data-portal-id="5854099">
           </div>
         </div>
 
-        <div class="vc-annual">
-          <p class="vc-annual-label">Annual saving with automation</p>
-          <p class="vc-annual-value" id="annualSaving">—</p>
-          <p class="vc-annual-sub" id="annualTime">—</p>
+        <!-- Thank you state -->
+        <div class="vc-thankyou" id="vcThankyou">
+          <div class="vc-thankyou-icon">✓</div>
+          <h2>Thanks — your results are on their way</h2>
+          <p>Check your inbox. We've sent your personalised breakdown along with how Instant Proposal can help your venue get that time back.</p>
+          <a href="https://www.ivvy.com/request-demo/" target="_blank" rel="noopener noreferrer">See how much you can save with iVvy →</a>
         </div>
 
-        <a href="https://www.ivvy.com/request-demo/" target="_blank" style="display:block; text-decoration:none;" rel="noopener noreferrer">
-          <button class="vc-cta">See how much you can save with iVvy →</button>
-        </a>
       </div>
     </div>
   </div>
@@ -1616,8 +1490,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     return m > 0 ? h + 'h ' + m + 'm' : h + 'h';
   };
 
-  function calculate() {
+  function getValues() {
     const enquiries = parseFloat(document.getElementById('enquiries').value) || 0;
+    const responseTime = parseFloat(document.getElementById('responseTime').value) || 0;
     const staff = parseFloat(document.getElementById('staff').value) || 0;
     const wage = parseFloat(document.getElementById('wage').value) || 0;
     const proposalTime = parseFloat(document.getElementById('proposalTime').value) || 0;
@@ -1627,30 +1502,76 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     const manualTimeMins = enquiries * proposalTime;
     const manualCost = (manualTimeMins / 60) * wage * staff;
-
     const autoTimeMins = enquiries * REVIEW_MINS;
     const autoCost = enquiries * INSTANT_COST + (autoTimeMins / 60) * wage * staff;
-
     const timeSaved = manualTimeMins - autoTimeMins;
     const costSaved = manualCost - autoCost;
 
-    document.getElementById('timeManual').textContent = fmtTime(manualTimeMins);
-    document.getElementById('timeAuto').textContent = fmtTime(autoTimeMins);
-    document.getElementById('timeSaving').textContent = fmtTime(timeSaved);
-
-    document.getElementById('costManual').textContent = fmt(manualCost);
-    document.getElementById('costAuto').textContent = fmt(autoCost);
-    document.getElementById('costSaving').textContent = fmt(costSaved);
-
-    document.getElementById('annualSaving').textContent = fmt(costSaved * 12);
-    document.getElementById('annualTime').textContent = 'and ' + fmtTime(timeSaved * 12) + ' of staff time returned every year';
+    return {
+      enquiries, responseTime, staff, wage, proposalTime,
+      manualTimeMins, manualCost,
+      autoTimeMins, autoCost,
+      timeSaved, costSaved,
+      annualCostSaving: costSaved * 12,
+      annualTimeSaving: timeSaved * 12
+    };
   }
 
-  document.querySelectorAll('#venue-calc input').forEach(input => {
-    input.addEventListener('input', calculate);
+  function populateHiddenFields(v) {
+    // Wait for HubSpot form to render then inject hidden field values
+    const interval = setInterval(function() {
+      const form = document.querySelector('.hs-form-frame form, .hs-form');
+      if (!form) return;
+      clearInterval(interval);
+
+      const fields = {
+        'calc_monthly_enquiries': v.enquiries,
+        'calc_response_time_hours': v.responseTime,
+        'calc_staff_count': v.staff,
+        'calc_hourly_wage': v.wage,
+        'calc_proposal_time_mins': v.proposalTime,
+        'monthly_cost_manual': fmt(v.manualCost),
+        'monthly_cost_automated': fmt(v.autoCost),
+        'monthly_cost_saving': fmt(v.costSaved),
+        'annual_cost_saving': fmt(v.annualCostSaving),
+        'monthly_time_manual': fmtTime(v.manualTimeMins),
+        'monthly_time_automated': fmtTime(v.autoTimeMins),
+        'monthly_time_saving': fmtTime(v.timeSaved),
+        'annual_time_saving': fmtTime(v.annualTimeSaving)
+      };
+
+      Object.entries(fields).forEach(function(entry) {
+        const name = entry[0];
+        const value = entry[1];
+        let input = form.querySelector('input[name="' + name + '"]');
+        if (!input) {
+          input = document.createElement('input');
+          input.type = 'hidden';
+          input.name = name;
+          form.appendChild(input);
+        }
+        input.value = value;
+      });
+    }, 200);
+  }
+
+  // Show gate on button click
+  document.getElementById('showResultsBtn').addEventListener('click', function() {
+    const v = getValues();
+    document.getElementById('vcGate').classList.add('visible');
+    document.getElementById('vcGate').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    this.style.display = 'none';
+    populateHiddenFields(v);
   });
 
-  calculate();
+  // Listen for HubSpot form submission
+  window.addEventListener('message', function(event) {
+    if (event.data && event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormSubmitted') {
+      document.getElementById('vcGate').style.display = 'none';
+      document.getElementById('vcThankyou').classList.add('visible');
+      document.getElementById('vcThankyou').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
 </script></div></div></section>
 </main>
 <script>(function(){window.addEventListener('message',function(e){var h='';try{h=new URL(e.origin).hostname;}catch(_){return;}if(!/hsforms\.(com|net)$/i.test(h))return;var d=e.data;if(!d||typeof d!=='object')return;var height=(d.type==='embedded-form-height'&&Number(d.height))||(d.type==='hsFormResize'&&Number(d.height))||(typeof d.height==='number'&&d.height);if(!height)return;document.querySelectorAll('iframe[data-hs-share="1"]').forEach(function(f){if(f.contentWindow===e.source){f.style.height=Math.ceil(height)+'px';f.style.minHeight='0px';}});});})();</script>
@@ -1665,7 +1586,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=efecf91b91" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=ff212c3a6e" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
         <div class="footer__social">
           <a href="https://linkedin.com/company/ivvy-pty-ltd/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1751,7 +1672,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           <a href="/marketplace-terms/" class="footer__link">Marketplace Terms</a>
           
-          <a href="/pdfs/CON-COR-Master-Services-Agreement-2025-09-25.pdf" class="footer__link" target="_blank" rel="noopener noreferrer">Event Management Software Terms</a>
+          <a href="/event-management-terms" class="footer__link">Event Management Software Terms</a>
           
           <a href="/website-terms/" class="footer__link">Website Terms of Use</a>
           
@@ -1828,7 +1749,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 
-<script src="/assets/js/scripts.js?v=efecf91b91" defer></script>
+<script src="/assets/js/scripts.js?v=ff212c3a6e" defer></script>
 
 
 <script type="application/ld+json">
