@@ -1,16 +1,16 @@
-<!-- build:30414683470-2732 -->
+<!-- build:30416028061-2733 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=9d52a82d33">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=9d52a82d33">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=9d52a82d33">
-  <link rel="alternate icon" href="/assets/images/favicon.ico?v=9d52a82d33">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=9d52a82d33">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=9d52a82d33">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=9d52a82d33">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=a8e0d38b87">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=a8e0d38b87">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=a8e0d38b87">
+  <link rel="alternate icon" href="/assets/images/favicon.ico?v=a8e0d38b87">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=a8e0d38b87">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=a8e0d38b87">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=a8e0d38b87">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Event Management Software Terms | iVvy</title>
   <meta name="description" content="iVvy Master Services Agreement (MSA) covering the supply of iVvy event and venue management software, fees, intellectual property, data protection, service levels and general terms.">
@@ -707,7 +707,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__logo-wrap">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=9d52a82d33" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=a8e0d38b87" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
         </a>
       </div>
       <nav class="nav">
@@ -995,7 +995,7 @@ ul,ol{list-style:none}
 <section class="section">
   <div class="container">
     <div class="legal-content">
-      <p><em>Correct as at: 25 September 2025</em></p>
+      <p><em>Correct as at: 29 July 2026</em></p>
       <p>This Master Services Agreement (“MSA”) outlines the terms and conditions applicable to “You” meaning the entity you represent in accepting these terms or, if that does not apply, to you individually. If you are accepting on behalf of your employer or another entity, you represent and warrant that: (i) you have full legal authority to bind your employer or such entity to these terms; (ii) you have read and understand these terms; and (iii) you agree to these terms on behalf of the party that you represent.</p>
       <p>These terms are effective as of the date you first sign a proposal or contract with iVvy, or use or access an iVvy software product, whichever is the earlier. iVvy reserves the right to adjust these terms by posting the revised version of this MSA on the iVvy website. Upon review by You, if the new terms are unacceptable, You agree to negotiate acceptable terms with iVvy in good faith or remain on your existing terms until the end date of your current agreement.</p>
       <h2>Terms of agreement</h2>
@@ -1421,40 +1421,60 @@ ul,ol{list-style:none}
       <h2>Schedule 3</h2>
       <h3>Service levels</h3>
       <p>Service Level targets are as per the following table (also available as a PDF: <a href="/pdfs/CON-COR-Master-Services-Agreement-2026-07-20-Schedule-3.pdf" target="_blank" rel="noopener noreferrer">Schedule 3 &ndash; Service Levels</a>):</p>
+      <div style="overflow-x:auto;">
       <table class="legal-table">
         <thead>
-          <tr><th scope="col">Fault Type</th><th scope="col">Response time and type</th></tr>
+          <tr>
+            <th scope="col">Priority</th>
+            <th scope="col">Definition / Trigger</th>
+            <th scope="col">Response Target</th>
+            <th scope="col">Interim Mitigation Target</th>
+            <th scope="col">Resolution Target</th>
+            <th scope="col">Status Updates</th>
+            <th scope="col">Reporting Target</th>
+          </tr>
         </thead>
         <tbody>
           <tr>
-            <td>
-              <p>A HIGH PRIORITY FAULT is one where large groups of Software users are impeded in the completion of an essential business function using the Software, but a work around exists.</p>
-              <p>Standard resolution targets are 75% of faults resolved within 8 working hours.</p>
-              <p>Typical examples of a high priority fault are: Partial loss of critical business function using the Software during normal business hours, Software system operating with severe limitations or business unit is unable to perform any function.</p>
-              <p>Method Of Reporting: Customer To Telephone iVvy</p>
-            </td>
-            <td>iVvy must acknowledge receipt of the Fault Notification within 3 hours of receipt</td>
+            <td>CRITICAL</td>
+            <td>Complete loss of an essential business function affecting all or a large proportion of users, or a verified risk to the integrity of production Customer data (e.g. corruption or loss of booking, financial, or guest data), as reasonably determined by iVvy.</td>
+            <td>&lt; 1 hour, 24/7</td>
+            <td>Within 4 hours, 24/7, where technically possible. Named escalation contact provided within 1 hour of Acknowledgment.</td>
+            <td>Emergency hotfix outside standard release cycle, targeted within 48 hours of Acknowledgment, worked 24/7 until resolved.</td>
+            <td>Every 2 hours until resolved.</td>
+            <td>90% of logged Incidents (Response + Resolution)</td>
           </tr>
           <tr>
-            <td>
-              <p>A MEDIUM PRIORITY FAULT is defined as one where a small number of individuals are impeded in the completion of an essential business function using the Software.</p>
-              <p>Standard resolution targets are 75% of faults resolved within 2 working days.</p>
-              <p>Typical examples of a medium priority fault are: a business unit able to function with reduced capacity or functionality, minimal impact system availability to the Customer.</p>
-              <p>Method Of Reporting: Log Ticket</p>
-            </td>
-            <td>iVvy must acknowledge receipt of the Fault Notification within 6 hours of receipt</td>
+            <td>HIGH</td>
+            <td>Large groups of users impeded in an essential business function.</td>
+            <td>&lt; 1 hour, 24/7</td>
+            <td>Within 24 hours, where available.</td>
+            <td>Configuration level: within 24 hours. Code-change required: patch targeted within 7 days.</td>
+            <td>Every 24 hours until resolved.</td>
+            <td>75% of logged Incidents (Response + Resolution)</td>
           </tr>
           <tr>
-            <td>
-              <p>A LOW PRIORITY FAULT is defined as one where an individual is impeded in the completion of a non-essential business activity using the Software or where a temporary work around exists for an essential business function using the Software.</p>
-              <p>Standard resolution targets are 75% of faults resolved within 5 working days.</p>
-              <p>Typical examples of a low priority fault are: Business unit can function normally, but some individuals are affected and requests for a move, addition or change to a customer&rsquo;s system.</p>
-              <p>Method Of Reporting: Log Ticket</p>
-            </td>
-            <td>iVvy must acknowledge receipt of the Fault Notification within 24 hours of receipt</td>
+            <td>MEDIUM</td>
+            <td>A small number of individuals impeded in an essential business function.</td>
+            <td>&lt; 1 hour, 24/7</td>
+            <td>Within 5 business days, where available.</td>
+            <td>Configuration level: within 5 business days. Code-change required: reviewed within 21 days and assigned an ETA with scheduled release or deferred to the following quarter&rsquo;s roadmap.</td>
+            <td>Every 7 days until an outcome is assigned; every 14 days once scheduled; every 30 days if deferred to roadmap.</td>
+            <td>75% of logged Incidents (Response + Resolution)</td>
+          </tr>
+          <tr>
+            <td>LOW</td>
+            <td>An individual impeded in a non-essential activity, a temporary workaround exists for an essential function, or a minor move/add/change request.</td>
+            <td>&lt; 1 hour, 24/7</td>
+            <td>Within 7 days, where a workaround is available.</td>
+            <td>Not guaranteed. Configuration changes actioned as capacity allows. Code-change items reviewed every 2 weeks and assigned an ETA with scheduled release, deferral for next-quarter reconsideration, or a decision not to proceed. Some Low priority items will not be fixed.</td>
+            <td>Outcome and indicative timing communicated within 14 days of logging; every 14 days once scheduled; every 30 days if deferred.</td>
+            <td>75% of Response and Interim Mitigation targets met. Resolution is excluded from this metric.</td>
           </tr>
         </tbody>
       </table>
+      </div>
+
 
     </div>
   </div>
@@ -1467,7 +1487,7 @@ ul,ol{list-style:none}
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=9d52a82d33" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=a8e0d38b87" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
         <div class="footer__social">
           <a href="https://linkedin.com/company/ivvy-pty-ltd/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1629,7 +1649,7 @@ ul,ol{list-style:none}
 
 
 
-<script src="/assets/js/scripts.js?v=9d52a82d33" defer></script>
+<script src="/assets/js/scripts.js?v=a8e0d38b87" defer></script>
 
 
 
