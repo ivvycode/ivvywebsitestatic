@@ -1,17 +1,17 @@
-<!-- build:31446158373-3008 -->
+<!-- build:31449785509-3009 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: blob: https:; font-src 'self' data: https:; media-src 'self' blob: https:; frame-src https:; connect-src 'self' https: wss:; object-src 'none'; base-uri 'self'; form-action 'self' https:; upgrade-insecure-requests">
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=928f5a0f8f">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=928f5a0f8f">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=928f5a0f8f">
-  <link rel="alternate icon" href="/assets/images/favicon.ico?v=928f5a0f8f">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=928f5a0f8f">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=928f5a0f8f">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=928f5a0f8f">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=a2634a4079">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=a2634a4079">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=a2634a4079">
+  <link rel="alternate icon" href="/assets/images/favicon.ico?v=a2634a4079">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=a2634a4079">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=a2634a4079">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=a2634a4079">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>iVvy</title>
   <meta name="description" content="">
@@ -877,7 +877,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__logo-wrap">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=928f5a0f8f" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=a2634a4079" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
         </a>
       </div>
       <nav class="nav">
@@ -1128,12 +1128,11 @@ ul,ol{list-style:none}
 <main class="lp-page">
   
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="/assets/images/landing-pages/b68cbda9b4e2c380.webp?v=928f5a0f8f"
+<noscript><iframe src="/assets/images/landing-pages/b68cbda9b4e2c380.webp?v=a2634a4079"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <main class="lp-page">
 <section class="lp-one-col" style="padding:32px;">  <div class="container"><div style="padding:16px 0"><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-<script src="/assets/images/landing-pages/1710ebfc1d1c67ea.webp?v=928f5a0f8f" defer></script>
 
 <style>
   :root {
@@ -1459,13 +1458,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- Right column -->
       <div>
 
-        <!-- Gate: HubSpot form -->
+        <!-- Gate: link through to the hosted HubSpot form -->
         <div class="vc-gate" id="vcGate">
-          <div class="hs-form-frame"
-            data-region="na1"
-            data-form-id="f598d636-7040-4b72-8c11-fd6c23f6da3b"
-            data-portal-id="5854099">
-          </div>
+          <p class="vc-section-label">Get your results</p>
+          <p style="font-size:14px;color:var(--body-dark);line-height:1.6;margin-bottom:20px;">
+            Your numbers are ready. Pop in your email on the next page and we'll send your breakdown straight over.
+          </p>
+          <a id="hsFormLink" href="#" target="_blank" rel="noopener noreferrer"
+             class="vc-show-btn"
+             style="display:block;text-decoration:none;text-align:center;">
+            Continue to get your results →
+          </a>
         </div>
 
         <!-- Thank you state -->
@@ -1517,60 +1520,40 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     };
   }
 
-  function populateHiddenFields(v) {
-    // Wait for HubSpot form to render then inject hidden field values
-    const interval = setInterval(function() {
-      const form = document.querySelector('.hs-form-frame form, .hs-form');
-      if (!form) return;
-      clearInterval(interval);
+  const HS_FORM_BASE_URL = 'https://share.hsforms.com/29ZjWNnBAS3KMEf1sI_baOw3hh1v';
 
-      const fields = {
-        'calc_monthly_enquiries': v.enquiries,
-        'calc_response_time_hours': v.responseTime,
-        'calc_staff_count': v.staff,
-        'calc_hourly_wage': v.wage,
-        'calc_proposal_time_mins': v.proposalTime,
-        'monthly_cost_manual': fmt(v.manualCost),
-        'monthly_cost_automated': fmt(v.autoCost),
-        'monthly_cost_saving': fmt(v.costSaved),
-        'annual_cost_saving': fmt(v.annualCostSaving),
-        'monthly_time_manual': fmtTime(v.manualTimeMins),
-        'monthly_time_automated': fmtTime(v.autoTimeMins),
-        'monthly_time_saving': fmtTime(v.timeSaved),
-        'annual_time_saving': fmtTime(v.annualTimeSaving)
-      };
+  function buildFormurl(/v) {
+    const params = {
+      calc_monthly_enquiries: v.enquiries,
+      calc_response_time_hours: v.responseTime,
+      calc_staff_count: v.staff,
+      calc_hourly_wage: v.wage,
+      calc_proposal_time_mins: v.proposalTime,
+      monthly_cost_manual: fmt(v.manualCost),
+      monthly_cost_automated: fmt(v.autoCost),
+      monthly_cost_saving: fmt(v.costSaved),
+      annual_cost_saving: fmt(v.annualCostSaving),
+      monthly_time_manual: fmtTime(v.manualTimeMins),
+      monthly_time_automated: fmtTime(v.autoTimeMins),
+      monthly_time_saving: fmtTime(v.timeSaved),
+      annual_time_saving: fmtTime(v.annualTimeSaving)
+    };
 
-      Object.entries(fields).forEach(function(entry) {
-        const name = entry[0];
-        const value = entry[1];
-        let input = form.querySelector('input[name="' + name + '"]');
-        if (!input) {
-          input = document.createElement('input');
-          input.type = 'hidden';
-          input.name = name;
-          form.appendChild(input);
-        }
-        input.value = value;
-      });
-    }, 200);
+    const query = Object.entries(params)
+      .map(function(entry) { return encodeURIComponent(entry[0]) + '=' + encodeURIComponent(entry[1]); })
+      .join('&');
+
+    return HS_FORM_BASE_URL + '?' + query;
   }
 
-  // Show gate on button click
   document.getElementById('showResultsBtn').addEventListener('click', function() {
     const v = getValues();
+    const link = document.getElementById('hsFormLink');
+    link.href = buildFormurl(/v);
+
     document.getElementById('vcGate').classList.add('visible');
     document.getElementById('vcGate').scrollIntoView({ behavior: 'smooth', block: 'start' });
     this.style.display = 'none';
-    populateHiddenFields(v);
-  });
-
-  // Listen for HubSpot form submission
-  window.addEventListener('message', function(event) {
-    if (event.data && event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormSubmitted') {
-      document.getElementById('vcGate').style.display = 'none';
-      document.getElementById('vcThankyou').classList.add('visible');
-      document.getElementById('vcThankyou').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
   });
 </script></div></div></section>
 </main>
@@ -1586,7 +1569,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=928f5a0f8f" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=a2634a4079" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
         <div class="footer__social">
           <a href="https://linkedin.com/company/ivvy-pty-ltd/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1749,7 +1732,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 
-<script src="/assets/js/scripts.js?v=928f5a0f8f" defer></script>
+<script src="/assets/js/scripts.js?v=a2634a4079" defer></script>
 
 
 <script type="application/ld+json">
