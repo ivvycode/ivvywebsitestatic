@@ -121,4 +121,10 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>https://www.ivvy.com/customers/derbyshire-county-cricket-club/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 </urlset>
