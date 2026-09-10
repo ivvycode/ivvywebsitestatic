@@ -1,17 +1,17 @@
-<!-- build:34419298541-3735 -->
+<!-- build:34422804274-3736 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: blob: https:; font-src 'self' data: https:; media-src 'self' blob: https:; frame-src https:; connect-src 'self' https: wss:; object-src 'none'; base-uri 'self'; form-action 'self' https:; upgrade-insecure-requests">
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=950830976c">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=950830976c">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=950830976c">
-  <link rel="alternate icon" href="/assets/images/favicon.ico?v=950830976c">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=950830976c">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=950830976c">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=950830976c">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg?v=26f1914b1c">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=26f1914b1c">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png?v=26f1914b1c">
+  <link rel="alternate icon" href="/assets/images/favicon.ico?v=26f1914b1c">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=26f1914b1c">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png?v=26f1914b1c">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png?v=26f1914b1c">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>iVvy</title>
   <meta name="description" content="">
@@ -595,9 +595,9 @@ ul,ol{list-style:none}
   
   
   
-  <link rel="preload" as="style" href="/assets/css/page/p-710fcc3413.css">
-  <link rel="stylesheet" href="/assets/css/page/p-710fcc3413.css" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="/assets/css/page/p-710fcc3413.css"></noscript>
+  <link rel="preload" as="style" href="/assets/css/page/p-b61974f6ee.css">
+  <link rel="stylesheet" href="/assets/css/page/p-b61974f6ee.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="/assets/css/page/p-b61974f6ee.css"></noscript>
   
 
   
@@ -735,7 +735,7 @@ ul,ol{list-style:none}
   .gap-14 { height: 14px; }
 
   /* Results panel */
-  .results { background: var(--ivvy-dark-green); border-radius: 12px; padding: 32px; display: flex; flex-direction: column; }
+  .results { background: var(--ivvy-dark-green); border-radius: 12px; padding: 32px; display: flex; flex-direction: column; position: relative; overflow: hidden; }
   .results .eyebrow {
     color: var(--ivvy-green-light); font-size: 13px; font-weight: 600;
     letter-spacing: .04em; text-transform: uppercase; margin: 0;
@@ -774,6 +774,107 @@ ul,ol{list-style:none}
   .cta-btn:hover { background: var(--ivvy-green-hover); transform: translateY(-1px); }
   .cta-btn:focus-visible { outline: 3px solid var(--ivvy-white); outline-offset: 2px; }
 
+  /* Results gate */
+  .results-inner {
+    transition: filter .25s ease, opacity .25s ease;
+  }
+  .results-inner.locked {
+    filter: blur(9px);
+    opacity: .6;
+    pointer-events: none;
+    user-select: none;
+  }
+  .result-gate {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 28px;
+    background: rgba(15, 51, 31, .93);
+    border-radius: 12px;
+  }
+  .result-gate.hidden { display: none; }
+  .result-gate h3 {
+    color: var(--ivvy-white);
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .result-gate p {
+    color: var(--ivvy-off-white);
+    font-size: 14px;
+    max-width: 320px;
+    margin: 0 0 18px;
+  }
+  .result-gate .hs-form-frame-wrap {
+    width: 100%;
+    max-width: 340px;
+  }
+  .result-gate .hs-form-frame-wrap.hidden { display: none; }
+
+  /* HubSpot form styling — only takes effect if the form renders as raw HTML
+     rather than inside an iframe. See note below the file if it doesn't apply. */
+  .hs-form-frame-wrap .hs-form label,
+  .hs-form-frame-wrap .hs-form legend,
+  .hs-form-frame-wrap .hs-form .hs-field-desc,
+  .hs-form-frame-wrap .hs-form .hs-error-msgs label {
+    color: var(--ivvy-white) !important;
+  }
+  .hs-form-frame-wrap .hs-form input[type="text"],
+  .hs-form-frame-wrap .hs-form input[type="email"],
+  .hs-form-frame-wrap .hs-form input[type="tel"],
+  .hs-form-frame-wrap .hs-form textarea,
+  .hs-form-frame-wrap .hs-form select {
+    color: var(--ivvy-dark-green) !important;
+    background: var(--ivvy-white) !important;
+  }
+  .hs-form-frame-wrap .hs-form .hs-button,
+  .hs-form-frame-wrap .hs-form input[type="submit"],
+  .hs-form-frame-wrap .hs-form .actions input[type="submit"],
+  .hs-form-frame-wrap .hs-form .hs-button.primary,
+  .hs-form-frame-wrap .hs-form .hs-button.primary.large {
+    background-color: var(--ivvy-green-mid) !important;
+    background-image: none !important;
+    border-color: var(--ivvy-green-mid) !important;
+    color: var(--ivvy-white) !important;
+  }
+  .hs-form-frame-wrap .hs-form .hs-button:hover,
+  .hs-form-frame-wrap .hs-form input[type="submit"]:hover,
+  .hs-form-frame-wrap .hs-form .hs-button:focus,
+  .hs-form-frame-wrap .hs-form input[type="submit"]:focus {
+    background-color: var(--ivvy-green-hover) !important;
+    background-image: none !important;
+    border-color: var(--ivvy-green-hover) !important;
+  }
+  .hs-form-frame-wrap .hs-form .hs-button:disabled,
+  .hs-form-frame-wrap .hs-form input[type="submit"]:disabled {
+    background-color: var(--ivvy-green-mid) !important;
+    background-image: none !important;
+    border-color: var(--ivvy-green-mid) !important;
+    color: var(--ivvy-white) !important;
+    opacity: 1 !important;
+  }
+  .gate-btn {
+    display: inline-block;
+    background: var(--ivvy-green-mid);
+    color: var(--ivvy-white);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 15px;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background .2s ease, transform .1s ease;
+  }
+  .gate-btn:hover { background: var(--ivvy-green-hover); transform: translateY(-1px); }
+  .gate-btn:focus-visible { outline: 3px solid var(--ivvy-white); outline-offset: 2px; }
+  .gate-prompt.hidden { display: none; }
+
   /* CTA banner */
   .banner { background: var(--ivvy-green-mid); }
   .banner .container { padding-top: 48px; padding-bottom: 48px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
@@ -795,6 +896,7 @@ ul,ol{list-style:none}
   @media (prefers-reduced-motion: reduce) {
     .cta-btn, input, select { transition: none; }
     .cta-btn:hover { transform: none; }
+    .results-inner { transition: none; }
   }
 </style>
   
@@ -814,7 +916,7 @@ ul,ol{list-style:none}
     <div class="header__inner">
       <div class="header__logo-wrap">
         <a href="/" class="header__logo">
-          <img src="/assets/images/ivvy-logo-venues.webp?v=950830976c" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
+          <img src="/assets/images/ivvy-logo-venues.webp?v=26f1914b1c" alt="iVvy" width="120" height="32" loading="eager" fetchpriority="high" style="width:120px;height:32px;object-fit:contain;" decoding="async">
         </a>
       </div>
       <nav class="nav">
@@ -1065,7 +1167,7 @@ ul,ol{list-style:none}
 <main class="lp-page">
   
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="/assets/images/landing-pages/b68cbda9b4e2c380.webp?v=950830976c"
+<noscript><iframe src="/assets/images/landing-pages/b68cbda9b4e2c380.webp?v=26f1914b1c"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <main class="lp-page">
@@ -1076,6 +1178,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>iVvy — Unsold Capacity Calculator</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="/assets/images/landing-pages/1710ebfc1d1c67ea.webp?v=26f1914b1c" defer></script>
 <style>
   :root {
     --ivvy-dark-green: #0F331F;
@@ -1204,7 +1307,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   .gap-14 { height: 14px; }
 
   /* Results panel */
-  .results { background: var(--ivvy-dark-green); border-radius: 12px; padding: 32px; display: flex; flex-direction: column; }
+  .results { background: var(--ivvy-dark-green); border-radius: 12px; padding: 32px; display: flex; flex-direction: column; position: relative; overflow: hidden; }
   .results .eyebrow {
     color: var(--ivvy-green-light); font-size: 13px; font-weight: 600;
     letter-spacing: .04em; text-transform: uppercase; margin: 0;
@@ -1243,6 +1346,107 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   .cta-btn:hover { background: var(--ivvy-green-hover); transform: translateY(-1px); }
   .cta-btn:focus-visible { outline: 3px solid var(--ivvy-white); outline-offset: 2px; }
 
+  /* Results gate */
+  .results-inner {
+    transition: filter .25s ease, opacity .25s ease;
+  }
+  .results-inner.locked {
+    filter: blur(9px);
+    opacity: .6;
+    pointer-events: none;
+    user-select: none;
+  }
+  .result-gate {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 28px;
+    background: rgba(15, 51, 31, .93);
+    border-radius: 12px;
+  }
+  .result-gate.hidden { display: none; }
+  .result-gate h3 {
+    color: var(--ivvy-white);
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .result-gate p {
+    color: var(--ivvy-off-white);
+    font-size: 14px;
+    max-width: 320px;
+    margin: 0 0 18px;
+  }
+  .result-gate .hs-form-frame-wrap {
+    width: 100%;
+    max-width: 340px;
+  }
+  .result-gate .hs-form-frame-wrap.hidden { display: none; }
+
+  /* HubSpot form styling — only takes effect if the form renders as raw HTML
+     rather than inside an iframe. See note below the file if it doesn't apply. */
+  .hs-form-frame-wrap .hs-form label,
+  .hs-form-frame-wrap .hs-form legend,
+  .hs-form-frame-wrap .hs-form .hs-field-desc,
+  .hs-form-frame-wrap .hs-form .hs-error-msgs label {
+    color: var(--ivvy-white) !important;
+  }
+  .hs-form-frame-wrap .hs-form input[type="text"],
+  .hs-form-frame-wrap .hs-form input[type="email"],
+  .hs-form-frame-wrap .hs-form input[type="tel"],
+  .hs-form-frame-wrap .hs-form textarea,
+  .hs-form-frame-wrap .hs-form select {
+    color: var(--ivvy-dark-green) !important;
+    background: var(--ivvy-white) !important;
+  }
+  .hs-form-frame-wrap .hs-form .hs-button,
+  .hs-form-frame-wrap .hs-form input[type="submit"],
+  .hs-form-frame-wrap .hs-form .actions input[type="submit"],
+  .hs-form-frame-wrap .hs-form .hs-button.primary,
+  .hs-form-frame-wrap .hs-form .hs-button.primary.large {
+    background-color: var(--ivvy-green-mid) !important;
+    background-image: none !important;
+    border-color: var(--ivvy-green-mid) !important;
+    color: var(--ivvy-white) !important;
+  }
+  .hs-form-frame-wrap .hs-form .hs-button:hover,
+  .hs-form-frame-wrap .hs-form input[type="submit"]:hover,
+  .hs-form-frame-wrap .hs-form .hs-button:focus,
+  .hs-form-frame-wrap .hs-form input[type="submit"]:focus {
+    background-color: var(--ivvy-green-hover) !important;
+    background-image: none !important;
+    border-color: var(--ivvy-green-hover) !important;
+  }
+  .hs-form-frame-wrap .hs-form .hs-button:disabled,
+  .hs-form-frame-wrap .hs-form input[type="submit"]:disabled {
+    background-color: var(--ivvy-green-mid) !important;
+    background-image: none !important;
+    border-color: var(--ivvy-green-mid) !important;
+    color: var(--ivvy-white) !important;
+    opacity: 1 !important;
+  }
+  .gate-btn {
+    display: inline-block;
+    background: var(--ivvy-green-mid);
+    color: var(--ivvy-white);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 15px;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background .2s ease, transform .1s ease;
+  }
+  .gate-btn:hover { background: var(--ivvy-green-hover); transform: translateY(-1px); }
+  .gate-btn:focus-visible { outline: 3px solid var(--ivvy-white); outline-offset: 2px; }
+  .gate-prompt.hidden { display: none; }
+
   /* CTA banner */
   .banner { background: var(--ivvy-green-mid); }
   .banner .container { padding-top: 48px; padding-bottom: 48px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
@@ -1264,6 +1468,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   @media (prefers-reduced-motion: reduce) {
     .cta-btn, input, select { transition: none; }
     .cta-btn:hover { transform: none; }
+    .results-inner { transition: none; }
   }
 </style>
 </head>
@@ -1369,19 +1574,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <!-- Results -->
       <section class="results">
-        <p class="eyebrow">Recoverable revenue each year</p>
-        <div class="headline" id="headline">—</div>
-        <p class="headline-sub" id="headline-sub"></p>
+        <div class="results-inner locked" id="results-inner">
+          <p class="eyebrow">Recoverable revenue each year</p>
+          <div class="headline" id="headline">—</div>
+          <p class="headline-sub" id="headline-sub"></p>
 
-        <div class="stats">
-          <div class="stat"><div class="val" id="stat-annual">—</div><div class="lbl">Sellable sessions / year</div></div>
-          <div class="stat"><div class="val" id="stat-sold">—</div><div class="lbl">Sessions booked now</div></div>
-          <div class="stat"><div class="val" id="stat-gap">—</div><div class="lbl">Extra sessions to benchmark</div></div>
-          <div class="stat"><div class="val" id="stat-current">—</div><div class="lbl">Revenue booked now</div></div>
+          <div class="stats">
+            <div class="stat"><div class="val" id="stat-annual">—</div><div class="lbl">Sellable sessions / year</div></div>
+            <div class="stat"><div class="val" id="stat-sold">—</div><div class="lbl">Sessions booked now</div></div>
+            <div class="stat"><div class="val" id="stat-gap">—</div><div class="lbl">Extra sessions to benchmark</div></div>
+            <div class="stat"><div class="val" id="stat-current">—</div><div class="lbl">Revenue booked now</div></div>
+          </div>
+
+          <div class="offpeak">
+            <p>Most of this gap hides in off-peak windows — weekday daytimes and low-season dates where spaces sell least. Those slots have the most room to move.</p>
+          </div>
         </div>
 
-        <div class="offpeak">
-          <p>Most of this gap hides in off-peak windows — weekday daytimes and low-season dates where spaces sell least. Those slots have the most room to move.</p>
+        <div class="result-gate" id="result-gate">
+          <div class="gate-prompt" id="gate-prompt">
+            <h3>Get your number</h3>
+            <p>Answer a couple of questions and we'll unlock your estimate.</p>
+            <button type="button" class="gate-btn" id="gate-btn">Get my number</button>
+          </div>
+          <div class="hs-form-frame-wrap hidden" id="hs-form-frame-wrap">
+            <div class="hs-form-frame" data-region="na1" data-form-id="c93deb00-e73e-4118-827a-5eb1da22e10e" data-portal-id="5854099"></div>
+          </div>
         </div>
       </section>
 
@@ -1515,6 +1733,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
 
   recompute();
+
+  // Reveal the form when the button is clicked
+  var gateBtn = $("gate-btn");
+  if (gateBtn) {
+    gateBtn.addEventListener("click", function () {
+      $("gate-prompt").classList.add("hidden");
+      $("hs-form-frame-wrap").classList.remove("hidden");
+    });
+  }
+
+  // Unlock the results once the HubSpot form is submitted
+  window.addEventListener("message", function (event) {
+    if (!event.data || event.data.type !== "hsFormCallback") return;
+    if (event.data.eventName !== "onFormSubmitted") return;
+
+    var inner = $("results-inner");
+    var gate = $("result-gate");
+    if (inner) inner.classList.remove("locked");
+    if (gate) gate.classList.add("hidden");
+  });
 })();
 </script>
 
@@ -1527,7 +1765,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="/assets/images/ivvy-logo-venues.webp?v=950830976c" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
+        <img src="/assets/images/ivvy-logo-venues.webp?v=26f1914b1c" alt="iVvy" class="footer__logo" width="120" height="40" loading="lazy" decoding="async">
         <div class="footer__social">
           <a href="https://linkedin.com/company/ivvy-pty-ltd/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1690,7 +1928,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 
-<script src="/assets/js/scripts.js?v=950830976c" defer></script>
+<script src="/assets/js/scripts.js?v=26f1914b1c" defer></script>
 
 
 <script type="application/ld+json">
