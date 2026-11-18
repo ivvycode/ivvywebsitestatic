@@ -6,7 +6,6 @@
 
 - [iVvyAI — Instant Proposal](/event-sales-ai/): AI agents that read enquiry emails, extract details and draft proposals automatically.
 - [iVvyPay](/ivvy-pay/): Integrated payments for deposits, balances and on-the-day charges.
-- [Event Ticketing](/event-ticketing-software/): Sell, scan and manage tickets for paid and free events.
 - [Venue Management Software](/venue-event-management-software/): End-to-end venue sales, catering and event operations.
 
 ## Venue types
@@ -37,4 +36,3 @@
 - [Website terms](/website-terms/)
 - [Credit terms](/credit-terms/)
 - [Marketplace terms](/marketplace-terms/)
-- [Events terms](/events-terms/)
